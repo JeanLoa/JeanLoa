@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090a09" />
+    <meta name="description" content="Jean Loa builds applied AI, full-stack product systems and deeply documented technical blueprints." />
+    <meta property="og:title" content="Jean Loa — Intelligence, engineered into systems" />
+    <meta property="og:description" content="Explore production-minded software, applied AI laboratories and architecture blueprints built with evidence." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="__SITE_ORIGIN__/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jean Loa — Systems Portfolio" />
+    <meta name="twitter:description" content="Applied AI, product software and architecture — mapped in depth." />
+    <meta name="twitter:image" content="__SITE_ORIGIN__/og.png" />
+    <title>Jean Loa — Systems Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="projects-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the work</a>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Jean Loa, home">
+        <span class="brand-mark">JL</span>
+        <span class="brand-copy">Systems<br />Portfolio</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="#selected">Selected work</a>
+        <a href="#paths">Engineering paths</a>
+        <a href="#atlas">Project atlas</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="header-cta" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero">
+        <div class="hero-backdrop" aria-hidden="true">
+          <div class="hero-orbit hero-orbit--one"></div>
+          <div class="hero-orbit hero-orbit--two"></div>
+          <div class="hero-core"></div>
+          <span class="signal signal--one">DOMAIN</span>
+          <span class="signal signal--two">MODEL</span>
+          <span class="signal signal--three">PRODUCT</span>
+        </div>
+        <div class="hero-content">
+          <p class="kicker reveal">Jean Franck Loa Rojas · Lima, Peru</p>
+          <h1 class="hero-title" aria-label="I build intelligence into systems">
+            <span class="hero-line reveal">I build</span>
+            <span class="hero-line hero-line--accent reveal">intelligence</span>
+            <span class="hero-line reveal">into systems.</span>
+          </h1>
+          <div class="hero-bottom reveal">
+            <p>
+              Applied AI, full-stack products and architecture blueprints—connected from
+              data and domain logic to interfaces, deployment and evidence.
+            </p>
+            <a class="round-link" href="#selected" aria-label="Explore selected systems">
+              <span>Explore<br />systems</span><span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-index" aria-label="Portfolio metrics">
+          <div><strong data-total-projects>—</strong><span>projects mapped</span></div>
+          <div><strong>03</strong><span>flagship systems</span></div>
+          <div><strong>02</strong><span>engineering paths</span></div>
+        </div>
+      </section>
+
+      <section class="manifesto section-pad">
+        <div class="section-label reveal"><span>01</span> Working principle</div>
+        <div class="manifesto-grid">
+          <p class="manifesto-lead reveal">
+            Not a gallery of isolated demos. A living map of systems, experiments,
+            decisions and technical growth.
+          </p>
+          <div class="manifesto-copy reveal">
+            <p>
+              Every entry says what is built, what remains a blueprint, how it is shaped,
+              and where the evidence lives. Ambition is useful only when the state of the
+              work stays honest.
+            </p>
+            <div class="principle-row">
+              <span>Explore before executing.</span>
+              <span>Execute with a map.</span>
+              <span>Document every advance.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="selected" class="selected-section">
+        <div class="section-intro section-pad">
+          <div class="section-label reveal"><span>02</span> Selected systems</div>
+          <div>
+            <h2 class="section-title reveal">Built across the whole stack.</h2>
+            <p class="section-note reveal">Open each system for the problem, architecture, capabilities and engineering evidence.</p>
+          </div>
+        </div>
+        <div id="featured-projects" class="featured-projects" aria-live="polite"></div>
+      </section>
+
+      <section id="paths" class="paths-section section-pad">
+        <div class="section-label reveal"><span>03</span> Engineering paths</div>
+        <div class="paths-header">
+          <h2 class="section-title reveal">A curriculum turned into an R&amp;D map.</h2>
+          <p class="section-note reveal">
+            Two parallel paths connect foundations to applied platforms. Blueprints are
+            labeled clearly; implementation evidence is never implied.
+          </p>
+        </div>
+        <div class="path-panels">
+          <article class="path-panel path-panel--ai reveal">
+            <div class="path-panel__top">
+              <span>Path / 01</span><span data-ai-count>— records</span>
+            </div>
+            <h3>AI<br />Engineering</h3>
+            <p>Machine learning, deep learning, vision, RAG, agents, generative systems, RL, quantum AI and robotics.</p>
+            <div class="path-spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <button type="button" class="text-button" data-filter-jump="AI Engineering">View the path <span>↘</span></button>
+          </article>
+          <article class="path-panel path-panel--software reveal">
+            <div class="path-panel__top">
+              <span>Path / 02</span><span data-software-count>— records</span>
+            </div>
+            <h3>Software<br />Engineering</h3>
+            <p>Product surfaces that translate technical depth into APIs, dashboards, platforms, observability and delivery.</p>
+            <div class="path-terminal" aria-hidden="true">
+              <span>frontend</span><i>→</i><span>api</span><i>→</i><span>services</span><i>→</i><span>evidence</span>
+            </div>
+            <button type="button" class="text-button" data-filter-jump="Software Engineering">View the path <span>↘</span></button>
+          </article>
+        </div>
+      </section>
+
+      <section id="atlas" class="atlas-section section-pad">
+        <div class="atlas-heading">
+          <div>
+            <div class="section-label reveal"><span>04</span> Project atlas</div>
+            <h2 class="section-title reveal">Every project.<br />Its real state.</h2>
+          </div>
+          <p class="atlas-description reveal">
+            Search the complete map. “Built” means code or product evidence exists.
+            “Blueprint” means the architecture and experiment are documented for future implementation.
+          </p>
+        </div>
+
+        <div class="atlas-controls reveal">
+          <label class="search-control">
+            <span class="sr-only">Search projects</span>
+            <span aria-hidden="true">⌕</span>
+            <input id="project-search" type="search" placeholder="Search systems, methods, technologies…" autocomplete="off" />
+          </label>
+          <div class="filter-row" role="group" aria-label="Filter projects">
+            <button type="button" class="filter-chip is-active" data-filter="All" aria-pressed="true">All</button>
+            <button type="button" class="filter-chip" data-filter="University" aria-pressed="false">University</button>
+            <button type="button" class="filter-chip" data-filter="AI Engineering" aria-pressed="false">AI path</button>
+            <button type="button" class="filter-chip" data-filter="Software Engineering" aria-pressed="false">Software path</button>
+            <button type="button" class="filter-chip" data-filter="Leisure" aria-pressed="false">Independent</button>
+          </div>
+        </div>
+
+        <div class="atlas-meta">
+          <p><span id="visible-count">0</span> projects in view</p>
+          <p id="atlas-status">Showing the complete engineering map</p>
+        </div>
+        <div id="project-grid" class="project-grid" aria-live="polite"></div>
+        <div class="atlas-more">
+          <button id="load-more" type="button" class="load-more">Load more projects <span aria-hidden="true">＋</span></button>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-visual" aria-hidden="true">
+          <div class="about-ring"></div>
+          <div class="about-coordinate"><span>12.0464° S</span><span>77.0428° W</span></div>
+        </div>
+        <div class="about-content section-pad">
+          <div class="section-label reveal"><span>05</span> Engineering style</div>
+          <h2 class="about-title reveal">Structure.<br /><em>Purpose.</em><br />Evidence.</h2>
+          <div class="about-copy reveal">
+            <p>
+              I work where software engineering and applied intelligence meet: domain models,
+              data pipelines, APIs, visual systems, deployment, technical writing and product decisions.
+            </p>
+            <p>
+              The goal is not to hide complexity. It is to give complexity a clear shape—one that can be tested,
+              explained and extended.
+            </p>
+          </div>
+          <a class="large-contact" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">
+            Let’s build something rigorous. <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><strong>Jean Loa</strong><span>Software Engineer · Applied AI</span></div>
+      <div class="footer-links"><a href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Back to top ↑</a></div>
+      <p>Built to make the work inspectable.</p>
+    </footer>
+
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" aria-label="Close project details">Close <span aria-hidden="true">×</span></button>
+        <div id="dialog-content"></div>
+      </div>
+    </dialog>
+  </body>
+</html>

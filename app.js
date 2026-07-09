@@ -1,0 +1,296 @@
+(() => {
+  const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
+  const state = { filter: "All", query: "", visible: 18 };
+  const accentMap = { lime: "#c8ff54", blue: "#5d98ff", cyan: "#56d8ff", orange: "#ff7754", violet: "#9995ff" };
+
+  const featuredRoot = document.querySelector("#featured-projects");
+  const grid = document.querySelector("#project-grid");
+  const dialog = document.querySelector("#project-dialog");
+  const dialogContent = document.querySelector("#dialog-content");
+  const search = document.querySelector("#project-search");
+  const loadMore = document.querySelector("#load-more");
+  const visibleCount = document.querySelector("#visible-count");
+  const atlasStatus = document.querySelector("#atlas-status");
+
+  const escapeHtml = value => String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+  const projectStatus = project => {
+    if (project.status) return project.status;
+    if (project.category === "University") return "Built system";
+    if ((project.signals?.code || 0) >= 4) return "Implementation";
+    if (project.category === "Roadmap") return "Roadmap";
+    return "Blueprint";
+  };
+
+  const statusClass = status => {
+    if (/built|implementation|functional|coursework|published|lab|practice|exploration|capstone|archived/i.test(status)) return "built";
+    if (/roadmap|development/i.test(status)) return "roadmap";
+    return "blueprint";
+  };
+
+  const techMarkup = technologies => (technologies || []).slice(0, 6)
+    .map(tech => `<span>${escapeHtml(tech)}</span>`).join("");
+
+  function visualMarkup(project) {
+    if (project.image) {
+      return `<div class="feature-frame"><span class="feature-frame__label">Product evidence</span><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} interface evidence" loading="lazy" /></div>`;
+    }
+    if (project.visual === "map") {
+      return `<div class="feature-frame"><span class="feature-frame__label">Route graph / Lima</span><div class="visual-map"><i class="map-node"></i><i class="map-node"></i><i class="map-node"></i><i class="map-node"></i></div></div>`;
+    }
+    const cells = Array.from({ length: 70 }, (_, index) => `<span style="--i:${(index % 9) + 1}"></span>`).join("");
+    return `<div class="feature-frame"><span class="feature-frame__label">Model surface</span><div class="visual-matrix">${cells}</div></div>`;
+  }
+
+  function renderFeatured() {
+    const featured = projects.filter(project => project.featured).slice(0, 4);
+    featuredRoot.innerHTML = featured.map((project, index) => `
+      <article class="feature-project" data-accent="${escapeHtml(project.accent || "lime")}">
+        <div class="feature-copy">
+          <div class="feature-number"><span>System / ${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(project.family)}</span></div>
+          <div class="feature-main reveal">
+            <p class="feature-eyebrow">${escapeHtml(project.eyebrow || project.category)}</p>
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.summary)}</p>
+          </div>
+          <div class="feature-footer reveal">
+            <div class="tech-list">${techMarkup(project.technologies)}</div>
+            <button class="open-project" type="button" data-open-project="${escapeHtml(project.id)}">Inside the build <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <div class="feature-visual reveal">${visualMarkup(project)}</div>
+      </article>
+    `).join("");
+  }
+
+  const searchableText = project => [project.title, project.summary, project.category, project.family, ...(project.technologies || [])].join(" ").toLowerCase();
+  const filteredProjects = () => projects.filter(project => {
+    const matchesFilter = state.filter === "All" || project.category === state.filter;
+    const matchesQuery = !state.query || searchableText(project).includes(state.query);
+    return matchesFilter && matchesQuery;
+  });
+
+  function cardMarkup(project) {
+    const status = projectStatus(project);
+    const signals = project.signals || {};
+    const evidence = signals.code > 0 ? `${signals.code} code files` : signals.files ? `${signals.files} documented files` : "documented scope";
+    return `
+      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}">
+        <div class="project-card__top">
+          <span class="project-card__category">${escapeHtml(project.category)}</span>
+          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
+        </div>
+        <div class="project-card__main">
+          <h3>${escapeHtml(project.title)}</h3>
+          <p class="project-card__family">${escapeHtml(project.family)}</p>
+          <p class="project-card__summary">${escapeHtml(project.summary)}</p>
+        </div>
+        <div class="project-card__footer"><span>${escapeHtml(evidence)}</span><b aria-hidden="true">↗</b></div>
+      </article>
+    `;
+  }
+
+  function renderAtlas() {
+    const results = filteredProjects();
+    const visible = results.slice(0, state.visible);
+    grid.innerHTML = visible.length
+      ? visible.map(cardMarkup).join("")
+      : `<div class="empty-projects"><h3>No projects match this view.</h3><p>Try another technology, system or path.</p></div>`;
+    visibleCount.textContent = String(results.length);
+    atlasStatus.textContent = state.filter === "All" ? "Showing the complete engineering map" : `Focused on ${state.filter}`;
+    loadMore.hidden = visible.length >= results.length;
+  }
+
+  function genericArchitecture(project) {
+    const technology = project.technologies?.length ? `${project.technologies.join(" · ")}` : "Technology choices documented in the project brief";
+    return [
+      `${project.family} research area`,
+      "Problem framing and module map",
+      technology,
+      "Evaluation and limitation notes"
+    ];
+  }
+
+  function openProject(projectId) {
+    const project = projects.find(item => item.id === projectId);
+    if (!project) return;
+    const status = projectStatus(project);
+    const isBlueprint = /blueprint|roadmap/i.test(status);
+    const architecture = project.architecture || genericArchitecture(project);
+    const capabilities = project.capabilities || [
+      "Documented objective and scope",
+      "Planned modules and interfaces",
+      "Evaluation signals and expected evidence",
+      "Constraints, risks and next implementation step"
+    ];
+    const signals = project.signals || {};
+    const challenge = project.challenge || project.summary;
+    const solution = project.solution || (isBlueprint
+      ? "This entry is a technical blueprint: it defines the intended modules, workflow, evaluation and limitations, but does not claim an implemented product."
+      : "This implementation connects data, code and documented evidence inside a focused engineering workflow.");
+    const accent = accentMap[project.accent] || accentMap.violet;
+
+    dialogContent.innerHTML = `
+      <article style="--dialog-accent:${accent}">
+        <header class="dialog-hero">
+          <div>
+            <p class="dialog-kicker">${escapeHtml(project.eyebrow || `${project.category} / ${project.family}`)}</p>
+            <h2 id="dialog-title">${escapeHtml(project.title)}</h2>
+          </div>
+          <div>
+            <p class="dialog-summary">${escapeHtml(project.summary)}</p>
+            <span class="dialog-status">${escapeHtml(status)}</span>
+          </div>
+        </header>
+        <div class="dialog-body">
+          <aside class="dialog-index" aria-label="Case study contents">
+            <span>01 / Problem</span><span>02 / Response</span><span>03 / Architecture</span><span>04 / Evidence</span>
+          </aside>
+          <div class="dialog-sections">
+            <section class="dialog-section">
+              <p class="dialog-section__label">01 · The problem</p>
+              <h3>Why this work exists.</h3>
+              <p>${escapeHtml(challenge)}</p>
+            </section>
+            <section class="dialog-section">
+              <p class="dialog-section__label">02 · The response</p>
+              <h3>${isBlueprint ? "A rigorous implementation map." : "A connected product system."}</h3>
+              <p>${escapeHtml(solution)}</p>
+            </section>
+            <section class="dialog-section">
+              <p class="dialog-section__label">03 · Architecture & capabilities</p>
+              <h3>How the system is shaped.</h3>
+              <div class="detail-list">${architecture.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+              <div class="detail-list">${capabilities.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+            </section>
+            <section class="dialog-section">
+              <p class="dialog-section__label">04 · Evidence surface</p>
+              <h3>What can be inspected.</h3>
+              <div class="evidence-grid">
+                <div><strong>${escapeHtml(signals.files ?? "—")}</strong><span>files mapped</span></div>
+                <div><strong>${escapeHtml(signals.code ?? "—")}</strong><span>code files</span></div>
+                <div><strong>${escapeHtml(signals.tests ?? "—")}</strong><span>test signals</span></div>
+                <div><strong>${escapeHtml(signals.notebooks ?? "—")}</strong><span>notebooks</span></div>
+              </div>
+              <div class="dialog-tags">${techMarkup(project.technologies || [])}</div>
+              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer">Inspect the project on GitHub <span aria-hidden="true">↗</span></a>
+            </section>
+          </div>
+        </div>
+      </article>
+    `;
+    dialog.showModal();
+    document.body.classList.add("dialog-open");
+    dialog.querySelector(".dialog-close").focus();
+  }
+
+  renderFeatured();
+  renderAtlas();
+
+  document.querySelectorAll("[data-total-projects]").forEach(node => { node.textContent = String(projects.length).padStart(2, "0"); });
+  document.querySelectorAll("[data-ai-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "AI Engineering").length} records`; });
+  document.querySelectorAll("[data-software-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "Software Engineering").length} records`; });
+
+  document.addEventListener("click", event => {
+    const openButton = event.target.closest("[data-open-project]");
+    const card = event.target.closest("[data-project-id]");
+    if (openButton) openProject(openButton.dataset.openProject);
+    else if (card) openProject(card.dataset.projectId);
+  });
+
+  document.addEventListener("keydown", event => {
+    const card = event.target.closest?.("[data-project-id]");
+    if (card && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      openProject(card.dataset.projectId);
+    }
+  });
+
+  document.querySelectorAll(".filter-chip").forEach(button => {
+    button.addEventListener("click", () => {
+      state.filter = button.dataset.filter;
+      state.visible = 18;
+      document.querySelectorAll(".filter-chip").forEach(chip => {
+        const active = chip === button;
+        chip.classList.toggle("is-active", active);
+        chip.setAttribute("aria-pressed", String(active));
+      });
+      renderAtlas();
+    });
+  });
+
+  document.querySelectorAll("[data-filter-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filterJump;
+      const chip = document.querySelector(`.filter-chip[data-filter="${filter}"]`);
+      chip?.click();
+      document.querySelector("#atlas")?.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  search.addEventListener("input", () => {
+    state.query = search.value.trim().toLowerCase();
+    state.visible = 18;
+    renderAtlas();
+  });
+  loadMore.addEventListener("click", () => { state.visible += 18; renderAtlas(); });
+
+  document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener("close", () => document.body.classList.remove("dialog-open"));
+
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".primary-nav");
+  menuButton.addEventListener("click", () => {
+    const open = !nav.classList.contains("is-open");
+    nav.classList.toggle("is-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+  nav.addEventListener("click", event => {
+    if (event.target.closest("a")) {
+      nav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion) {
+    document.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.13, rootMargin: "0px 0px -6%" });
+    document.querySelectorAll(".reveal").forEach(node => observer.observe(node));
+  }
+
+  const header = document.querySelector("[data-header]");
+  const progress = document.querySelector(".scroll-progress span");
+  const updateScroll = () => {
+    const top = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    header.classList.toggle("is-scrolled", top > 24);
+    progress.style.width = `${max > 0 ? (top / max) * 100 : 0}%`;
+  };
+  updateScroll();
+  window.addEventListener("scroll", updateScroll, { passive: true });
+
+  if (!reducedMotion) {
+    const core = document.querySelector(".hero-core");
+    document.querySelector(".hero").addEventListener("pointermove", event => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      core.style.transform = `translate(${x * 26}px, ${y * 26}px)`;
+    });
+  }
+})();

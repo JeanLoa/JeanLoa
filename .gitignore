@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.npm-cache/
+.wrangler/
+artifacts/
+*.log
+.DS_Store
