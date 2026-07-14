@@ -1,106 +1,196 @@
+<div align="center">
+
 # Jean Franck Loa Rojas
 
-**Software Engineer | Applied AI & Full-Stack Product Systems**
+### Software Engineering Student · AI-Native Builder · Full-Stack Product Systems
 
-I build structured software projects that connect applied AI, backend architecture, frontend dashboards, documentation, testing, and deployable product flows.
+I build structured software and applied AI systems—from data and algorithms to APIs, dashboards, testing, documentation, and deployment.
 
-My work focuses on clean architecture, domain-driven design, technical evidence, and software that can grow beyond isolated demos.
+<p>
+  <img src="https://img.shields.io/badge/Location-Lima%2C%20Peru-2563EB?style=flat-square" alt="Lima, Peru" />
+  <img src="https://img.shields.io/badge/UPC-Software%20Engineering-B91C1C?style=flat-square" alt="UPC Software Engineering" />
+  <img src="https://img.shields.io/badge/Open%20to-International%20Internships-16A34A?style=flat-square" alt="Open to international internships" />
+</p>
 
-I am especially interested in building complete AI-powered systems: from data, models, metrics, and APIs to dashboards, deployment, documentation, and product-ready architecture.
+<p>
+  <a href="https://github.com/Path-AI-Engineer">
+    <img src="https://img.shields.io/badge/Path%20AI%20Engineer-111827?style=for-the-badge&logo=github&logoColor=white" alt="Path AI Engineer" />
+  </a>
+  <a href="https://github.com/Path-Software-Engineer">
+    <img src="https://img.shields.io/badge/Path%20Software%20Engineer-1D4ED8?style=for-the-badge&logo=github&logoColor=white" alt="Path Software Engineer" />
+  </a>
+</p>
+
+</div>
 
 ---
 
-## Technical Workspaces
+## About Me
 
-### [Path AI Engineer](https://github.com/Path-AI-Engineer)
+I am a Software Engineering student at the Universidad Peruana de Ciencias Aplicadas in Lima, Peru, building toward **AI Engineering and Machine Learning Engineering with a strong software foundation**.
 
-My long-term AI Engineering workspace focused on building deep technical foundations in machine learning systems, model evaluation, feature engineering, MLOps, LLMs, RAG, agents, computer vision, quantum AI, robotics, and platform architecture.
+My work combines:
 
-### [Path Software Engineer](https://github.com/Path-Software-Engineer)
+- Applied AI, machine learning, and algorithmic systems
+- Backend architecture, APIs, and relational databases
+- Frontend dashboards and complete product workflows
+- Clean Architecture, Domain-Driven Design, and modular systems
+- Documentation, testing, deployment, and delivery evidence
 
-My software engineering workspace focused on turning technical depth into real applications through frontend, backend, APIs, dashboards, databases, documentation, testing, sprints, Gitflow, and deployable product systems.
+My goal is to move beyond isolated technical demos and build systems that are structured, measurable, documented, and ready to evolve.
+
+---
+
+## Engineering Workspaces
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>
+        <a href="https://github.com/Path-AI-Engineer">🤖 Path AI Engineer</a>
+      </h3>
+      <p>
+        My long-term AI Engineering workspace for developing strong foundations in machine learning systems and applied AI.
+      </p>
+      <p>
+        <strong>Current focus:</strong> model evaluation, feature engineering, forecasting, data workflows, APIs, MLOps, LLMs, RAG, agents, computer vision, and platform architecture.
+      </p>
+      <p>
+        <strong>Long-term exploration:</strong> robotics, Quantum AI, and Quantum Machine Learning.
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>
+        <a href="https://github.com/Path-Software-Engineer">🧱 Path Software Engineer</a>
+      </h3>
+      <p>
+        My software engineering workspace for turning technical depth into complete, usable applications.
+      </p>
+      <p>
+        <strong>Current focus:</strong> frontend, backend, APIs, databases, dashboards, testing, documentation, sprints, Gitflow, deployment, and product-oriented architecture.
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Featured Projects
 
-### SmartLocation — Route Optimization Platform
-
-Route-planning system based on traffic data, graph algorithms, and geospatial visualization.
-
-**Highlights**
-
-* Angular frontend
-* Clean Architecture + MVVM
-* Dijkstra, A*, and BFS route comparison
-* Route-planning dataset and technical documentation
-
-### LowCortisol — Water & Gas Monitoring Platform
-
-Full-stack operations platform for monitoring water and gas consumption across sites, rooms, devices, sensors, valves, alerts, reports, and support workflows.
-
-**Highlights**
-
-* Vue 3 SPA with operational dashboards and reusable UI components
-* ASP.NET Core REST API with EF Core, PostgreSQL, and Swagger/OpenAPI documentation
-* DDD/CQRS modular backend organized by bounded contexts
-* IAM, plans, support, alerts, reports, and Render deployment configuration
-
-### ElectroCorp — Enterprise-Style Smart Energy Platform
-
-Full-stack academic platform for smart energy management, covering backend services, frontend workflows, database integration, deployment, and Gitflow release discipline.
-
-**Highlights**
-
-* Spring Boot backend platform with REST APIs, DDD/CQRS structure, JWT authentication, BCrypt password hashing, and OpenAPI/Swagger documentation
-* Angular frontend workflows for subscriptions, spaces, devices, energy monitoring, alerts, reports, and support tickets
-* PostgreSQL persistence and Render deployment for backend and frontend services
-* Gitflow release workflow with versioned branches, tags, releases, documentation, and delivery evidence
-
----
-
-## Current Technical Direction
-
-I am currently building two parallel paths:
-
-### AI Engineering
-
-Focused on machine learning systems, model evaluation, feature engineering, APIs, MLOps, LLMs, RAG, agents, computer vision, quantum AI, robotics, and platform architecture.
-
-### Software Engineering
-
-Focused on turning technical depth into real applications through frontend, backend, APIs, dashboards, databases, documentation, testing, sprints, Gitflow, and deployable product systems.
-
----
-
-## Technical Focus
-
-* Full-stack software engineering
-* Applied AI and ML systems
-* API design and backend architecture
-* Frontend dashboards and product UX
-* Clean Architecture, DDD, and MVVM
-* Data pipelines and model-ready workflows
-* Documentation, testing, and delivery evidence
-* Git, GitHub, Gitflow, and release discipline
-* Cloud deployment and product-oriented architecture
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>🚦 SmartLocation</h3>
+      <p><strong>Route Optimization Platform</strong></p>
+      <p>
+        Urban route-planning system built around traffic data, graph algorithms, and geospatial visualization.
+      </p>
+      <p>
+        Worked with a graph dataset containing more than <strong>1,500 nodes</strong> and compared multiple routing strategies.
+      </p>
+      <p>
+        <code>Angular</code>
+        <code>Python</code>
+        <code>Dijkstra</code>
+        <code>A*</code>
+        <code>BFS</code>
+        <code>Graphs</code>
+      </p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>🌊 LowCortisol</h3>
+      <p><strong>Water & Gas Monitoring Platform</strong></p>
+      <p>
+        IoT operations platform for managing sites, device groups, sensors, valves, consumption, alerts, reports, and support workflows.
+      </p>
+      <p>
+        Built as a modular full-stack system with REST APIs, operational dashboards, and deployable services.
+      </p>
+      <p>
+        <code>Vue 3</code>
+        <code>C#</code>
+        <code>ASP.NET Core</code>
+        <code>PostgreSQL</code>
+        <code>DDD</code>
+        <code>CQRS</code>
+      </p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>⚡ ElectroCorp</h3>
+      <p><strong>Smart Energy Platform</strong></p>
+      <p>
+        Enterprise-style platform for subscriptions, spaces, rooms, devices, routines, energy monitoring, billing, alerts, reports, and support.
+      </p>
+      <p>
+        Developed with modular backend architecture, authentication, database persistence, deployment, and Gitflow delivery discipline.
+      </p>
+      <p>
+        <code>Angular</code>
+        <code>Java</code>
+        <code>Spring Boot</code>
+        <code>PostgreSQL</code>
+        <code>JWT</code>
+        <code>DDD</code>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## Engineering Style
+## How I Build Systems
 
-I prefer building projects with clear structure, documented decisions, reproducible workflows, and product-oriented execution.
-
-My approach is simple:
-
-```txt
-Explore before executing.
-Execute with a map.
-Document every advance.
-Compare before improving.
-Build to understand.
+```mermaid
+flowchart LR
+    A[Data and Domain] --> B[Models and Algorithms]
+    B --> C[APIs and Services]
+    C --> D[Product UI]
+    D --> E[Testing and Evaluation]
+    E --> F[Deployment and Evidence]
+    F --> G[Iteration]
 ```
 
-I do not build random demos.
+I approach AI and software as complete systems. A useful model or algorithm is only one component; it also needs reliable data, clear interfaces, evaluation, documentation, and a product flow that people can use.
 
-I build systems with structure, purpose, evidence, and long-term growth in mind.
+---
+
+## Core Stack
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue.js" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+</p>
+
+### Current Technical Direction
+
+- **AI Engineering:** ML systems, evaluation, forecasting, data pipelines, MLOps, LLMs, RAG, agents, and applied AI products.
+- **Software Engineering:** backend services, APIs, databases, frontend workflows, testing, deployment, and maintainable architecture.
+- **Product Engineering:** connecting technical components into systems that solve complete user and business workflows.
+
+---
+
+## Engineering Principles
+
+> Explore before executing.  
+> Execute with a map.  
+> Document every advance.  
+> Compare before improving.  
+> Build to understand.
+
+**I build systems with structure, purpose, evidence, and room to grow.**
+
+---
+
+## Open To
+
+I am interested in international internships and remote opportunities related to:
+
+`AI Engineering` · `Machine Learning Engineering` · `Applied AI` · `Backend Engineering` · `Software Engineering` · `AI Agents` · `RAG` · `ML Systems`
