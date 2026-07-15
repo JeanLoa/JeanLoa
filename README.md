@@ -1,6 +1,6 @@
 <div align="center">
 
-# Jean Franck Loa Rojas
+# [Jean Franck Loa Rojas](https://jeanloa.github.io/JeanLoa/)
 
 ### Software Engineering Student · AI-Native Builder · Full-Stack Product Systems
 
