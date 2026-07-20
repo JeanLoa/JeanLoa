@@ -15,6 +15,7 @@
   --category-software: #ffb000;
   --category-ai: #8b5cf6;
   --category-independent: #25a36f;
+  --featured-gold: #d7a62f;
   --muted: #9b9d98;
   --pad: clamp(1.25rem, 4vw, 4.8rem);
   --radius: 1.5rem;
@@ -453,6 +454,7 @@ img { display: block; max-width: 100%; }
 .dialog-hero h2 { margin: 0; font-size: clamp(4.2rem, 11vw, 11rem); font-weight: 500; line-height: .77; letter-spacing: -.08em; }
 .dialog-summary { max-width: 35rem; margin: 0; color: var(--paper-2); font-size: clamp(1.1rem, 1.7vw, 1.45rem); }
 .dialog-status { display: inline-flex; margin-top: 2rem; padding: .55rem .8rem; color: var(--ink); background: var(--dialog-accent, var(--lime)); border-radius: 999px; font-size: .6rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.dialog-status--pending { color: var(--paper); background: #323431; border: 1px solid #5d5f5a; }
 .dialog-body { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); padding: clamp(5rem, 10vw, 10rem) 0; }
 .dialog-index { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .67rem; }
 .dialog-index span { display: block; padding: .75rem 0; border-bottom: 1px solid var(--line); }
@@ -583,6 +585,7 @@ img { display: block; max-width: 100%; }
 .project-group[data-layout="single"] .section-project-card { min-height: 25rem; }
 .section-project-card {
   position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   min-height: 30rem;
@@ -593,6 +596,20 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px solid #bdbdbd;
   cursor: pointer;
   transition: color 350ms var(--ease), background 350ms var(--ease), transform 350ms var(--ease);
+}
+.section-project-card.is-featured::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: .55rem;
+  border: 1px solid color-mix(in srgb, var(--featured-gold) 55%, transparent);
+  pointer-events: none;
+  transition: border-color 350ms ease, box-shadow 350ms ease;
+}
+.section-project-card.is-featured:hover::after,
+.section-project-card.is-featured:focus-visible::after {
+  border-color: var(--featured-gold);
+  box-shadow: inset 0 0 2rem color-mix(in srgb, var(--featured-gold) 10%, transparent);
 }
 .section-project-card::before {
   content: "";
@@ -627,6 +644,27 @@ img { display: block; max-width: 100%; }
 .section-project-card__meta { color: #666; }
 .section-project-card__meta span:first-child { max-width: 72%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .section-project-card:hover .section-project-card__meta { color: #b9b9b9; }
+.featured-label {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 1.2rem;
+  padding: .45rem .7rem;
+  color: #1a1406;
+  background: linear-gradient(135deg, #ffe698, var(--featured-gold));
+  border: 1px solid #f2c95b;
+  border-radius: 999px;
+  box-shadow: 0 .7rem 1.8rem rgba(137, 94, 0, .2);
+  font-size: .59rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.featured-label span { font-size: .85rem; line-height: 1; }
+.featured-label--dialog { margin: 0 0 1.5rem; }
 .section-project-card__body { margin: auto 0; padding: 3rem 0; }
 .section-project-card__body > p:first-child { margin: 0 0 1rem; color: var(--section-accent); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .section-project-card__body h3 { margin: 0; font-size: clamp(2.5rem, 4.5vw, 5rem); font-weight: 500; line-height: .88; letter-spacing: -.065em; overflow-wrap: anywhere; }
@@ -635,8 +673,10 @@ img { display: block; max-width: 100%; }
 .section-project-card__footer { padding-top: 1rem; border-top: 1px solid #cfcfcf; }
 .section-project-card:hover .section-project-card__footer { border-color: #333; }
 .section-project-card .status-pill { border-color: #bdbdbd; }
-.section-project-card .status-pill--built { color: var(--section-accent); }
-.section-project-card:hover .status-pill { color: var(--section-accent); border-color: #444; }
+.section-project-card .status-pill--completed { color: var(--section-accent); }
+.section-project-card .status-pill--pending { color: #686a66; }
+.section-project-card:hover .status-pill--completed { color: var(--section-accent); border-color: #444; }
+.section-project-card:hover .status-pill--pending { color: #b9b9b9; border-color: #444; }
 
 .feature-project { --feature-accent: var(--category-university); }
 .feature-visual { background: color-mix(in srgb, var(--feature-accent) 12%, #090909); }

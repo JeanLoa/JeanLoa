@@ -8,6 +8,12 @@
     "AI Engineering": accentMap.ai,
     Leisure: accentMap.independent
   };
+  const featuredProjectIds = new Set([
+    "lowcortisol",
+    "electrocorp",
+    "roadmap-72",
+    "path-software-engineer-final-ai-quantum-robotics-software-platform-12-ai-quantum-robotics-platform-portal"
+  ]);
 
   const dialog = document.querySelector("#project-dialog");
   const dialogContent = document.querySelector("#dialog-content");
@@ -20,20 +26,25 @@
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 
-  const projectStatus = project => {
+  const rawProjectStatus = project => {
     if (project.status) return project.status;
     if (project.category === "University") return "Built system";
     if ((project.signals?.code || 0) >= 4) return "Implementation";
-    if (project.category === "Roadmap") return "Roadmap";
     return "Blueprint";
   };
 
-  const statusClass = status => {
-    if (/completed|built|implementation|functional|coursework|published|lab|practice|exploration|capstone|archived/i.test(status)) return "built";
-    if (/pending/i.test(status)) return "pending";
-    if (/roadmap|development/i.test(status)) return "roadmap";
-    return "blueprint";
+  const omitsStatusAnnotation = project =>
+    /coursework|published course|practice collection|lab collection|exploration/i.test(rawProjectStatus(project));
+
+  const projectStatus = project => {
+    if (omitsStatusAnnotation(project)) return null;
+    return /pending|blueprint|roadmap|development/i.test(rawProjectStatus(project))
+      ? "Pending"
+      : "Completed";
   };
+
+  const statusClass = status => String(status || "").toLowerCase();
+  const isFeaturedProject = project => featuredProjectIds.has(project.id);
 
   const projectAccent = project => categoryAccentMap[project.category] || accentMap.independent;
 
@@ -134,22 +145,26 @@
 
   function sectionCardMarkup(project, groupName, projectIndex) {
     const status = projectStatus(project);
+    const featured = isFeaturedProject(project);
     const descriptor = project.eyebrow
       || (project.technologies || []).slice(0, 3).join(" · ")
       || project.family;
     return `
-      <article class="section-project-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
+      <article class="section-project-card${featured ? " is-featured" : ""}" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
         <div class="section-project-card__meta">
           <span>${escapeHtml(groupName)}</span>
           <span>Project ${String(projectIndex + 1).padStart(2, "0")}</span>
         </div>
+        ${featured ? '<div class="featured-label"><span aria-hidden="true">★</span> Featured</div>' : ""}
         <div class="section-project-card__body">
           <p>${escapeHtml(descriptor)}</p>
           <h3>${escapeHtml(project.title)}</h3>
           <p>${escapeHtml(project.summary)}</p>
         </div>
         <div class="section-project-card__footer">
-          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
+          ${status
+            ? `<span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>`
+            : '<span aria-hidden="true"></span>'}
           <span aria-hidden="true">↗</span>
         </div>
       </article>
@@ -211,7 +226,9 @@
     const project = projects.find(item => item.id === projectId);
     if (!project) return;
     const status = projectStatus(project);
-    const isBlueprint = /blueprint|roadmap/i.test(status);
+    const sourceStatus = rawProjectStatus(project);
+    const isBlueprint = /blueprint|roadmap|pending|development/i.test(sourceStatus);
+    const featured = isFeaturedProject(project);
     const architecture = project.architecture || genericArchitecture(project);
     const capabilities = project.capabilities || [
       "Documented objective and scope",
@@ -231,11 +248,12 @@
         <header class="dialog-hero">
           <div>
             <p class="dialog-kicker">${escapeHtml(project.eyebrow || `${project.category} / ${project.family}`)}</p>
+            ${featured ? '<div class="featured-label featured-label--dialog"><span aria-hidden="true">★</span> Featured</div>' : ""}
             <h2 id="dialog-title">${escapeHtml(project.title)}</h2>
           </div>
           <div>
             <p class="dialog-summary">${escapeHtml(project.summary)}</p>
-            <span class="dialog-status">${escapeHtml(status)}</span>
+            ${status ? `<span class="dialog-status dialog-status--${statusClass(status)}">${escapeHtml(status)}</span>` : ""}
           </div>
         </header>
         <div class="dialog-body">
@@ -285,8 +303,8 @@
   document.querySelectorAll("[data-total-projects]").forEach(node => { node.textContent = String(projects.length).padStart(2, "0"); });
   const internships = projects.filter(project => project.internship);
   document.querySelectorAll("[data-internship-count]").forEach(node => { node.textContent = String(internships.length).padStart(2, "0"); });
-  document.querySelectorAll("[data-internship-completed]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "built").length).padStart(2, "0"); });
-  document.querySelectorAll("[data-internship-pending]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "pending").length).padStart(2, "0"); });
+  document.querySelectorAll("[data-internship-completed]").forEach(node => { node.textContent = String(internships.filter(project => projectStatus(project) === "Completed").length).padStart(2, "0"); });
+  document.querySelectorAll("[data-internship-pending]").forEach(node => { node.textContent = String(internships.filter(project => projectStatus(project) === "Pending").length).padStart(2, "0"); });
 
   document.addEventListener("click", event => {
     const card = event.target.closest("[data-project-id]");
