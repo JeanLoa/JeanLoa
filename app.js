@@ -237,7 +237,7 @@
                 <div><strong>${escapeHtml(signals.notebooks ?? "—")}</strong><span>notebooks</span></div>
               </div>
               <div class="dialog-tags">${techMarkup(project.technologies || [])}</div>
-              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer">Inspect the project on GitHub <span aria-hidden="true">↗</span></a>
+              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer"><strong>Inspect the project on GitHub</strong><span aria-hidden="true">↗</span></a>
             </section>
           </div>
         </div>
