@@ -134,7 +134,19 @@
     `;
   }
 
-  function roadmapMarkup(projectsToRender) {
+  function projectSequence(project) {
+    const numberedSegment = [project.path, project.url]
+      .filter(Boolean)
+      .flatMap(value => String(value).split("/"))
+      .reverse()
+      .find(segment => /^\d{2}-/.test(segment));
+    if (numberedSegment) return Number(numberedSegment.slice(0, 2));
+
+    const roadmapNumber = String(project.id || "").match(/^roadmap-(\d+)$/);
+    return roadmapNumber ? Number(roadmapNumber[1]) : Number.MAX_SAFE_INTEGER;
+  }
+
+  function groupedRoadmaps(projectsToRender) {
     const groups = new Map();
     projectsToRender.forEach(project => {
       const family = project.family || "Engineering roadmap";
@@ -142,8 +154,20 @@
       groups.get(family).push(project);
     });
 
+    return Array.from(groups.entries())
+      .map(([family, roadmapProjects]) => ({
+        family,
+        sequence: Math.min(...roadmapProjects.map(projectSequence)),
+        projects: roadmapProjects.sort((first, second) =>
+          projectSequence(first) - projectSequence(second) || first.title.localeCompare(second.title))
+      }))
+      .sort((first, second) =>
+        first.sequence - second.sequence || first.family.localeCompare(second.family));
+  }
+
+  function roadmapMarkup(projectsToRender) {
     let cardIndex = 0;
-    return Array.from(groups.entries()).map(([family, roadmapProjects], roadmapIndex) => {
+    return groupedRoadmaps(projectsToRender).map(({ family, projects: roadmapProjects }, roadmapIndex) => {
       const category = roadmapProjects[0]?.category || state.filter;
       const singleProject = roadmapProjects.length === 1;
       const projectLabel = `${roadmapProjects.length} ${singleProject ? "project" : "projects"}`;
@@ -164,15 +188,8 @@
   }
 
   function completeRoadmapsInView(projectsToRender, limit) {
-    const groups = new Map();
-    projectsToRender.forEach(project => {
-      const family = project.family || "Engineering roadmap";
-      if (!groups.has(family)) groups.set(family, []);
-      groups.get(family).push(project);
-    });
-
     const visibleProjects = [];
-    for (const roadmapProjects of groups.values()) {
+    for (const { projects: roadmapProjects } of groupedRoadmaps(projectsToRender)) {
       if (visibleProjects.length >= limit) break;
       visibleProjects.push(...roadmapProjects);
     }
