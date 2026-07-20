@@ -3,7 +3,7 @@ import { join, relative, sep } from "node:path";
 
 const site = process.cwd();
 const root = join(site, "..");
-const skip = new Set(["node_modules", ".git", ".venv", "venv", "dist", "build", "target", "coverage", ".angular"]);
+const skip = new Set(["node_modules", ".git", ".venv", "venv", "dist", "build", "target", "coverage", ".angular", ".pytest_cache", ".pytest_tmp"]);
 const techMatchers = [
   ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i],
   ["TypeScript", /\btypescript\b/i], ["JavaScript", /\bjavascript\b/i], ["Python", /\bpython\b/i],
@@ -57,7 +57,14 @@ function extractSummary(markdown, fallback) {
 }
 
 async function walk(directory, found = []) {
-  for (const entry of await readdir(directory, { withFileTypes: true })) {
+  let entries;
+  try {
+    entries = await readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code === "EPERM" || error?.code === "EACCES") return found;
+    throw error;
+  }
+  for (const entry of entries) {
     if (skip.has(entry.name)) continue;
     const full = join(directory, entry.name);
     if (entry.isDirectory()) await walk(full, found);

@@ -1914,9 +1914,9 @@ window.PORTFOLIO_PROJECTS = [
       "Render"
     ],
     "signals": {
-      "files": 222,
+      "files": 216,
       "code": 60,
-      "tests": 89,
+      "tests": 83,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1938,9 +1938,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 275,
+      "files": 269,
       "code": 71,
-      "tests": 53,
+      "tests": 47,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2064,9 +2064,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 374,
-      "code": 132,
-      "tests": 136,
+      "files": 375,
+      "code": 133,
+      "tests": 130,
       "notebooks": 0
     },
     "status": "Implementation",
