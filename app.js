@@ -8,11 +8,9 @@
     "AI Engineering": accentMap.ai,
     Leisure: accentMap.independent
   };
-  const featuredProjectIds = new Set([
+  const featuredUniversityProjectIds = new Set([
     "lowcortisol",
-    "electrocorp",
-    "roadmap-72",
-    "path-software-engineer-final-ai-quantum-robotics-software-platform-12-ai-quantum-robotics-platform-portal"
+    "electrocorp"
   ]);
 
   const dialog = document.querySelector("#project-dialog");
@@ -44,7 +42,20 @@
   };
 
   const statusClass = status => String(status || "").toLowerCase();
-  const isFeaturedProject = project => featuredProjectIds.has(project.id);
+
+  function isFeaturedProject(project) {
+    if (featuredUniversityProjectIds.has(project.id)) return true;
+    if (project.category === "Software Engineering") return true;
+    if (project.category !== "AI Engineering") return false;
+
+    const roadmapProjects = projects
+      .filter(candidate =>
+        candidate.category === "AI Engineering" && candidate.family === project.family)
+      .sort((first, second) =>
+        sectionProjectSequence(first) - sectionProjectSequence(second)
+        || first.title.localeCompare(second.title));
+    return roadmapProjects.at(-1)?.id === project.id;
+  }
 
   const projectAccent = project => categoryAccentMap[project.category] || accentMap.independent;
 
