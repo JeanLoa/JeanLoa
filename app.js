@@ -19,6 +19,9 @@
   const loadMore = document.querySelector("#load-more");
   const visibleCount = document.querySelector("#visible-count");
   const atlasStatus = document.querySelector("#atlas-status");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let atlasSwapTimer = 0;
+  let atlasEntranceTimer = 0;
 
   const escapeHtml = value => String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -111,12 +114,12 @@
     return matchesFilter && matchesQuery;
   });
 
-  function cardMarkup(project) {
+  function cardMarkup(project, index = 0) {
     const status = projectStatus(project);
     const signals = project.signals || {};
     const evidence = signals.code > 0 ? `${signals.code} code files` : signals.files ? `${signals.files} documented files` : "documented scope";
     return `
-      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}" data-category="${categoryClass(project.category)}">
+      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}" data-category="${categoryClass(project.category)}" style="--card-delay:${Math.min(index, 11) * 32}ms">
         <div class="project-card__top">
           <span class="project-card__category">${escapeHtml(project.category)}</span>
           <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
@@ -131,15 +134,35 @@
     `;
   }
 
-  function renderAtlas() {
+  function renderAtlas({ animate = false } = {}) {
     const results = filteredProjects();
     const visible = results.slice(0, state.visible);
-    grid.innerHTML = visible.length
+    const markup = visible.length
       ? visible.map(cardMarkup).join("")
       : `<div class="empty-projects"><h3>No projects match this view.</h3><p>Try another technology, system or path.</p></div>`;
     visibleCount.textContent = String(results.length);
     atlasStatus.textContent = state.filter === "All" ? "Showing the complete engineering map" : `Focused on ${state.filter}`;
     loadMore.hidden = visible.length >= results.length;
+
+    window.clearTimeout(atlasSwapTimer);
+    window.clearTimeout(atlasEntranceTimer);
+    grid.classList.remove("is-entering");
+
+    if (!animate || reducedMotion || !grid.childElementCount) {
+      grid.classList.remove("is-leaving");
+      grid.innerHTML = markup;
+      return;
+    }
+
+    grid.classList.add("is-leaving");
+    atlasSwapTimer = window.setTimeout(() => {
+      grid.innerHTML = markup;
+      grid.classList.remove("is-leaving");
+      grid.classList.add("is-entering");
+      atlasEntranceTimer = window.setTimeout(() => {
+        grid.classList.remove("is-entering");
+      }, 760);
+    }, 210);
   }
 
   function genericArchitecture(project) {
@@ -261,7 +284,7 @@
         chip.classList.toggle("is-active", active);
         chip.setAttribute("aria-pressed", String(active));
       });
-      renderAtlas();
+      renderAtlas({ animate: true });
     });
   });
 
@@ -277,9 +300,9 @@
   search.addEventListener("input", () => {
     state.query = search.value.trim().toLowerCase();
     state.visible = 18;
-    renderAtlas();
+    renderAtlas({ animate: true });
   });
-  loadMore.addEventListener("click", () => { state.visible += 18; renderAtlas(); });
+  loadMore.addEventListener("click", () => { state.visible += 18; renderAtlas({ animate: true }); });
 
   document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
@@ -299,7 +322,6 @@
     }
   });
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reducedMotion) {
     document.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
   } else {

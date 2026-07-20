@@ -13,6 +13,7 @@ const types = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".webp": "image/webp",
+  ".svg": "image/svg+xml",
   ".ico": "image/x-icon"
 };
 
@@ -20,7 +21,7 @@ createServer(async (request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
   const requested = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
   const candidate = normalize(join(root, requested));
-  const allowed = /^(?:index\.html|styles\.css|app\.js|projects-data\.js|og\.png|favicon\.ico)$/.test(requested)
+  const allowed = /^(?:index\.html|styles\.css|app\.js|projects-data\.js|og\.png|favicon\.(?:svg|ico))$/.test(requested)
     || requested.startsWith("assets/");
 
   if (!candidate.startsWith(root) || !allowed) {

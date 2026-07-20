@@ -333,12 +333,20 @@ img { display: block; max-width: 100%; }
 .search-control input { width: 100%; padding: .75rem 0; color: var(--paper); background: transparent; border: 0; outline: none; font-size: clamp(.95rem, 1.4vw, 1.15rem); }
 .search-control input::placeholder { color: #6f716d; }
 .filter-row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .45rem; }
-.filter-chip { padding: .65rem .9rem; color: var(--paper-2); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.filter-chip { padding: .65rem .9rem; color: var(--paper-2); background: transparent; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: color 280ms ease, background 280ms ease, border-color 280ms ease, transform 280ms var(--ease); }
 .filter-chip:hover, .filter-chip.is-active { color: var(--ink); border-color: var(--lime); background: var(--lime); }
+.filter-chip:hover { transform: translateY(-2px); }
 .atlas-meta { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; }
 .atlas-meta p { margin: 0; }
 .atlas-meta span { color: var(--paper); }
-.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); transform-origin: top center; transition: opacity 210ms ease, transform 320ms var(--ease); }
+.project-grid.is-leaving { opacity: 0; transform: translateY(12px); }
+.project-grid.is-entering .project-card,
+.project-grid.is-entering .empty-projects { animation: atlas-card-enter 540ms var(--ease) both; animation-delay: var(--card-delay, 0ms); }
+@keyframes atlas-card-enter {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .project-card {
   position: relative;
   display: flex;
