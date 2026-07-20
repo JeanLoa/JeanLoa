@@ -1,5 +1,209 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    "id": "decodelabs-decodebot",
+    "title": "DecodeBot Assistant",
+    "eyebrow": "DecodeLabs / Project 01",
+    "category": "Internships",
+    "organization": "DecodeLabs",
+    "sequence": "01",
+    "family": "Artificial Intelligence Internship",
+    "summary": "A polished rule-based assistant with bilingual intent matching, local conversation history, exports and a transparent decision trace.",
+    "challenge": "Turn deterministic phrase matching into a credible conversational product without overstating its AI capabilities.",
+    "solution": "A Streamlit experience backed by normalized O(1) intent lookup, SQLite persistence and independently testable conversation logic.",
+    "architecture": [
+      "Reusable conversation core",
+      "Normalized intent index",
+      "SQLite persistence",
+      "Streamlit presentation"
+    ],
+    "capabilities": [
+      "Eight bilingual intents",
+      "Multiple persistent conversations",
+      "JSON conversation export",
+      "Decision trace and controlled fallback"
+    ],
+    "technologies": [
+      "Python",
+      "Streamlit",
+      "SQLite"
+    ],
+    "signals": {
+      "files": 13,
+      "code": 6,
+      "tests": 2,
+      "notebooks": 0
+    },
+    "status": "Completed",
+    "url": "https://github.com/JeanLoa/DecodeLabs/tree/main/01-decodebot-assistant",
+    "featured": false,
+    "internship": true,
+    "accent": "internship"
+  },
+  {
+    "id": "decodelabs-decodeclassify",
+    "title": "DecodeClassify",
+    "eyebrow": "DecodeLabs / Project 02",
+    "category": "Internships",
+    "organization": "DecodeLabs",
+    "sequence": "02",
+    "family": "Artificial Intelligence Internship",
+    "summary": "An interactive Iris classification lab that connects reproducible ETL, leakage-safe KNN training, model evaluation and new-sample prediction.",
+    "challenge": "Demonstrate supervised learning as a complete and inspectable workflow instead of presenting accuracy as the only result.",
+    "solution": "A local Streamlit lab with schema validation, stratified splitting, a scikit-learn pipeline, cross-validation and multiclass metrics.",
+    "architecture": [
+      "Validated raw data",
+      "Reproducible ETL",
+      "Leakage-safe training pipeline",
+      "Interactive evaluation surface"
+    ],
+    "capabilities": [
+      "KNN tuning with cross-validation",
+      "Accuracy and macro F1",
+      "Confusion matrix and class metrics",
+      "Interactive flower prediction"
+    ],
+    "technologies": [
+      "Python",
+      "Streamlit",
+      "scikit-learn",
+      "Pandas"
+    ],
+    "signals": {
+      "files": 22,
+      "code": 11,
+      "tests": 1,
+      "notebooks": 0
+    },
+    "status": "Completed",
+    "url": "https://github.com/JeanLoa/DecodeLabs/tree/main/02-decode-classify",
+    "featured": false,
+    "internship": true,
+    "accent": "internship"
+  },
+  {
+    "id": "decodelabs-recommendation-logic",
+    "title": "AI Recommendation Logic",
+    "eyebrow": "DecodeLabs / Project 03",
+    "category": "Internships",
+    "organization": "DecodeLabs",
+    "sequence": "03",
+    "family": "Artificial Intelligence Internship",
+    "summary": "A planned recommendation system that will match user interests with item attributes through explicit preference and similarity logic.",
+    "challenge": "Move from generic suggestions to explainable pattern alignment between user profiles and candidate items.",
+    "solution": "The official project brief is available and scoped; implementation has not started, so this entry remains explicitly pending.",
+    "architecture": [
+      "User preference input",
+      "Profile and item attributes",
+      "Similarity or rule matching",
+      "Ranked recommendation output"
+    ],
+    "capabilities": [
+      "Capture choices and interests",
+      "Match preferences",
+      "Explain recommendation logic",
+      "Display ranked items"
+    ],
+    "technologies": [
+      "Python",
+      "Recommendation Systems"
+    ],
+    "signals": {
+      "files": 1,
+      "code": 0,
+      "tests": 0,
+      "notebooks": 0
+    },
+    "status": "Pending",
+    "url": "https://github.com/JeanLoa/DecodeLabs",
+    "featured": false,
+    "internship": true,
+    "accent": "internship"
+  },
+  {
+    "id": "decodelabs-optic-nerve",
+    "title": "Machine's Optic Nerve",
+    "eyebrow": "DecodeLabs / Project 04",
+    "category": "Internships",
+    "organization": "DecodeLabs",
+    "sequence": "04",
+    "family": "Artificial Intelligence Internship",
+    "summary": "A planned image and text recognition pipeline for extracting machine-readable information from raw visual data with validated confidence.",
+    "challenge": "Bridge unstructured images and scanned documents with reliable text or object recognition.",
+    "solution": "The official brief defines an OCR or object-recognition pipeline; implementation remains pending and is not represented as completed work.",
+    "architecture": [
+      "Raw image ingestion",
+      "Image preprocessing",
+      "OCR or object detection",
+      "Validated recognition output"
+    ],
+    "capabilities": [
+      "Process unstructured visual data",
+      "Recognize text or objects",
+      "Report confidence",
+      "Produce machine-readable results"
+    ],
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "Tesseract",
+      "MobileNet SSD"
+    ],
+    "signals": {
+      "files": 1,
+      "code": 0,
+      "tests": 0,
+      "notebooks": 0
+    },
+    "status": "Pending",
+    "url": "https://github.com/JeanLoa/DecodeLabs",
+    "featured": false,
+    "internship": true,
+    "accent": "internship"
+  },
+  {
+    "id": "spotter-fuel-route-optimizer",
+    "title": "Fuel Route Optimizer API",
+    "eyebrow": "Spotter / Technical Project",
+    "category": "Internships",
+    "organization": "Spotter",
+    "sequence": "01",
+    "family": "Backend Engineering Project",
+    "summary": "A Django REST API that maps US driving routes and recommends cost-effective fuel stops from a catalog of 6,626 stations.",
+    "challenge": "Combine road routing, imperfect station data and vehicle constraints into a feasible, inspectable fuel-purchasing plan.",
+    "solution": "A layered Django service integrates Geoapify once per route, filters stations along the corridor and applies a cheaper-station fuel strategy.",
+    "architecture": [
+      "DRF validation and resources",
+      "Geoapify provider integration",
+      "Route corridor selection",
+      "Fuel optimization services"
+    ],
+    "capabilities": [
+      "US geocoding and routing",
+      "GeoJSON route output",
+      "Per-stop gallons and cost",
+      "Structured errors and mocked provider tests"
+    ],
+    "technologies": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "HTTPX",
+      "Geoapify",
+      "SQLite"
+    ],
+    "signals": {
+      "files": 59,
+      "code": 38,
+      "tests": 9,
+      "notebooks": 0
+    },
+    "status": "Completed",
+    "url": "https://github.com/JeanLoa/fuel-route-optimizer-api",
+    "featured": false,
+    "internship": true,
+    "accent": "internship"
+  },
+  {
     "id": "smartlocation",
     "title": "SmartLocation",
     "eyebrow": "Route intelligence / Lima",
@@ -37,7 +241,7 @@ window.PORTFOLIO_PROJECTS = [
     "status": "Functional demo",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/smartlocation-route-optimization-platform",
     "featured": true,
-    "accent": "lime",
+    "accent": "university",
     "visual": "map"
   },
   {
@@ -78,7 +282,7 @@ window.PORTFOLIO_PROJECTS = [
     "status": "Built system",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/lowcortisol-digital-health-platform",
     "featured": true,
-    "accent": "blue",
+    "accent": "university",
     "image": "assets/lowcortisol-reports.png"
   },
   {
@@ -119,7 +323,7 @@ window.PORTFOLIO_PROJECTS = [
     "status": "Built system",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/electrocorp-enterprise-platform-suite",
     "featured": true,
-    "accent": "cyan",
+    "accent": "university",
     "image": "assets/electrocorp-home.png"
   },
   {
@@ -205,7 +409,7 @@ window.PORTFOLIO_PROJECTS = [
       "notebooks": 0
     },
     "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/06-ai-software-foundations-platform",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/06-ai-software-foundations-platform",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform"
@@ -332,8 +536,8 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A supermarket system combining circular lists, queues, stacks, AVL trees, hashing, graphs, sales flows and persistence.",
     "technologies": [],
     "signals": {
-      "files": 3,
-      "code": 0,
+      "files": 390,
+      "code": 4,
       "tests": 0,
       "notebooks": 0
     },
@@ -436,7 +640,7 @@ window.PORTFOLIO_PROJECTS = [
       "notebooks": 0
     },
     "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/03-classical-model-comparison-suite",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/03-classical-model-comparison-suite",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite"
@@ -518,7 +722,7 @@ window.PORTFOLIO_PROJECTS = [
       "notebooks": 0
     },
     "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/04-customer-segmentation-and-churn-api",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/04-customer-segmentation-and-churn-api",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api"
@@ -933,7 +1137,7 @@ window.PORTFOLIO_PROJECTS = [
       "notebooks": 0
     },
     "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/05-inventory-optimization-ml-service",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/05-inventory-optimization-ml-service",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service"
@@ -1704,18 +1908,19 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Machine Learning Engineering Software Foundations",
     "summary": "An implementation-stage retail demand workflow with data validation, temporal features, a classical model baseline and evaluation evidence.",
     "technologies": [
+      "Python",
       "FastAPI",
       "Pandas",
       "Render"
     ],
     "signals": {
-      "files": 102,
-      "code": 40,
-      "tests": 28,
+      "files": 222,
+      "code": 60,
+      "tests": 89,
       "notebooks": 0
     },
     "status": "Implementation",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/01-retail-demand-prediction-api",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/01-retail-demand-prediction-api",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api"
@@ -1727,12 +1932,15 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Applied AI Software Platform",
     "summary": "A partially implemented retail-intelligence platform with Python analytics, processed sales data, demand insights and measured baseline performance.",
     "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
       "Docker"
     ],
     "signals": {
-      "files": 121,
-      "code": 20,
-      "tests": 5,
+      "files": 275,
+      "code": 71,
+      "tests": 53,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1849,20 +2057,20 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Sales Forecasting Dashboard API",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "A documented Sales Forecasting Dashboard API blueprint defining the experiment, modules, evaluation signals and known limitations inside Machine Learning Engineering Software Foundations.",
+    "summary": "An implementation-stage retail demand workflow with data validation, temporal features, a classical model baseline and evaluation evidence.",
     "technologies": [
+      "Python",
       "FastAPI",
-      "Pandas",
-      "Render"
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 374,
+      "code": 132,
+      "tests": 136,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/AI/tree/main/02-sales-forecasting-dashboard-api",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/02-sales-forecasting-dashboard-api",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api"

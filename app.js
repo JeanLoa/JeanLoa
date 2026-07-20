@@ -1,8 +1,16 @@
 (() => {
   const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
   const state = { filter: "All", query: "", visible: 18 };
-  const accentMap = { lime: "#c8ff54", blue: "#5d98ff", cyan: "#56d8ff", orange: "#ff7754", violet: "#9995ff" };
+  const accentMap = { internship: "#ff4f2e", university: "#1877f2", software: "#ffb000", ai: "#8b5cf6", independent: "#25a36f" };
+  const categoryAccentMap = {
+    Internships: accentMap.internship,
+    University: accentMap.university,
+    "Software Engineering": accentMap.software,
+    "AI Engineering": accentMap.ai,
+    Leisure: accentMap.independent
+  };
 
+  const internshipRoot = document.querySelector("#internship-projects");
   const featuredRoot = document.querySelector("#featured-projects");
   const grid = document.querySelector("#project-grid");
   const dialog = document.querySelector("#project-dialog");
@@ -28,10 +36,14 @@
   };
 
   const statusClass = status => {
-    if (/built|implementation|functional|coursework|published|lab|practice|exploration|capstone|archived/i.test(status)) return "built";
+    if (/completed|built|implementation|functional|coursework|published|lab|practice|exploration|capstone|archived/i.test(status)) return "built";
+    if (/pending/i.test(status)) return "pending";
     if (/roadmap|development/i.test(status)) return "roadmap";
     return "blueprint";
   };
+
+  const categoryClass = category => String(category || "other").toLowerCase().replaceAll(/[^a-z0-9]+/g, "-");
+  const projectAccent = project => categoryAccentMap[project.category] || accentMap.independent;
 
   const techMarkup = technologies => (technologies || []).slice(0, 6)
     .map(tech => `<span>${escapeHtml(tech)}</span>`).join("");
@@ -68,7 +80,31 @@
     `).join("");
   }
 
-  const searchableText = project => [project.title, project.summary, project.category, project.family, ...(project.technologies || [])].join(" ").toLowerCase();
+  function renderInternships() {
+    const internships = projects.filter(project => project.internship);
+    internshipRoot.innerHTML = internships.map(project => {
+      const status = projectStatus(project);
+      return `
+        <article class="internship-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
+          <div class="internship-card__meta">
+            <span>${escapeHtml(project.organization)}</span>
+            <span>Project ${escapeHtml(project.sequence)}</span>
+          </div>
+          <div class="internship-card__body">
+            <p>${escapeHtml(project.family)}</p>
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.summary)}</p>
+          </div>
+          <div class="internship-card__footer">
+            <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  const searchableText = project => [project.title, project.summary, project.category, project.organization, project.family, ...(project.technologies || [])].join(" ").toLowerCase();
   const filteredProjects = () => projects.filter(project => {
     const matchesFilter = state.filter === "All" || project.category === state.filter;
     const matchesQuery = !state.query || searchableText(project).includes(state.query);
@@ -80,7 +116,7 @@
     const signals = project.signals || {};
     const evidence = signals.code > 0 ? `${signals.code} code files` : signals.files ? `${signals.files} documented files` : "documented scope";
     return `
-      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}">
+      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}" data-category="${categoryClass(project.category)}">
         <div class="project-card__top">
           <span class="project-card__category">${escapeHtml(project.category)}</span>
           <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
@@ -133,7 +169,7 @@
     const solution = project.solution || (isBlueprint
       ? "This entry is a technical blueprint: it defines the intended modules, workflow, evaluation and limitations, but does not claim an implemented product."
       : "This implementation connects data, code and documented evidence inside a focused engineering workflow.");
-    const accent = accentMap[project.accent] || accentMap.violet;
+    const accent = projectAccent(project);
 
     dialogContent.innerHTML = `
       <article style="--dialog-accent:${accent}">
@@ -189,10 +225,15 @@
     dialog.querySelector(".dialog-close").focus();
   }
 
+  renderInternships();
   renderFeatured();
   renderAtlas();
 
   document.querySelectorAll("[data-total-projects]").forEach(node => { node.textContent = String(projects.length).padStart(2, "0"); });
+  const internships = projects.filter(project => project.internship);
+  document.querySelectorAll("[data-internship-count]").forEach(node => { node.textContent = String(internships.length).padStart(2, "0"); });
+  document.querySelectorAll("[data-internship-completed]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "built").length).padStart(2, "0"); });
+  document.querySelectorAll("[data-internship-pending]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "pending").length).padStart(2, "0"); });
   document.querySelectorAll("[data-ai-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "AI Engineering").length} records`; });
   document.querySelectorAll("[data-software-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "Software Engineering").length} records`; });
 
