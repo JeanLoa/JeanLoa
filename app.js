@@ -161,8 +161,8 @@
       grid.classList.add("is-entering");
       atlasEntranceTimer = window.setTimeout(() => {
         grid.classList.remove("is-entering");
-      }, 760);
-    }, 210);
+      }, 1120);
+    }, 330);
   }
 
   function genericArchitecture(project) {
