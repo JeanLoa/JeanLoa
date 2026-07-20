@@ -163,9 +163,9 @@ window.PORTFOLIO_PROJECTS = [
   {
     "id": "spotter-fuel-route-optimizer",
     "title": "Fuel Route Optimizer API",
-    "eyebrow": "Spotter / Technical Project",
+    "eyebrow": "SpotterAI / Technical Project",
     "category": "Internships",
-    "organization": "Spotter",
+    "organization": "SpotterAI",
     "sequence": "01",
     "family": "Backend Engineering Project",
     "summary": "A Django REST API that maps US driving routes and recommends cost-effective fuel stops from a catalog of 6,626 stations.",

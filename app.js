@@ -83,28 +83,58 @@
     `).join("");
   }
 
+  function internshipCardMarkup(project) {
+    const status = projectStatus(project);
+    return `
+      <article class="internship-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
+        <div class="internship-card__meta">
+          <span>${escapeHtml(project.organization)}</span>
+          <span>Project ${escapeHtml(project.sequence)}</span>
+        </div>
+        <div class="internship-card__body">
+          <p>${escapeHtml(project.family)}</p>
+          <h3>${escapeHtml(project.title)}</h3>
+          <p>${escapeHtml(project.summary)}</p>
+        </div>
+        <div class="internship-card__footer">
+          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
+          <span aria-hidden="true">↗</span>
+        </div>
+      </article>
+    `;
+  }
+
   function renderInternships() {
-    const internships = projects.filter(project => project.internship);
-    internshipRoot.innerHTML = internships.map(project => {
-      const status = projectStatus(project);
-      return `
-        <article class="internship-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
-          <div class="internship-card__meta">
-            <span>${escapeHtml(project.organization)}</span>
-            <span>Project ${escapeHtml(project.sequence)}</span>
-          </div>
-          <div class="internship-card__body">
-            <p>${escapeHtml(project.family)}</p>
-            <h3>${escapeHtml(project.title)}</h3>
-            <p>${escapeHtml(project.summary)}</p>
-          </div>
-          <div class="internship-card__footer">
-            <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
-            <span aria-hidden="true">↗</span>
-          </div>
-        </article>
-      `;
-    }).join("");
+    const groups = new Map();
+    projects.filter(project => project.internship).forEach(project => {
+      const organization = project.organization || "Internship";
+      if (!groups.has(organization)) groups.set(organization, []);
+      groups.get(organization).push(project);
+    });
+
+    const organizationOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
+    internshipRoot.innerHTML = Array.from(groups.entries())
+      .sort(([first], [second]) =>
+        (organizationOrder.get(first) || 99) - (organizationOrder.get(second) || 99) || first.localeCompare(second))
+      .map(([organization, organizationProjects], index) => {
+        const orderedProjects = organizationProjects.sort((first, second) =>
+          Number(first.sequence || 99) - Number(second.sequence || 99));
+        const singleProject = orderedProjects.length === 1;
+        return `
+          <section class="internship-group" data-layout="${singleProject ? "single" : "grid"}">
+            <header class="internship-company-header">
+              <div>
+                <span>Internship / ${String(index + 1).padStart(2, "0")}</span>
+                <h3>${escapeHtml(organization)}</h3>
+              </div>
+              <p>${orderedProjects.length} ${singleProject ? "project" : "projects"}</p>
+            </header>
+            <div class="internship-company-projects">
+              ${orderedProjects.map(internshipCardMarkup).join("")}
+            </div>
+          </section>
+        `;
+      }).join("");
   }
 
   const searchableText = project => [project.title, project.summary, project.category, project.organization, project.family, ...(project.technologies || [])].join(" ").toLowerCase();
