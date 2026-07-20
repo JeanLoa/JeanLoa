@@ -134,11 +134,59 @@
     `;
   }
 
+  function roadmapMarkup(projectsToRender) {
+    const groups = new Map();
+    projectsToRender.forEach(project => {
+      const family = project.family || "Engineering roadmap";
+      if (!groups.has(family)) groups.set(family, []);
+      groups.get(family).push(project);
+    });
+
+    let cardIndex = 0;
+    return Array.from(groups.entries()).map(([family, roadmapProjects], roadmapIndex) => {
+      const category = roadmapProjects[0]?.category || state.filter;
+      const singleProject = roadmapProjects.length === 1;
+      const projectLabel = `${roadmapProjects.length} ${singleProject ? "project" : "projects"}`;
+      const cards = roadmapProjects.map(project => cardMarkup(project, cardIndex++)).join("");
+      return `
+        <section class="roadmap-group" data-category="${categoryClass(category)}" data-layout="${singleProject ? "single" : "grid"}">
+          <header class="roadmap-header" style="--card-delay:${Math.min(roadmapIndex, 8) * 55}ms">
+            <div>
+              <span>Roadmap / ${String(roadmapIndex + 1).padStart(2, "0")}</span>
+              <h3>${escapeHtml(family)}</h3>
+            </div>
+            <p>${projectLabel}</p>
+          </header>
+          <div class="roadmap-projects">${cards}</div>
+        </section>
+      `;
+    }).join("");
+  }
+
+  function completeRoadmapsInView(projectsToRender, limit) {
+    const groups = new Map();
+    projectsToRender.forEach(project => {
+      const family = project.family || "Engineering roadmap";
+      if (!groups.has(family)) groups.set(family, []);
+      groups.get(family).push(project);
+    });
+
+    const visibleProjects = [];
+    for (const roadmapProjects of groups.values()) {
+      if (visibleProjects.length >= limit) break;
+      visibleProjects.push(...roadmapProjects);
+    }
+    return visibleProjects;
+  }
+
   function renderAtlas({ animate = false } = {}) {
     const results = filteredProjects();
-    const visible = results.slice(0, state.visible);
+    const hasRoadmapGroups = state.filter === "AI Engineering" || state.filter === "Software Engineering";
+    const visible = hasRoadmapGroups
+      ? completeRoadmapsInView(results, state.visible)
+      : results.slice(0, state.visible);
     const markup = visible.length
-      ? visible.map(cardMarkup).join("")
+      ? hasRoadmapGroups ? roadmapMarkup(visible) : visible.map(cardMarkup).join("")
       : `<div class="empty-projects"><h3>No projects match this view.</h3><p>Try another technology, system or path.</p></div>`;
     visibleCount.textContent = String(results.length);
     atlasStatus.textContent = state.filter === "All" ? "Showing the complete engineering map" : `Focused on ${state.filter}`;
@@ -150,12 +198,14 @@
 
     if (!animate || reducedMotion || !grid.childElementCount) {
       grid.classList.remove("is-leaving");
+      grid.classList.toggle("has-roadmaps", hasRoadmapGroups);
       grid.innerHTML = markup;
       return;
     }
 
     grid.classList.add("is-leaving");
     atlasSwapTimer = window.setTimeout(() => {
+      grid.classList.toggle("has-roadmaps", hasRoadmapGroups);
       grid.innerHTML = markup;
       grid.classList.remove("is-leaving");
       grid.classList.add("is-entering");
