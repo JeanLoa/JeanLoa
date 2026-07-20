@@ -195,6 +195,26 @@
         first.sequence - second.sequence || first.family.localeCompare(second.family));
   }
 
+  function groupedInternships(projectsToRender) {
+    const groups = new Map();
+    projectsToRender.forEach(project => {
+      const organization = project.organization || "Internship";
+      if (!groups.has(organization)) groups.set(organization, []);
+      groups.get(organization).push(project);
+    });
+
+    const organizationOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
+    return Array.from(groups.entries())
+      .map(([organization, organizationProjects]) => ({
+        organization,
+        projects: organizationProjects.sort((first, second) =>
+          Number(first.sequence || 99) - Number(second.sequence || 99) || first.title.localeCompare(second.title))
+      }))
+      .sort((first, second) =>
+        (organizationOrder.get(first.organization) || 99) - (organizationOrder.get(second.organization) || 99)
+        || first.organization.localeCompare(second.organization));
+  }
+
   function roadmapMarkup(projectsToRender) {
     let cardIndex = 0;
     return groupedRoadmaps(projectsToRender).map(({ family, projects: roadmapProjects }, roadmapIndex) => {
@@ -217,6 +237,27 @@
     }).join("");
   }
 
+  function internshipGroupMarkup(projectsToRender) {
+    let cardIndex = 0;
+    return groupedInternships(projectsToRender).map(({ organization, projects: organizationProjects }, groupIndex) => {
+      const singleProject = organizationProjects.length === 1;
+      const projectLabel = `${organizationProjects.length} ${singleProject ? "project" : "projects"}`;
+      const cards = organizationProjects.map(project => cardMarkup(project, cardIndex++)).join("");
+      return `
+        <section class="roadmap-group" data-category="internships" data-layout="${singleProject ? "single" : "grid"}">
+          <header class="roadmap-header" style="--card-delay:${Math.min(groupIndex, 8) * 55}ms">
+            <div>
+              <span>Internship / ${String(groupIndex + 1).padStart(2, "0")}</span>
+              <h3>${escapeHtml(organization)}</h3>
+            </div>
+            <p>${projectLabel}</p>
+          </header>
+          <div class="roadmap-projects">${cards}</div>
+        </section>
+      `;
+    }).join("");
+  }
+
   function completeRoadmapsInView(projectsToRender, limit) {
     const visibleProjects = [];
     for (const { projects: roadmapProjects } of groupedRoadmaps(projectsToRender)) {
@@ -229,11 +270,17 @@
   function renderAtlas({ animate = false } = {}) {
     const results = filteredProjects();
     const hasRoadmapGroups = state.filter === "AI Engineering" || state.filter === "Software Engineering";
+    const hasInternshipGroups = state.filter === "Internships";
+    const hasGroupedHeaders = hasRoadmapGroups || hasInternshipGroups;
     const visible = hasRoadmapGroups
       ? completeRoadmapsInView(results, state.visible)
       : results.slice(0, state.visible);
     const markup = visible.length
-      ? hasRoadmapGroups ? roadmapMarkup(visible) : visible.map(cardMarkup).join("")
+      ? hasRoadmapGroups
+        ? roadmapMarkup(visible)
+        : hasInternshipGroups
+          ? internshipGroupMarkup(visible)
+          : visible.map(cardMarkup).join("")
       : `<div class="empty-projects"><h3>No projects match this view.</h3><p>Try another technology, system or path.</p></div>`;
     visibleCount.textContent = String(results.length);
     atlasStatus.textContent = state.filter === "All" ? "Showing the complete engineering map" : `Focused on ${state.filter}`;
@@ -245,14 +292,14 @@
 
     if (!animate || reducedMotion || !grid.childElementCount) {
       grid.classList.remove("is-leaving");
-      grid.classList.toggle("has-roadmaps", hasRoadmapGroups);
+      grid.classList.toggle("has-roadmaps", hasGroupedHeaders);
       grid.innerHTML = markup;
       return;
     }
 
     grid.classList.add("is-leaving");
     atlasSwapTimer = window.setTimeout(() => {
-      grid.classList.toggle("has-roadmaps", hasRoadmapGroups);
+      grid.classList.toggle("has-roadmaps", hasGroupedHeaders);
       grid.innerHTML = markup;
       grid.classList.remove("is-leaving");
       grid.classList.add("is-entering");

@@ -375,12 +375,14 @@ img { display: block; max-width: 100%; }
   background: #0c0d0c;
 }
 .roadmap-group[data-category="software-engineering"] .roadmap-header { --roadmap-accent: var(--category-software); }
+.roadmap-group[data-category="internships"] .roadmap-header { --roadmap-accent: var(--category-internship); }
 .roadmap-header::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 44%, color-mix(in srgb, var(--roadmap-accent) 16%, transparent)); pointer-events: none; }
 .roadmap-header > * { position: relative; z-index: 1; }
 .roadmap-header span { color: var(--roadmap-accent); font-size: .65rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .roadmap-header h3 { max-width: 68rem; margin: 1.2rem 0 0; font-size: clamp(2.6rem, 5.5vw, 6rem); font-weight: 500; line-height: .88; letter-spacing: -.065em; }
 .roadmap-header p { margin: 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
 .roadmap-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-left: 1px solid var(--line); }
+.roadmap-group[data-category="internships"] .roadmap-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .roadmap-projects .project-card { border-top: 0; }
 .roadmap-group[data-layout="single"] .roadmap-projects { grid-template-columns: 1fr; }
 .roadmap-group[data-layout="single"] .project-card { min-height: 25rem; }
