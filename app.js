@@ -1,6 +1,5 @@
 (() => {
   const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
-  const state = { filter: "All", query: "", visible: 18 };
   const accentMap = { internship: "#ff4f2e", university: "#1877f2", software: "#ffb000", ai: "#8b5cf6", independent: "#25a36f" };
   const categoryAccentMap = {
     Internships: accentMap.internship,
@@ -10,18 +9,9 @@
     Leisure: accentMap.independent
   };
 
-  const internshipRoot = document.querySelector("#internship-projects");
-  const featuredRoot = document.querySelector("#featured-projects");
-  const grid = document.querySelector("#project-grid");
   const dialog = document.querySelector("#project-dialog");
   const dialogContent = document.querySelector("#dialog-content");
-  const search = document.querySelector("#project-search");
-  const loadMore = document.querySelector("#load-more");
-  const visibleCount = document.querySelector("#visible-count");
-  const atlasStatus = document.querySelector("#atlas-status");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let atlasSwapTimer = 0;
-  let atlasEntranceTimer = 0;
 
   const escapeHtml = value => String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -45,124 +35,10 @@
     return "blueprint";
   };
 
-  const categoryClass = category => String(category || "other").toLowerCase().replaceAll(/[^a-z0-9]+/g, "-");
   const projectAccent = project => categoryAccentMap[project.category] || accentMap.independent;
 
   const techMarkup = technologies => (technologies || []).slice(0, 6)
     .map(tech => `<span>${escapeHtml(tech)}</span>`).join("");
-
-  function visualMarkup(project) {
-    if (project.image) {
-      return `<div class="feature-frame"><span class="feature-frame__label">Product evidence</span><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} interface evidence" loading="lazy" /></div>`;
-    }
-    if (project.visual === "map") {
-      return `<div class="feature-frame"><span class="feature-frame__label">Route graph / Lima</span><div class="visual-map"><i class="map-node"></i><i class="map-node"></i><i class="map-node"></i><i class="map-node"></i></div></div>`;
-    }
-    const cells = Array.from({ length: 70 }, (_, index) => `<span style="--i:${(index % 9) + 1}"></span>`).join("");
-    return `<div class="feature-frame"><span class="feature-frame__label">Model surface</span><div class="visual-matrix">${cells}</div></div>`;
-  }
-
-  function renderFeatured() {
-    const featured = projects.filter(project => project.featured).slice(0, 4);
-    featuredRoot.innerHTML = featured.map((project, index) => `
-      <article class="feature-project" data-accent="${escapeHtml(project.accent || "lime")}">
-        <div class="feature-copy">
-          <div class="feature-number"><span>System / ${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(project.family)}</span></div>
-          <div class="feature-main reveal">
-            <p class="feature-eyebrow">${escapeHtml(project.eyebrow || project.category)}</p>
-            <h3>${escapeHtml(project.title)}</h3>
-            <p>${escapeHtml(project.summary)}</p>
-          </div>
-          <div class="feature-footer reveal">
-            <div class="tech-list">${techMarkup(project.technologies)}</div>
-            <button class="open-project" type="button" data-open-project="${escapeHtml(project.id)}">Inside the build <span aria-hidden="true">↗</span></button>
-          </div>
-        </div>
-        <div class="feature-visual reveal">${visualMarkup(project)}</div>
-      </article>
-    `).join("");
-  }
-
-  function internshipCardMarkup(project) {
-    const status = projectStatus(project);
-    return `
-      <article class="internship-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
-        <div class="internship-card__meta">
-          <span>${escapeHtml(project.organization)}</span>
-          <span>Project ${escapeHtml(project.sequence)}</span>
-        </div>
-        <div class="internship-card__body">
-          <p>${escapeHtml(project.family)}</p>
-          <h3>${escapeHtml(project.title)}</h3>
-          <p>${escapeHtml(project.summary)}</p>
-        </div>
-        <div class="internship-card__footer">
-          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
-          <span aria-hidden="true">↗</span>
-        </div>
-      </article>
-    `;
-  }
-
-  function renderInternships() {
-    const groups = new Map();
-    projects.filter(project => project.internship).forEach(project => {
-      const organization = project.organization || "Internship";
-      if (!groups.has(organization)) groups.set(organization, []);
-      groups.get(organization).push(project);
-    });
-
-    const organizationOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
-    internshipRoot.innerHTML = Array.from(groups.entries())
-      .sort(([first], [second]) =>
-        (organizationOrder.get(first) || 99) - (organizationOrder.get(second) || 99) || first.localeCompare(second))
-      .map(([organization, organizationProjects], index) => {
-        const orderedProjects = organizationProjects.sort((first, second) =>
-          Number(first.sequence || 99) - Number(second.sequence || 99));
-        const singleProject = orderedProjects.length === 1;
-        return `
-          <section class="internship-group" data-layout="${singleProject ? "single" : "grid"}">
-            <header class="internship-company-header">
-              <div>
-                <span>Internship / ${String(index + 1).padStart(2, "0")}</span>
-                <h3>${escapeHtml(organization)}</h3>
-              </div>
-              <p>${orderedProjects.length} ${singleProject ? "project" : "projects"}</p>
-            </header>
-            <div class="internship-company-projects">
-              ${orderedProjects.map(internshipCardMarkup).join("")}
-            </div>
-          </section>
-        `;
-      }).join("");
-  }
-
-  const searchableText = project => [project.title, project.summary, project.category, project.organization, project.family, ...(project.technologies || [])].join(" ").toLowerCase();
-  const filteredProjects = () => projects.filter(project => {
-    const matchesFilter = state.filter === "All" || project.category === state.filter;
-    const matchesQuery = !state.query || searchableText(project).includes(state.query);
-    return matchesFilter && matchesQuery;
-  });
-
-  function cardMarkup(project, index = 0) {
-    const status = projectStatus(project);
-    const signals = project.signals || {};
-    const evidence = signals.code > 0 ? `${signals.code} code files` : signals.files ? `${signals.files} documented files` : "documented scope";
-    return `
-      <article class="project-card" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details" data-project-id="${escapeHtml(project.id)}" data-category="${categoryClass(project.category)}" style="--card-delay:${Math.min(index, 11) * 32}ms">
-        <div class="project-card__top">
-          <span class="project-card__category">${escapeHtml(project.category)}</span>
-          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
-        </div>
-        <div class="project-card__main">
-          <h3>${escapeHtml(project.title)}</h3>
-          <p class="project-card__family">${escapeHtml(project.family)}</p>
-          <p class="project-card__summary">${escapeHtml(project.summary)}</p>
-        </div>
-        <div class="project-card__footer"><span>${escapeHtml(evidence)}</span><b aria-hidden="true">↗</b></div>
-      </article>
-    `;
-  }
 
   function projectSequence(project) {
     const numberedSegment = [project.path, project.url]
@@ -176,137 +52,149 @@
     return roadmapNumber ? Number(roadmapNumber[1]) : Number.MAX_SAFE_INTEGER;
   }
 
-  function groupedRoadmaps(projectsToRender) {
+  const universityGroupNames = new Map([
+    ["Mobility systems", "Portfolio Systems"],
+    ["Resource monitoring", "Portfolio Systems"],
+    ["Energy systems", "Portfolio Systems"]
+  ]);
+  const universityGroupOrder = new Map([
+    ["Portfolio Systems", 1],
+    ["Computer Science Coursework", 2],
+    ["Academic Capstones", 3],
+    ["Technical Education", 4]
+  ]);
+  const internshipGroupOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
+  const independentGroupOrder = new Map([["Programming Foundations", 1], ["Independent Laboratories", 2]]);
+  const universityProjectOrder = new Map([["SmartLocation", 1], ["LowCortisol", 2], ["ElectroCorp", 3]]);
+
+  const projectSections = [
+    {
+      category: "Internships",
+      rootId: "internship-projects",
+      groupLabel: "Internship",
+      groupName: project => project.organization || "Internship",
+      groupOrder: internshipGroupOrder
+    },
+    {
+      category: "University",
+      rootId: "university-projects",
+      groupLabel: "Collection",
+      groupName: project => universityGroupNames.get(project.family) || project.family || "University Projects",
+      groupOrder: universityGroupOrder
+    },
+    {
+      category: "AI Engineering",
+      rootId: "ai-projects",
+      groupLabel: "Roadmap",
+      groupName: project => project.family || "AI Engineering Roadmap"
+    },
+    {
+      category: "Software Engineering",
+      rootId: "software-projects",
+      groupLabel: "Roadmap",
+      groupName: project => project.family || "Software Engineering Roadmap"
+    },
+    {
+      category: "Leisure",
+      rootId: "independent-projects",
+      groupLabel: "Collection",
+      groupName: project => project.family || "Independent Projects",
+      groupOrder: independentGroupOrder
+    }
+  ];
+
+  function sectionProjectSequence(project) {
+    if (project.category === "Internships" && project.sequence) return Number(project.sequence);
+    if (universityProjectOrder.has(project.title)) return universityProjectOrder.get(project.title);
+    const semesterNumber = String(project.path || project.url || "").match(/semester-(\d{2})/i);
+    if (semesterNumber) return Number(semesterNumber[1]);
+    return projectSequence(project);
+  }
+
+  function groupedSectionProjects(definition, projectsToRender) {
     const groups = new Map();
     projectsToRender.forEach(project => {
-      const family = project.family || "Engineering roadmap";
-      if (!groups.has(family)) groups.set(family, []);
-      groups.get(family).push(project);
+      const name = definition.groupName(project);
+      if (!groups.has(name)) groups.set(name, []);
+      groups.get(name).push(project);
     });
 
     return Array.from(groups.entries())
-      .map(([family, roadmapProjects]) => ({
-        family,
-        sequence: Math.min(...roadmapProjects.map(projectSequence)),
-        projects: roadmapProjects.sort((first, second) =>
-          projectSequence(first) - projectSequence(second) || first.title.localeCompare(second.title))
+      .map(([name, groupProjects]) => ({
+        name,
+        sequence: definition.groupOrder?.get(name)
+          ?? Math.min(...groupProjects.map(sectionProjectSequence)),
+        projects: groupProjects.sort((first, second) =>
+          sectionProjectSequence(first) - sectionProjectSequence(second)
+          || first.title.localeCompare(second.title))
       }))
       .sort((first, second) =>
-        first.sequence - second.sequence || first.family.localeCompare(second.family));
+        first.sequence - second.sequence || first.name.localeCompare(second.name));
   }
 
-  function groupedInternships(projectsToRender) {
-    const groups = new Map();
-    projectsToRender.forEach(project => {
-      const organization = project.organization || "Internship";
-      if (!groups.has(organization)) groups.set(organization, []);
-      groups.get(organization).push(project);
+  function sectionCardMarkup(project, groupName, projectIndex) {
+    const status = projectStatus(project);
+    const descriptor = project.eyebrow
+      || (project.technologies || []).slice(0, 3).join(" · ")
+      || project.family;
+    return `
+      <article class="section-project-card" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
+        <div class="section-project-card__meta">
+          <span>${escapeHtml(groupName)}</span>
+          <span>Project ${String(projectIndex + 1).padStart(2, "0")}</span>
+        </div>
+        <div class="section-project-card__body">
+          <p>${escapeHtml(descriptor)}</p>
+          <h3>${escapeHtml(project.title)}</h3>
+          <p>${escapeHtml(project.summary)}</p>
+        </div>
+        <div class="section-project-card__footer">
+          <span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>
+          <span aria-hidden="true">↗</span>
+        </div>
+      </article>
+    `;
+  }
+
+  function projectGroupMarkup(definition, group, groupIndex) {
+    const singleProject = group.projects.length === 1;
+    const projectLabel = `${group.projects.length} ${singleProject ? "project" : "projects"}`;
+    return `
+      <section class="project-group" data-layout="${singleProject ? "single" : "grid"}">
+        <header class="project-group__header reveal" style="--group-delay:${Math.min(groupIndex, 10) * 45}ms">
+          <div>
+            <span>${definition.groupLabel} / ${String(groupIndex + 1).padStart(2, "0")}</span>
+            <h3>${escapeHtml(group.name)}</h3>
+          </div>
+          <p>${projectLabel}</p>
+        </header>
+        <div class="project-group__projects">
+          ${group.projects.map((project, projectIndex) =>
+            sectionCardMarkup(project, group.name, projectIndex)).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderProjectSections() {
+    projectSections.forEach(definition => {
+      const root = document.getElementById(definition.rootId);
+      if (!root) return;
+      const categoryProjects = projects.filter(project => project.category === definition.category);
+      const groups = groupedSectionProjects(definition, categoryProjects);
+      root.innerHTML = groups.map((group, index) => projectGroupMarkup(definition, group, index)).join("");
+
+      document.querySelectorAll("[data-category-count]").forEach(node => {
+        if (node.dataset.categoryCount === definition.category) {
+          node.textContent = String(categoryProjects.length).padStart(2, "0");
+        }
+      });
+      document.querySelectorAll("[data-group-count]").forEach(node => {
+        if (node.dataset.groupCount === definition.category) {
+          node.textContent = String(groups.length).padStart(2, "0");
+        }
+      });
     });
-
-    const organizationOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
-    return Array.from(groups.entries())
-      .map(([organization, organizationProjects]) => ({
-        organization,
-        projects: organizationProjects.sort((first, second) =>
-          Number(first.sequence || 99) - Number(second.sequence || 99) || first.title.localeCompare(second.title))
-      }))
-      .sort((first, second) =>
-        (organizationOrder.get(first.organization) || 99) - (organizationOrder.get(second.organization) || 99)
-        || first.organization.localeCompare(second.organization));
-  }
-
-  function roadmapMarkup(projectsToRender) {
-    let cardIndex = 0;
-    return groupedRoadmaps(projectsToRender).map(({ family, projects: roadmapProjects }, roadmapIndex) => {
-      const category = roadmapProjects[0]?.category || state.filter;
-      const singleProject = roadmapProjects.length === 1;
-      const projectLabel = `${roadmapProjects.length} ${singleProject ? "project" : "projects"}`;
-      const cards = roadmapProjects.map(project => cardMarkup(project, cardIndex++)).join("");
-      return `
-        <section class="roadmap-group" data-category="${categoryClass(category)}" data-layout="${singleProject ? "single" : "grid"}">
-          <header class="roadmap-header" style="--card-delay:${Math.min(roadmapIndex, 8) * 55}ms">
-            <div>
-              <span>Roadmap / ${String(roadmapIndex + 1).padStart(2, "0")}</span>
-              <h3>${escapeHtml(family)}</h3>
-            </div>
-            <p>${projectLabel}</p>
-          </header>
-          <div class="roadmap-projects">${cards}</div>
-        </section>
-      `;
-    }).join("");
-  }
-
-  function internshipGroupMarkup(projectsToRender) {
-    let cardIndex = 0;
-    return groupedInternships(projectsToRender).map(({ organization, projects: organizationProjects }, groupIndex) => {
-      const singleProject = organizationProjects.length === 1;
-      const projectLabel = `${organizationProjects.length} ${singleProject ? "project" : "projects"}`;
-      const cards = organizationProjects.map(project => cardMarkup(project, cardIndex++)).join("");
-      return `
-        <section class="roadmap-group" data-category="internships" data-layout="${singleProject ? "single" : "grid"}">
-          <header class="roadmap-header" style="--card-delay:${Math.min(groupIndex, 8) * 55}ms">
-            <div>
-              <span>Internship / ${String(groupIndex + 1).padStart(2, "0")}</span>
-              <h3>${escapeHtml(organization)}</h3>
-            </div>
-            <p>${projectLabel}</p>
-          </header>
-          <div class="roadmap-projects">${cards}</div>
-        </section>
-      `;
-    }).join("");
-  }
-
-  function completeRoadmapsInView(projectsToRender, limit) {
-    const visibleProjects = [];
-    for (const { projects: roadmapProjects } of groupedRoadmaps(projectsToRender)) {
-      if (visibleProjects.length >= limit) break;
-      visibleProjects.push(...roadmapProjects);
-    }
-    return visibleProjects;
-  }
-
-  function renderAtlas({ animate = false } = {}) {
-    const results = filteredProjects();
-    const hasRoadmapGroups = state.filter === "AI Engineering" || state.filter === "Software Engineering";
-    const hasInternshipGroups = state.filter === "Internships";
-    const hasGroupedHeaders = hasRoadmapGroups || hasInternshipGroups;
-    const visible = hasRoadmapGroups
-      ? completeRoadmapsInView(results, state.visible)
-      : results.slice(0, state.visible);
-    const markup = visible.length
-      ? hasRoadmapGroups
-        ? roadmapMarkup(visible)
-        : hasInternshipGroups
-          ? internshipGroupMarkup(visible)
-          : visible.map(cardMarkup).join("")
-      : `<div class="empty-projects"><h3>No projects match this view.</h3><p>Try another technology, system or path.</p></div>`;
-    visibleCount.textContent = String(results.length);
-    atlasStatus.textContent = state.filter === "All" ? "Showing the complete engineering map" : `Focused on ${state.filter}`;
-    loadMore.hidden = visible.length >= results.length;
-
-    window.clearTimeout(atlasSwapTimer);
-    window.clearTimeout(atlasEntranceTimer);
-    grid.classList.remove("is-entering");
-
-    if (!animate || reducedMotion || !grid.childElementCount) {
-      grid.classList.remove("is-leaving");
-      grid.classList.toggle("has-roadmaps", hasGroupedHeaders);
-      grid.innerHTML = markup;
-      return;
-    }
-
-    grid.classList.add("is-leaving");
-    atlasSwapTimer = window.setTimeout(() => {
-      grid.classList.toggle("has-roadmaps", hasGroupedHeaders);
-      grid.innerHTML = markup;
-      grid.classList.remove("is-leaving");
-      grid.classList.add("is-entering");
-      atlasEntranceTimer = window.setTimeout(() => {
-        grid.classList.remove("is-entering");
-      }, 1120);
-    }, 330);
   }
 
   function genericArchitecture(project) {
@@ -392,23 +280,17 @@
     dialog.querySelector(".dialog-close").focus();
   }
 
-  renderInternships();
-  renderFeatured();
-  renderAtlas();
+  renderProjectSections();
 
   document.querySelectorAll("[data-total-projects]").forEach(node => { node.textContent = String(projects.length).padStart(2, "0"); });
   const internships = projects.filter(project => project.internship);
   document.querySelectorAll("[data-internship-count]").forEach(node => { node.textContent = String(internships.length).padStart(2, "0"); });
   document.querySelectorAll("[data-internship-completed]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "built").length).padStart(2, "0"); });
   document.querySelectorAll("[data-internship-pending]").forEach(node => { node.textContent = String(internships.filter(project => statusClass(projectStatus(project)) === "pending").length).padStart(2, "0"); });
-  document.querySelectorAll("[data-ai-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "AI Engineering").length} records`; });
-  document.querySelectorAll("[data-software-count]").forEach(node => { node.textContent = `${projects.filter(p => p.category === "Software Engineering").length} records`; });
 
   document.addEventListener("click", event => {
-    const openButton = event.target.closest("[data-open-project]");
     const card = event.target.closest("[data-project-id]");
-    if (openButton) openProject(openButton.dataset.openProject);
-    else if (card) openProject(card.dataset.projectId);
+    if (card) openProject(card.dataset.projectId);
   });
 
   document.addEventListener("keydown", event => {
@@ -418,35 +300,6 @@
       openProject(card.dataset.projectId);
     }
   });
-
-  document.querySelectorAll(".filter-chip").forEach(button => {
-    button.addEventListener("click", () => {
-      state.filter = button.dataset.filter;
-      state.visible = 18;
-      document.querySelectorAll(".filter-chip").forEach(chip => {
-        const active = chip === button;
-        chip.classList.toggle("is-active", active);
-        chip.setAttribute("aria-pressed", String(active));
-      });
-      renderAtlas({ animate: true });
-    });
-  });
-
-  document.querySelectorAll("[data-filter-jump]").forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.dataset.filterJump;
-      const chip = document.querySelector(`.filter-chip[data-filter="${filter}"]`);
-      chip?.click();
-      document.querySelector("#atlas")?.scrollIntoView({ behavior: "smooth" });
-    });
-  });
-
-  search.addEventListener("input", () => {
-    state.query = search.value.trim().toLowerCase();
-    state.visible = 18;
-    renderAtlas({ animate: true });
-  });
-  loadMore.addEventListener("click", () => { state.visible += 18; renderAtlas({ animate: true }); });
 
   document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
