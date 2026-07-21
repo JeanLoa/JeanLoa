@@ -14,12 +14,26 @@
   ]);
   const projectFilms = new Map([
     ["electrocorp", {
+      brand: "ElectroCorp",
       source: "electrocorp-trailer.webm",
       type: "video/webm",
       poster: "electrocorp-trailer-poster.webp",
       duration: "00:25",
       title: "Energy, orchestrated.",
-      description: "A product journey through spaces, connected devices, energy intelligence and decision-ready reports."
+      description: "A product journey through spaces, connected devices, energy intelligence and decision-ready reports.",
+      stack: "Angular / Spring Boot / PostgreSQL",
+      footnote: "From domain workflows to visible operational evidence."
+    }],
+    ["lowcortisol", {
+      brand: "LowCortisol",
+      source: "lowcortisol-trailer.webm",
+      type: "video/webm",
+      poster: "lowcortisol-trailer-poster.webp",
+      duration: "00:23",
+      title: "Wellbeing, made operational.",
+      description: "A connected journey through workplaces, resource monitoring, smart valves and real-time operational control.",
+      stack: "Vue / ASP.NET Core / PostgreSQL",
+      footnote: "From physical resources to calm, actionable decisions."
     }]
   ]);
 
@@ -269,18 +283,18 @@
             playsinline
             preload="metadata"
             poster="${escapeHtml(film.poster)}"
-            aria-label="ElectroCorp product walkthrough"
+            aria-label="${escapeHtml(film.brand)} product walkthrough"
           >
             <source src="${escapeHtml(film.source)}" type="${escapeHtml(film.type)}" />
           </video>
           <div class="dialog-film__shade" aria-hidden="true"></div>
           <div class="dialog-film__topline" aria-hidden="true">
-            <span><i></i> ElectroCorp / Product film</span>
+            <span><i></i> ${escapeHtml(film.brand)} / Product film</span>
             <span>${escapeHtml(film.duration)}</span>
           </div>
           <div class="dialog-film__controls">
             <span class="dialog-film__signal" aria-hidden="true">Live product surface</span>
-            <button class="dialog-film__toggle" type="button" data-film-toggle aria-label="Play ElectroCorp product film">
+            <button class="dialog-film__toggle" type="button" data-film-toggle aria-label="Play ${escapeHtml(film.brand)} product film">
               <span class="dialog-film__toggle-icon" aria-hidden="true"></span>
               <span data-film-toggle-label>Play film</span>
             </button>
@@ -288,8 +302,8 @@
           <div class="dialog-film__progress" aria-hidden="true"><span></span></div>
         </div>
         <div class="dialog-film__footer">
-          <span>Angular / Spring Boot / PostgreSQL</span>
-          <p>From domain workflows to visible operational evidence.</p>
+          <span>${escapeHtml(film.stack)}</span>
+          <p>${escapeHtml(film.footnote)}</p>
         </div>
       </section>
     `;
@@ -304,6 +318,7 @@
     const toggle = dialog.querySelector("[data-film-toggle]");
     const toggleLabel = dialog.querySelector("[data-film-toggle-label]");
     if (!video || !frame || !toggle || !toggleLabel) return;
+    const filmLabel = video.getAttribute("aria-label") || "product film";
 
     video.muted = true;
     video.defaultMuted = true;
@@ -313,7 +328,7 @@
       const playing = !video.paused;
       toggle.classList.toggle("is-playing", playing);
       toggleLabel.textContent = playing ? "Pause film" : "Play film";
-      toggle.setAttribute("aria-label", `${playing ? "Pause" : "Play"} ElectroCorp product film`);
+      toggle.setAttribute("aria-label", `${playing ? "Pause" : "Play"} ${filmLabel}`);
       frame.classList.toggle("is-playing", playing);
     };
 

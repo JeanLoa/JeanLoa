@@ -15,7 +15,9 @@ for (const file of [
   "og.png",
   ".nojekyll",
   "electrocorp-trailer.webm",
-  "electrocorp-trailer-poster.webp"
+  "electrocorp-trailer-poster.webp",
+  "lowcortisol-trailer.webm",
+  "lowcortisol-trailer-poster.webp"
 ]) {
   await cp(join(root, file), join(dist, "client", file));
 }
