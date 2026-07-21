@@ -12,10 +12,21 @@
     "lowcortisol",
     "electrocorp"
   ]);
+  const projectFilms = new Map([
+    ["electrocorp", {
+      source: "electrocorp-trailer.webm",
+      type: "video/webm",
+      poster: "electrocorp-trailer-poster.webp",
+      duration: "00:25",
+      title: "Energy, orchestrated.",
+      description: "A product journey through spaces, connected devices, energy intelligence and decision-ready reports."
+    }]
+  ]);
 
   const dialog = document.querySelector("#project-dialog");
   const dialogContent = document.querySelector("#dialog-content");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeFilmObserver = null;
 
   const escapeHtml = value => String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -157,11 +168,12 @@
   function sectionCardMarkup(project, groupName, projectIndex) {
     const status = projectStatus(project);
     const featured = isFeaturedProject(project);
+    const film = projectFilms.get(project.id);
     const descriptor = project.eyebrow
       || (project.technologies || []).slice(0, 3).join(" · ")
       || project.family;
     return `
-      <article class="section-project-card${featured ? " is-featured" : ""}" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details">
+      <article class="section-project-card${featured ? " is-featured" : ""}${film ? " has-film" : ""}" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details${film ? " and product film" : ""}">
         <div class="section-project-card__meta">
           <span>${escapeHtml(groupName)}</span>
           <span>Project ${String(projectIndex + 1).padStart(2, "0")}</span>
@@ -176,7 +188,9 @@
           ${status
             ? `<span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>`
             : '<span aria-hidden="true"></span>'}
-          <span aria-hidden="true">↗</span>
+          ${film
+            ? `<span class="project-film-indicator"><i aria-hidden="true"></i> Film ${escapeHtml(film.duration)}</span>`
+            : '<span aria-hidden="true">↗</span>'}
         </div>
       </article>
     `;
@@ -233,6 +247,112 @@
     ];
   }
 
+  function projectFilmMarkup(project) {
+    const film = projectFilms.get(project.id);
+    if (!film) return "";
+
+    return `
+      <section class="dialog-film" aria-labelledby="dialog-film-title">
+        <div class="dialog-film__intro">
+          <div>
+            <p class="dialog-film__eyebrow"><span>Product film</span> / ${escapeHtml(film.duration)}</p>
+            <h3 id="dialog-film-title">${escapeHtml(film.title)}</h3>
+          </div>
+          <p>${escapeHtml(film.description)}</p>
+        </div>
+        <div class="dialog-film__frame" data-film-frame style="--film-progress:0%">
+          <video
+            class="dialog-film__video"
+            data-project-film
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="${escapeHtml(film.poster)}"
+            aria-label="ElectroCorp product walkthrough"
+          >
+            <source src="${escapeHtml(film.source)}" type="${escapeHtml(film.type)}" />
+          </video>
+          <div class="dialog-film__shade" aria-hidden="true"></div>
+          <div class="dialog-film__topline" aria-hidden="true">
+            <span><i></i> ElectroCorp / Product film</span>
+            <span>${escapeHtml(film.duration)}</span>
+          </div>
+          <div class="dialog-film__controls">
+            <span class="dialog-film__signal" aria-hidden="true">Live product surface</span>
+            <button class="dialog-film__toggle" type="button" data-film-toggle aria-label="Play ElectroCorp product film">
+              <span class="dialog-film__toggle-icon" aria-hidden="true"></span>
+              <span data-film-toggle-label>Play film</span>
+            </button>
+          </div>
+          <div class="dialog-film__progress" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="dialog-film__footer">
+          <span>Angular / Spring Boot / PostgreSQL</span>
+          <p>From domain workflows to visible operational evidence.</p>
+        </div>
+      </section>
+    `;
+  }
+
+  function initializeProjectFilm() {
+    activeFilmObserver?.disconnect();
+    activeFilmObserver = null;
+
+    const video = dialog.querySelector("[data-project-film]");
+    const frame = dialog.querySelector("[data-film-frame]");
+    const toggle = dialog.querySelector("[data-film-toggle]");
+    const toggleLabel = dialog.querySelector("[data-film-toggle-label]");
+    if (!video || !frame || !toggle || !toggleLabel) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.dataset.userPaused = String(reducedMotion);
+
+    const syncPlaybackUi = () => {
+      const playing = !video.paused;
+      toggle.classList.toggle("is-playing", playing);
+      toggleLabel.textContent = playing ? "Pause film" : "Play film";
+      toggle.setAttribute("aria-label", `${playing ? "Pause" : "Play"} ElectroCorp product film`);
+      frame.classList.toggle("is-playing", playing);
+    };
+
+    const updateProgress = () => {
+      const progress = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+      frame.style.setProperty("--film-progress", `${progress}%`);
+    };
+
+    toggle.addEventListener("click", () => {
+      if (video.paused) {
+        video.dataset.userPaused = "false";
+        video.play().catch(syncPlaybackUi);
+      } else {
+        video.dataset.userPaused = "true";
+        video.pause();
+      }
+    });
+    video.addEventListener("play", syncPlaybackUi);
+    video.addEventListener("pause", syncPlaybackUi);
+    video.addEventListener("timeupdate", updateProgress);
+    video.addEventListener("loadedmetadata", updateProgress);
+    syncPlaybackUi();
+
+    if ("IntersectionObserver" in window) {
+      activeFilmObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !reducedMotion && video.dataset.userPaused !== "true") {
+            video.play().catch(syncPlaybackUi);
+          } else if (!entry.isIntersecting) {
+            video.pause();
+          }
+        });
+      }, { root: dialog, threshold: 0.42 });
+      activeFilmObserver.observe(frame);
+    } else if (!reducedMotion) {
+      video.play().catch(syncPlaybackUi);
+    }
+  }
+
   function openProject(projectId) {
     const project = projects.find(item => item.id === projectId);
     if (!project) return;
@@ -267,6 +387,7 @@
             ${status ? `<span class="dialog-status dialog-status--${statusClass(status)}">${escapeHtml(status)}</span>` : ""}
           </div>
         </header>
+        ${projectFilmMarkup(project)}
         <div class="dialog-body">
           <aside class="dialog-index" aria-label="Case study contents">
             <span>01 / Problem</span><span>02 / Response</span><span>03 / Architecture</span><span>04 / Evidence</span>
@@ -306,6 +427,7 @@
     `;
     dialog.showModal();
     document.body.classList.add("dialog-open");
+    initializeProjectFilm();
     dialog.querySelector(".dialog-close").focus();
   }
 
@@ -332,7 +454,12 @@
 
   document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener("close", () => document.body.classList.remove("dialog-open"));
+  dialog.addEventListener("close", () => {
+    activeFilmObserver?.disconnect();
+    activeFilmObserver = null;
+    dialog.querySelector("[data-project-film]")?.pause();
+    document.body.classList.remove("dialog-open");
+  });
 
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".primary-nav");

@@ -6,7 +6,17 @@ const dist = join(root, "dist");
 await rm(dist, { recursive: true, force: true });
 await mkdir(join(dist, "client"), { recursive: true });
 await mkdir(join(dist, "server"), { recursive: true });
-for (const file of ["index.html", "styles.css", "app.js", "projects-data.js", "favicon.svg", "og.png", ".nojekyll"]) {
+for (const file of [
+  "index.html",
+  "styles.css",
+  "app.js",
+  "projects-data.js",
+  "favicon.svg",
+  "og.png",
+  ".nojekyll",
+  "electrocorp-trailer.webm",
+  "electrocorp-trailer-poster.webp"
+]) {
   await cp(join(root, file), join(dist, "client", file));
 }
 await cp(join(root, "assets"), join(dist, "client", "assets"), { recursive: true });
