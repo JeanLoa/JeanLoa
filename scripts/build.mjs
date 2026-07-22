@@ -13,11 +13,7 @@ for (const file of [
   "projects-data.js",
   "favicon.svg",
   "og.png",
-  ".nojekyll",
-  "electrocorp-trailer.webm",
-  "electrocorp-trailer-poster.webp",
-  "lowcortisol-trailer.webm",
-  "lowcortisol-trailer-poster.webp"
+  ".nojekyll"
 ]) {
   await cp(join(root, file), join(dist, "client", file));
 }

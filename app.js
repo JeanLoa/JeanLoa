@@ -15,25 +15,91 @@
   const projectFilms = new Map([
     ["electrocorp", {
       brand: "ElectroCorp",
-      source: "electrocorp-trailer.webm",
-      type: "video/webm",
-      poster: "electrocorp-trailer-poster.webp",
-      duration: "00:25",
       title: "Energy, orchestrated.",
       description: "A product journey through spaces, connected devices, energy intelligence and decision-ready reports.",
       stack: "Angular / Spring Boot / PostgreSQL",
-      footnote: "From domain workflows to visible operational evidence."
+      footnote: "From domain workflows to visible operational evidence.",
+      clips: [{
+        label: "Product film",
+        source: "assets/videos/university/electrocorp/film.webm",
+        type: "video/webm",
+        poster: "assets/videos/university/electrocorp/poster.webp",
+        duration: "00:25"
+      }]
     }],
     ["lowcortisol", {
       brand: "LowCortisol",
-      source: "lowcortisol-trailer.webm",
-      type: "video/webm",
-      poster: "lowcortisol-trailer-poster.webp",
-      duration: "00:23",
       title: "Wellbeing, made operational.",
       description: "A connected journey through workplaces, resource monitoring, smart valves and real-time operational control.",
       stack: "Vue / ASP.NET Core / PostgreSQL",
-      footnote: "From physical resources to calm, actionable decisions."
+      footnote: "From physical resources to calm, actionable decisions.",
+      clips: [{
+        label: "Product film",
+        source: "assets/videos/university/lowcortisol/film.webm",
+        type: "video/webm",
+        poster: "assets/videos/university/lowcortisol/poster.webp",
+        duration: "00:23"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
+      brand: "AI Engineer / Project 01",
+      title: "Demand, made measurable.",
+      description: "A concise walkthrough of the first AI Engineering build, from retail data and temporal features to prediction evidence exposed through an API.",
+      stack: "Python / FastAPI / Pandas / scikit-learn",
+      footnote: "A reproducible baseline for demand-oriented machine learning systems.",
+      clips: [{
+        label: "Project demo",
+        source: "assets/videos/ai-engineer/01-retail-demand-prediction-api/demo.mp4",
+        type: "video/mp4",
+        duration: "00:22"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-02-sales-forecasting-dashboard-api", {
+      brand: "AI Engineer / Project 02",
+      title: "Forecasts, made visible.",
+      description: "An interface-led view of the forecasting workflow, connecting model output, dashboard exploration and API-ready delivery.",
+      stack: "Python / FastAPI / Streamlit / Docker",
+      footnote: "Forecasting evidence translated into an inspectable product surface.",
+      clips: [{
+        label: "Project demo",
+        source: "assets/videos/ai-engineer/02-sales-forecasting-dashboard-api/demo.mp4",
+        type: "video/mp4",
+        duration: "00:23"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite", {
+      brand: "AI Engineer / Project 03",
+      title: "Models, compared fairly.",
+      description: "A product film for the reproducible comparison suite, showing shared folds, model evidence, rankings and persisted experiment reports.",
+      stack: "Python / scikit-learn / Pandas / SciPy",
+      footnote: "The protocol and its evidence matter as much as the winning score.",
+      clips: [{
+        label: "Project demo",
+        source: "assets/videos/ai-engineer/03-classical-model-comparison-suite/demo.mp4",
+        type: "video/mp4",
+        duration: "00:19"
+      }]
+    }],
+    ["path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform", {
+      brand: "Software Engineer / Project 01",
+      title: "Intelligence, delivered in sprints.",
+      description: "Two chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
+      stack: "React / FastAPI / Python / Docker",
+      footnote: "A software platform shaped incrementally around visible product evidence.",
+      clips: [
+        {
+          label: "Sprint 01",
+          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-01.mp4",
+          type: "video/mp4",
+          duration: "00:22"
+        },
+        {
+          label: "Sprint 02",
+          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-02.mp4",
+          type: "video/mp4",
+          duration: "00:17"
+        }
+      ]
     }]
   ]);
 
@@ -179,6 +245,14 @@
         first.sequence - second.sequence || first.name.localeCompare(second.name));
   }
 
+  const filmClips = film => Array.isArray(film?.clips) ? film.clips : [];
+
+  function filmCardLabel(film) {
+    const clips = filmClips(film);
+    if (clips.length > 1) return `${clips.length} films`;
+    return `Film ${clips[0]?.duration || ""}`.trim();
+  }
+
   function sectionCardMarkup(project, groupName, projectIndex) {
     const status = projectStatus(project);
     const featured = isFeaturedProject(project);
@@ -203,7 +277,7 @@
             ? `<span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>`
             : '<span aria-hidden="true"></span>'}
           ${film
-            ? `<span class="project-film-indicator"><i aria-hidden="true"></i> Film ${escapeHtml(film.duration)}</span>`
+            ? `<span class="project-film-indicator"><i aria-hidden="true"></i> ${escapeHtml(filmCardLabel(film))}</span>`
             : '<span aria-hidden="true">↗</span>'}
         </div>
       </article>
@@ -264,16 +338,44 @@
   function projectFilmMarkup(project) {
     const film = projectFilms.get(project.id);
     if (!film) return "";
+    const clips = filmClips(film);
+    const primaryClip = clips[0];
+    if (!primaryClip) return "";
+    const playlistLabel = clips.length > 1 ? `${clips.length} chapters` : primaryClip.duration;
+    const posterAttribute = primaryClip.poster
+      ? ` poster="${escapeHtml(primaryClip.poster)}"`
+      : "";
 
     return `
       <section class="dialog-film" aria-labelledby="dialog-film-title">
         <div class="dialog-film__intro">
           <div>
-            <p class="dialog-film__eyebrow"><span>Product film</span> / ${escapeHtml(film.duration)}</p>
+            <p class="dialog-film__eyebrow"><span>Product film</span> / ${escapeHtml(playlistLabel)}</p>
             <h3 id="dialog-film-title">${escapeHtml(film.title)}</h3>
           </div>
           <p>${escapeHtml(film.description)}</p>
         </div>
+        ${clips.length > 1 ? `
+          <div class="dialog-film__playlist" aria-label="${escapeHtml(film.brand)} film chapters">
+            ${clips.map((clip, index) => `
+              <button
+                class="dialog-film__chapter${index === 0 ? " is-active" : ""}"
+                type="button"
+                data-film-clip
+                data-film-source="${escapeHtml(clip.source)}"
+                data-film-type="${escapeHtml(clip.type)}"
+                data-film-poster="${escapeHtml(clip.poster || "")}"
+                data-film-duration="${escapeHtml(clip.duration)}"
+                data-film-label="${escapeHtml(clip.label)}"
+                aria-pressed="${index === 0 ? "true" : "false"}"
+              >
+                <span>${String(index + 1).padStart(2, "0")}</span>
+                <strong>${escapeHtml(clip.label)}</strong>
+                <small>${escapeHtml(clip.duration)}</small>
+              </button>
+            `).join("")}
+          </div>
+        ` : ""}
         <div class="dialog-film__frame" data-film-frame style="--film-progress:0%">
           <video
             class="dialog-film__video"
@@ -282,15 +384,15 @@
             loop
             playsinline
             preload="metadata"
-            poster="${escapeHtml(film.poster)}"
-            aria-label="${escapeHtml(film.brand)} product walkthrough"
+            ${posterAttribute}
+            aria-label="${escapeHtml(film.brand)} ${escapeHtml(primaryClip.label)}"
           >
-            <source src="${escapeHtml(film.source)}" type="${escapeHtml(film.type)}" />
+            <source data-film-source-element src="${escapeHtml(primaryClip.source)}" type="${escapeHtml(primaryClip.type)}" />
           </video>
           <div class="dialog-film__shade" aria-hidden="true"></div>
           <div class="dialog-film__topline" aria-hidden="true">
-            <span><i></i> ${escapeHtml(film.brand)} / Product film</span>
-            <span>${escapeHtml(film.duration)}</span>
+            <span><i></i> ${escapeHtml(film.brand)} / <b data-film-active-label>${escapeHtml(primaryClip.label)}</b></span>
+            <span data-film-active-duration>${escapeHtml(primaryClip.duration)}</span>
           </div>
           <div class="dialog-film__controls">
             <span class="dialog-film__signal" aria-hidden="true">Live product surface</span>
@@ -317,8 +419,12 @@
     const frame = dialog.querySelector("[data-film-frame]");
     const toggle = dialog.querySelector("[data-film-toggle]");
     const toggleLabel = dialog.querySelector("[data-film-toggle-label]");
-    if (!video || !frame || !toggle || !toggleLabel) return;
-    const filmLabel = video.getAttribute("aria-label") || "product film";
+    const source = dialog.querySelector("[data-film-source-element]");
+    const chapterButtons = Array.from(dialog.querySelectorAll("[data-film-clip]"));
+    const activeLabel = dialog.querySelector("[data-film-active-label]");
+    const activeDuration = dialog.querySelector("[data-film-active-duration]");
+    if (!video || !frame || !toggle || !toggleLabel || !source) return;
+    let filmLabel = video.getAttribute("aria-label") || "product film";
 
     video.muted = true;
     video.defaultMuted = true;
@@ -337,6 +443,31 @@
       frame.style.setProperty("--film-progress", `${progress}%`);
     };
 
+    const selectChapter = button => {
+      chapterButtons.forEach(chapter => {
+        const selected = chapter === button;
+        chapter.classList.toggle("is-active", selected);
+        chapter.setAttribute("aria-pressed", String(selected));
+      });
+      video.pause();
+      source.src = button.dataset.filmSource || "";
+      source.type = button.dataset.filmType || "video/mp4";
+      const poster = button.dataset.filmPoster || "";
+      if (poster) video.poster = poster;
+      else video.removeAttribute("poster");
+      const label = button.dataset.filmLabel || "Product film";
+      const duration = button.dataset.filmDuration || "";
+      filmLabel = `${label} product film`;
+      video.setAttribute("aria-label", filmLabel);
+      if (activeLabel) activeLabel.textContent = label;
+      if (activeDuration) activeDuration.textContent = duration;
+      frame.style.setProperty("--film-progress", "0%");
+      video.dataset.userPaused = "false";
+      video.load();
+      if (!reducedMotion) video.play().catch(syncPlaybackUi);
+      syncPlaybackUi();
+    };
+
     toggle.addEventListener("click", () => {
       if (video.paused) {
         video.dataset.userPaused = "false";
@@ -350,6 +481,9 @@
     video.addEventListener("pause", syncPlaybackUi);
     video.addEventListener("timeupdate", updateProgress);
     video.addEventListener("loadedmetadata", updateProgress);
+    chapterButtons.forEach(button => {
+      button.addEventListener("click", () => selectChapter(button));
+    });
     syncPlaybackUi();
 
     if ("IntersectionObserver" in window) {

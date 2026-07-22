@@ -631,15 +631,17 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Classical Model Comparison Suite",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "A documented Classical Model Comparison Suite blueprint defining the experiment, modules, evaluation signals and known limitations inside Machine Learning Engineering Software Foundations.",
-    "technologies": [],
+    "summary": "A reproducible and configurable laboratory for comparing classical machine learning models under one explicit experimental protocol.",
+    "technologies": [
+      "Python"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 573,
+      "code": 86,
+      "tests": 326,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/03-classical-model-comparison-suite",
     "featured": false,
     "accent": "violet",
@@ -1906,7 +1908,7 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Retail Demand Prediction API",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "An implementation-stage retail demand workflow with data validation, temporal features, a classical model baseline and evaluation evidence.",
+    "summary": "A retail demand prediction service with validated data, temporal features, a classical baseline and API-ready inference.",
     "technologies": [
       "Python",
       "FastAPI",
@@ -1930,7 +1932,7 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Retail Intelligence Platform",
     "category": "Software Engineering",
     "family": "Applied AI Software Platform",
-    "summary": "A partially implemented retail-intelligence platform with Python analytics, processed sales data, demand insights and measured baseline performance.",
+    "summary": "An applied AI software platform combining demand insights, forecast evidence, decision-support workflows and sprint-based delivery.",
     "technologies": [
       "React",
       "Python",
@@ -1938,9 +1940,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 269,
-      "code": 71,
-      "tests": 47,
+      "files": 534,
+      "code": 144,
+      "tests": 109,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2057,15 +2059,15 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Sales Forecasting Dashboard API",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "An implementation-stage retail demand workflow with data validation, temporal features, a classical model baseline and evaluation evidence.",
+    "summary": "Applied machine-learning system that turns product-level sales history into auditable seven-day forecasts.",
     "technologies": [
       "Python",
       "FastAPI",
       "Docker"
     ],
     "signals": {
-      "files": 375,
-      "code": 133,
+      "files": 378,
+      "code": 134,
       "tests": 130,
       "notebooks": 0
     },

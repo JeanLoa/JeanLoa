@@ -3,7 +3,12 @@ import { join, relative, sep } from "node:path";
 
 const site = process.cwd();
 const root = join(site, "..");
-const skip = new Set(["node_modules", ".git", ".venv", "venv", "dist", "build", "target", "coverage", ".angular", ".pytest_cache", ".pytest_tmp"]);
+const skip = new Set([
+  "node_modules", ".git", ".venv", "venv", ".runtime", ".tmp", ".vite",
+  ".mypy_cache", ".ruff_cache", ".matplotlib", ".pip-build-tracker",
+  ".pip-temp-day84", "dist", "build", "target", "coverage", ".angular",
+  ".pytest_cache", ".pytest_tmp", ".pytest-tmp"
+]);
 const techMatchers = [
   ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i],
   ["TypeScript", /\btypescript\b/i], ["JavaScript", /\bjavascript\b/i], ["Python", /\bpython\b/i],
@@ -23,6 +28,16 @@ const titleWords = {
   qaoa: "QAOA", vqe: "VQE", pqc: "PQC", sdk: "SDK", mcp: "MCP", ui: "UI", ux: "UX",
   langgraph: "LangGraph", automl: "AutoML", pytorch: "PyTorch", fastapi: "FastAPI", dbscan: "DBSCAN"
 };
+const implementationSummaries = new Map([
+  [
+    "Retail Demand Prediction API",
+    "A retail demand prediction service with validated data, temporal features, a classical baseline and API-ready inference."
+  ],
+  [
+    "Retail Intelligence Platform",
+    "An applied AI software platform combining demand insights, forecast evidence, decision-support workflows and sprint-based delivery."
+  ]
+]);
 
 const titleCase = value => value
   .replace(/^\d{2}-/, "")
@@ -97,12 +112,12 @@ async function makeProject({ directory, category, family, url, fallbackTitle, fe
   let summary = extractedSummary;
   if (category === "AI Engineering") {
     summary = status === "Implementation"
-      ? "An implementation-stage retail demand workflow with data validation, temporal features, a classical model baseline and evaluation evidence."
+      ? implementationSummaries.get(title) || extractedSummary
       : `A documented ${title} blueprint defining the experiment, modules, evaluation signals and known limitations inside ${titleCase(family)}.`;
   }
   if (category === "Software Engineering") {
     summary = status === "Implementation"
-      ? "A partially implemented retail-intelligence platform with Python analytics, processed sales data, demand insights and measured baseline performance."
+      ? implementationSummaries.get(title) || extractedSummary
       : `A product-platform blueprint translating ${title} into a dashboard, API, AI services, data, reports and implementation evidence.`;
   }
   return {

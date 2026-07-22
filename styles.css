@@ -492,6 +492,16 @@ img { display: block; max-width: 100%; }
 .dialog-film__eyebrow span { color: var(--dialog-accent); }
 .dialog-film__intro h3 { margin: 0; font-size: clamp(3.4rem, 8vw, 9rem); font-weight: 500; line-height: .78; letter-spacing: -.075em; }
 .dialog-film__intro > p { max-width: 34rem; margin: 0; color: var(--paper-2); font-size: clamp(1rem, 1.4vw, 1.25rem); }
+.dialog-film__playlist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 100rem); margin: 0 auto 1rem; border: 1px solid rgba(255,255,255,.18); border-bottom: 0; }
+.dialog-film__chapter { display: grid; grid-template-columns: auto 1fr auto; gap: .85rem; align-items: center; min-height: 4.25rem; padding: .9rem 1rem; color: var(--muted); background: rgba(255,255,255,.025); border: 0; border-right: 1px solid rgba(255,255,255,.18); cursor: pointer; text-align: left; transition: color 320ms ease, background 320ms ease, box-shadow 320ms ease; }
+.dialog-film__chapter:last-child { border-right: 0; }
+.dialog-film__chapter span,
+.dialog-film__chapter small { font: 700 .59rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
+.dialog-film__chapter strong { color: var(--paper-2); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; }
+.dialog-film__chapter:hover,
+.dialog-film__chapter:focus-visible { color: #fff; background: color-mix(in srgb, var(--dialog-accent) 12%, rgba(255,255,255,.03)); outline: 0; }
+.dialog-film__chapter.is-active { color: var(--dialog-accent); background: color-mix(in srgb, var(--dialog-accent) 16%, rgba(255,255,255,.035)); box-shadow: inset 0 3px 0 var(--dialog-accent); }
+.dialog-film__chapter.is-active strong { color: #fff; }
 .dialog-film__frame {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -521,6 +531,7 @@ img { display: block; max-width: 100%; }
 .dialog-film__controls { position: absolute; z-index: 4; right: clamp(1rem, 2.2vw, 2rem); left: clamp(1rem, 2.2vw, 2rem); display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: rgba(255,255,255,.78); font: 700 .61rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }
 .dialog-film__topline { top: clamp(1rem, 2.2vw, 2rem); }
 .dialog-film__topline span:first-child { display: inline-flex; align-items: center; gap: .7rem; }
+.dialog-film__topline b { color: inherit; font: inherit; }
 .dialog-film__topline i { width: .45rem; height: .45rem; background: var(--dialog-accent); border-radius: 50%; box-shadow: 0 0 1rem var(--dialog-accent); }
 .dialog-film__controls { bottom: clamp(1.1rem, 2.5vw, 2.2rem); }
 .dialog-film__toggle { display: inline-flex; align-items: center; gap: .7rem; padding: .68rem .9rem; color: #fff; background: rgba(5,7,8,.58); border: 1px solid rgba(255,255,255,.32); border-radius: 999px; backdrop-filter: blur(14px); cursor: pointer; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; transition: color 300ms ease, background 300ms ease, border-color 300ms ease, transform 300ms var(--ease); }
@@ -871,6 +882,9 @@ img { display: block; max-width: 100%; }
   .dialog-hero h2 { font-size: clamp(3.8rem, 20vw, 7rem); }
   .dialog-film { padding-top: 3.5rem; padding-bottom: 3rem; }
   .dialog-film__intro h3 { font-size: clamp(3.2rem, 16vw, 6rem); }
+  .dialog-film__playlist { grid-template-columns: 1fr; }
+  .dialog-film__chapter { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+  .dialog-film__chapter:last-child { border-bottom: 0; }
   .dialog-film__signal { display: none; }
   .dialog-film__footer { grid-template-columns: 1fr; gap: .55rem; }
   .dialog-film__topline { font-size: .52rem; }

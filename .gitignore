@@ -5,3 +5,6 @@ dist/
 artifacts/
 *.log
 .DS_Store
+
+# Local master recordings. The optimized web films live in assets/videos/.
+/video-sources/**/*.mp4
