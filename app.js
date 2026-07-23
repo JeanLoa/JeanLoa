@@ -41,6 +41,45 @@
         duration: "00:23"
       }]
     }],
+    ["decodelabs-decodebot", {
+      brand: "DecodeLabs / Project 01",
+      title: "Intent routing, made inspectable.",
+      description: "A bilingual deterministic assistant with normalized phrase matching, persistent conversations and a visible decision trace.",
+      stack: "Python / Streamlit / SQLite",
+      footnote: "Constant-time intent lookup without presenting deterministic rules as an LLM.",
+      clips: [{
+        label: "Technical demo",
+        source: "assets/videos/internships/decodelabs/01-decodebot-assistant/deterministic-intent-routing-demo.mp4",
+        type: "video/mp4",
+        duration: "00:42"
+      }]
+    }],
+    ["decodelabs-decodeclassify", {
+      brand: "DecodeLabs / Project 02",
+      title: "Classification, without leakage.",
+      description: "An inspectable Iris classification workflow covering validated ETL, stratified splitting, training-only scaling, KNN tuning and multiclass evidence.",
+      stack: "Python / Streamlit / scikit-learn / Pandas",
+      footnote: "The held-out test set remains outside preprocessing and model-selection decisions.",
+      clips: [{
+        label: "Technical demo",
+        source: "assets/videos/internships/decodelabs/02-decode-classify/leakage-safe-knn-classification-demo.mp4",
+        type: "video/mp4",
+        duration: "00:32"
+      }]
+    }],
+    ["decodelabs-recommendation-logic", {
+      brand: "DecodeLabs / Project 03",
+      title: "Career paths, ranked transparently.",
+      description: "A content-based tech-stack recommender that converts skills and goals into TF-IDF vectors, ranks career paths with cosine similarity and explains every result.",
+      stack: "Python / Streamlit / scikit-learn / SQLite",
+      footnote: "Top-three recommendations expose matched skills, gaps, tools and learning steps.",
+      clips: [{
+        label: "Technical demo",
+        source: "assets/videos/internships/decodelabs/03-decodepath-recommender/tfidf-cosine-career-recommender-demo.mp4",
+        type: "video/mp4",
+        duration: "01:04"
+      }]
+    }],
     ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
       brand: "AI Engineer / Project 01",
       title: "Demand, made measurable.",

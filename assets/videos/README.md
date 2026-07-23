@@ -11,6 +11,11 @@ videos/
 |   |-- 04-customer-segmentation-and-churn-api/
 |   |-- 05-inventory-optimization-ml-service/
 |   `-- 06-ai-software-foundations-platform/
+|-- internships/
+|   `-- decodelabs/
+|       |-- 01-decodebot-assistant/
+|       |-- 02-decode-classify/
+|       `-- 03-decodepath-recommender/
 |-- software-engineer/
 |   `-- 01-retail-intelligence-platform/ (Sprint 01-03)
 `-- university/

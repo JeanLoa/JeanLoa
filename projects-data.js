@@ -82,80 +82,85 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "decodelabs-recommendation-logic",
-    "title": "AI Recommendation Logic",
+    "title": "DecodePath Recommender",
     "eyebrow": "DecodeLabs / Project 03",
     "category": "Internships",
     "organization": "DecodeLabs",
     "sequence": "03",
     "family": "Artificial Intelligence Internship",
-    "summary": "A planned recommendation system that will match user interests with item attributes through explicit preference and similarity logic.",
-    "challenge": "Move from generic suggestions to explainable pattern alignment between user profiles and candidate items.",
-    "solution": "The official project brief is available and scoped; implementation has not started, so this entry remains explicitly pending.",
+    "summary": "A transparent tech-stack recommender that ranks three explainable career paths from a user's skills, goals and interests.",
+    "challenge": "Turn sparse career preferences into useful recommendations without hiding the matching logic behind an opaque score.",
+    "solution": "A local content-based system uses canonical profile terms, TF-IDF vectors and cosine similarity against a validated catalog of 18 technology roles.",
     "architecture": [
-      "User preference input",
-      "Profile and item attributes",
-      "Similarity or rule matching",
-      "Ranked recommendation output"
+      "Canonical profile vocabulary",
+      "TF-IDF vectorization",
+      "Cosine-similarity ranking",
+      "Streamlit explanation workspace"
     ],
     "capabilities": [
-      "Capture choices and interests",
-      "Match preferences",
-      "Explain recommendation logic",
-      "Display ranked items"
+      "Top-three deterministic ranking",
+      "Matched skills and gap analysis",
+      "Cold-start presets and fallback",
+      "SQLite history and JSON export"
     ],
     "technologies": [
       "Python",
-      "Recommendation Systems"
+      "Streamlit",
+      "scikit-learn",
+      "TF-IDF",
+      "Cosine Similarity",
+      "SQLite"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 50,
+      "code": 8,
+      "tests": 1,
       "notebooks": 0
     },
-    "status": "Pending",
-    "url": "https://github.com/JeanLoa/DecodeLabs",
+    "status": "Completed",
+    "url": "https://github.com/JeanLoa/DecodeLabs/tree/main/03-decodepath-recommender",
     "featured": false,
     "internship": true,
     "accent": "internship"
   },
   {
     "id": "decodelabs-optic-nerve",
-    "title": "Machine's Optic Nerve",
+    "title": "DecodeVision OCR",
     "eyebrow": "DecodeLabs / Project 04",
     "category": "Internships",
     "organization": "DecodeLabs",
     "sequence": "04",
     "family": "Artificial Intelligence Internship",
-    "summary": "A planned image and text recognition pipeline for extracting machine-readable information from raw visual data with validated confidence.",
-    "challenge": "Bridge unstructured images and scanned documents with reliable text or object recognition.",
-    "solution": "The official brief defines an OCR or object-recognition pipeline; implementation remains pending and is not represented as completed work.",
+    "summary": "An inspectable OCR workspace that transforms document images into confidence-gated text and bounding-box evidence.",
+    "challenge": "Make OCR preprocessing, recognition confidence and rejected words visible instead of presenting raw extracted text as unquestionably correct.",
+    "solution": "A layered OpenCV pipeline performs grayscale conversion, denoising, thresholding and deskewing before a native Tesseract adapter returns word-level evidence.",
     "architecture": [
-      "Raw image ingestion",
-      "Image preprocessing",
-      "OCR or object detection",
-      "Validated recognition output"
+      "Validated image ingestion",
+      "OpenCV preprocessing pipeline",
+      "Tesseract OCR adapter",
+      "Confidence-gated evidence workspace"
     ],
     "capabilities": [
-      "Process unstructured visual data",
-      "Recognize text or objects",
-      "Report confidence",
-      "Produce machine-readable results"
+      "Adaptive and Otsu thresholding",
+      "Safe foreground deskewing",
+      "Word confidence and bounding boxes",
+      "TXT and JSON exports"
     ],
     "technologies": [
       "Python",
+      "Streamlit",
       "OpenCV",
       "Tesseract",
-      "MobileNet SSD"
+      "Pillow"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 42,
+      "code": 11,
+      "tests": 1,
       "notebooks": 0
     },
-    "status": "Pending",
-    "url": "https://github.com/JeanLoa/DecodeLabs",
+    "status": "Completed",
+    "url": "https://github.com/JeanLoa/DecodeLabs/tree/main/04-decodevision-ocr",
     "featured": false,
     "internship": true,
     "accent": "internship"
