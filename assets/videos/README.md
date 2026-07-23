@@ -7,9 +7,12 @@ videos/
 |-- ai-engineer/
 |   |-- 01-retail-demand-prediction-api/
 |   |-- 02-sales-forecasting-dashboard-api/
-|   `-- 03-classical-model-comparison-suite/
+|   |-- 03-classical-model-comparison-suite/
+|   |-- 04-customer-segmentation-and-churn-api/
+|   |-- 05-inventory-optimization-ml-service/
+|   `-- 06-ai-software-foundations-platform/
 |-- software-engineer/
-|   `-- 01-retail-intelligence-platform/
+|   `-- 01-retail-intelligence-platform/ (Sprint 01-03)
 `-- university/
     |-- electrocorp/
     `-- lowcortisol/

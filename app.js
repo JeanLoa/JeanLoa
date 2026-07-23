@@ -80,10 +80,49 @@
         duration: "00:19"
       }]
     }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api", {
+      brand: "AI Engineer / Project 04",
+      title: "Segments, without stereotypes.",
+      description: "A walkthrough of two deliberately separate customer views: descriptive segment discovery and evidence-based churn review priority.",
+      stack: "Python / FastAPI / Streamlit / PostgreSQL",
+      footnote: "Patterns and probabilities remain decision support, never demographic truth or certainty.",
+      clips: [{
+        label: "Project demo",
+        source: "assets/videos/ai-engineer/04-customer-segmentation-and-churn-api/demo.mp4",
+        type: "video/mp4",
+        duration: "00:26"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-05-inventory-optimization-ml-service", {
+      brand: "AI Engineer / Project 05",
+      title: "Inventory, decided with evidence.",
+      description: "A product film connecting calibrated demand forecasts, lead-time uncertainty and constrained replenishment recommendations.",
+      stack: "Python / FastAPI / Streamlit / scikit-learn",
+      footnote: "Forecasting and inventory policy stay explicit, replayable and open to human review.",
+      clips: [{
+        label: "Project demo",
+        source: "assets/videos/ai-engineer/05-inventory-optimization-ml-service/demo.mp4",
+        type: "video/mp4",
+        duration: "00:25"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-06-ai-software-foundations-platform", {
+      brand: "AI Engineer / Project 06",
+      title: "Foundations, made operational.",
+      description: "The plan's production-oriented integrator: a React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence.",
+      stack: "React / TypeScript / FastAPI / PostgreSQL / GCP",
+      footnote: "Recommendations are traceable and operable while every final ordering decision remains human-controlled.",
+      clips: [{
+        label: "Final project demo",
+        source: "assets/videos/ai-engineer/06-ai-software-foundations-platform/demo.mp4",
+        type: "video/mp4",
+        duration: "00:48"
+      }]
+    }],
     ["path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform", {
       brand: "Software Engineer / Project 01",
       title: "Intelligence, delivered in sprints.",
-      description: "Two chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
+      description: "Three chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
       stack: "React / FastAPI / Python / Docker",
       footnote: "A software platform shaped incrementally around visible product evidence.",
       clips: [
@@ -98,6 +137,12 @@
           source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-02.mp4",
           type: "video/mp4",
           duration: "00:17"
+        },
+        {
+          label: "Sprint 03",
+          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-03.mp4",
+          type: "video/mp4",
+          duration: "00:26"
         }
       ]
     }]
@@ -356,7 +401,7 @@
           <p>${escapeHtml(film.description)}</p>
         </div>
         ${clips.length > 1 ? `
-          <div class="dialog-film__playlist" aria-label="${escapeHtml(film.brand)} film chapters">
+          <div class="dialog-film__playlist" style="--film-chapters:${clips.length}" aria-label="${escapeHtml(film.brand)} film chapters">
             ${clips.map((clip, index) => `
               <button
                 class="dialog-film__chapter${index === 0 ? " is-active" : ""}"

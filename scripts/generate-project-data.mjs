@@ -12,14 +12,14 @@ const skip = new Set([
 const techMatchers = [
   ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i],
   ["TypeScript", /\btypescript\b/i], ["JavaScript", /\bjavascript\b/i], ["Python", /\bpython\b/i],
-  ["FastAPI", /\bfastapi\b/i], ["Spring Boot", /\bspring boot\b/i], ["ASP.NET Core", /asp\.net core/i],
+  ["FastAPI", /\bfastapi\b/i], ["Streamlit", /\bstreamlit\b/i], ["Spring Boot", /\bspring boot\b/i], ["ASP.NET Core", /asp\.net core/i],
   ["PostgreSQL", /\bpostgres(?:ql)?\b/i], ["Docker", /\bdocker\b/i], ["MapLibre", /\bmaplibre\b/i],
   ["OpenStreetMap", /openstreetmap|open street map/i], ["PyTorch", /\bpytorch\b/i], ["TensorFlow", /\btensorflow\b/i],
   ["scikit-learn", /scikit-learn|sklearn/i], ["Pandas", /\bpandas\b/i], ["NumPy", /\bnumpy\b/i],
   ["MLflow", /\bmlflow\b/i], ["LangGraph", /\blanggraph\b/i], ["RAG", /\brag\b/i],
   ["LLMs", /\bllm(?:s)?\b/i], ["Computer Vision", /computer vision/i], ["Qiskit", /\bqiskit\b/i],
   ["Quantum ML", /quantum machine learning|\bqml\b/i], ["Reinforcement Learning", /reinforcement learning/i],
-  ["Cloudflare", /\bcloudflare\b/i], ["Render", /\brender\b/i], ["GitHub Actions", /github actions/i]
+  ["Cloudflare", /\bcloudflare\b/i], ["GCP", /\b(?:gcp|google cloud)\b/i], ["Render", /\brender\b/i], ["GitHub Actions", /github actions/i]
 ];
 
 const titleWords = {
@@ -36,6 +36,18 @@ const implementationSummaries = new Map([
   [
     "Retail Intelligence Platform",
     "An applied AI software platform combining demand insights, forecast evidence, decision-support workflows and sprint-based delivery."
+  ],
+  [
+    "Customer Segmentation and Churn API",
+    "An end-to-end classical machine-learning product that keeps segment discovery and churn review priority as two separate, interpretable workflows."
+  ],
+  [
+    "Inventory Optimization ML Service",
+    "A machine-learning decision product that transforms retail demand history into explainable, human-reviewed replenishment recommendations."
+  ],
+  [
+    "AI Software Foundations Platform",
+    "A production-oriented decision platform combining a React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence."
   ]
 ]);
 

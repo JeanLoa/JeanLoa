@@ -333,7 +333,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Advanced ML Decision Platform",
     "summary": "A product-platform blueprint translating Advanced ML Decision Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Docker"
+      "Docker",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -356,7 +357,8 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -394,21 +396,23 @@ window.PORTFOLIO_PROJECTS = [
     "title": "AI Software Foundations Platform",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "A documented AI Software Foundations Platform blueprint defining the experiment, modules, evaluation signals and known limitations inside Machine Learning Engineering Software Foundations.",
+    "summary": "A production-oriented decision platform combining a React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence.",
     "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
       "PostgreSQL",
-      "RAG",
-      "LLMs",
-      "Computer Vision",
-      "Render"
+      "Docker",
+      "GCP"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 261,
+      "code": 104,
+      "tests": 95,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/06-ai-software-foundations-platform",
     "featured": false,
     "accent": "violet",
@@ -612,7 +616,8 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented Chunking Retrieval Evaluation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -709,21 +714,26 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api",
-    "title": "Customer Segmentation And Churn API",
+    "title": "Customer Segmentation and Churn API",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "A documented Customer Segmentation And Churn API blueprint defining the experiment, modules, evaluation signals and known limitations inside Machine Learning Engineering Software Foundations.",
+    "summary": "An end-to-end classical machine-learning product that keeps segment discovery and churn review priority as two separate, interpretable workflows.",
     "technologies": [
+      "Python",
       "FastAPI",
-      "Pandas"
+      "Streamlit",
+      "PostgreSQL",
+      "Docker",
+      "GCP",
+      "Render"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 281,
+      "code": 107,
+      "tests": 65,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/04-customer-segmentation-and-churn-api",
     "featured": false,
     "accent": "violet",
@@ -853,7 +863,9 @@ window.PORTFOLIO_PROJECTS = [
     "category": "Software Engineering",
     "family": "Embodied AI Robotics Software Platform",
     "summary": "A product-platform blueprint translating Embodied AI Robotics Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
-    "technologies": [],
+    "technologies": [
+      "GCP"
+    ],
     "signals": {
       "files": 1,
       "code": 0,
@@ -930,6 +942,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Final AI Quantum Robotics Software Platform",
     "summary": "A product-platform blueprint translating Final AI Quantum Robotics Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
+      "Streamlit",
+      "GCP",
       "Render"
     ],
     "signals": {
@@ -989,7 +1003,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Generative AI Control Platform",
     "summary": "A product-platform blueprint translating Generative AI Control Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Docker"
+      "Docker",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1089,7 +1104,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
     "summary": "A documented Hybrid AI Quantum Platform Blueprint blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
     "technologies": [
-      "Quantum ML"
+      "Quantum ML",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1127,18 +1143,21 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Inventory Optimization ML Service",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
-    "summary": "A documented Inventory Optimization ML Service blueprint defining the experiment, modules, evaluation signals and known limitations inside Machine Learning Engineering Software Foundations.",
+    "summary": "A machine-learning decision product that transforms retail demand history into explainable, human-reviewed replenishment recommendations.",
     "technologies": [
+      "Python",
       "FastAPI",
-      "Pandas"
+      "Streamlit",
+      "GCP",
+      "Render"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 286,
+      "code": 106,
+      "tests": 76,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/05-inventory-optimization-ml-service",
     "featured": false,
     "accent": "violet",
@@ -1191,7 +1210,8 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1213,7 +1233,8 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented LLM Tool Use Function Calling Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1494,7 +1515,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "QML Benchmark Software Platform",
     "summary": "A product-platform blueprint translating QML Benchmark Hybrid Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Quantum ML"
+      "Quantum ML",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1701,7 +1723,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Quantum First Product Platform",
     "summary": "A product-platform blueprint translating Quantum First Product Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Python"
+      "Python",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1722,6 +1745,8 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Quantum Foundations Software Platform",
     "summary": "A product-platform blueprint translating Quantum Foundations Software Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
+      "Streamlit",
+      "GCP",
       "Render"
     ],
     "signals": {
@@ -1825,7 +1850,8 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1847,7 +1873,8 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented RAG Document Assistant blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -1913,6 +1940,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Pandas",
+      "GCP",
       "Render"
     ],
     "signals": {
@@ -1937,12 +1965,12 @@ window.PORTFOLIO_PROJECTS = [
       "React",
       "Python",
       "FastAPI",
-      "Docker"
+      "GCP"
     ],
     "signals": {
-      "files": 534,
-      "code": 144,
-      "tests": 109,
+      "files": 818,
+      "code": 230,
+      "tests": 168,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1981,6 +2009,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Docker",
       "Reinforcement Learning",
+      "GCP",
       "Render"
     ],
     "signals": {
@@ -2063,12 +2092,14 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Python",
       "FastAPI",
+      "Streamlit",
+      "PostgreSQL",
       "Docker"
     ],
     "signals": {
-      "files": 378,
-      "code": 134,
-      "tests": 130,
+      "files": 410,
+      "code": 147,
+      "tests": 137,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2086,7 +2117,8 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "FastAPI",
       "RAG",
-      "LLMs"
+      "LLMs",
+      "GCP"
     ],
     "signals": {
       "files": 1,
@@ -2252,7 +2284,8 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A product-platform blueprint translating Vision Multimodal AI Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
       "Docker",
-      "Computer Vision"
+      "Computer Vision",
+      "GCP"
     ],
     "signals": {
       "files": 1,
