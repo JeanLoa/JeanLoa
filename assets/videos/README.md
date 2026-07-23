@@ -15,7 +15,8 @@ videos/
 |   `-- decodelabs/
 |       |-- 01-decodebot-assistant/
 |       |-- 02-decode-classify/
-|       `-- 03-decodepath-recommender/
+|       |-- 03-decodepath-recommender/
+|       `-- 04-decodevision-ocr/
 |-- software-engineer/
 |   `-- 01-retail-intelligence-platform/ (Sprint 01-03)
 `-- university/

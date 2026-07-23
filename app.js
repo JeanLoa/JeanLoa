@@ -80,6 +80,19 @@
         duration: "01:04"
       }]
     }],
+    ["decodelabs-optic-nerve", {
+      brand: "DecodeLabs / Project 04",
+      title: "Document vision, made inspectable.",
+      description: "An OCR workspace that exposes every step from deterministic OpenCV preprocessing to Tesseract recognition, confidence filtering and word-level bounding boxes.",
+      stack: "Python / Streamlit / OpenCV / Tesseract",
+      footnote: "Accepted and rejected text remain traceable through confidence-aware visual evidence.",
+      clips: [{
+        label: "Technical demo",
+        source: "assets/videos/internships/decodelabs/04-decodevision-ocr/opencv-tesseract-ocr-pipeline-demo.mp4",
+        type: "video/mp4",
+        duration: "00:35"
+      }]
+    }],
     ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
       brand: "AI Engineer / Project 01",
       title: "Demand, made measurable.",
