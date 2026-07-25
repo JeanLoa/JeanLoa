@@ -281,7 +281,7 @@
   function projectGroupMarkup(definition, group, groupIndex) {
     const count = group.projects.length;
     return `
-      <section class="project-group">
+      <section class="project-group" data-group-name="${escapeHtml(group.name)}">
         <header class="project-group__header">
           <div>
             <span>${definition.label} / ${String(groupIndex + 1).padStart(2, "0")}</span>
@@ -298,7 +298,69 @@
     `;
   }
 
-  function renderCategorySection(definition, expanded = false) {
+  function disclosureSnapshot(root) {
+    return {
+      groups: new Set(
+        Array.from(root.querySelectorAll("[data-group-name]"), group => group.dataset.groupName)
+      ),
+      projects: new Set(
+        Array.from(root.querySelectorAll("[data-project-id]"), trigger => trigger.dataset.projectId)
+      )
+    };
+  }
+
+  function animateDisclosureContent(root, snapshot, expanded) {
+    if (reducedMotion.matches || !snapshot) return;
+
+    root.classList.remove("is-expanding", "is-condensing");
+    root.querySelectorAll(".is-new-group, .is-new-card").forEach(node => {
+      node.classList.remove("is-new-group", "is-new-card");
+      node.style.removeProperty("--archive-delay");
+    });
+
+    if (!expanded) {
+      root.classList.add("is-condensing");
+      root.setAttribute("aria-busy", "true");
+      window.setTimeout(() => {
+        root.classList.remove("is-condensing");
+        root.removeAttribute("aria-busy");
+      }, 320);
+      return;
+    }
+
+    let groupIndex = 0;
+    let cardIndex = 0;
+    root.querySelectorAll("[data-group-name]").forEach(group => {
+      const isNewGroup = !snapshot.groups.has(group.dataset.groupName);
+      if (isNewGroup) {
+        group.classList.add("is-new-group");
+        group.style.setProperty("--archive-delay", `${Math.min(groupIndex, 8) * 42}ms`);
+        groupIndex += 1;
+        return;
+      }
+
+      group.querySelectorAll(".project-card").forEach(card => {
+        const projectId = card.querySelector("[data-project-id]")?.dataset.projectId;
+        if (!projectId || snapshot.projects.has(projectId)) return;
+        card.classList.add("is-new-card");
+        card.style.setProperty("--archive-delay", `${Math.min(cardIndex, 6) * 38}ms`);
+        cardIndex += 1;
+      });
+    });
+
+    root.classList.add("is-expanding");
+    root.setAttribute("aria-busy", "true");
+    window.setTimeout(() => {
+      root.classList.remove("is-expanding");
+      root.removeAttribute("aria-busy");
+      root.querySelectorAll(".is-new-group, .is-new-card").forEach(node => {
+        node.classList.remove("is-new-group", "is-new-card");
+        node.style.removeProperty("--archive-delay");
+      });
+    }, 760);
+  }
+
+  function renderCategorySection(definition, expanded = false, transitionSnapshot = null) {
     const root = document.getElementById(definition.rootId);
     if (!root) return;
 
@@ -312,14 +374,25 @@
       .map((group, index) => projectGroupMarkup(definition, group, index))
       .join("");
     root.dataset.expanded = String(expanded);
+    animateDisclosureContent(root, transitionSnapshot, expanded);
 
     const button = document.querySelector(`[data-section-toggle="${definition.category}"]`);
     if (button) {
+      const hiddenProjectCount = Math.max(allProjects.length - definition.previewCount, 0);
+      const collapsedLabel = button.dataset.expandLabel
+        || button.querySelector("[data-toggle-label]")?.textContent
+        || "View complete archive";
+      button.dataset.expandLabel = collapsedLabel;
       button.setAttribute("aria-expanded", String(expanded));
       button.querySelector("[data-toggle-label]").textContent = expanded
         ? "Show concise view"
-        : button.dataset.expandLabel;
-      button.querySelector("[data-toggle-icon]").textContent = expanded ? "−" : "+";
+        : collapsedLabel;
+      button.querySelector("[data-toggle-count]").textContent = expanded
+        ? String(allProjects.length).padStart(2, "0")
+        : `+${String(hiddenProjectCount).padStart(2, "0")}`;
+      button.querySelector("[data-toggle-count-label]").textContent = expanded
+        ? "visible"
+        : "projects";
     }
 
     document
@@ -578,7 +651,9 @@
       button.dataset.expandLabel = button.querySelector("[data-toggle-label]")?.textContent || "View complete archive";
       button.addEventListener("click", () => {
         const expanded = button.getAttribute("aria-expanded") === "true";
-        renderCategorySection(definition, !expanded);
+        const root = document.getElementById(definition.rootId);
+        const snapshot = root ? disclosureSnapshot(root) : null;
+        renderCategorySection(definition, !expanded, snapshot);
         const status = document.querySelector(`[data-section-status="${definition.category}"]`);
         if (status) {
           const count = sortedProjects(definition.category).length;
