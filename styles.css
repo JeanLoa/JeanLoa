@@ -1003,6 +1003,8 @@
   }
 
   .project-section__heading {
+    align-items: start;
+    padding-top: clamp(4rem, 6vw, 6.5rem);
     border-top: 3px solid var(--accent);
   }
 
@@ -1013,6 +1015,7 @@
   .project-section__summary {
     display: grid;
     gap: 1.75rem;
+    margin-top: clamp(2.75rem, 4vw, 4.5rem);
   }
 
   .project-section__totals {
@@ -2093,6 +2096,14 @@
     .category-atlas__heading,
     .project-section__heading {
       align-items: start;
+    }
+
+    .project-section__heading {
+      padding-top: 3rem;
+    }
+
+    .project-section__summary {
+      margin-top: 0;
     }
 
     .flagship-projects {
