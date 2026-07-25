@@ -1,5 +1,5 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 
 const root = process.cwd();
 const dist = join(root, "dist");
@@ -12,12 +12,19 @@ for (const file of [
   "app.js",
   "projects-data.js",
   "favicon.svg",
-  "og.png",
+  "og-v2.png",
   ".nojekyll"
 ]) {
   await cp(join(root, file), join(dist, "client", file));
 }
-await cp(join(root, "assets"), join(dist, "client", "assets"), { recursive: true });
+for (const asset of [
+  "assets/electrocorp-home.jpg",
+  "assets/lowcortisol-reports.png"
+]) {
+  const destination = join(dist, "client", asset);
+  await mkdir(dirname(destination), { recursive: true });
+  await cp(join(root, asset), destination, { recursive: true });
+}
 
 const worker = `const worker = {
   async fetch(request, env) {

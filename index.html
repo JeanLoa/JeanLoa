@@ -8,12 +8,15 @@
     <meta property="og:title" content="Jean Loa — Intelligence, engineered into systems" />
     <meta property="og:description" content="Explore production-minded software, applied AI laboratories and architecture blueprints built with evidence." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="__SITE_ORIGIN__/og.png" />
+    <meta property="og:image" content="__SITE_ORIGIN__/og-v2.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Jean Loa — Systems Portfolio" />
     <meta name="twitter:description" content="Applied AI, product software and architecture — mapped in depth." />
-    <meta name="twitter:image" content="__SITE_ORIGIN__/og.png" />
+    <meta name="twitter:image" content="__SITE_ORIGIN__/og-v2.png" />
     <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
     <title>Jean Loa — Systems Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="projects-data.js" defer></script>
@@ -33,17 +36,16 @@
         <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
       </button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="#internships">Internships</a>
-        <a href="#university">University</a>
-        <a href="#ai-path">AI path</a>
-        <a href="#software-path">Software path</a>
-        <a href="#independent">Independent</a>
+        <a href="#selected">Selected work</a>
+        <a href="#categories">Categories</a>
+        <a href="#archive">Archive</a>
         <a href="#about">About</a>
       </nav>
       <a class="header-cta" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">
         GitHub <span aria-hidden="true">↗</span>
       </a>
     </header>
+    <button class="nav-scrim" type="button" data-nav-dismiss aria-label="Close navigation" hidden></button>
 
     <main id="main">
       <section id="top" class="hero">
@@ -59,7 +61,7 @@
           <p class="kicker reveal">Jean Franck Loa Rojas · Lima, Peru</p>
           <h1 class="hero-title" aria-label="I build intelligence into systems">
             <span class="hero-line reveal">I build</span>
-            <span class="hero-line hero-line--accent reveal">intelligence</span>
+            <span class="hero-line hero-line--accent reveal"><em>intelligence</em></span>
             <span class="hero-line reveal">into systems.</span>
           </h1>
           <div class="hero-bottom reveal">
@@ -67,26 +69,54 @@
               Applied AI, full-stack products and architecture blueprints—connected from
               data and domain logic to interfaces, deployment and evidence.
             </p>
-            <a class="round-link" href="#internships" aria-label="Explore project sections">
-              <span>Explore<br />systems</span><span aria-hidden="true">↓</span>
+            <a class="round-link" href="#selected" aria-label="Explore selected systems">
+              <span>Selected<br />systems</span><span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
         <div class="hero-index" aria-label="Portfolio metrics">
           <div><strong data-total-projects>—</strong><span>projects mapped</span></div>
-          <div><strong data-internship-count>05</strong><span>internship projects</span></div>
-          <div><strong data-category-count="University">12</strong><span>university projects</span></div>
+          <div><strong>03</strong><span>flagship systems</span></div>
+          <div><strong>05</strong><span>explicit contexts</span></div>
           <div><strong>02</strong><span>engineering paths</span></div>
         </div>
       </section>
 
-      <section class="manifesto section-pad">
-        <div class="section-label reveal"><span>01</span> Working principle</div>
+      <section id="selected" class="selected-section section-pad" aria-labelledby="selected-title">
+        <div class="selected-heading">
+          <div>
+            <div class="section-label reveal"><span>01</span> Selected systems</div>
+            <h2 id="selected-title" class="section-title reveal">Three systems.<br />Different constraints.</h2>
+          </div>
+          <p class="section-note reveal">
+            The strongest product work comes first: mobility intelligence, resource
+            operations and enterprise energy management.
+          </p>
+        </div>
+        <div id="flagship-projects" class="flagship-projects"></div>
+      </section>
+
+      <section id="categories" class="category-atlas section-pad" aria-labelledby="category-atlas-title">
+        <div class="category-atlas__heading">
+          <div>
+            <div class="section-label reveal"><span>02</span> Category map</div>
+            <h2 id="category-atlas-title" class="section-title reveal">One practice.<br />Five contexts.</h2>
+          </div>
+          <p class="section-note reveal">
+            Color identifies context. Counts and states describe the real archive;
+            nothing is promoted by decoration alone.
+          </p>
+        </div>
+        <div id="category-atlas" class="category-atlas__rows"></div>
+      </section>
+
+      <section class="manifesto section-pad" aria-labelledby="working-principle-title">
+        <div class="section-label reveal"><span>03</span> Working principle</div>
         <div class="manifesto-grid">
-          <p class="manifesto-lead reveal">
+          <h2 id="working-principle-title" class="manifesto-lead reveal">
             Not a gallery of isolated demos. A living map of systems, experiments,
             decisions and technical growth.
-          </p>
+          </h2>
           <div class="manifesto-copy reveal">
             <p>
               Every entry says what is built, what remains a blueprint, how it is shaped,
@@ -102,30 +132,36 @@
         </div>
       </section>
 
+      <div id="archive" class="archive-anchor" aria-hidden="true"></div>
+
       <section id="internships" class="project-section project-section--internships section-pad">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>02</span> Internship work</div>
+            <div class="section-label reveal"><span>04</span> Internship work</div>
             <h2 class="section-title reveal">Professional work.<br />Visible progress.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
-              Five scoped projects across DecodeLabs and SpotterAI. Completed work links
-              to implementation evidence; upcoming briefs remain clearly marked as pending.
+              Five completed projects across DecodeLabs and SpotterAI, each linked to
+              implementation evidence and presented without inflated claims.
             </p>
             <div class="project-section__totals" aria-label="Internship progress">
               <span><strong data-internship-completed>03</strong> completed</span>
               <span><strong data-internship-pending>02</strong> pending</span>
             </div>
+            <button class="section-disclosure" type="button" data-section-toggle="Internships" aria-controls="internship-projects" aria-expanded="false">
+              <span data-toggle-label>View complete internship archive</span><span data-toggle-icon aria-hidden="true">+</span>
+            </button>
           </div>
         </div>
-        <div id="internship-projects" class="project-section__groups" aria-live="polite"></div>
+        <div id="internship-projects" class="project-section__groups"></div>
+        <p class="sr-only" role="status" data-section-status="Internships"></p>
       </section>
 
       <section id="university" class="project-section project-section--university section-pad">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>03</span> University work</div>
+            <div class="section-label reveal"><span>05</span> University work</div>
             <h2 class="section-title reveal">Systems built<br />through practice.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -137,15 +173,19 @@
               <span><strong data-category-count="University">12</strong> projects</span>
               <span><strong data-group-count="University">04</strong> collections</span>
             </div>
+            <button class="section-disclosure" type="button" data-section-toggle="University" aria-controls="university-projects" aria-expanded="false">
+              <span data-toggle-label>View complete university archive</span><span data-toggle-icon aria-hidden="true">+</span>
+            </button>
           </div>
         </div>
-        <div id="university-projects" class="project-section__groups" aria-live="polite"></div>
+        <div id="university-projects" class="project-section__groups"></div>
+        <p class="sr-only" role="status" data-section-status="University"></p>
       </section>
 
       <section id="ai-path" class="project-section project-section--ai section-pad">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>04</span> AI engineering path</div>
+            <div class="section-label reveal"><span>06</span> AI engineering path</div>
             <h2 class="section-title reveal">Intelligence,<br />mapped in depth.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -157,15 +197,19 @@
               <span><strong data-category-count="AI Engineering">72</strong> projects</span>
               <span><strong data-group-count="AI Engineering">12</strong> roadmaps</span>
             </div>
+            <button class="section-disclosure" type="button" data-section-toggle="AI Engineering" aria-controls="ai-projects" aria-expanded="false">
+              <span data-toggle-label>View all AI roadmaps</span><span data-toggle-icon aria-hidden="true">+</span>
+            </button>
           </div>
         </div>
-        <div id="ai-projects" class="project-section__groups" aria-live="polite"></div>
+        <div id="ai-projects" class="project-section__groups"></div>
+        <p class="sr-only" role="status" data-section-status="AI Engineering"></p>
       </section>
 
       <section id="software-path" class="project-section project-section--software section-pad">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>05</span> Software engineering path</div>
+            <div class="section-label reveal"><span>07</span> Software engineering path</div>
             <h2 class="section-title reveal">Platforms shaped<br />for delivery.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -177,16 +221,20 @@
               <span><strong data-category-count="Software Engineering">12</strong> projects</span>
               <span><strong data-group-count="Software Engineering">12</strong> roadmaps</span>
             </div>
+            <button class="section-disclosure" type="button" data-section-toggle="Software Engineering" aria-controls="software-projects" aria-expanded="false">
+              <span data-toggle-label>View all software roadmaps</span><span data-toggle-icon aria-hidden="true">+</span>
+            </button>
           </div>
         </div>
 
-        <div id="software-projects" class="project-section__groups" aria-live="polite"></div>
+        <div id="software-projects" class="project-section__groups"></div>
+        <p class="sr-only" role="status" data-section-status="Software Engineering"></p>
       </section>
 
       <section id="independent" class="project-section project-section--independent section-pad">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>06</span> Independent practice</div>
+            <div class="section-label reveal"><span>08</span> Independent practice</div>
             <h2 class="section-title reveal">Foundations explored<br />by curiosity.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -198,9 +246,13 @@
               <span><strong data-category-count="Leisure">05</strong> projects</span>
               <span><strong data-group-count="Leisure">02</strong> collections</span>
             </div>
+            <button class="section-disclosure" type="button" data-section-toggle="Leisure" aria-controls="independent-projects" aria-expanded="false">
+              <span data-toggle-label>View complete independent archive</span><span data-toggle-icon aria-hidden="true">+</span>
+            </button>
           </div>
         </div>
-        <div id="independent-projects" class="project-section__groups" aria-live="polite"></div>
+        <div id="independent-projects" class="project-section__groups"></div>
+        <p class="sr-only" role="status" data-section-status="Leisure"></p>
       </section>
 
       <section id="about" class="about-section">
@@ -209,7 +261,7 @@
           <div class="about-coordinate"><span>12.0464° S</span><span>77.0428° W</span></div>
         </div>
         <div class="about-content section-pad">
-          <div class="section-label reveal"><span>07</span> Engineering style</div>
+          <div class="section-label reveal"><span>09</span> Engineering style</div>
           <h2 class="about-title reveal">Structure.<br /><em>Purpose.</em><br />Evidence.</h2>
           <div class="about-copy reveal">
             <p>

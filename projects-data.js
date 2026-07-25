@@ -412,9 +412,9 @@ window.PORTFOLIO_PROJECTS = [
       "GCP"
     ],
     "signals": {
-      "files": 261,
+      "files": 290,
       "code": 104,
-      "tests": 95,
+      "tests": 124,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -646,9 +646,9 @@ window.PORTFOLIO_PROJECTS = [
       "Python"
     ],
     "signals": {
-      "files": 573,
+      "files": 598,
       "code": 86,
-      "tests": 326,
+      "tests": 351,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -733,9 +733,9 @@ window.PORTFOLIO_PROJECTS = [
       "Render"
     ],
     "signals": {
-      "files": 281,
+      "files": 308,
       "code": 107,
-      "tests": 65,
+      "tests": 92,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -749,15 +749,21 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Deep Learning Visual Lab Platform",
     "category": "Software Engineering",
     "family": "Deep Learning Software Lab Platform",
-    "summary": "A product-platform blueprint translating Deep Learning Visual Lab Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
-    "technologies": [],
+    "summary": "Project 02 of the Software Engineer path. Sprint 1 delivers Axon, a full-stack Neural Network Explainer for a controlled XOR model.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "PyTorch"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 499,
+      "code": 166,
+      "tests": 39,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Deep-Learning-Visual-Tools/tree/main/02-deep-learning-visual-lab-platform",
     "featured": false,
     "accent": "blue",
@@ -1157,9 +1163,9 @@ window.PORTFOLIO_PROJECTS = [
       "Render"
     ],
     "signals": {
-      "files": 286,
+      "files": 314,
       "code": 106,
-      "tests": 76,
+      "tests": 104,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1298,17 +1304,20 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Neural Network Foundations Lab",
     "category": "AI Engineering",
     "family": "Deep Learning Core",
-    "summary": "A documented Neural Network Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
+    "summary": "Plan 2 · Deep Learning Core · Global days 190–210",
     "technologies": [
-      "PyTorch"
+      "Python",
+      "Streamlit",
+      "PyTorch",
+      "NumPy"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 1546,
+      "code": 54,
+      "tests": 430,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/07-neural-network-foundations-lab",
     "featured": false,
     "accent": "violet",
@@ -1949,9 +1958,9 @@ window.PORTFOLIO_PROJECTS = [
       "Render"
     ],
     "signals": {
-      "files": 216,
+      "files": 233,
       "code": 60,
-      "tests": 83,
+      "tests": 100,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1973,9 +1982,9 @@ window.PORTFOLIO_PROJECTS = [
       "GCP"
     ],
     "signals": {
-      "files": 818,
+      "files": 860,
       "code": 230,
-      "tests": 168,
+      "tests": 210,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2102,9 +2111,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 410,
+      "files": 443,
       "code": 147,
-      "tests": 137,
+      "tests": 170,
       "notebooks": 0
     },
     "status": "Implementation",

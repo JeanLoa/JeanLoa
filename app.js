@@ -1,209 +1,158 @@
 (() => {
-  const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
-  const accentMap = { internship: "#ff4f2e", university: "#1877f2", software: "#ffb000", ai: "#8b5cf6", independent: "#25a36f" };
-  const categoryAccentMap = {
-    Internships: accentMap.internship,
-    University: accentMap.university,
-    "Software Engineering": accentMap.software,
-    "AI Engineering": accentMap.ai,
-    Leisure: accentMap.independent
+  const projects = Array.isArray(window.PORTFOLIO_PROJECTS)
+    ? window.PORTFOLIO_PROJECTS
+    : [];
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileNavigation = window.matchMedia("(max-width: 860px)");
+
+  const categoryDefinitions = [
+    {
+      category: "Internships",
+      rootId: "internship-projects",
+      sectionId: "internships",
+      label: "Internship",
+      previewCount: 3,
+      groupName: project => project.organization || "Internship",
+      groupOrder: new Map([["DecodeLabs", 1], ["SpotterAI", 2]])
+    },
+    {
+      category: "University",
+      rootId: "university-projects",
+      sectionId: "university",
+      label: "Collection",
+      previewCount: 3,
+      groupName: project => {
+        const portfolioFamilies = new Set([
+          "Mobility systems",
+          "Resource monitoring",
+          "Energy systems"
+        ]);
+        return portfolioFamilies.has(project.family)
+          ? "Portfolio Systems"
+          : project.family || "University Projects";
+      },
+      groupOrder: new Map([
+        ["Portfolio Systems", 1],
+        ["Computer Science Coursework", 2],
+        ["Academic Capstones", 3],
+        ["Technical Education", 4]
+      ])
+    },
+    {
+      category: "AI Engineering",
+      rootId: "ai-projects",
+      sectionId: "ai-path",
+      label: "Roadmap",
+      previewCount: 6,
+      groupName: project => project.family || "AI Engineering Roadmap"
+    },
+    {
+      category: "Software Engineering",
+      rootId: "software-projects",
+      sectionId: "software-path",
+      label: "Roadmap",
+      previewCount: 4,
+      groupName: project => project.family || "Software Engineering Roadmap"
+    },
+    {
+      category: "Leisure",
+      rootId: "independent-projects",
+      sectionId: "independent",
+      label: "Collection",
+      previewCount: 3,
+      groupName: project => project.family || "Independent Projects",
+      groupOrder: new Map([
+        ["Programming Foundations", 1],
+        ["Independent Laboratories", 2]
+      ])
+    }
+  ];
+
+  const categoryTokens = {
+    Internships: {
+      key: "internship",
+      accent: "#ff4f2e",
+      text: "#c9361e",
+      short: "Professional"
+    },
+    University: {
+      key: "university",
+      accent: "#1877f2",
+      text: "#0b5fcc",
+      short: "University"
+    },
+    "AI Engineering": {
+      key: "ai",
+      accent: "#8b5cf6",
+      text: "#6d42d8",
+      short: "AI"
+    },
+    "Software Engineering": {
+      key: "software",
+      accent: "#ffb000",
+      text: "#8a5a00",
+      short: "Software"
+    },
+    Leisure: {
+      key: "independent",
+      accent: "#25a36f",
+      text: "#147a4f",
+      short: "Independent"
+    }
   };
-  const featuredUniversityProjectIds = new Set([
-    "lowcortisol",
-    "electrocorp"
-  ]);
+
+  const flagshipIds = ["smartlocation", "lowcortisol", "electrocorp"];
+  const flagshipVisuals = {
+    smartlocation: { kind: "map", label: "Mobility routing model" },
+    lowcortisol: {
+      kind: "image",
+      source: "assets/lowcortisol-reports.png",
+      label: "LowCortisol operational reports"
+    },
+    electrocorp: {
+      kind: "image",
+      source: "assets/electrocorp-home.jpg",
+      label: "ElectroCorp energy platform"
+    }
+  };
+
   const projectFilms = new Map([
     ["electrocorp", {
       brand: "ElectroCorp",
       title: "Energy, orchestrated.",
-      description: "A product journey through spaces, connected devices, energy intelligence and decision-ready reports.",
+      description: "A visual walkthrough of spaces, connected devices, energy intelligence and decision-ready reports.",
       stack: "Angular / Spring Boot / PostgreSQL",
       footnote: "From domain workflows to visible operational evidence.",
       clips: [{
         label: "Product film",
-        source: "assets/videos/university/electrocorp/film.webm",
+        source: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/electrocorp/film.webm",
         type: "video/webm",
-        poster: "assets/videos/university/electrocorp/poster.webp",
+        poster: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/electrocorp/poster.webp",
         duration: "00:25"
       }]
     }],
     ["lowcortisol", {
       brand: "LowCortisol",
       title: "Wellbeing, made operational.",
-      description: "A connected journey through workplaces, resource monitoring, smart valves and real-time operational control.",
+      description: "A visual walkthrough of workplaces, resource monitoring, smart valves and operational control.",
       stack: "Vue / ASP.NET Core / PostgreSQL",
       footnote: "From physical resources to calm, actionable decisions.",
       clips: [{
         label: "Product film",
-        source: "assets/videos/university/lowcortisol/film.webm",
+        source: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/lowcortisol/film.webm",
         type: "video/webm",
-        poster: "assets/videos/university/lowcortisol/poster.webp",
+        poster: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/lowcortisol/poster.webp",
         duration: "00:23"
       }]
-    }],
-    ["decodelabs-decodebot", {
-      brand: "DecodeLabs / Project 01",
-      title: "Intent routing, made inspectable.",
-      description: "A bilingual deterministic assistant with normalized phrase matching, persistent conversations and a visible decision trace.",
-      stack: "Python / Streamlit / SQLite",
-      footnote: "Constant-time intent lookup without presenting deterministic rules as an LLM.",
-      clips: [{
-        label: "Technical demo",
-        source: "assets/videos/internships/decodelabs/01-decodebot-assistant/deterministic-intent-routing-demo.mp4",
-        type: "video/mp4",
-        duration: "00:42"
-      }]
-    }],
-    ["decodelabs-decodeclassify", {
-      brand: "DecodeLabs / Project 02",
-      title: "Classification, without leakage.",
-      description: "An inspectable Iris classification workflow covering validated ETL, stratified splitting, training-only scaling, KNN tuning and multiclass evidence.",
-      stack: "Python / Streamlit / scikit-learn / Pandas",
-      footnote: "The held-out test set remains outside preprocessing and model-selection decisions.",
-      clips: [{
-        label: "Technical demo",
-        source: "assets/videos/internships/decodelabs/02-decode-classify/leakage-safe-knn-classification-demo.mp4",
-        type: "video/mp4",
-        duration: "00:32"
-      }]
-    }],
-    ["decodelabs-recommendation-logic", {
-      brand: "DecodeLabs / Project 03",
-      title: "Career paths, ranked transparently.",
-      description: "A content-based tech-stack recommender that converts skills and goals into TF-IDF vectors, ranks career paths with cosine similarity and explains every result.",
-      stack: "Python / Streamlit / scikit-learn / SQLite",
-      footnote: "Top-three recommendations expose matched skills, gaps, tools and learning steps.",
-      clips: [{
-        label: "Technical demo",
-        source: "assets/videos/internships/decodelabs/03-decodepath-recommender/tfidf-cosine-career-recommender-demo.mp4",
-        type: "video/mp4",
-        duration: "01:04"
-      }]
-    }],
-    ["decodelabs-optic-nerve", {
-      brand: "DecodeLabs / Project 04",
-      title: "Document vision, made inspectable.",
-      description: "An OCR workspace that exposes every step from deterministic OpenCV preprocessing to Tesseract recognition, confidence filtering and word-level bounding boxes.",
-      stack: "Python / Streamlit / OpenCV / Tesseract",
-      footnote: "Accepted and rejected text remain traceable through confidence-aware visual evidence.",
-      clips: [{
-        label: "Technical demo",
-        source: "assets/videos/internships/decodelabs/04-decodevision-ocr/opencv-tesseract-ocr-pipeline-demo.mp4",
-        type: "video/mp4",
-        duration: "00:35"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
-      brand: "AI Engineer / Project 01",
-      title: "Demand, made measurable.",
-      description: "A concise walkthrough of the first AI Engineering build, from retail data and temporal features to prediction evidence exposed through an API.",
-      stack: "Python / FastAPI / Pandas / scikit-learn",
-      footnote: "A reproducible baseline for demand-oriented machine learning systems.",
-      clips: [{
-        label: "Project demo",
-        source: "assets/videos/ai-engineer/01-retail-demand-prediction-api/demo.mp4",
-        type: "video/mp4",
-        duration: "00:22"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-02-sales-forecasting-dashboard-api", {
-      brand: "AI Engineer / Project 02",
-      title: "Forecasts, made visible.",
-      description: "An interface-led view of the forecasting workflow, connecting model output, dashboard exploration and API-ready delivery.",
-      stack: "Python / FastAPI / Streamlit / Docker",
-      footnote: "Forecasting evidence translated into an inspectable product surface.",
-      clips: [{
-        label: "Project demo",
-        source: "assets/videos/ai-engineer/02-sales-forecasting-dashboard-api/demo.mp4",
-        type: "video/mp4",
-        duration: "00:23"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite", {
-      brand: "AI Engineer / Project 03",
-      title: "Models, compared fairly.",
-      description: "A product film for the reproducible comparison suite, showing shared folds, model evidence, rankings and persisted experiment reports.",
-      stack: "Python / scikit-learn / Pandas / SciPy",
-      footnote: "The protocol and its evidence matter as much as the winning score.",
-      clips: [{
-        label: "Project demo",
-        source: "assets/videos/ai-engineer/03-classical-model-comparison-suite/demo.mp4",
-        type: "video/mp4",
-        duration: "00:19"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api", {
-      brand: "AI Engineer / Project 04",
-      title: "Segments, without stereotypes.",
-      description: "A walkthrough of two deliberately separate customer views: descriptive segment discovery and evidence-based churn review priority.",
-      stack: "Python / FastAPI / Streamlit / PostgreSQL",
-      footnote: "Patterns and probabilities remain decision support, never demographic truth or certainty.",
-      clips: [{
-        label: "Project demo",
-        source: "assets/videos/ai-engineer/04-customer-segmentation-and-churn-api/demo.mp4",
-        type: "video/mp4",
-        duration: "00:26"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-05-inventory-optimization-ml-service", {
-      brand: "AI Engineer / Project 05",
-      title: "Inventory, decided with evidence.",
-      description: "A product film connecting calibrated demand forecasts, lead-time uncertainty and constrained replenishment recommendations.",
-      stack: "Python / FastAPI / Streamlit / scikit-learn",
-      footnote: "Forecasting and inventory policy stay explicit, replayable and open to human review.",
-      clips: [{
-        label: "Project demo",
-        source: "assets/videos/ai-engineer/05-inventory-optimization-ml-service/demo.mp4",
-        type: "video/mp4",
-        duration: "00:25"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-06-ai-software-foundations-platform", {
-      brand: "AI Engineer / Project 06",
-      title: "Foundations, made operational.",
-      description: "The plan's production-oriented integrator: a React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence.",
-      stack: "React / TypeScript / FastAPI / PostgreSQL / GCP",
-      footnote: "Recommendations are traceable and operable while every final ordering decision remains human-controlled.",
-      clips: [{
-        label: "Final project demo",
-        source: "assets/videos/ai-engineer/06-ai-software-foundations-platform/demo.mp4",
-        type: "video/mp4",
-        duration: "00:48"
-      }]
-    }],
-    ["path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform", {
-      brand: "Software Engineer / Project 01",
-      title: "Intelligence, delivered in sprints.",
-      description: "Three chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
-      stack: "React / FastAPI / Python / Docker",
-      footnote: "A software platform shaped incrementally around visible product evidence.",
-      clips: [
-        {
-          label: "Sprint 01",
-          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-01.mp4",
-          type: "video/mp4",
-          duration: "00:22"
-        },
-        {
-          label: "Sprint 02",
-          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-02.mp4",
-          type: "video/mp4",
-          duration: "00:17"
-        },
-        {
-          label: "Sprint 03",
-          source: "assets/videos/software-engineer/01-retail-intelligence-platform/sprint-03.mp4",
-          type: "video/mp4",
-          duration: "00:26"
-        }
-      ]
     }]
   ]);
 
-  const dialog = document.querySelector("#project-dialog");
-  const dialogContent = document.querySelector("#dialog-content");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let activeFilmObserver = null;
+  const universityProjectOrder = new Map([
+    ["SmartLocation", 1],
+    ["LowCortisol", 2],
+    ["ElectroCorp", 3]
+  ]);
 
   const escapeHtml = value => String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -215,215 +164,271 @@
   const rawProjectStatus = project => {
     if (project.status) return project.status;
     if (project.category === "University") return "Built system";
-    if ((project.signals?.code || 0) >= 4) return "Implementation";
-    return "Blueprint";
+    return (project.signals?.code || 0) >= 4 ? "Implementation" : "Blueprint";
   };
 
-  const omitsStatusAnnotation = project =>
-    /coursework|published course|practice collection|lab collection|exploration/i.test(rawProjectStatus(project));
+  const omitsStatus = project =>
+    /coursework|published course|practice collection|lab collection|exploration/i
+      .test(rawProjectStatus(project));
 
   const projectStatus = project => {
-    if (omitsStatusAnnotation(project)) return null;
+    if (omitsStatus(project)) return null;
     return /pending|blueprint|roadmap|development/i.test(rawProjectStatus(project))
       ? "Pending"
       : "Completed";
   };
 
-  const statusClass = status => String(status || "").toLowerCase();
-
-  function isFeaturedProject(project) {
-    if (featuredUniversityProjectIds.has(project.id)) return true;
-    if (project.category === "Software Engineering") return true;
-    if (project.category !== "AI Engineering") return false;
-
-    const roadmapProjects = projects
-      .filter(candidate =>
-        candidate.category === "AI Engineering" && candidate.family === project.family)
-      .sort((first, second) =>
-        sectionProjectSequence(first) - sectionProjectSequence(second)
-        || first.title.localeCompare(second.title));
-    return roadmapProjects.at(-1)?.id === project.id;
-  }
-
-  const projectAccent = project => categoryAccentMap[project.category] || accentMap.independent;
-
-  const techMarkup = technologies => (technologies || []).slice(0, 6)
-    .map(tech => `<span>${escapeHtml(tech)}</span>`).join("");
+  const isFeaturedProject = project => flagshipIds.includes(project.id);
 
   function projectSequence(project) {
-    const numberedSegment = [project.path, project.url]
-      .filter(Boolean)
-      .flatMap(value => String(value).split("/"))
+    if (project.category === "Internships" && project.sequence) {
+      return Number(project.sequence);
+    }
+    if (universityProjectOrder.has(project.title)) {
+      return universityProjectOrder.get(project.title);
+    }
+    const pathValue = String(project.path || project.url || "");
+    const semester = pathValue.match(/semester-(\d{2})/i);
+    if (semester) return Number(semester[1]);
+    const numberedSegment = pathValue
+      .split("/")
       .reverse()
       .find(segment => /^\d{2}-/.test(segment));
     if (numberedSegment) return Number(numberedSegment.slice(0, 2));
-
-    const roadmapNumber = String(project.id || "").match(/^roadmap-(\d+)$/);
-    return roadmapNumber ? Number(roadmapNumber[1]) : Number.MAX_SAFE_INTEGER;
+    const roadmap = String(project.id || "").match(/(?:roadmap-|project-)(\d+)/i);
+    return roadmap ? Number(roadmap[1]) : Number.MAX_SAFE_INTEGER;
   }
 
-  const universityGroupNames = new Map([
-    ["Mobility systems", "Portfolio Systems"],
-    ["Resource monitoring", "Portfolio Systems"],
-    ["Energy systems", "Portfolio Systems"]
-  ]);
-  const universityGroupOrder = new Map([
-    ["Portfolio Systems", 1],
-    ["Computer Science Coursework", 2],
-    ["Academic Capstones", 3],
-    ["Technical Education", 4]
-  ]);
-  const internshipGroupOrder = new Map([["DecodeLabs", 1], ["SpotterAI", 2]]);
-  const independentGroupOrder = new Map([["Programming Foundations", 1], ["Independent Laboratories", 2]]);
-  const universityProjectOrder = new Map([["SmartLocation", 1], ["LowCortisol", 2], ["ElectroCorp", 3]]);
-
-  const projectSections = [
-    {
-      category: "Internships",
-      rootId: "internship-projects",
-      groupLabel: "Internship",
-      groupName: project => project.organization || "Internship",
-      groupOrder: internshipGroupOrder
-    },
-    {
-      category: "University",
-      rootId: "university-projects",
-      groupLabel: "Collection",
-      groupName: project => universityGroupNames.get(project.family) || project.family || "University Projects",
-      groupOrder: universityGroupOrder
-    },
-    {
-      category: "AI Engineering",
-      rootId: "ai-projects",
-      groupLabel: "Roadmap",
-      groupName: project => project.family || "AI Engineering Roadmap"
-    },
-    {
-      category: "Software Engineering",
-      rootId: "software-projects",
-      groupLabel: "Roadmap",
-      groupName: project => project.family || "Software Engineering Roadmap"
-    },
-    {
-      category: "Leisure",
-      rootId: "independent-projects",
-      groupLabel: "Collection",
-      groupName: project => project.family || "Independent Projects",
-      groupOrder: independentGroupOrder
-    }
-  ];
-
-  function sectionProjectSequence(project) {
-    if (project.category === "Internships" && project.sequence) return Number(project.sequence);
-    if (universityProjectOrder.has(project.title)) return universityProjectOrder.get(project.title);
-    const semesterNumber = String(project.path || project.url || "").match(/semester-(\d{2})/i);
-    if (semesterNumber) return Number(semesterNumber[1]);
-    return projectSequence(project);
+  function sortedProjects(category) {
+    return projects
+      .filter(project => project.category === category)
+      .sort((first, second) =>
+        projectSequence(first) - projectSequence(second)
+        || first.title.localeCompare(second.title));
   }
 
-  function groupedSectionProjects(definition, projectsToRender) {
+  function groupProjects(definition, selectedProjects) {
     const groups = new Map();
-    projectsToRender.forEach(project => {
+    selectedProjects.forEach(project => {
       const name = definition.groupName(project);
       if (!groups.has(name)) groups.set(name, []);
       groups.get(name).push(project);
     });
 
     return Array.from(groups.entries())
-      .map(([name, groupProjects]) => ({
+      .map(([name, items]) => ({
         name,
-        sequence: definition.groupOrder?.get(name)
-          ?? Math.min(...groupProjects.map(sectionProjectSequence)),
-        projects: groupProjects.sort((first, second) =>
-          sectionProjectSequence(first) - sectionProjectSequence(second)
-          || first.title.localeCompare(second.title))
+        order: definition.groupOrder?.get(name)
+          ?? Math.min(...items.map(projectSequence)),
+        projects: items
       }))
       .sort((first, second) =>
-        first.sequence - second.sequence || first.name.localeCompare(second.name));
+        first.order - second.order || first.name.localeCompare(second.name));
   }
 
-  const filmClips = film => Array.isArray(film?.clips) ? film.clips : [];
-
-  function filmCardLabel(film) {
-    const clips = filmClips(film);
-    if (clips.length > 1) return `${clips.length} films`;
-    return `Film ${clips[0]?.duration || ""}`.trim();
-  }
-
-  function sectionCardMarkup(project, groupName, projectIndex) {
+  function statusMarkup(project) {
     const status = projectStatus(project);
-    const featured = isFeaturedProject(project);
+    if (!status) return '<span class="project-card__no-status">Documented collection</span>';
+    return `
+      <span class="status-pill status-pill--${status.toLowerCase()}">
+        <i aria-hidden="true"></i>${escapeHtml(status)}
+      </span>
+    `;
+  }
+
+  function technologyMarkup(project, limit = 3) {
+    return (project.technologies || [])
+      .slice(0, limit)
+      .map(technology => `<span>${escapeHtml(technology)}</span>`)
+      .join("");
+  }
+
+  function projectCardMarkup(project, groupName, index) {
     const film = projectFilms.get(project.id);
     const descriptor = project.eyebrow
       || (project.technologies || []).slice(0, 3).join(" · ")
       || project.family;
+    const token = categoryTokens[project.category] || categoryTokens.Leisure;
+
     return `
-      <article class="section-project-card${featured ? " is-featured" : ""}${film ? " has-film" : ""}" data-project-id="${escapeHtml(project.id)}" tabindex="0" role="button" aria-label="Open ${escapeHtml(project.title)} details${film ? " and product film" : ""}">
-        <div class="section-project-card__meta">
+      <article class="project-card${film ? " has-film" : ""}" data-accent="${token.key}">
+        <div class="project-card__meta">
           <span>${escapeHtml(groupName)}</span>
-          <span>Project ${String(projectIndex + 1).padStart(2, "0")}</span>
+          <span>${String(index + 1).padStart(2, "0")}</span>
         </div>
-        ${featured ? '<div class="featured-label"><span aria-hidden="true">★</span> Featured</div>' : ""}
-        <div class="section-project-card__body">
-          <p>${escapeHtml(descriptor)}</p>
-          <h3>${escapeHtml(project.title)}</h3>
-          <p>${escapeHtml(project.summary)}</p>
+        <div class="project-card__content">
+          <p class="project-card__eyebrow">${escapeHtml(descriptor)}</p>
+          <h4>${escapeHtml(project.title)}</h4>
+          <p class="project-card__summary">${escapeHtml(project.summary)}</p>
         </div>
-        <div class="section-project-card__footer">
-          ${status
-            ? `<span class="status-pill status-pill--${statusClass(status)}">${escapeHtml(status)}</span>`
-            : '<span aria-hidden="true"></span>'}
-          ${film
-            ? `<span class="project-film-indicator"><i aria-hidden="true"></i> ${escapeHtml(filmCardLabel(film))}</span>`
-            : '<span aria-hidden="true">↗</span>'}
+        <div class="project-card__tags">${technologyMarkup(project)}</div>
+        <div class="project-card__footer">
+          ${statusMarkup(project)}
+          <button
+            class="project-card__open"
+            type="button"
+            data-project-id="${escapeHtml(project.id)}"
+            aria-label="View ${escapeHtml(project.title)} case study"
+          >
+            ${film ? "View case + film" : "View case study"}
+            <span aria-hidden="true">↗</span>
+          </button>
         </div>
       </article>
     `;
   }
 
   function projectGroupMarkup(definition, group, groupIndex) {
-    const singleProject = group.projects.length === 1;
-    const projectLabel = `${group.projects.length} ${singleProject ? "project" : "projects"}`;
+    const count = group.projects.length;
     return `
-      <section class="project-group" data-layout="${singleProject ? "single" : "grid"}">
-        <header class="project-group__header reveal" style="--group-delay:${Math.min(groupIndex, 10) * 45}ms">
+      <section class="project-group">
+        <header class="project-group__header">
           <div>
-            <span>${definition.groupLabel} / ${String(groupIndex + 1).padStart(2, "0")}</span>
+            <span>${definition.label} / ${String(groupIndex + 1).padStart(2, "0")}</span>
             <h3>${escapeHtml(group.name)}</h3>
           </div>
-          <p>${projectLabel}</p>
+          <p>${String(count).padStart(2, "0")} ${count === 1 ? "project" : "projects"}</p>
         </header>
-        <div class="project-group__projects">
-          ${group.projects.map((project, projectIndex) =>
-            sectionCardMarkup(project, group.name, projectIndex)).join("")}
+        <div class="project-group__grid">
+          ${group.projects
+            .map((project, index) => projectCardMarkup(project, group.name, index))
+            .join("")}
         </div>
       </section>
     `;
   }
 
-  function renderProjectSections() {
-    projectSections.forEach(definition => {
-      const root = document.getElementById(definition.rootId);
-      if (!root) return;
-      const categoryProjects = projects.filter(project => project.category === definition.category);
-      const groups = groupedSectionProjects(definition, categoryProjects);
-      root.innerHTML = groups.map((group, index) => projectGroupMarkup(definition, group, index)).join("");
+  function renderCategorySection(definition, expanded = false) {
+    const root = document.getElementById(definition.rootId);
+    if (!root) return;
 
-      document.querySelectorAll("[data-category-count]").forEach(node => {
-        if (node.dataset.categoryCount === definition.category) {
-          node.textContent = String(categoryProjects.length).padStart(2, "0");
-        }
+    const allProjects = sortedProjects(definition.category);
+    const selectedProjects = expanded
+      ? allProjects
+      : allProjects.slice(0, definition.previewCount);
+    const groups = groupProjects(definition, selectedProjects);
+
+    root.innerHTML = groups
+      .map((group, index) => projectGroupMarkup(definition, group, index))
+      .join("");
+    root.dataset.expanded = String(expanded);
+
+    const button = document.querySelector(`[data-section-toggle="${definition.category}"]`);
+    if (button) {
+      button.setAttribute("aria-expanded", String(expanded));
+      button.querySelector("[data-toggle-label]").textContent = expanded
+        ? "Show concise view"
+        : button.dataset.expandLabel;
+      button.querySelector("[data-toggle-icon]").textContent = expanded ? "−" : "+";
+    }
+
+    document
+      .querySelectorAll(`[data-category-count="${definition.category}"]`)
+      .forEach(node => {
+        node.textContent = String(allProjects.length).padStart(2, "0");
       });
-      document.querySelectorAll("[data-group-count]").forEach(node => {
-        if (node.dataset.groupCount === definition.category) {
-          node.textContent = String(groups.length).padStart(2, "0");
-        }
+    document
+      .querySelectorAll(`[data-group-count="${definition.category}"]`)
+      .forEach(node => {
+        node.textContent = String(groupProjects(definition, allProjects).length).padStart(2, "0");
       });
-    });
+  }
+
+  function flagshipVisualMarkup(project) {
+    const visual = flagshipVisuals[project.id] || { kind: "map", label: project.title };
+    if (visual.kind === "image") {
+      return `
+        <div class="flagship-card__visual">
+          <img src="${escapeHtml(visual.source)}" alt="${escapeHtml(visual.label)}" loading="lazy" />
+          <div class="flagship-card__visual-grid" aria-hidden="true"></div>
+        </div>
+      `;
+    }
+    return `
+      <div class="flagship-card__visual flagship-card__visual--map" role="img" aria-label="${escapeHtml(visual.label)}">
+        <span class="map-route map-route--one" aria-hidden="true"></span>
+        <span class="map-route map-route--two" aria-hidden="true"></span>
+        <span class="map-node map-node--one" aria-hidden="true"></span>
+        <span class="map-node map-node--two" aria-hidden="true"></span>
+        <span class="map-node map-node--three" aria-hidden="true"></span>
+        <span class="map-coordinate" aria-hidden="true">12.0464° S / 77.0428° W</span>
+      </div>
+    `;
+  }
+
+  function renderFlagships() {
+    const root = document.querySelector("#flagship-projects");
+    if (!root) return;
+    const flagships = flagshipIds
+      .map(id => projects.find(project => project.id === id))
+      .filter(Boolean);
+
+    root.innerHTML = flagships.map((project, index) => {
+      const token = categoryTokens[project.category] || categoryTokens.University;
+      return `
+        <article class="flagship-card flagship-card--${index + 1}" data-accent="${token.key}">
+          ${flagshipVisualMarkup(project)}
+          <div class="flagship-card__body">
+            <div class="flagship-card__index">
+              <span>Case ${String(index + 1).padStart(2, "0")}</span>
+              <span>${escapeHtml(project.family)}</span>
+            </div>
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.summary)}</p>
+            <div class="flagship-card__footer">
+              <div class="flagship-card__tags">${technologyMarkup(project, 4)}</div>
+              <button
+                class="flagship-card__open"
+                type="button"
+                data-project-id="${escapeHtml(project.id)}"
+                aria-label="View ${escapeHtml(project.title)} case study"
+              >
+                View case study <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  function renderCategoryAtlas() {
+    const root = document.querySelector("#category-atlas");
+    if (!root) return;
+    const total = Math.max(projects.length, 1);
+
+    root.innerHTML = categoryDefinitions.map((definition, index) => {
+      const items = projects.filter(project => project.category === definition.category);
+      const completed = items.filter(project => projectStatus(project) === "Completed").length;
+      const pending = items.filter(project => projectStatus(project) === "Pending").length;
+      const collections = groupProjects(definition, sortedProjects(definition.category)).length;
+      const token = categoryTokens[definition.category];
+      const share = (items.length / total) * 100;
+      return `
+        <a class="atlas-row" href="#${definition.sectionId}" data-accent="${token.key}">
+          <span class="atlas-row__index">${String(index + 1).padStart(2, "0")}</span>
+          <span class="atlas-row__name">${escapeHtml(token.short)}</span>
+          <span class="atlas-row__counts">
+            <strong>${String(items.length).padStart(2, "0")}</strong> projects
+            <small>${String(collections).padStart(2, "0")} collections</small>
+          </span>
+          <span class="atlas-row__states">
+            <span>${String(completed).padStart(2, "0")} completed</span>
+            <span>${String(pending).padStart(2, "0")} pending</span>
+          </span>
+          <span class="atlas-row__bar" aria-hidden="true">
+            <i style="width:${share.toFixed(2)}%"></i>
+          </span>
+          <span class="atlas-row__arrow" aria-hidden="true">↓</span>
+        </a>
+      `;
+    }).join("");
   }
 
   function genericArchitecture(project) {
-    const technology = project.technologies?.length ? `${project.technologies.join(" · ")}` : "Technology choices documented in the project brief";
+    const technology = project.technologies?.length
+      ? project.technologies.join(" · ")
+      : "Technology choices documented in the project brief";
     return [
       `${project.family} research area`,
       "Problem framing and module map",
@@ -432,73 +437,30 @@
     ];
   }
 
-  function projectFilmMarkup(project) {
+  function filmMarkup(project) {
     const film = projectFilms.get(project.id);
-    if (!film) return "";
-    const clips = filmClips(film);
-    const primaryClip = clips[0];
-    if (!primaryClip) return "";
-    const playlistLabel = clips.length > 1 ? `${clips.length} chapters` : primaryClip.duration;
-    const posterAttribute = primaryClip.poster
-      ? ` poster="${escapeHtml(primaryClip.poster)}"`
-      : "";
+    const clip = film?.clips?.[0];
+    if (!film || !clip) return "";
 
     return `
       <section class="dialog-film" aria-labelledby="dialog-film-title">
         <div class="dialog-film__intro">
           <div>
-            <p class="dialog-film__eyebrow"><span>Product film</span> / ${escapeHtml(playlistLabel)}</p>
+            <p>Product film / ${escapeHtml(clip.duration)}</p>
             <h3 id="dialog-film-title">${escapeHtml(film.title)}</h3>
           </div>
-          <p>${escapeHtml(film.description)}</p>
+          <p id="dialog-film-description">${escapeHtml(film.description)}</p>
         </div>
-        ${clips.length > 1 ? `
-          <div class="dialog-film__playlist" style="--film-chapters:${clips.length}" aria-label="${escapeHtml(film.brand)} film chapters">
-            ${clips.map((clip, index) => `
-              <button
-                class="dialog-film__chapter${index === 0 ? " is-active" : ""}"
-                type="button"
-                data-film-clip
-                data-film-source="${escapeHtml(clip.source)}"
-                data-film-type="${escapeHtml(clip.type)}"
-                data-film-poster="${escapeHtml(clip.poster || "")}"
-                data-film-duration="${escapeHtml(clip.duration)}"
-                data-film-label="${escapeHtml(clip.label)}"
-                aria-pressed="${index === 0 ? "true" : "false"}"
-              >
-                <span>${String(index + 1).padStart(2, "0")}</span>
-                <strong>${escapeHtml(clip.label)}</strong>
-                <small>${escapeHtml(clip.duration)}</small>
-              </button>
-            `).join("")}
-          </div>
-        ` : ""}
-        <div class="dialog-film__frame" data-film-frame style="--film-progress:0%">
+        <div class="dialog-film__frame">
           <video
-            class="dialog-film__video"
-            data-project-film
-            muted
-            loop
+            controls
             playsinline
             preload="metadata"
-            ${posterAttribute}
-            aria-label="${escapeHtml(film.brand)} ${escapeHtml(primaryClip.label)}"
+            ${clip.poster ? `poster="${escapeHtml(clip.poster)}"` : ""}
+            aria-describedby="dialog-film-description"
           >
-            <source data-film-source-element src="${escapeHtml(primaryClip.source)}" type="${escapeHtml(primaryClip.type)}" />
+            <source src="${escapeHtml(clip.source)}" type="${escapeHtml(clip.type)}" />
           </video>
-          <div class="dialog-film__shade" aria-hidden="true"></div>
-          <div class="dialog-film__topline" aria-hidden="true">
-            <span><i></i> ${escapeHtml(film.brand)} / <b data-film-active-label>${escapeHtml(primaryClip.label)}</b></span>
-            <span data-film-active-duration>${escapeHtml(primaryClip.duration)}</span>
-          </div>
-          <div class="dialog-film__controls">
-            <span class="dialog-film__signal" aria-hidden="true">Live product surface</span>
-            <button class="dialog-film__toggle" type="button" data-film-toggle aria-label="Play ${escapeHtml(film.brand)} product film">
-              <span class="dialog-film__toggle-icon" aria-hidden="true"></span>
-              <span data-film-toggle-label>Play film</span>
-            </button>
-          </div>
-          <div class="dialog-film__progress" aria-hidden="true"><span></span></div>
         </div>
         <div class="dialog-film__footer">
           <span>${escapeHtml(film.stack)}</span>
@@ -508,104 +470,18 @@
     `;
   }
 
-  function initializeProjectFilm() {
-    activeFilmObserver?.disconnect();
-    activeFilmObserver = null;
+  const dialog = document.querySelector("#project-dialog");
+  const dialogContent = document.querySelector("#dialog-content");
+  let lastDialogTrigger = null;
 
-    const video = dialog.querySelector("[data-project-film]");
-    const frame = dialog.querySelector("[data-film-frame]");
-    const toggle = dialog.querySelector("[data-film-toggle]");
-    const toggleLabel = dialog.querySelector("[data-film-toggle-label]");
-    const source = dialog.querySelector("[data-film-source-element]");
-    const chapterButtons = Array.from(dialog.querySelectorAll("[data-film-clip]"));
-    const activeLabel = dialog.querySelector("[data-film-active-label]");
-    const activeDuration = dialog.querySelector("[data-film-active-duration]");
-    if (!video || !frame || !toggle || !toggleLabel || !source) return;
-    let filmLabel = video.getAttribute("aria-label") || "product film";
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.dataset.userPaused = String(reducedMotion);
-
-    const syncPlaybackUi = () => {
-      const playing = !video.paused;
-      toggle.classList.toggle("is-playing", playing);
-      toggleLabel.textContent = playing ? "Pause film" : "Play film";
-      toggle.setAttribute("aria-label", `${playing ? "Pause" : "Play"} ${filmLabel}`);
-      frame.classList.toggle("is-playing", playing);
-    };
-
-    const updateProgress = () => {
-      const progress = video.duration ? (video.currentTime / video.duration) * 100 : 0;
-      frame.style.setProperty("--film-progress", `${progress}%`);
-    };
-
-    const selectChapter = button => {
-      chapterButtons.forEach(chapter => {
-        const selected = chapter === button;
-        chapter.classList.toggle("is-active", selected);
-        chapter.setAttribute("aria-pressed", String(selected));
-      });
-      video.pause();
-      source.src = button.dataset.filmSource || "";
-      source.type = button.dataset.filmType || "video/mp4";
-      const poster = button.dataset.filmPoster || "";
-      if (poster) video.poster = poster;
-      else video.removeAttribute("poster");
-      const label = button.dataset.filmLabel || "Product film";
-      const duration = button.dataset.filmDuration || "";
-      filmLabel = `${label} product film`;
-      video.setAttribute("aria-label", filmLabel);
-      if (activeLabel) activeLabel.textContent = label;
-      if (activeDuration) activeDuration.textContent = duration;
-      frame.style.setProperty("--film-progress", "0%");
-      video.dataset.userPaused = "false";
-      video.load();
-      if (!reducedMotion) video.play().catch(syncPlaybackUi);
-      syncPlaybackUi();
-    };
-
-    toggle.addEventListener("click", () => {
-      if (video.paused) {
-        video.dataset.userPaused = "false";
-        video.play().catch(syncPlaybackUi);
-      } else {
-        video.dataset.userPaused = "true";
-        video.pause();
-      }
-    });
-    video.addEventListener("play", syncPlaybackUi);
-    video.addEventListener("pause", syncPlaybackUi);
-    video.addEventListener("timeupdate", updateProgress);
-    video.addEventListener("loadedmetadata", updateProgress);
-    chapterButtons.forEach(button => {
-      button.addEventListener("click", () => selectChapter(button));
-    });
-    syncPlaybackUi();
-
-    if ("IntersectionObserver" in window) {
-      activeFilmObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !reducedMotion && video.dataset.userPaused !== "true") {
-            video.play().catch(syncPlaybackUi);
-          } else if (!entry.isIntersecting) {
-            video.pause();
-          }
-        });
-      }, { root: dialog, threshold: 0.42 });
-      activeFilmObserver.observe(frame);
-    } else if (!reducedMotion) {
-      video.play().catch(syncPlaybackUi);
-    }
-  }
-
-  function openProject(projectId) {
+  function openProject(projectId, trigger) {
     const project = projects.find(item => item.id === projectId);
-    if (!project) return;
+    if (!project || !dialog || !dialogContent) return;
+
+    lastDialogTrigger = trigger || document.activeElement;
     const status = projectStatus(project);
     const sourceStatus = rawProjectStatus(project);
     const isBlueprint = /blueprint|roadmap|pending|development/i.test(sourceStatus);
-    const featured = isFeaturedProject(project);
     const architecture = project.architecture || genericArchitecture(project);
     const capabilities = project.capabilities || [
       "Documented objective and scope",
@@ -616,27 +492,34 @@
     const signals = project.signals || {};
     const challenge = project.challenge || project.summary;
     const solution = project.solution || (isBlueprint
-      ? "This entry is a technical blueprint: it defines the intended modules, workflow, evaluation and limitations, but does not claim an implemented product."
+      ? "This entry defines intended modules, workflow, evaluation and limitations without claiming an implemented product."
       : "This implementation connects data, code and documented evidence inside a focused engineering workflow.");
-    const accent = projectAccent(project);
+    const token = categoryTokens[project.category] || categoryTokens.Leisure;
 
     dialogContent.innerHTML = `
-      <article style="--dialog-accent:${accent}">
+      <article class="dialog-case" data-accent="${token.key}">
         <header class="dialog-hero">
           <div>
             <p class="dialog-kicker">${escapeHtml(project.eyebrow || `${project.category} / ${project.family}`)}</p>
-            ${featured ? '<div class="featured-label featured-label--dialog"><span aria-hidden="true">★</span> Featured</div>' : ""}
+            ${isFeaturedProject(project) ? '<span class="featured-label"><i aria-hidden="true"></i>Selected system</span>' : ""}
             <h2 id="dialog-title">${escapeHtml(project.title)}</h2>
           </div>
           <div>
             <p class="dialog-summary">${escapeHtml(project.summary)}</p>
-            ${status ? `<span class="dialog-status dialog-status--${statusClass(status)}">${escapeHtml(status)}</span>` : ""}
+            ${status ? `
+              <span class="status-pill status-pill--${status.toLowerCase()}">
+                <i aria-hidden="true"></i>${escapeHtml(status)}
+              </span>
+            ` : ""}
           </div>
         </header>
-        ${projectFilmMarkup(project)}
+        ${filmMarkup(project)}
         <div class="dialog-body">
           <aside class="dialog-index" aria-label="Case study contents">
-            <span>01 / Problem</span><span>02 / Response</span><span>03 / Architecture</span><span>04 / Evidence</span>
+            <span>01 / Problem</span>
+            <span>02 / Response</span>
+            <span>03 / Architecture</span>
+            <span>04 / Evidence</span>
           </aside>
           <div class="dialog-sections">
             <section class="dialog-section">
@@ -650,10 +533,14 @@
               <p>${escapeHtml(solution)}</p>
             </section>
             <section class="dialog-section">
-              <p class="dialog-section__label">03 · Architecture & capabilities</p>
+              <p class="dialog-section__label">03 · Architecture and capabilities</p>
               <h3>How the system is shaped.</h3>
-              <div class="detail-list">${architecture.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
-              <div class="detail-list">${capabilities.map(item => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+              <div class="detail-list">
+                ${architecture.map(item => `<span>${escapeHtml(item)}</span>`).join("")}
+              </div>
+              <div class="detail-list detail-list--secondary">
+                ${capabilities.map(item => `<span>${escapeHtml(item)}</span>`).join("")}
+              </div>
             </section>
             <section class="dialog-section">
               <p class="dialog-section__label">04 · Evidence surface</p>
@@ -664,95 +551,230 @@
                 <div><strong>${escapeHtml(signals.tests ?? "—")}</strong><span>test signals</span></div>
                 <div><strong>${escapeHtml(signals.notebooks ?? "—")}</strong><span>notebooks</span></div>
               </div>
-              <div class="dialog-tags">${techMarkup(project.technologies || [])}</div>
-              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer"><strong>Inspect the project on GitHub</strong><span aria-hidden="true">↗</span></a>
+              <div class="dialog-tags">${technologyMarkup(project, 8)}</div>
+              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer">
+                <strong>Inspect the project on GitHub</strong><span aria-hidden="true">↗</span>
+              </a>
             </section>
           </div>
         </div>
       </article>
     `;
+
     dialog.showModal();
     document.body.classList.add("dialog-open");
-    initializeProjectFilm();
-    dialog.querySelector(".dialog-close").focus();
+    dialog.querySelector(".dialog-close")?.focus();
   }
 
-  renderProjectSections();
+  function closeDialog() {
+    dialog?.querySelector("video")?.pause();
+    dialog?.close();
+  }
 
-  document.querySelectorAll("[data-total-projects]").forEach(node => { node.textContent = String(projects.length).padStart(2, "0"); });
-  const internships = projects.filter(project => project.internship);
-  document.querySelectorAll("[data-internship-count]").forEach(node => { node.textContent = String(internships.length).padStart(2, "0"); });
-  document.querySelectorAll("[data-internship-completed]").forEach(node => { node.textContent = String(internships.filter(project => projectStatus(project) === "Completed").length).padStart(2, "0"); });
-  document.querySelectorAll("[data-internship-pending]").forEach(node => { node.textContent = String(internships.filter(project => projectStatus(project) === "Pending").length).padStart(2, "0"); });
-
-  document.addEventListener("click", event => {
-    const card = event.target.closest("[data-project-id]");
-    if (card) openProject(card.dataset.projectId);
-  });
-
-  document.addEventListener("keydown", event => {
-    const card = event.target.closest?.("[data-project-id]");
-    if (card && (event.key === "Enter" || event.key === " ")) {
-      event.preventDefault();
-      openProject(card.dataset.projectId);
-    }
-  });
-
-  document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
-  dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener("close", () => {
-    activeFilmObserver?.disconnect();
-    activeFilmObserver = null;
-    dialog.querySelector("[data-project-film]")?.pause();
-    document.body.classList.remove("dialog-open");
-  });
-
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".primary-nav");
-  menuButton.addEventListener("click", () => {
-    const open = !nav.classList.contains("is-open");
-    nav.classList.toggle("is-open", open);
-    menuButton.setAttribute("aria-expanded", String(open));
-  });
-  nav.addEventListener("click", event => {
-    if (event.target.closest("a")) {
-      nav.classList.remove("is-open");
-      menuButton.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  if (reducedMotion) {
-    document.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
-  } else {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+  function initializeDisclosures() {
+    categoryDefinitions.forEach(definition => {
+      const button = document.querySelector(`[data-section-toggle="${definition.category}"]`);
+      if (!button) return;
+      button.dataset.expandLabel = button.querySelector("[data-toggle-label]")?.textContent || "View complete archive";
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        renderCategorySection(definition, !expanded);
+        const status = document.querySelector(`[data-section-status="${definition.category}"]`);
+        if (status) {
+          const count = sortedProjects(definition.category).length;
+          status.textContent = expanded
+            ? `${definition.category} reduced to a concise preview.`
+            : `All ${count} ${definition.category} projects are now visible.`;
+        }
+        if (expanded) {
+          document.getElementById(definition.sectionId)?.scrollIntoView({
+            behavior: reducedMotion.matches ? "auto" : "smooth",
+            block: "start"
+          });
         }
       });
-    }, { threshold: 0.13, rootMargin: "0px 0px -6%" });
-    document.querySelectorAll(".reveal").forEach(node => observer.observe(node));
-  }
-
-  const header = document.querySelector("[data-header]");
-  const progress = document.querySelector(".scroll-progress span");
-  const updateScroll = () => {
-    const top = window.scrollY;
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    header.classList.toggle("is-scrolled", top > 24);
-    progress.style.width = `${max > 0 ? (top / max) * 100 : 0}%`;
-  };
-  updateScroll();
-  window.addEventListener("scroll", updateScroll, { passive: true });
-
-  if (!reducedMotion) {
-    const core = document.querySelector(".hero-core");
-    document.querySelector(".hero").addEventListener("pointermove", event => {
-      const rect = event.currentTarget.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      core.style.transform = `translate(${x * 26}px, ${y * 26}px)`;
     });
   }
+
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector(".primary-nav");
+  const navScrim = document.querySelector("[data-nav-dismiss]");
+
+  function setNavigation(open, returnFocus = false) {
+    if (!menuButton || !navigation || !navScrim) return;
+    const mobile = mobileNavigation.matches;
+    const nextOpen = mobile && open;
+    navigation.classList.toggle("is-open", nextOpen);
+    menuButton.setAttribute("aria-expanded", String(nextOpen));
+    menuButton.querySelector(".sr-only").textContent = nextOpen
+      ? "Close navigation"
+      : "Open navigation";
+    navScrim.hidden = !nextOpen;
+    document.body.classList.toggle("nav-open", nextOpen);
+
+    if (mobile) {
+      navigation.toggleAttribute("inert", !nextOpen);
+      navigation.setAttribute("aria-hidden", String(!nextOpen));
+    } else {
+      navigation.removeAttribute("inert");
+      navigation.removeAttribute("aria-hidden");
+    }
+
+    if (nextOpen) navigation.querySelector("a")?.focus();
+    if (!nextOpen && returnFocus) menuButton.focus();
+  }
+
+  function initializeNavigation() {
+    menuButton?.addEventListener("click", () => {
+      setNavigation(menuButton.getAttribute("aria-expanded") !== "true");
+    });
+    navScrim?.addEventListener("click", () => setNavigation(false, true));
+    navigation?.addEventListener("click", event => {
+      if (event.target.closest("a")) setNavigation(false);
+    });
+    mobileNavigation.addEventListener("change", () => setNavigation(false));
+    setNavigation(false);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+        event.preventDefault();
+        setNavigation(false, true);
+      }
+      if (
+        event.key === "Tab"
+        && mobileNavigation.matches
+        && menuButton?.getAttribute("aria-expanded") === "true"
+      ) {
+        const focusable = [menuButton, ...navigation.querySelectorAll("a")];
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }
+
+  function initializeActiveNavigation() {
+    if (!("IntersectionObserver" in window)) return;
+    const links = Array.from(document.querySelectorAll(".primary-nav a[href^='#']"));
+    const archiveSections = new Set([
+      "internships",
+      "university",
+      "ai-path",
+      "software-path",
+      "independent"
+    ]);
+    const sections = [
+      document.querySelector("#selected"),
+      document.querySelector("#categories"),
+      ...Array.from(archiveSections, id => document.getElementById(id)),
+      document.querySelector("#about")
+    ].filter(Boolean);
+
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+      if (!visible) return;
+      const target = archiveSections.has(visible.target.id)
+        ? "#archive"
+        : `#${visible.target.id}`;
+      links.forEach(link => {
+        if (link.getAttribute("href") === target) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-20% 0px -65%", threshold: [0, 0.15, 0.5] });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  function initializeReveal() {
+    const nodes = document.querySelectorAll(".reveal");
+    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+      nodes.forEach(node => node.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -5%" });
+    nodes.forEach(node => observer.observe(node));
+  }
+
+  function initializeScrollUi() {
+    const header = document.querySelector("[data-header]");
+    const progress = document.querySelector(".scroll-progress span");
+    const update = () => {
+      const top = window.scrollY;
+      const maximum = document.documentElement.scrollHeight - window.innerHeight;
+      header?.classList.toggle("is-scrolled", top > 24);
+      if (progress) {
+        progress.style.width = `${maximum > 0 ? (top / maximum) * 100 : 0}%`;
+      }
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  function initializeHeroMotion() {
+    const hero = document.querySelector(".hero");
+    const core = document.querySelector(".hero-core");
+    if (!hero || !core || reducedMotion.matches) return;
+    hero.addEventListener("pointermove", event => {
+      const rectangle = hero.getBoundingClientRect();
+      const x = (event.clientX - rectangle.left) / rectangle.width - 0.5;
+      const y = (event.clientY - rectangle.top) / rectangle.height - 0.5;
+      core.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0)`;
+    });
+  }
+
+  renderFlagships();
+  renderCategoryAtlas();
+  categoryDefinitions.forEach(definition => renderCategorySection(definition));
+  initializeDisclosures();
+  initializeNavigation();
+  initializeActiveNavigation();
+  initializeReveal();
+  initializeScrollUi();
+  initializeHeroMotion();
+
+  document.querySelectorAll("[data-total-projects]").forEach(node => {
+    node.textContent = String(projects.length).padStart(3, "0");
+  });
+
+  const internships = projects.filter(project => project.category === "Internships");
+  document.querySelectorAll("[data-internship-completed]").forEach(node => {
+    node.textContent = String(
+      internships.filter(project => projectStatus(project) === "Completed").length
+    ).padStart(2, "0");
+  });
+  document.querySelectorAll("[data-internship-pending]").forEach(node => {
+    node.textContent = String(
+      internships.filter(project => projectStatus(project) === "Pending").length
+    ).padStart(2, "0");
+  });
+
+  document.addEventListener("click", event => {
+    const trigger = event.target.closest("[data-project-id]");
+    if (trigger) openProject(trigger.dataset.projectId, trigger);
+  });
+
+  dialog?.querySelector(".dialog-close")?.addEventListener("click", closeDialog);
+  dialog?.addEventListener("click", event => {
+    if (event.target === dialog) closeDialog();
+  });
+  dialog?.addEventListener("close", () => {
+    dialog.querySelector("video")?.pause();
+    document.body.classList.remove("dialog-open");
+    if (lastDialogTrigger instanceof HTMLElement) lastDialogTrigger.focus();
+    lastDialogTrigger = null;
+  });
 })();
