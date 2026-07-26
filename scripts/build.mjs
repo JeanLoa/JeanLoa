@@ -20,7 +20,8 @@ for (const file of [
 for (const asset of [
   "assets/electrocorp-home.jpg",
   "assets/lowcortisol-reports.png",
-  "assets/audio/the-secret-ingredient-called-victory.mp3"
+  "assets/audio/the-secret-ingredient-called-victory.mp3",
+  "assets/videos/university/smartlocation/lima-route-optimization-demo.mp4"
 ]) {
   const destination = join(dist, "client", asset);
   await mkdir(dirname(destination), { recursive: true });

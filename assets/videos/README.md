@@ -25,7 +25,9 @@ videos/
     `-- smartlocation/
 ```
 
-Only web-ready files belong here. Project films are delivered through the
-repository-backed media CDN, while lightweight interface assets and background
-audio are copied into the production build. Original high-resolution recordings
-remain under `video-sources/` and are intentionally ignored by Git.
+Only web-ready files belong here. Most project films are delivered through the
+repository-backed media CDN. SmartLocation is copied directly into the production
+build because its film exceeds the CDN's standard per-file limit. Lightweight
+interface assets and background audio are also copied into the build. Original
+high-resolution recordings remain under `video-sources/` and are intentionally
+ignored by Git.

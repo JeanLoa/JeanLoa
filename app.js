@@ -129,7 +129,7 @@
       footnote: "Distance, travel time, explored nodes and algorithm tradeoffs stay visible.",
       clips: [{
         label: "Route intelligence demo",
-        source: portfolioMedia("assets/videos/university/smartlocation/lima-route-optimization-demo.mp4"),
+        source: "assets/videos/university/smartlocation/lima-route-optimization-demo.mp4",
         type: "video/mp4",
         duration: "00:28"
       }]
