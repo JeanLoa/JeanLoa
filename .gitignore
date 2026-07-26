@@ -8,3 +8,4 @@ artifacts/
 
 # Local master recordings. The optimized web films live in assets/videos/.
 /video-sources/**/*.mp4
+/music/**/*.mp3

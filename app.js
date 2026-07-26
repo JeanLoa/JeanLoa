@@ -117,7 +117,23 @@
     }
   };
 
+  const portfolioMedia = path =>
+    `https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/${path}`;
+
   const projectFilms = new Map([
+    ["smartlocation", {
+      brand: "SmartLocation",
+      title: "Routes, made explainable.",
+      description: "A walkthrough of geocoded Lima destinations, graph route calculation and side-by-side Dijkstra, A* and BFS evidence inside an interactive map.",
+      stack: "Angular / TypeScript / Python / MapLibre / OpenStreetMap",
+      footnote: "Distance, travel time, explored nodes and algorithm tradeoffs stay visible.",
+      clips: [{
+        label: "Route intelligence demo",
+        source: portfolioMedia("assets/videos/university/smartlocation/lima-route-optimization-demo.mp4"),
+        type: "video/mp4",
+        duration: "00:28"
+      }]
+    }],
     ["electrocorp", {
       brand: "ElectroCorp",
       title: "Energy, orchestrated.",
@@ -126,9 +142,9 @@
       footnote: "From domain workflows to visible operational evidence.",
       clips: [{
         label: "Product film",
-        source: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/electrocorp/film.webm",
+        source: portfolioMedia("assets/videos/university/electrocorp/film.webm"),
         type: "video/webm",
-        poster: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/electrocorp/poster.webp",
+        poster: portfolioMedia("assets/videos/university/electrocorp/poster.webp"),
         duration: "00:25"
       }]
     }],
@@ -140,11 +156,168 @@
       footnote: "From physical resources to calm, actionable decisions.",
       clips: [{
         label: "Product film",
-        source: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/lowcortisol/film.webm",
+        source: portfolioMedia("assets/videos/university/lowcortisol/film.webm"),
         type: "video/webm",
-        poster: "https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/assets/videos/university/lowcortisol/poster.webp",
+        poster: portfolioMedia("assets/videos/university/lowcortisol/poster.webp"),
         duration: "00:23"
       }]
+    }],
+    ["decodelabs-decodebot", {
+      brand: "DecodeLabs / Project 01",
+      title: "Intent routing, made inspectable.",
+      description: "A bilingual deterministic assistant with normalized phrase matching, persistent conversations and a visible decision trace.",
+      stack: "Python / Streamlit / SQLite",
+      footnote: "Constant-time intent lookup without presenting deterministic rules as an LLM.",
+      clips: [{
+        label: "Technical demo",
+        source: portfolioMedia("assets/videos/internships/decodelabs/01-decodebot-assistant/deterministic-intent-routing-demo.mp4"),
+        type: "video/mp4",
+        duration: "00:42"
+      }]
+    }],
+    ["decodelabs-decodeclassify", {
+      brand: "DecodeLabs / Project 02",
+      title: "Classification, without leakage.",
+      description: "An inspectable Iris classification workflow covering validated ETL, stratified splitting, training-only scaling, KNN tuning and multiclass evidence.",
+      stack: "Python / Streamlit / scikit-learn / Pandas",
+      footnote: "The held-out test set remains outside preprocessing and model-selection decisions.",
+      clips: [{
+        label: "Technical demo",
+        source: portfolioMedia("assets/videos/internships/decodelabs/02-decode-classify/leakage-safe-knn-classification-demo.mp4"),
+        type: "video/mp4",
+        duration: "00:32"
+      }]
+    }],
+    ["decodelabs-recommendation-logic", {
+      brand: "DecodeLabs / Project 03",
+      title: "Career paths, ranked transparently.",
+      description: "A content-based tech-stack recommender that converts skills and goals into TF-IDF vectors, ranks career paths with cosine similarity and explains every result.",
+      stack: "Python / Streamlit / scikit-learn / SQLite",
+      footnote: "Top-three recommendations expose matched skills, gaps, tools and learning steps.",
+      clips: [{
+        label: "Technical demo",
+        source: portfolioMedia("assets/videos/internships/decodelabs/03-decodepath-recommender/tfidf-cosine-career-recommender-demo.mp4"),
+        type: "video/mp4",
+        duration: "01:04"
+      }]
+    }],
+    ["decodelabs-optic-nerve", {
+      brand: "DecodeLabs / Project 04",
+      title: "Document vision, made inspectable.",
+      description: "An OCR workspace that exposes every step from deterministic OpenCV preprocessing to Tesseract recognition, confidence filtering and word-level bounding boxes.",
+      stack: "Python / Streamlit / OpenCV / Tesseract",
+      footnote: "Accepted and rejected text remain traceable through confidence-aware visual evidence.",
+      clips: [{
+        label: "Technical demo",
+        source: portfolioMedia("assets/videos/internships/decodelabs/04-decodevision-ocr/opencv-tesseract-ocr-pipeline-demo.mp4"),
+        type: "video/mp4",
+        duration: "00:35"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
+      brand: "AI Engineer / Project 01",
+      title: "Demand, made measurable.",
+      description: "A concise walkthrough from retail data and temporal features to prediction evidence exposed through an API.",
+      stack: "Python / FastAPI / Pandas / scikit-learn",
+      footnote: "A reproducible baseline for demand-oriented machine learning systems.",
+      clips: [{
+        label: "Project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/01-retail-demand-prediction-api/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:22"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-02-sales-forecasting-dashboard-api", {
+      brand: "AI Engineer / Project 02",
+      title: "Forecasts, made visible.",
+      description: "An interface-led view of the forecasting workflow, connecting model output, dashboard exploration and API-ready delivery.",
+      stack: "Python / FastAPI / Streamlit / Docker",
+      footnote: "Forecasting evidence translated into an inspectable product surface.",
+      clips: [{
+        label: "Project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/02-sales-forecasting-dashboard-api/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:23"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite", {
+      brand: "AI Engineer / Project 03",
+      title: "Models, compared fairly.",
+      description: "A product film for the reproducible comparison suite, showing shared folds, model evidence, rankings and persisted experiment reports.",
+      stack: "Python / scikit-learn / Pandas / SciPy",
+      footnote: "The protocol and its evidence matter as much as the winning score.",
+      clips: [{
+        label: "Project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/03-classical-model-comparison-suite/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:19"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api", {
+      brand: "AI Engineer / Project 04",
+      title: "Segments, without stereotypes.",
+      description: "A walkthrough of two deliberately separate customer views: descriptive segment discovery and evidence-based churn review priority.",
+      stack: "Python / FastAPI / Streamlit / PostgreSQL",
+      footnote: "Patterns and probabilities remain decision support, never demographic truth or certainty.",
+      clips: [{
+        label: "Project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/04-customer-segmentation-and-churn-api/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:26"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-05-inventory-optimization-ml-service", {
+      brand: "AI Engineer / Project 05",
+      title: "Inventory, decided with evidence.",
+      description: "A product film connecting calibrated demand forecasts, lead-time uncertainty and constrained replenishment recommendations.",
+      stack: "Python / FastAPI / Streamlit / scikit-learn",
+      footnote: "Forecasting and inventory policy stay explicit, replayable and open to human review.",
+      clips: [{
+        label: "Project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/05-inventory-optimization-ml-service/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:25"
+      }]
+    }],
+    ["path-ai-engineer-machine-learning-engineering-software-foundations-06-ai-software-foundations-platform", {
+      brand: "AI Engineer / Project 06",
+      title: "Foundations, made operational.",
+      description: "A React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence.",
+      stack: "React / TypeScript / FastAPI / PostgreSQL / GCP",
+      footnote: "Recommendations are traceable and operable while final ordering decisions remain human-controlled.",
+      clips: [{
+        label: "Final project demo",
+        source: portfolioMedia("assets/videos/ai-engineer/06-ai-software-foundations-platform/demo.mp4"),
+        type: "video/mp4",
+        duration: "00:48"
+      }]
+    }],
+    ["path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform", {
+      brand: "Software Engineer / Project 01",
+      title: "Intelligence, delivered in sprints.",
+      description: "Three chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
+      stack: "React / FastAPI / Python / Docker",
+      footnote: "A software platform shaped incrementally around visible product evidence.",
+      clips: [
+        {
+          label: "Sprint 01",
+          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-01.mp4"),
+          type: "video/mp4",
+          duration: "00:22"
+        },
+        {
+          label: "Sprint 02",
+          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-02.mp4"),
+          type: "video/mp4",
+          duration: "00:17"
+        },
+        {
+          label: "Sprint 03",
+          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-03.mp4"),
+          type: "video/mp4",
+          duration: "00:26"
+        }
+      ]
     }]
   ]);
 
@@ -512,27 +685,53 @@
 
   function filmMarkup(project) {
     const film = projectFilms.get(project.id);
-    const clip = film?.clips?.[0];
+    const clips = Array.isArray(film?.clips) ? film.clips : [];
+    const clip = clips[0];
     if (!film || !clip) return "";
+    const runningTime = clips.length > 1
+      ? `${clips.length} chapters`
+      : clip.duration;
 
     return `
       <section class="dialog-film" aria-labelledby="dialog-film-title">
         <div class="dialog-film__intro">
           <div>
-            <p>Product film / ${escapeHtml(clip.duration)}</p>
+            <p>Product film / ${escapeHtml(runningTime)}</p>
             <h3 id="dialog-film-title">${escapeHtml(film.title)}</h3>
           </div>
           <p id="dialog-film-description">${escapeHtml(film.description)}</p>
         </div>
+        ${clips.length > 1 ? `
+          <div class="dialog-film__playlist" aria-label="${escapeHtml(film.brand)} film chapters">
+            ${clips.map((item, index) => `
+              <button
+                class="dialog-film__chapter${index === 0 ? " is-active" : ""}"
+                type="button"
+                data-film-clip
+                data-film-source="${escapeHtml(item.source)}"
+                data-film-type="${escapeHtml(item.type)}"
+                data-film-poster="${escapeHtml(item.poster || "")}"
+                data-film-label="${escapeHtml(item.label)}"
+                aria-pressed="${index === 0 ? "true" : "false"}"
+              >
+                <span>${String(index + 1).padStart(2, "0")}</span>
+                <strong>${escapeHtml(item.label)}</strong>
+                <small>${escapeHtml(item.duration)}</small>
+              </button>
+            `).join("")}
+          </div>
+        ` : ""}
         <div class="dialog-film__frame">
           <video
+            data-project-film
             controls
             playsinline
             preload="metadata"
             ${clip.poster ? `poster="${escapeHtml(clip.poster)}"` : ""}
+            aria-label="${escapeHtml(`${film.brand} ${clip.label}`)}"
             aria-describedby="dialog-film-description"
           >
-            <source src="${escapeHtml(clip.source)}" type="${escapeHtml(clip.type)}" />
+            <source data-film-source-element src="${escapeHtml(clip.source)}" type="${escapeHtml(clip.type)}" />
           </video>
         </div>
         <div class="dialog-film__footer">
@@ -545,7 +744,128 @@
 
   const dialog = document.querySelector("#project-dialog");
   const dialogContent = document.querySelector("#dialog-content");
+  const backgroundAudio = document.querySelector("[data-background-audio]");
+  const soundToggle = document.querySelector("[data-sound-toggle]");
+  const soundLabel = document.querySelector("[data-sound-label]");
+  const soundStatus = document.querySelector("[data-sound-status]");
+  const backgroundVolume = 0.28;
   let lastDialogTrigger = null;
+  let resumeBackgroundAfterFilm = false;
+
+  function syncBackgroundAudioUi(message = "") {
+    if (!backgroundAudio || !soundToggle || !soundLabel) return;
+    const playing = !backgroundAudio.paused;
+    soundToggle.classList.toggle("is-playing", playing);
+    soundToggle.setAttribute("aria-pressed", String(playing));
+    soundToggle.setAttribute(
+      "aria-label",
+      playing ? "Pause background music" : "Play background music"
+    );
+    soundLabel.textContent = playing ? "Music on" : "Music off";
+    if (soundStatus && message) soundStatus.textContent = message;
+  }
+
+  async function playBackgroundAudio() {
+    if (!backgroundAudio) return false;
+    backgroundAudio.volume = backgroundVolume;
+    try {
+      await backgroundAudio.play();
+      syncBackgroundAudioUi("Background music playing at moderate volume.");
+      return true;
+    } catch {
+      syncBackgroundAudioUi("Use the music control to start background audio.");
+      return false;
+    }
+  }
+
+  function initializeBackgroundAudio() {
+    if (!backgroundAudio || !soundToggle) return;
+    backgroundAudio.volume = backgroundVolume;
+    let intentListenersActive = true;
+
+    const removeIntentListeners = () => {
+      if (!intentListenersActive) return;
+      intentListenersActive = false;
+      document.removeEventListener("pointerdown", startFromIntent);
+      document.removeEventListener("keydown", startFromIntent);
+    };
+
+    const startFromIntent = event => {
+      const target = event.target instanceof Element ? event.target : null;
+      if (target?.closest("[data-sound-toggle], video")) return;
+      if (event.type === "keydown" && !["Enter", " "].includes(event.key)) return;
+      void playBackgroundAudio().then(started => {
+        if (started) removeIntentListeners();
+      });
+    };
+
+    soundToggle.addEventListener("click", () => {
+      removeIntentListeners();
+      if (backgroundAudio.paused) {
+        void playBackgroundAudio();
+      } else {
+        backgroundAudio.pause();
+        syncBackgroundAudioUi("Background music paused.");
+      }
+    });
+    backgroundAudio.addEventListener("play", () => syncBackgroundAudioUi());
+    backgroundAudio.addEventListener("pause", () => syncBackgroundAudioUi());
+    backgroundAudio.addEventListener("error", () => {
+      syncBackgroundAudioUi("Background music could not be loaded.");
+    });
+    document.addEventListener("pointerdown", startFromIntent);
+    document.addEventListener("keydown", startFromIntent);
+    syncBackgroundAudioUi();
+  }
+
+  function initializeProjectFilm() {
+    const video = dialog?.querySelector("[data-project-film]");
+    const source = dialog?.querySelector("[data-film-source-element]");
+    const chapterButtons = Array.from(dialog?.querySelectorAll("[data-film-clip]") || []);
+    if (!video || !source) return;
+    let switchingClip = false;
+
+    const resumeBackground = () => {
+      if (switchingClip || !resumeBackgroundAfterFilm) return;
+      resumeBackgroundAfterFilm = false;
+      void playBackgroundAudio();
+    };
+
+    video.addEventListener("play", () => {
+      resumeBackgroundAfterFilm = Boolean(backgroundAudio && !backgroundAudio.paused);
+      if (resumeBackgroundAfterFilm) {
+        backgroundAudio.pause();
+        syncBackgroundAudioUi("Background music paused while the project film plays.");
+      }
+    });
+    video.addEventListener("pause", resumeBackground);
+    video.addEventListener("ended", resumeBackground);
+
+    chapterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const shouldContinue = !video.paused;
+        switchingClip = true;
+        video.pause();
+        source.src = button.dataset.filmSource || "";
+        source.type = button.dataset.filmType || "video/mp4";
+        const poster = button.dataset.filmPoster || "";
+        if (poster) video.poster = poster;
+        else video.removeAttribute("poster");
+        video.setAttribute(
+          "aria-label",
+          `${button.dataset.filmLabel || "Project"} product film`
+        );
+        chapterButtons.forEach(item => {
+          const selected = item === button;
+          item.classList.toggle("is-active", selected);
+          item.setAttribute("aria-pressed", String(selected));
+        });
+        video.load();
+        switchingClip = false;
+        if (shouldContinue) video.play().catch(() => {});
+      });
+    });
+  }
 
   function openProject(projectId, trigger) {
     const project = projects.find(item => item.id === projectId);
@@ -636,6 +956,7 @@
 
     dialog.showModal();
     document.body.classList.add("dialog-open");
+    initializeProjectFilm();
     dialog.querySelector(".dialog-close")?.focus();
   }
 
@@ -817,6 +1138,7 @@
   initializeDisclosures();
   initializeNavigation();
   initializeActiveNavigation();
+  initializeBackgroundAudio();
   initializeReveal();
   initializeScrollUi();
   initializeHeroMotion();

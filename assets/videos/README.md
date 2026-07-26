@@ -21,9 +21,11 @@ videos/
 |   `-- 01-retail-intelligence-platform/ (Sprint 01-03)
 `-- university/
     |-- electrocorp/
-    `-- lowcortisol/
+    |-- lowcortisol/
+    `-- smartlocation/
 ```
 
-Only web-ready files belong here because the complete `assets/` directory is
-copied into the production build. Original high-resolution recordings remain
-under `video-sources/` and are intentionally ignored by Git.
+Only web-ready files belong here. Project films are delivered through the
+repository-backed media CDN, while lightweight interface assets and background
+audio are copied into the production build. Original high-resolution recordings
+remain under `video-sources/` and are intentionally ignored by Git.

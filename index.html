@@ -46,6 +46,23 @@
       </a>
     </header>
     <button class="nav-scrim" type="button" data-nav-dismiss aria-label="Close navigation" hidden></button>
+    <audio data-background-audio loop preload="metadata">
+      <source src="assets/audio/the-secret-ingredient-called-victory.mp3" type="audio/mpeg" />
+    </audio>
+    <button
+      class="sound-control"
+      type="button"
+      data-sound-toggle
+      aria-pressed="false"
+      aria-label="Play background music"
+    >
+      <span class="sound-control__meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="sound-control__copy">
+        <small>Ambient track</small>
+        <strong data-sound-label>Music off</strong>
+      </span>
+    </button>
+    <p class="sr-only" data-sound-status aria-live="polite"></p>
 
     <main id="main">
       <section id="top" class="hero">
