@@ -659,21 +659,22 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-deep-learning-core-09-cnn-foundations-image-classifier",
-    "title": "CNN Foundations Image Classifier",
+    "title": "CNN Vision Lab",
     "category": "AI Engineering",
     "family": "Deep Learning Core",
-    "summary": "A documented CNN Foundations Image Classifier blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
+    "summary": "An inspectable FashionMNIST product that connects convolution mechanics, controlled CNN inference, intermediate activations and held-out evaluation in one professional web laboratory.",
     "technologies": [
+      "Python",
       "PyTorch",
       "Computer Vision"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 456,
+      "code": 70,
+      "tests": 74,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/09-cnn-foundations-image-classifier",
     "featured": false,
     "accent": "violet",
@@ -758,13 +759,13 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 499,
-      "code": 166,
-      "tests": 39,
+      "files": 610,
+      "code": 178,
+      "tests": 44,
       "notebooks": 0
     },
     "status": "Implementation",
-    "url": "https://github.com/Path-Software-Engineer/Deep-Learning-Visual-Tools/tree/main/02-deep-learning-visual-lab-platform",
+    "url": "https://github.com/Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/tree/main/02-deep-learning-visual-lab-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform"
@@ -1460,21 +1461,25 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-deep-learning-core-08-pytorch-regression-classification-api",
-    "title": "PyTorch Regression Classification API",
+    "title": "PyTorch Tabular Studio",
     "category": "AI Engineering",
     "family": "Deep Learning Core",
-    "summary": "A documented PyTorch Regression Classification API blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
+    "summary": "A complete Deep Learning workflow for tabular regression and multiclass classification. Two approved PyTorch MLPs are served through a versioned FastAPI backend and a responsive React interface with batch inference, reproducible artifacts and explicit model limitations.",
     "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
       "FastAPI",
+      "Docker",
       "PyTorch"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 696,
+      "code": 81,
+      "tests": 112,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/08-pytorch-regression-classification-api",
     "featured": false,
     "accent": "violet",
@@ -1982,7 +1987,7 @@ window.PORTFOLIO_PROJECTS = [
       "GCP"
     ],
     "signals": {
-      "files": 860,
+      "files": 862,
       "code": 230,
       "tests": 210,
       "notebooks": 0

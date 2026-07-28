@@ -30,16 +30,18 @@
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Jean Loa, home">
         <span class="brand-mark">JL</span>
-        <span class="brand-copy">Systems<br />Portfolio</span>
+        <span class="brand-copy">Software + AI<br />Engineer</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
       </button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="#selected">Selected work</a>
-        <a href="#categories">Categories</a>
-        <a href="#archive">Archive</a>
-        <a href="#about">About</a>
+        <a href="#selected">Selected</a>
+        <a href="#internships">Internships</a>
+        <a href="#university">University</a>
+        <a href="#ai-path">AI path</a>
+        <a href="#software-path">Software path</a>
+        <a href="#independent">Independent</a>
       </nav>
       <a class="header-cta" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">
         GitHub <span aria-hidden="true">↗</span>
@@ -75,20 +77,32 @@
           <span class="signal signal--three">PRODUCT</span>
         </div>
         <div class="hero-content">
-          <p class="kicker reveal">Jean Franck Loa Rojas · Lima, Peru</p>
-          <h1 class="hero-title" aria-label="I build intelligence into systems">
-            <span class="hero-line reveal">I build</span>
-            <span class="hero-line hero-line--accent reveal"><em>intelligence</em></span>
-            <span class="hero-line reveal">into systems.</span>
+          <p class="kicker reveal">Software Engineering · AI Engineering · Lima, Peru</p>
+          <h1 class="hero-title" aria-label="I engineer products end to end">
+            <span class="hero-line reveal">I engineer</span>
+            <span class="hero-line hero-line--accent reveal"><em>products</em></span>
+            <span class="hero-line reveal">end to end.</span>
           </h1>
           <div class="hero-bottom reveal">
             <p>
-              Applied AI, full-stack products and architecture blueprints—connected from
-              data and domain logic to interfaces, deployment and evidence.
+              From frontend and backend architecture to data, AI, deployment and
+              technical evidence—complete systems rather than isolated demos.
             </p>
-            <a class="round-link" href="#selected" aria-label="Explore selected systems">
-              <span>Selected<br />systems</span><span aria-hidden="true">↓</span>
-            </a>
+            <div class="hero-actions" aria-label="Explore Jean Loa's engineering work">
+              <a class="hero-track-link" href="#software-path" data-accent="software">
+                <span>01</span>
+                <strong>Software Engineering</strong>
+                <small>Products · platforms · delivery</small>
+              </a>
+              <a class="hero-track-link" href="#ai-path" data-accent="ai">
+                <span>02</span>
+                <strong>AI Engineering</strong>
+                <small>Models · agents · evaluation</small>
+              </a>
+              <a class="hero-selected-link" href="#selected">
+                Explore selected systems <span aria-hidden="true">↓</span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="hero-index" aria-label="Portfolio metrics">
@@ -151,11 +165,11 @@
 
       <div id="archive" class="archive-anchor" aria-hidden="true"></div>
 
-      <section id="internships" class="project-section project-section--internships section-pad">
+      <section id="internships" class="project-section project-section--internships section-pad" aria-labelledby="internships-title">
         <div class="project-section__heading">
           <div>
             <div class="section-label reveal"><span>04</span> Internship work</div>
-            <h2 class="section-title reveal">Professional work.<br />Visible progress.</h2>
+            <h2 id="internships-title" class="section-title reveal">Professional work.<br />Visible progress.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
@@ -182,11 +196,11 @@
         <p class="sr-only" role="status" data-section-status="Internships"></p>
       </section>
 
-      <section id="university" class="project-section project-section--university section-pad">
+      <section id="university" class="project-section project-section--university section-pad" aria-labelledby="university-title">
         <div class="project-section__heading">
           <div>
             <div class="section-label reveal"><span>05</span> University work</div>
-            <h2 class="section-title reveal">Systems built<br />through practice.</h2>
+            <h2 id="university-title" class="section-title reveal">Systems built<br />through practice.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
@@ -213,11 +227,11 @@
         <p class="sr-only" role="status" data-section-status="University"></p>
       </section>
 
-      <section id="ai-path" class="project-section project-section--ai section-pad">
+      <section id="ai-path" class="project-section project-section--ai section-pad" aria-labelledby="ai-path-title">
         <div class="project-section__heading">
           <div>
             <div class="section-label reveal"><span>06</span> AI engineering path</div>
-            <h2 class="section-title reveal">Intelligence,<br />mapped in depth.</h2>
+            <h2 id="ai-path-title" class="section-title reveal">Intelligence,<br />mapped in depth.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
@@ -244,11 +258,11 @@
         <p class="sr-only" role="status" data-section-status="AI Engineering"></p>
       </section>
 
-      <section id="software-path" class="project-section project-section--software section-pad">
+      <section id="software-path" class="project-section project-section--software section-pad" aria-labelledby="software-path-title">
         <div class="project-section__heading">
           <div>
             <div class="section-label reveal"><span>07</span> Software engineering path</div>
-            <h2 class="section-title reveal">Platforms shaped<br />for delivery.</h2>
+            <h2 id="software-path-title" class="section-title reveal">Platforms shaped<br />for delivery.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
@@ -276,11 +290,11 @@
         <p class="sr-only" role="status" data-section-status="Software Engineering"></p>
       </section>
 
-      <section id="independent" class="project-section project-section--independent section-pad">
+      <section id="independent" class="project-section project-section--independent section-pad" aria-labelledby="independent-title">
         <div class="project-section__heading">
           <div>
             <div class="section-label reveal"><span>08</span> Independent practice</div>
-            <h2 class="section-title reveal">Foundations explored<br />by curiosity.</h2>
+            <h2 id="independent-title" class="section-title reveal">Foundations explored<br />by curiosity.</h2>
           </div>
           <div class="project-section__summary reveal">
             <p>
@@ -317,12 +331,12 @@
           <h2 class="about-title reveal">Structure.<br /><em>Purpose.</em><br />Evidence.</h2>
           <div class="about-copy reveal">
             <p>
-              I work where software engineering and applied intelligence meet: domain models,
-              data pipelines, APIs, visual systems, deployment, technical writing and product decisions.
+              I take projects from domain framing and architecture through frontend,
+              backend, data, AI, testing, deployment and technical documentation.
             </p>
             <p>
-              The goal is not to hide complexity. It is to give complexity a clear shape—one that can be tested,
-              explained and extended.
+              The goal is not to hide complexity. It is to give complexity a clear
+              shape—one that can be used, tested, explained and extended.
             </p>
           </div>
           <a class="large-contact" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">

@@ -74,7 +74,7 @@
       key: "internship",
       accent: "#ff4f2e",
       text: "#c9361e",
-      short: "Professional"
+      short: "Internships"
     },
     University: {
       key: "university",
@@ -86,13 +86,13 @@
       key: "ai",
       accent: "#8b5cf6",
       text: "#6d42d8",
-      short: "AI"
+      short: "AI Engineering"
     },
     "Software Engineering": {
       key: "software",
       accent: "#ffb000",
       text: "#8a5a00",
-      short: "Software"
+      short: "Software Engineering"
     },
     Leisure: {
       key: "independent",
@@ -401,7 +401,17 @@
 
   function statusMarkup(project) {
     const status = projectStatus(project);
-    if (!status) return '<span class="project-card__no-status">Documented collection</span>';
+    if (!status) {
+      const source = rawProjectStatus(project);
+      const recordType = /coursework/i.test(source)
+        ? "Coursework record"
+        : /published course/i.test(source)
+          ? "Published course"
+          : /exploration/i.test(source)
+            ? "Independent study"
+            : "Documented collection";
+      return `<span class="project-card__no-status">${escapeHtml(recordType)}</span>`;
+    }
     return `
       <span class="status-pill status-pill--${status.toLowerCase()}">
         <i aria-hidden="true"></i>${escapeHtml(status)}
@@ -414,6 +424,34 @@
       .slice(0, limit)
       .map(technology => `<span>${escapeHtml(technology)}</span>`)
       .join("");
+  }
+
+  function projectSignalsMarkup(project, film) {
+    const signals = project.signals || {};
+    const clips = Array.isArray(film?.clips) ? film.clips : [];
+    const items = [];
+
+    if (clips.length) {
+      items.push(`
+        <span>
+          <small>Film</small>
+          <strong>${clips.length > 1 ? `${clips.length} chapters` : clips[0].duration}</strong>
+        </span>
+      `);
+    }
+
+    if ((signals.code || 0) > 0 || (signals.tests || 0) > 0) {
+      items.push(`
+        <span>
+          <small>Evidence</small>
+          <strong>${escapeHtml(signals.code || 0)} code · ${escapeHtml(signals.tests || 0)} tests</strong>
+        </span>
+      `);
+    }
+
+    return items.length
+      ? `<div class="project-card__signals">${items.join("")}</div>`
+      : "";
   }
 
   function projectCardMarkup(project, groupName, index) {
@@ -435,6 +473,7 @@
           <p class="project-card__summary">${escapeHtml(project.summary)}</p>
         </div>
         <div class="project-card__tags">${technologyMarkup(project)}</div>
+        ${projectSignalsMarkup(project, film)}
         <div class="project-card__footer">
           ${statusMarkup(project)}
           <button
@@ -585,7 +624,15 @@
     if (visual.kind === "image") {
       return `
         <div class="flagship-card__visual">
-          <img src="${escapeHtml(visual.source)}" alt="${escapeHtml(visual.label)}" loading="lazy" />
+          <img
+            src="${escapeHtml(visual.source)}"
+            alt="${escapeHtml(visual.label)}"
+            loading="lazy"
+            data-evidence-image
+          />
+          <p class="flagship-card__visual-fallback" data-evidence-fallback hidden>
+            Visual evidence is temporarily unavailable.
+          </p>
           <div class="flagship-card__visual-grid" aria-hidden="true"></div>
         </div>
       `;
@@ -611,6 +658,8 @@
 
     root.innerHTML = flagships.map((project, index) => {
       const token = categoryTokens[project.category] || categoryTokens.University;
+      const film = projectFilms.get(project.id);
+      const filmDuration = film?.clips?.[0]?.duration;
       return `
         <article class="flagship-card flagship-card--${index + 1}" data-accent="${token.key}">
           ${flagshipVisualMarkup(project)}
@@ -621,6 +670,11 @@
             </div>
             <h3>${escapeHtml(project.title)}</h3>
             <p>${escapeHtml(project.summary)}</p>
+            ${filmDuration ? `
+              <p class="flagship-card__film">
+                <span>Product film</span><strong>${escapeHtml(filmDuration)}</strong>
+              </p>
+            ` : ""}
             <div class="flagship-card__footer">
               <div class="flagship-card__tags">${technologyMarkup(project, 4)}</div>
               <button
@@ -629,13 +683,25 @@
                 data-project-id="${escapeHtml(project.id)}"
                 aria-label="View ${escapeHtml(project.title)} case study"
               >
-                View case study <span aria-hidden="true">↗</span>
+                ${film ? "View case + film" : "View case study"} <span aria-hidden="true">↗</span>
               </button>
             </div>
           </div>
         </article>
       `;
     }).join("");
+  }
+
+  function initializeEvidenceImages() {
+    document.querySelectorAll("[data-evidence-image]").forEach(image => {
+      const fallback = image.parentElement?.querySelector("[data-evidence-fallback]");
+      const showFallback = () => {
+        image.hidden = true;
+        if (fallback) fallback.hidden = false;
+      };
+      image.addEventListener("error", showFallback);
+      if (image.complete && image.naturalWidth === 0) showFallback();
+    });
   }
 
   function renderCategoryAtlas() {
@@ -721,7 +787,19 @@
             `).join("")}
           </div>
         ` : ""}
-        <div class="dialog-film__frame">
+        <div class="dialog-film__frame is-loading" data-film-frame>
+          <div class="dialog-film__state" data-film-state role="status" aria-live="polite">
+            <span data-film-status>Loading film metadata…</span>
+            <a
+              data-film-fallback
+              href="${escapeHtml(clip.source)}"
+              target="_blank"
+              rel="noreferrer"
+              hidden
+            >
+              Open film directly <span aria-hidden="true">↗</span>
+            </a>
+          </div>
           <video
             data-project-film
             controls
@@ -781,26 +859,8 @@
   function initializeBackgroundAudio() {
     if (!backgroundAudio || !soundToggle) return;
     backgroundAudio.volume = backgroundVolume;
-    let intentListenersActive = true;
-
-    const removeIntentListeners = () => {
-      if (!intentListenersActive) return;
-      intentListenersActive = false;
-      document.removeEventListener("pointerdown", startFromIntent);
-      document.removeEventListener("keydown", startFromIntent);
-    };
-
-    const startFromIntent = event => {
-      const target = event.target instanceof Element ? event.target : null;
-      if (target?.closest("[data-sound-toggle], video")) return;
-      if (event.type === "keydown" && !["Enter", " "].includes(event.key)) return;
-      void playBackgroundAudio().then(started => {
-        if (started) removeIntentListeners();
-      });
-    };
 
     soundToggle.addEventListener("click", () => {
-      removeIntentListeners();
       if (backgroundAudio.paused) {
         void playBackgroundAudio();
       } else {
@@ -813,17 +873,36 @@
     backgroundAudio.addEventListener("error", () => {
       syncBackgroundAudioUi("Background music could not be loaded.");
     });
-    document.addEventListener("pointerdown", startFromIntent);
-    document.addEventListener("keydown", startFromIntent);
     syncBackgroundAudioUi();
   }
 
   function initializeProjectFilm() {
     const video = dialog?.querySelector("[data-project-film]");
     const source = dialog?.querySelector("[data-film-source-element]");
+    const frame = dialog?.querySelector("[data-film-frame]");
+    const status = dialog?.querySelector("[data-film-status]");
+    const fallback = dialog?.querySelector("[data-film-fallback]");
     const chapterButtons = Array.from(dialog?.querySelectorAll("[data-film-clip]") || []);
     if (!video || !source) return;
     let switchingClip = false;
+
+    const setFilmState = (state, message) => {
+      frame?.classList.toggle("is-loading", state === "loading");
+      frame?.classList.toggle("is-ready", state === "ready");
+      frame?.classList.toggle("has-error", state === "error");
+      if (status) status.textContent = message;
+      if (fallback) {
+        fallback.hidden = state !== "error";
+        fallback.href = source.src;
+      }
+    };
+
+    const handleFilmError = () => {
+      setFilmState(
+        "error",
+        "This film is temporarily unavailable from the media source."
+      );
+    };
 
     const resumeBackground = () => {
       if (switchingClip || !resumeBackgroundAfterFilm) return;
@@ -831,6 +910,17 @@
       void playBackgroundAudio();
     };
 
+    video.addEventListener("loadedmetadata", () => {
+      setFilmState("ready", "Project film ready.");
+    });
+    video.addEventListener("waiting", () => {
+      setFilmState("loading", "Loading project film…");
+    });
+    video.addEventListener("stalled", () => {
+      setFilmState("loading", "The media source is responding slowly…");
+    });
+    video.addEventListener("error", handleFilmError);
+    source.addEventListener("error", handleFilmError);
     video.addEventListener("play", () => {
       resumeBackgroundAfterFilm = Boolean(backgroundAudio && !backgroundAudio.paused);
       if (resumeBackgroundAfterFilm) {
@@ -846,6 +936,7 @@
         const shouldContinue = !video.paused;
         switchingClip = true;
         video.pause();
+        setFilmState("loading", `Loading ${button.dataset.filmLabel || "project film"}…`);
         source.src = button.dataset.filmSource || "";
         source.type = button.dataset.filmType || "video/mp4";
         const poster = button.dataset.filmPoster || "";
@@ -865,6 +956,12 @@
         if (shouldContinue) video.play().catch(() => {});
       });
     });
+
+    if (video.readyState >= 1) {
+      setFilmState("ready", "Project film ready.");
+    } else {
+      setFilmState("loading", "Loading film metadata…");
+    }
   }
 
   function openProject(projectId, trigger) {
@@ -1058,28 +1155,21 @@
   function initializeActiveNavigation() {
     if (!("IntersectionObserver" in window)) return;
     const links = Array.from(document.querySelectorAll(".primary-nav a[href^='#']"));
-    const archiveSections = new Set([
+    const sections = [
+      "selected",
       "internships",
       "university",
       "ai-path",
       "software-path",
       "independent"
-    ]);
-    const sections = [
-      document.querySelector("#selected"),
-      document.querySelector("#categories"),
-      ...Array.from(archiveSections, id => document.getElementById(id)),
-      document.querySelector("#about")
-    ].filter(Boolean);
+    ].map(id => document.getElementById(id)).filter(Boolean);
 
     const observer = new IntersectionObserver(entries => {
       const visible = entries
         .filter(entry => entry.isIntersecting)
         .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
       if (!visible) return;
-      const target = archiveSections.has(visible.target.id)
-        ? "#archive"
-        : `#${visible.target.id}`;
+      const target = `#${visible.target.id}`;
       links.forEach(link => {
         if (link.getAttribute("href") === target) link.setAttribute("aria-current", "location");
         else link.removeAttribute("aria-current");
@@ -1133,6 +1223,7 @@
   }
 
   renderFlagships();
+  initializeEvidenceImages();
   renderCategoryAtlas();
   categoryDefinitions.forEach(definition => renderCategorySection(definition));
   initializeDisclosures();

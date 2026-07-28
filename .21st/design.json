@@ -1,0 +1,174 @@
+{
+  "project": {
+    "name": "JeanLoa Portfolio",
+    "type": "technical editorial engineering portfolio",
+    "description": "A structured portfolio for complete software products, AI engineering, internships, university systems, independent practice, courses and academic records."
+  },
+  "stack": {
+    "runtime": "static HTML, CSS and vanilla JavaScript",
+    "data": "generated window.PORTFOLIO_PROJECTS payload",
+    "sourceFiles": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "scripts/generate-project-data.mjs"
+    ],
+    "build": "Node.js scripts/build.mjs",
+    "packageDependencies": []
+  },
+  "tokens": {
+    "colors": {
+      "canvas": "#f7f7f4",
+      "paper": "#ffffff",
+      "ink": "#0b0c0b",
+      "inkSoft": "#242624",
+      "muted": "#5b5e59",
+      "line": "#d8d9d4",
+      "lineStrong": "#a8aaa4",
+      "inverseLine": "#30322f",
+      "focus": "#0b5fcc",
+      "internship": "#ff4f2e",
+      "university": "#1877f2",
+      "aiEngineering": "#8b5cf6",
+      "softwareEngineering": "#ffb000",
+      "independent": "#25a36f"
+    },
+    "typography": {
+      "display": "Archivo",
+      "body": "Space Grotesk",
+      "technical": "JetBrains Mono",
+      "editorialAccent": "Instrument Serif Italic"
+    },
+    "spacing": {
+      "baseUnit": "4px",
+      "pageGutter": "clamp(1.5rem, 4.5vw, 4.5rem)",
+      "sectionSpace": "clamp(4rem, 8vw, 7.5rem)",
+      "maxWidth": "100rem"
+    },
+    "shape": {
+      "defaultRadius": "0",
+      "circularOnly": [
+        "small status markers",
+        "intentional round-link",
+        "decorative system diagrams"
+      ]
+    },
+    "motion": {
+      "duration": "150-300ms",
+      "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "reducedMotionRequired": true
+    }
+  },
+  "categories": [
+    {
+      "name": "Internships",
+      "accent": "#ff4f2e",
+      "organizations": [
+        "DecodeLabs",
+        "SpotterAI"
+      ]
+    },
+    {
+      "name": "University",
+      "accent": "#1877f2"
+    },
+    {
+      "name": "AI Engineering",
+      "accent": "#8b5cf6"
+    },
+    {
+      "name": "Software Engineering",
+      "accent": "#ffb000"
+    },
+    {
+      "name": "Independent",
+      "accent": "#25a36f"
+    }
+  ],
+  "existingComponents": [
+    "fixed editorial header and mobile navigation drawer",
+    "end-to-end engineering hero",
+    "selected flagship system cards",
+    "category atlas rows",
+    "category section headers and disclosure controls",
+    "grouped editorial project lists",
+    "COMPLETED and PENDING status pills",
+    "neutral academic record descriptors",
+    "full-screen project case-study dialog",
+    "single-film and chapter-playlist video showcases",
+    "engineering style and contact section",
+    "background audio control"
+  ],
+  "decisions": [
+    "Preserve a white, black and warm off-white editorial foundation.",
+    "Use color primarily as category identity, never as the only information carrier.",
+    "Keep every trajectory as an explicit section.",
+    "Present the portfolio as a body of complete engineering work, not as a SaaS landing page.",
+    "Prioritize project evidence, implementation state, media and repository links.",
+    "Reuse existing render functions and CSS layers before introducing new primitives.",
+    "Use only COMPLETED and PENDING as visible project states.",
+    "Omit project-state pills for courses, collections and academic records.",
+    "Respect keyboard navigation, visible focus, touch targets and reduced motion."
+  ],
+  "constraints": [
+    "Do not merge all work into an undifferentiated card gallery.",
+    "Do not invent experience, technologies, results, deployments or projects.",
+    "Do not use excessive glassmorphism, 3D effects, strong glow or decorative gradients.",
+    "Do not use emoji as interface icons.",
+    "Do not add constant animation or hover-only primary interactions.",
+    "Do not break generated project data, media paths, categories, statuses, links or deployment output.",
+    "Do not upload the project to Stitch without explicit authorization."
+  ],
+  "allowedDependencies": {
+    "existing": [],
+    "new": "No new runtime dependency is allowed unless a verified requirement cannot be met with the existing static stack.",
+    "explicitlyNotApproved": [
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion"
+    ]
+  },
+  "inspirationRequest": {
+    "mode": "metadata-only",
+    "needs": [
+      "editorial technical portfolio navigation",
+      "multi-track engineering hierarchy",
+      "project evidence cards",
+      "restrained audiovisual case studies",
+      "accessible monochromatic interactions"
+    ],
+    "reject": [
+      "generic SaaS templates",
+      "masonry-only portfolios",
+      "bento dashboards",
+      "glassmorphism",
+      "neon AI gradients",
+      "component-library migrations"
+    ]
+  },
+  "inspirationDecision": {
+    "accepted": {
+      "reference": "Project Showcase",
+      "principleOnly": [
+        "list-based project index",
+        "strong textual hierarchy",
+        "editorial scanning before interaction"
+      ]
+    },
+    "rejectedFromAcceptedReference": [
+      "floating cursor",
+      "cursor-following animation"
+    ],
+    "rejectedAcrossOtherReferences": [
+      "glassmorphism",
+      "3D presentation",
+      "automatic carousels",
+      "decorative gradients",
+      "GSAP",
+      "Framer Motion",
+      "SaaS landing-page structure"
+    ],
+    "codeConsumed": false,
+    "generationConsumed": false
+  }
+}
