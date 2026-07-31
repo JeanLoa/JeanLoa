@@ -245,6 +245,7 @@ window.PORTFOLIO_PROJECTS = [
     },
     "status": "Functional demo",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/smartlocation-route-optimization-platform",
+    "liveUrl": "https://smartlocation.onrender.com",
     "featured": true,
     "accent": "university",
     "visual": "map"
@@ -276,7 +277,9 @@ window.PORTFOLIO_PROJECTS = [
       "ASP.NET Core",
       "PostgreSQL",
       "Docker",
-      "Render"
+      "Cloud Run",
+      "Firebase Hosting",
+      "Neon"
     ],
     "signals": {
       "files": 757,
@@ -286,6 +289,8 @@ window.PORTFOLIO_PROJECTS = [
     },
     "status": "Built system",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/lowcortisol-digital-health-platform",
+    "liveUrl": "https://university-lowcortisol.web.app",
+    "apiUrl": "https://lowcortisol-platform-y2umk6uzwq-ue.a.run.app/swagger/index.html",
     "featured": true,
     "accent": "university",
     "image": "assets/lowcortisol-reports.png"
@@ -317,7 +322,9 @@ window.PORTFOLIO_PROJECTS = [
       "Spring Boot",
       "PostgreSQL",
       "Docker",
-      "Render"
+      "Cloud Run",
+      "Firebase Hosting",
+      "Neon"
     ],
     "signals": {
       "files": 1075,
@@ -327,6 +334,8 @@ window.PORTFOLIO_PROJECTS = [
     },
     "status": "Built system",
     "url": "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/electrocorp-enterprise-platform-suite",
+    "liveUrl": "https://university-electrocorp.web.app",
+    "apiUrl": "https://electrocorp-platform-vfvqevfzvq-ue.a.run.app/swagger-ui.html",
     "featured": true,
     "accent": "university",
     "image": "assets/electrocorp-home.png"

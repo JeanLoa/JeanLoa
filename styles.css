@@ -2292,21 +2292,32 @@
     border-color: var(--inverse-line);
   }
 
+  .dialog-links {
+    margin-top: 3rem;
+  }
+
   .dialog-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 4.5rem;
-    margin-top: 3rem;
     padding: 1rem 0;
     color: var(--paper);
-    border-block: 1px solid var(--inverse-line);
+    border-bottom: 1px solid var(--inverse-line);
     font-family: var(--mono);
     font-size: 0.72rem;
     text-transform: uppercase;
     transition:
       color 180ms ease,
       padding 220ms var(--ease);
+  }
+
+  .dialog-link:first-child {
+    border-top: 1px solid var(--inverse-line);
+  }
+
+  .dialog-link--live {
+    color: var(--accent-text);
   }
 
   .dialog-link:hover {

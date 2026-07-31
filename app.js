@@ -985,6 +985,23 @@
       ? "This entry defines intended modules, workflow, evaluation and limitations without claiming an implemented product."
       : "This implementation connects data, code and documented evidence inside a focused engineering workflow.");
     const token = categoryTokens[project.category] || categoryTokens.Leisure;
+    const projectLinks = [
+      project.liveUrl && {
+        url: project.liveUrl,
+        label: "Open the live product",
+        modifier: "dialog-link--live"
+      },
+      project.apiUrl && {
+        url: project.apiUrl,
+        label: "Explore the live API",
+        modifier: "dialog-link--api"
+      },
+      {
+        url: project.url,
+        label: "Inspect the source on GitHub",
+        modifier: "dialog-link--source"
+      }
+    ].filter(Boolean);
 
     dialogContent.innerHTML = `
       <article class="dialog-case" data-accent="${token.key}">
@@ -1042,9 +1059,13 @@
                 <div><strong>${escapeHtml(signals.notebooks ?? "—")}</strong><span>notebooks</span></div>
               </div>
               <div class="dialog-tags">${technologyMarkup(project, 8)}</div>
-              <a class="dialog-link" href="${escapeHtml(project.url)}" target="_blank" rel="noreferrer">
-                <strong>Inspect the project on GitHub</strong><span aria-hidden="true">↗</span>
-              </a>
+              <nav class="dialog-links" aria-label="Project links">
+                ${projectLinks.map(link => `
+                  <a class="dialog-link ${link.modifier}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+                    <strong>${escapeHtml(link.label)}</strong><span aria-hidden="true">↗</span>
+                  </a>
+                `).join("")}
+              </nav>
             </section>
           </div>
         </div>

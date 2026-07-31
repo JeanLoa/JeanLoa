@@ -85,8 +85,15 @@ My work connects domain logic, data, intelligence, APIs, user experience, and in
         <code>Angular</code>
         <code>Spring Boot</code>
         <code>PostgreSQL</code>
+        <code>Cloud Run</code>
+        <code>Firebase</code>
         <code>JWT</code>
         <code>DDD</code>
+      </p>
+      <p>
+        <a href="https://university-electrocorp.web.app"><strong>Live product</strong></a> ·
+        <a href="https://electrocorp-platform-vfvqevfzvq-ue.a.run.app/swagger-ui.html">Live API</a> ·
+        <a href="https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/electrocorp-enterprise-platform-suite">Source</a>
       </p>
     </td>
     <td width="33%" valign="top">
@@ -99,8 +106,15 @@ My work connects domain logic, data, intelligence, APIs, user experience, and in
         <code>Vue 3</code>
         <code>ASP.NET Core</code>
         <code>PostgreSQL</code>
+        <code>Cloud Run</code>
+        <code>Firebase</code>
         <code>CQRS</code>
         <code>DDD</code>
+      </p>
+      <p>
+        <a href="https://university-lowcortisol.web.app"><strong>Live product</strong></a> ·
+        <a href="https://lowcortisol-platform-y2umk6uzwq-ue.a.run.app/swagger/index.html">Live API</a> ·
+        <a href="https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/lowcortisol-digital-health-platform">Source</a>
       </p>
     </td>
     <td width="33%" valign="top">
@@ -115,6 +129,10 @@ My work connects domain logic, data, intelligence, APIs, user experience, and in
         <code>MapLibre</code>
         <code>Dijkstra</code>
         <code>A*</code>
+      </p>
+      <p>
+        <a href="https://smartlocation.onrender.com"><strong>Live product</strong></a> ·
+        <a href="https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/smartlocation-route-optimization-platform">Source</a>
       </p>
     </td>
   </tr>
