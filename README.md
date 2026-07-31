@@ -172,47 +172,169 @@ The ecosystem below defines the full technical scope of my Software Engineering 
 
 ### Frontend, Product UI & Visualization
 
-`Next.js` · `React` · `Angular` · `Vue.js` · `Tailwind CSS` · `RxJS` · `TanStack Query` · `Streamlit` · `Plotly` · `MapLibre`
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=111827" alt="React" />
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue.js" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/RxJS-B7178C?style=flat-square&logo=reactivex&logoColor=white" alt="RxJS" />
+  <img src="https://img.shields.io/badge/TanStack%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white" alt="TanStack Query" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly" />
+  <img src="https://img.shields.io/badge/MapLibre-396CB2?style=flat-square&logo=maplibre&logoColor=white" alt="MapLibre" />
+</p>
 
 ### Backend, APIs & Distributed Services
 
-`NestJS` · `Spring Boot` · `ASP.NET Core` · `FastAPI` · `GraphQL` · `REST APIs` · `gRPC` · `WebSockets` · `OpenAPI`
+<p>
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="ASP.NET Core" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white" alt="GraphQL" />
+  <img src="https://img.shields.io/badge/REST%20APIs-005571?style=flat-square&logo=swagger&logoColor=white" alt="REST APIs" />
+  <img src="https://img.shields.io/badge/gRPC-244C5A?style=flat-square&logo=google&logoColor=white" alt="gRPC" />
+  <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="WebSockets" />
+  <img src="https://img.shields.io/badge/OpenAPI-6BA539?style=flat-square&logo=openapiinitiative&logoColor=white" alt="OpenAPI" />
+</p>
 
 ### Machine Learning, Deep Learning & MLOps
 
-`scikit-learn` · `PyTorch` · `TensorFlow` · `Hugging Face` · `Optuna` · `MLflow` · `DVC` · `Kubeflow` · `ONNX`
+<p>
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
+  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=111827" alt="Hugging Face" />
+  <img src="https://img.shields.io/badge/Optuna-2E6DB4?style=flat-square" alt="Optuna" />
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
+  <img src="https://img.shields.io/badge/DVC-13ADC7?style=flat-square&logo=dvc&logoColor=white" alt="DVC" />
+  <img src="https://img.shields.io/badge/Kubeflow-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubeflow" />
+  <img src="https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white" alt="ONNX" />
+</p>
 
 ### LLMs, RAG & Agentic AI
 
-`Agentic AI` · `OpenAI API` · `LangGraph` · `LangChain` · `LlamaIndex` · `RAG` · `MCP` · `Tool Calling` · `Guardrails` · `LLM Evaluation`
+<p>
+  <img src="https://img.shields.io/badge/Agentic%20AI-111827?style=flat-square&logo=openai&logoColor=white" alt="Agentic AI" />
+  <img src="https://img.shields.io/badge/OpenAI%20API-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI API" />
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph" />
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain" />
+  <img src="https://img.shields.io/badge/LlamaIndex-7C3AED?style=flat-square" alt="LlamaIndex" />
+  <img src="https://img.shields.io/badge/RAG-7C3AED?style=flat-square&logo=databricks&logoColor=white" alt="RAG" />
+  <img src="https://img.shields.io/badge/MCP-111827?style=flat-square&logo=anthropic&logoColor=white" alt="Model Context Protocol" />
+  <img src="https://img.shields.io/badge/Tool%20Calling-10A37F?style=flat-square&logo=openai&logoColor=white" alt="Tool Calling" />
+  <img src="https://img.shields.io/badge/Guardrails-DC2626?style=flat-square" alt="AI Guardrails" />
+  <img src="https://img.shields.io/badge/LLM%20Evaluation-2563EB?style=flat-square&logo=weightsandbiases&logoColor=white" alt="LLM Evaluation" />
+</p>
 
 ### Computer Vision, Multimodal AI & Edge
 
-`OpenCV` · `Ultralytics` · `Transformers` · `CLIP` · `Tesseract OCR` · `ONNX Runtime` · `TensorRT` · `Edge AI`
+<p>
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
+  <img src="https://img.shields.io/badge/Ultralytics-111F68?style=flat-square&logo=yolo&logoColor=white" alt="Ultralytics" />
+  <img src="https://img.shields.io/badge/Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=111827" alt="Transformers" />
+  <img src="https://img.shields.io/badge/CLIP-8B5CF6?style=flat-square&logo=openai&logoColor=white" alt="CLIP" />
+  <img src="https://img.shields.io/badge/Tesseract%20OCR-4285F4?style=flat-square&logo=google&logoColor=white" alt="Tesseract OCR" />
+  <img src="https://img.shields.io/badge/ONNX%20Runtime-005CED?style=flat-square&logo=onnx&logoColor=white" alt="ONNX Runtime" />
+  <img src="https://img.shields.io/badge/TensorRT-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="TensorRT" />
+  <img src="https://img.shields.io/badge/Edge%20AI-FF6F00?style=flat-square&logo=raspberrypi&logoColor=white" alt="Edge AI" />
+</p>
 
 ### Data, Streaming, Search & Storage
 
-`PostgreSQL` · `MongoDB` · `Redis` · `Elasticsearch` · `Apache Kafka` · `Apache Spark` · `Apache Airflow` · `BigQuery` · `FAISS` · `Chroma` · `Qdrant` · `Pinecone` · `Weaviate`
+<p>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
+  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Apache Kafka" />
+  <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white" alt="Apache Spark" />
+  <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" alt="Apache Airflow" />
+  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+  <img src="https://img.shields.io/badge/FAISS-0467DF?style=flat-square&logo=meta&logoColor=white" alt="FAISS" />
+  <img src="https://img.shields.io/badge/Chroma-FF6B35?style=flat-square" alt="Chroma" />
+  <img src="https://img.shields.io/badge/Qdrant-DC244C?style=flat-square&logo=qdrant&logoColor=white" alt="Qdrant" />
+  <img src="https://img.shields.io/badge/Pinecone-000000?style=flat-square&logo=pinecone&logoColor=white" alt="Pinecone" />
+  <img src="https://img.shields.io/badge/Weaviate-00C2A8?style=flat-square&logo=weaviate&logoColor=white" alt="Weaviate" />
+</p>
 
 ### Cloud AI & Managed Platforms
 
-**AWS** — `Amazon SageMaker AI` · `AWS App Runner` · `AWS Lambda` · `Amazon ECS` · `Amazon EKS` · `Amazon S3`
+<p>
+  <strong>AWS</strong><br>
+  <img src="https://img.shields.io/badge/Amazon%20SageMaker%20AI-232F3E?style=flat-square&logo=amazonwebservices&logoColor=FF9900" alt="Amazon SageMaker AI" />
+  <img src="https://img.shields.io/badge/AWS%20App%20Runner-FF9900?style=flat-square&logo=amazonwebservices&logoColor=232F3E" alt="AWS App Runner" />
+  <img src="https://img.shields.io/badge/AWS%20Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white" alt="AWS Lambda" />
+  <img src="https://img.shields.io/badge/Amazon%20ECS-FF9900?style=flat-square&logo=amazonecs&logoColor=white" alt="Amazon ECS" />
+  <img src="https://img.shields.io/badge/Amazon%20EKS-FF9900?style=flat-square&logo=amazoneks&logoColor=white" alt="Amazon EKS" />
+  <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=flat-square&logo=amazons3&logoColor=white" alt="Amazon S3" />
+</p>
 
-**Azure** — `Azure Machine Learning` · `Azure Container Apps` · `Azure Functions` · `Azure Kubernetes Service` · `Azure Blob Storage`
+<p>
+  <strong>Azure</strong><br>
+  <img src="https://img.shields.io/badge/Azure%20Machine%20Learning-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure Machine Learning" />
+  <img src="https://img.shields.io/badge/Azure%20Container%20Apps-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure Container Apps" />
+  <img src="https://img.shields.io/badge/Azure%20Functions-0062AD?style=flat-square&logo=azurefunctions&logoColor=white" alt="Azure Functions" />
+  <img src="https://img.shields.io/badge/Azure%20Kubernetes%20Service-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Azure Kubernetes Service" />
+  <img src="https://img.shields.io/badge/Azure%20Blob%20Storage-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure Blob Storage" />
+</p>
 
-**GCP** — `Vertex AI` · `Cloud Run` · `Google Kubernetes Engine` · `BigQuery` · `Cloud Build` · `Artifact Registry`
+<p>
+  <strong>GCP</strong><br>
+  <img src="https://img.shields.io/badge/Vertex%20AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI" />
+  <img src="https://img.shields.io/badge/Cloud%20Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Run" />
+  <img src="https://img.shields.io/badge/Google%20Kubernetes%20Engine-4285F4?style=flat-square&logo=kubernetes&logoColor=white" alt="Google Kubernetes Engine" />
+  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
+  <img src="https://img.shields.io/badge/Cloud%20Build-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Build" />
+  <img src="https://img.shields.io/badge/Artifact%20Registry-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Artifact Registry" />
+</p>
 
 ### DevOps, Infrastructure & Observability
 
-`Docker` · `Kubernetes` · `Terraform` · `Helm` · `GitHub Actions` · `Argo CD` · `Prometheus` · `Grafana` · `OpenTelemetry`
+<p>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+  <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white" alt="Terraform" />
+  <img src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white" alt="Helm" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat-square&logo=argo&logoColor=white" alt="Argo CD" />
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana" />
+  <img src="https://img.shields.io/badge/OpenTelemetry-000000?style=flat-square&logo=opentelemetry&logoColor=white" alt="OpenTelemetry" />
+</p>
 
 ### Testing, Security & Architecture
 
-`Playwright` · `Cypress` · `Jest` · `Vitest` · `Pytest` · `SonarQube` · `OAuth 2.0` · `OpenID Connect` · `JWT` · `Domain-Driven Design` · `Clean Architecture` · `CQRS` · `Event-Driven Architecture` · `Microservices`
+<p>
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
+  <img src="https://img.shields.io/badge/Cypress-17202C?style=flat-square&logo=cypress&logoColor=white" alt="Cypress" />
+  <img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white" alt="Jest" />
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Vitest" />
+  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="Pytest" />
+  <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white" alt="SonarQube" />
+  <img src="https://img.shields.io/badge/OAuth%202.0-EB5424?style=flat-square&logo=auth0&logoColor=white" alt="OAuth 2.0" />
+  <img src="https://img.shields.io/badge/OpenID%20Connect-000000?style=flat-square&logo=openid&logoColor=white" alt="OpenID Connect" />
+  <img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JWT" />
+  <img src="https://img.shields.io/badge/Domain--Driven%20Design-111827?style=flat-square" alt="Domain-Driven Design" />
+  <img src="https://img.shields.io/badge/Clean%20Architecture-334155?style=flat-square" alt="Clean Architecture" />
+  <img src="https://img.shields.io/badge/CQRS-7C3AED?style=flat-square" alt="CQRS" />
+  <img src="https://img.shields.io/badge/Event--Driven%20Architecture-F59E0B?style=flat-square&logo=apachekafka&logoColor=white" alt="Event-Driven Architecture" />
+  <img src="https://img.shields.io/badge/Microservices-2563EB?style=flat-square" alt="Microservices" />
+</p>
 
 ### Reinforcement Learning, Quantum AI & Robotics
 
-`Gymnasium` · `Stable Baselines3` · `Ray RLlib` · `Qiskit` · `PennyLane` · `ROS 2` · `Gazebo` · `NVIDIA Isaac`
+<p>
+  <img src="https://img.shields.io/badge/Gymnasium-0081A5?style=flat-square" alt="Gymnasium" />
+  <img src="https://img.shields.io/badge/Stable%20Baselines3-5A4FCF?style=flat-square" alt="Stable Baselines3" />
+  <img src="https://img.shields.io/badge/Ray%20RLlib-028CF0?style=flat-square&logo=ray&logoColor=white" alt="Ray RLlib" />
+  <img src="https://img.shields.io/badge/Qiskit-6929C4?style=flat-square&logo=qiskit&logoColor=white" alt="Qiskit" />
+  <img src="https://img.shields.io/badge/PennyLane-000000?style=flat-square" alt="PennyLane" />
+  <img src="https://img.shields.io/badge/ROS%202-22314E?style=flat-square&logo=ros&logoColor=white" alt="ROS 2" />
+  <img src="https://img.shields.io/badge/Gazebo-F58113?style=flat-square&logo=gazebo&logoColor=white" alt="Gazebo" />
+  <img src="https://img.shields.io/badge/NVIDIA%20Isaac-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA Isaac" />
+</p>
 
 ---
 
