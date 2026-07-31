@@ -266,9 +266,9 @@ The ecosystem below defines the full technical scope of my Software Engineering 
   <img src="https://img.shields.io/badge/Amazon%20SageMaker%20AI-232F3E?style=flat-square&logo=amazonwebservices&logoColor=FF9900" alt="Amazon SageMaker AI" />
   <img src="https://img.shields.io/badge/AWS%20App%20Runner-FF9900?style=flat-square&logo=amazonwebservices&logoColor=232F3E" alt="AWS App Runner" />
   <img src="https://img.shields.io/badge/AWS%20Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white" alt="AWS Lambda" />
-  <img src="https://img.shields.io/badge/Amazon%20ECS-FF9900?style=flat-square&logo=amazonecs&logoColor=white" alt="Amazon ECS" />
   <img src="https://img.shields.io/badge/Amazon%20EKS-FF9900?style=flat-square&logo=amazoneks&logoColor=white" alt="Amazon EKS" />
   <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=flat-square&logo=amazons3&logoColor=white" alt="Amazon S3" />
+  <img src="https://img.shields.io/badge/Amazon%20ECR-FF9900?style=flat-square&logo=amazonwebservices&logoColor=232F3E" alt="Amazon Elastic Container Registry" />
 </p>
 
 <p>
@@ -278,15 +278,16 @@ The ecosystem below defines the full technical scope of my Software Engineering 
   <img src="https://img.shields.io/badge/Azure%20Functions-0062AD?style=flat-square&logo=azurefunctions&logoColor=white" alt="Azure Functions" />
   <img src="https://img.shields.io/badge/Azure%20Kubernetes%20Service-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Azure Kubernetes Service" />
   <img src="https://img.shields.io/badge/Azure%20Blob%20Storage-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure Blob Storage" />
+  <img src="https://img.shields.io/badge/Azure%20Container%20Registry-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure Container Registry" />
 </p>
 
 <p>
   <strong>GCP</strong><br>
   <img src="https://img.shields.io/badge/Vertex%20AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI" />
   <img src="https://img.shields.io/badge/Cloud%20Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Run" />
+  <img src="https://img.shields.io/badge/Cloud%20Run%20functions-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Run functions" />
   <img src="https://img.shields.io/badge/Google%20Kubernetes%20Engine-4285F4?style=flat-square&logo=kubernetes&logoColor=white" alt="Google Kubernetes Engine" />
-  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white" alt="BigQuery" />
-  <img src="https://img.shields.io/badge/Cloud%20Build-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Build" />
+  <img src="https://img.shields.io/badge/Cloud%20Storage-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Storage" />
   <img src="https://img.shields.io/badge/Artifact%20Registry-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Artifact Registry" />
 </p>
 
@@ -295,9 +296,11 @@ The ecosystem below defines the full technical scope of my Software Engineering 
 <p>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+  <img src="https://img.shields.io/badge/Amazon%20ECS-FF9900?style=flat-square&logo=amazonecs&logoColor=white" alt="Amazon ECS" />
   <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white" alt="Terraform" />
   <img src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white" alt="Helm" />
   <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Cloud%20Build-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Build" />
   <img src="https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat-square&logo=argo&logoColor=white" alt="Argo CD" />
   <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus" />
   <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana" />
