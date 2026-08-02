@@ -389,12 +389,27 @@
     });
 
     return Array.from(groups.entries())
-      .map(([name, items]) => ({
-        name,
-        order: definition.groupOrder?.get(name)
-          ?? Math.min(...items.map(projectSequence)),
-        projects: items
-      }))
+      .map(([name, items]) => {
+        const roadmapNumbers = items
+          .map(project => Number(project.roadmapNumber))
+          .filter(Number.isFinite);
+        const roadmapNumber = roadmapNumbers.length
+          ? Math.min(...roadmapNumbers)
+          : null;
+        const cloudFocuses = Array.from(new Set(
+          items.map(project => project.cloudFocus).filter(Boolean)
+        ));
+
+        return {
+          name,
+          order: definition.groupOrder?.get(name)
+            ?? roadmapNumber
+            ?? Math.min(...items.map(projectSequence)),
+          roadmapNumber,
+          cloudFocus: cloudFocuses.length === 1 ? cloudFocuses[0] : null,
+          projects: items
+        };
+      })
       .sort((first, second) =>
         first.order - second.order || first.name.localeCompare(second.name));
   }
@@ -456,6 +471,7 @@
 
   function projectCardMarkup(project, groupName, index) {
     const film = projectFilms.get(project.id);
+    const sequence = project.cloudFocus ? projectSequence(project) : index + 1;
     const descriptor = project.eyebrow
       || (project.technologies || []).slice(0, 3).join(" · ")
       || project.family;
@@ -464,8 +480,8 @@
     return `
       <article class="project-card${film ? " has-film" : ""}" data-accent="${token.key}">
         <div class="project-card__meta">
-          <span>${escapeHtml(groupName)}</span>
-          <span>${String(index + 1).padStart(2, "0")}</span>
+          <span>${escapeHtml(project.cloudFocus ? `${project.cloudFocus} cloud focus` : groupName)}</span>
+          <span>${String(sequence).padStart(2, "0")}</span>
         </div>
         <div class="project-card__content">
           <p class="project-card__eyebrow">${escapeHtml(descriptor)}</p>
@@ -492,14 +508,18 @@
 
   function projectGroupMarkup(definition, group, groupIndex) {
     const count = group.projects.length;
+    const groupNumber = group.roadmapNumber ?? groupIndex + 1;
     return `
       <section class="project-group" data-group-name="${escapeHtml(group.name)}">
         <header class="project-group__header">
           <div>
-            <span>${definition.label} / ${String(groupIndex + 1).padStart(2, "0")}</span>
+            <span>${definition.label} / ${String(groupNumber).padStart(2, "0")}</span>
             <h3>${escapeHtml(group.name)}</h3>
           </div>
-          <p>${String(count).padStart(2, "0")} ${count === 1 ? "project" : "projects"}</p>
+          <div class="project-group__summary">
+            ${group.cloudFocus ? `<span class="project-group__cloud">Cloud focus / ${escapeHtml(group.cloudFocus)}</span>` : ""}
+            <p>${String(count).padStart(2, "0")} ${count === 1 ? "project" : "projects"}</p>
+          </div>
         </header>
         <div class="project-group__grid">
           ${group.projects
@@ -985,6 +1005,10 @@
       ? "This entry defines intended modules, workflow, evaluation and limitations without claiming an implemented product."
       : "This implementation connects data, code and documented evidence inside a focused engineering workflow.");
     const token = categoryTokens[project.category] || categoryTokens.Leisure;
+    const projectContext = project.eyebrow || `${project.category} / ${project.family}`;
+    const dialogKicker = project.cloudFocus
+      ? `${projectContext} / ${project.cloudFocus} cloud focus`
+      : projectContext;
     const projectLinks = [
       project.liveUrl && {
         url: project.liveUrl,
@@ -1007,7 +1031,7 @@
       <article class="dialog-case" data-accent="${token.key}">
         <header class="dialog-hero">
           <div>
-            <p class="dialog-kicker">${escapeHtml(project.eyebrow || `${project.category} / ${project.family}`)}</p>
+            <p class="dialog-kicker">${escapeHtml(dialogKicker)}</p>
             ${isFeaturedProject(project) ? '<span class="featured-label"><i aria-hidden="true"></i>Selected system</span>' : ""}
             <h2 id="dialog-title">${escapeHtml(project.title)}</h2>
           </div>

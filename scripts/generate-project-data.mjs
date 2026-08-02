@@ -19,7 +19,7 @@ const techMatchers = [
   ["MLflow", /\bmlflow\b/i], ["LangGraph", /\blanggraph\b/i], ["RAG", /\brag\b/i],
   ["LLMs", /\bllm(?:s)?\b/i], ["Computer Vision", /computer vision/i], ["Qiskit", /\bqiskit\b/i],
   ["Quantum ML", /quantum machine learning|\bqml\b/i], ["Reinforcement Learning", /reinforcement learning/i],
-  ["Cloudflare", /\bcloudflare\b/i], ["GCP", /\b(?:gcp|google cloud)\b/i], ["Render", /\brender\b/i], ["GitHub Actions", /github actions/i]
+  ["Cloudflare", /\bcloudflare\b/i], ["GitHub Actions", /github actions/i]
 ];
 
 const titleWords = {
@@ -338,6 +338,13 @@ const collections = [
   { base: "Path-Software-Engineer", category: "Software Engineering", org: "Path-Software-Engineer" }
 ];
 
+const cloudFocusByRoadmap = new Map([
+  [1, "GCP"], [2, "GCP"], [3, "GCP"],
+  [4, "AWS"], [5, "AWS"], [6, "AWS"],
+  [7, "Azure"], [8, "Azure"], [9, "Azure"],
+  [10, "GCP"], [11, "AWS"], [12, "Azure"]
+]);
+
 const publicProjectLinks = new Map([
   [
     "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
@@ -434,7 +441,9 @@ const publicProjectLinks = new Map([
 
 const supersededProjectPaths = new Set([
   "Path-AI-Engineer/Deep-Learning-Core/12-transformer-architecture-foundations-lab",
-  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-transfer-learning-image-classifier"
+  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-transfer-learning-image-classifier",
+  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-visual-search-embeddings-api",
+  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-object-detection-retail-lab"
 ]);
 
 for (const collection of collections) {
@@ -448,6 +457,10 @@ for (const collection of collections) {
     for (const entry of numbered) {
       const projectPath = join(repositoryPath, entry.name);
       const projectUrl = `${baseUrl}/tree/main/${entry.name}`;
+      const projectNumber = Number(entry.name.slice(0, 2));
+      const roadmapNumber = collection.category === "AI Engineering"
+        ? Math.ceil(projectNumber / 6)
+        : projectNumber;
       const project = await makeProject({
         directory: projectPath,
         category: collection.category,
@@ -457,7 +470,12 @@ for (const collection of collections) {
         accent: collection.category === "AI Engineering" ? "violet" : "blue"
       });
       if (supersededProjectPaths.has(project.path)) continue;
-      generated.push({ ...project, ...publicProjectLinks.get(project.path) });
+      generated.push({
+        ...project,
+        roadmapNumber,
+        cloudFocus: cloudFocusByRoadmap.get(roadmapNumber),
+        ...publicProjectLinks.get(project.path)
+      });
     }
   }
 }
@@ -611,6 +629,8 @@ const roadmapProjects = [
   url: "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
   featured: false,
   accent: "orange",
+  roadmapNumber: 12,
+  cloudFocus: cloudFocusByRoadmap.get(12),
   path: "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
 }));
 

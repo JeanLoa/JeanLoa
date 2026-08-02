@@ -352,8 +352,7 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI",
       "Spring Boot",
       "PostgreSQL",
-      "Docker",
-      "GCP"
+      "Docker"
     ],
     "signals": {
       "files": 4734,
@@ -366,6 +365,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP",
     "liveUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
     "apiUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html"
   },
@@ -378,8 +379,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -391,7 +391,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/29-agentic-workflow-langgraph-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/29-agentic-workflow-langgraph-lab"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/29-agentic-workflow-langgraph-lab",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "roadmap-72",
@@ -410,6 +412,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -424,8 +428,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "PostgreSQL",
-      "Docker",
-      "GCP"
+      "Docker"
     ],
     "signals": {
       "files": 322,
@@ -438,6 +441,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs"
   },
@@ -477,7 +482,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/66-android-systems-cognitive-architecture",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/66-android-systems-cognitive-architecture"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/66-android-systems-cognitive-architecture",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-14-anomaly-detection-monitor",
@@ -500,7 +507,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/14-anomaly-detection-monitor",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor"
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-18-automl-meta-learning-benchmark-lab",
@@ -512,8 +521,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "scikit-learn",
-      "GCP"
+      "scikit-learn"
     ],
     "signals": {
       "files": 316,
@@ -526,6 +534,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs"
   },
@@ -625,7 +635,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/16-causal-promotion-effect-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/16-causal-promotion-effect-lab"
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/16-causal-promotion-effect-lab",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-27-chunking-retrieval-evaluation-lab",
@@ -635,8 +647,7 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented Chunking Retrieval Evaluation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -648,7 +659,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/27-chunking-retrieval-evaluation-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/27-chunking-retrieval-evaluation-lab"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/27-chunking-retrieval-evaluation-lab",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite",
@@ -669,7 +682,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/03-classical-model-comparison-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-deep-learning-core-09-cnn-foundations-image-classifier",
@@ -680,8 +695,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Python",
       "PyTorch",
-      "Computer Vision",
-      "GCP"
+      "Computer Vision"
     ],
     "signals": {
       "files": 1028,
@@ -694,6 +708,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs"
   },
@@ -714,7 +730,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/35-conditioned-generation-control-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-conditioned-generation-control-lab"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-conditioned-generation-control-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "roadmap-68",
@@ -733,6 +751,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -746,9 +766,7 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI",
       "Streamlit",
       "PostgreSQL",
-      "Docker",
-      "GCP",
-      "Render"
+      "Docker"
     ],
     "signals": {
       "files": 336,
@@ -761,6 +779,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs"
   },
@@ -776,8 +796,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "PyTorch",
-      "GCP"
+      "PyTorch"
     ],
     "signals": {
       "files": 1138,
@@ -790,6 +809,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP",
     "liveUrl": "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
     "apiUrl": "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs"
   },
@@ -812,7 +833,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/39-deep-q-network-gymnasium-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-deep-q-network-gymnasium-lab"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-deep-q-network-gymnasium-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-17-probabilistic-demand-forecasting",
@@ -836,6 +859,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs"
   },
@@ -856,7 +881,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/34-diffusion-denoising-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-diffusion-denoising-foundations-lab"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-diffusion-denoising-foundations-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
@@ -877,7 +904,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/24-edge-vision-optimization-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "university-03-academic-final-projects-final-project-deliverables-semester-01-cpp-final-project",
@@ -915,7 +944,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/61-embodied-ai-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/61-embodied-ai-foundations-lab"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/61-embodied-ai-foundations-lab",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-software-engineer-embodied-ai-robotics-software-platform-11-embodied-robotics-control-platform",
@@ -923,9 +954,7 @@ window.PORTFOLIO_PROJECTS = [
     "category": "Software Engineering",
     "family": "Embodied AI Robotics Software Platform",
     "summary": "A product-platform blueprint translating Embodied AI Robotics Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
-    "technologies": [
-      "GCP"
-    ],
+    "technologies": [],
     "signals": {
       "files": 1,
       "code": 0,
@@ -936,7 +965,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Embodied-AI-Robotics-Software-Platform/tree/main/11-embodied-robotics-control-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Embodied-AI-Robotics-Software-Platform/11-embodied-robotics-control-platform"
+    "path": "Path-Software-Engineer/Embodied-AI-Robotics-Software-Platform/11-embodied-robotics-control-platform",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "roadmap-70",
@@ -955,6 +986,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -974,7 +1007,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/56-enterprise-ai-product-line",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/56-enterprise-ai-product-line"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/56-enterprise-ai-product-line",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "roadmap-67",
@@ -993,6 +1028,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -1002,9 +1039,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Final AI Quantum Robotics Software Platform",
     "summary": "A product-platform blueprint translating Final AI Quantum Robotics Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Streamlit",
-      "GCP",
-      "Render"
+      "Streamlit"
     ],
     "signals": {
       "files": 1,
@@ -1016,7 +1051,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Final-AI-Quantum-Robotics-Software-Platform/tree/main/12-ai-quantum-robotics-platform-portal",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Final-AI-Quantum-Robotics-Software-Platform/12-ai-quantum-robotics-platform-portal"
+    "path": "Path-Software-Engineer/Final-AI-Quantum-Robotics-Software-Platform/12-ai-quantum-robotics-platform-portal",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure"
   },
   {
     "id": "leisure-03-machine-learning-pipelines",
@@ -1054,7 +1091,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/33-gan-image-generation-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-gan-image-generation-lab"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-gan-image-generation-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-software-engineer-generative-ai-control-platform-06-generative-ai-control-platform",
@@ -1063,8 +1102,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Generative AI Control Platform",
     "summary": "A product-platform blueprint translating Generative AI Control Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Docker",
-      "GCP"
+      "Docker"
     ],
     "signals": {
       "files": 1,
@@ -1076,7 +1114,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Generative-AI-Control-Platform/tree/main/06-generative-ai-control-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform"
+    "path": "Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-36-generative-ai-evaluation-suite",
@@ -1095,7 +1135,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/36-generative-ai-evaluation-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-31-generative-models-foundations-lab",
@@ -1117,7 +1159,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/31-generative-models-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/31-generative-models-foundations-lab"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/31-generative-models-foundations-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-64-human-robot-interaction-safety-lab",
@@ -1136,7 +1180,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/64-human-robot-interaction-safety-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/64-human-robot-interaction-safety-lab"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/64-human-robot-interaction-safety-lab",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-65-humanoid-robotics-architecture-blueprint",
@@ -1155,7 +1201,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/65-humanoid-robotics-architecture-blueprint",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/65-humanoid-robotics-architecture-blueprint"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/65-humanoid-robotics-architecture-blueprint",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-54-hybrid-ai-quantum-platform-blueprint",
@@ -1164,8 +1212,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
     "summary": "A documented Hybrid AI Quantum Platform Blueprint blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
     "technologies": [
-      "Quantum ML",
-      "GCP"
+      "Quantum ML"
     ],
     "signals": {
       "files": 1,
@@ -1177,7 +1224,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/54-hybrid-ai-quantum-platform-blueprint",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-platform-blueprint"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-platform-blueprint",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "university-02-computer-science-coursework-cpp-introduction-to-algorithms",
@@ -1208,9 +1257,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Streamlit",
-      "Docker",
-      "GCP",
-      "Render"
+      "Docker"
     ],
     "signals": {
       "files": 346,
@@ -1222,7 +1269,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/05-inventory-optimization-ml-service",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP"
   },
   {
     "id": "university-01-portfolio-projects-electrocorp-enterprise-platform-suite-java-fundamentals-course-electrocorp",
@@ -1253,8 +1302,7 @@ window.PORTFOLIO_PROJECTS = [
       "React",
       "TypeScript",
       "Python",
-      "FastAPI",
-      "GCP"
+      "FastAPI"
     ],
     "signals": {
       "files": 684,
@@ -1267,6 +1315,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs"
   },
@@ -1298,8 +1348,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -1311,7 +1360,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/30-llm-evaluation-guardrails-mcp-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/30-llm-evaluation-guardrails-mcp-suite"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/30-llm-evaluation-guardrails-mcp-suite",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-28-llm-tool-use-function-calling-lab",
@@ -1321,8 +1372,7 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented LLM Tool Use Function Calling Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -1334,7 +1384,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/28-llm-tool-use-function-calling-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/28-llm-tool-use-function-calling-lab"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/28-llm-tool-use-function-calling-lab",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "leisure-02-machine-learning-labs",
@@ -1374,7 +1426,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/23-multimodal-image-text-assistant",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-multimodal-image-text-assistant"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-multimodal-image-text-assistant",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-deep-learning-core-07-neural-network-foundations-lab",
@@ -1387,8 +1441,7 @@ window.PORTFOLIO_PROJECTS = [
       "Streamlit",
       "Docker",
       "PyTorch",
-      "NumPy",
-      "GCP"
+      "NumPy"
     ],
     "signals": {
       "files": 1551,
@@ -1400,28 +1453,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/07-neural-network-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/07-neural-network-foundations-lab"
-  },
-  {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-object-detection-retail-lab",
-    "title": "Object Detection Retail Lab",
-    "category": "AI Engineering",
-    "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Object Detection Retail Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
-    "technologies": [
-      "Computer Vision"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/21-object-detection-retail-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-object-detection-retail-lab"
+    "path": "Path-AI-Engineer/Deep-Learning-Core/07-neural-network-foundations-lab",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP"
   },
   {
     "id": "university-02-computer-science-coursework-cpp-object-oriented-algorithms",
@@ -1459,7 +1493,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/62-perception-memory-action-agent-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/62-perception-memory-action-agent-lab"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/62-perception-memory-action-agent-lab",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-19-image-classification-api",
@@ -1485,7 +1521,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/19-image-classification-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-48-post-quantum-security-and-hybrid-workflows-lab",
@@ -1504,7 +1542,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/48-post-quantum-security-and-hybrid-workflows-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/48-post-quantum-security-and-hybrid-workflows-lab"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/48-post-quantum-security-and-hybrid-workflows-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-57-post-quantum-security-product-blueprint",
@@ -1523,7 +1563,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/57-post-quantum-security-product-blueprint",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/57-post-quantum-security-product-blueprint"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/57-post-quantum-security-product-blueprint",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "leisure-04-python-fundamentals",
@@ -1556,8 +1598,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "PyTorch",
-      "GCP"
+      "PyTorch"
     ],
     "signals": {
       "files": 699,
@@ -1569,7 +1610,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/08-pytorch-regression-classification-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/08-pytorch-regression-classification-api"
+    "path": "Path-AI-Engineer/Deep-Learning-Core/08-pytorch-regression-classification-api",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-38-q-learning-agent-lab",
@@ -1590,7 +1633,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/38-q-learning-agent-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-q-learning-agent-lab"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-q-learning-agent-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-52-qaoa-vqe-optimizer-comparison-lab",
@@ -1611,7 +1656,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/52-qaoa-vqe-optimizer-comparison-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-qaoa-vqe-optimizer-comparison-lab"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-qaoa-vqe-optimizer-comparison-lab",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-software-engineer-qml-benchmark-software-platform-09-qml-benchmark-platform",
@@ -1620,8 +1667,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "QML Benchmark Software Platform",
     "summary": "A product-platform blueprint translating QML Benchmark Hybrid Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Quantum ML",
-      "GCP"
+      "Quantum ML"
     ],
     "signals": {
       "files": 1,
@@ -1633,7 +1679,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/QML-Benchmark-Software-Platform/tree/main/09-qml-benchmark-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/QML-Benchmark-Software-Platform/09-qml-benchmark-platform"
+    "path": "Path-Software-Engineer/QML-Benchmark-Software-Platform/09-qml-benchmark-platform",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "roadmap-69",
@@ -1652,6 +1700,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -1673,7 +1723,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/45-quantum-algorithms-basics-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/45-quantum-algorithms-basics-lab"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/45-quantum-algorithms-basics-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-44-quantum-circuits-and-gates-playground",
@@ -1694,7 +1746,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/44-quantum-circuits-and-gates-playground",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/44-quantum-circuits-and-gates-playground"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/44-quantum-circuits-and-gates-playground",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-46-quantum-cloud-provider-comparison-lab",
@@ -1715,7 +1769,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/46-quantum-cloud-provider-comparison-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/46-quantum-cloud-provider-comparison-lab"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/46-quantum-cloud-provider-comparison-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-43-quantum-computing-foundations-lab",
@@ -1736,7 +1792,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/43-quantum-computing-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/43-quantum-computing-foundations-lab"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/43-quantum-computing-foundations-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-49-quantum-data-encoding-lab",
@@ -1757,7 +1815,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/49-quantum-data-encoding-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-data-encoding-lab"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-data-encoding-lab",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-59-quantum-developer-platform-design",
@@ -1779,7 +1839,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/59-quantum-developer-platform-design",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/59-quantum-developer-platform-design"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/59-quantum-developer-platform-design",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-55-quantum-first-company-vision",
@@ -1798,7 +1860,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/55-quantum-first-company-vision",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/55-quantum-first-company-vision"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/55-quantum-first-company-vision",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-60-quantum-first-platform-roadmap",
@@ -1819,7 +1883,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/60-quantum-first-platform-roadmap",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/60-quantum-first-platform-roadmap"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/60-quantum-first-platform-roadmap",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-software-engineer-quantum-first-product-platform-10-quantum-first-product-platform",
@@ -1828,8 +1894,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Quantum First Product Platform",
     "summary": "A product-platform blueprint translating Quantum First Product Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Python",
-      "GCP"
+      "Python"
     ],
     "signals": {
       "files": 1,
@@ -1841,7 +1906,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Quantum-First-Product-Platform/tree/main/10-quantum-first-product-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Quantum-First-Product-Platform/10-quantum-first-product-platform"
+    "path": "Path-Software-Engineer/Quantum-First-Product-Platform/10-quantum-first-product-platform",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-software-engineer-quantum-foundations-software-platform-08-quantum-foundations-visual-platform",
@@ -1850,9 +1917,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Quantum Foundations Software Platform",
     "summary": "A product-platform blueprint translating Quantum Foundations Software Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
-      "Streamlit",
-      "GCP",
-      "Render"
+      "Streamlit"
     ],
     "signals": {
       "files": 1,
@@ -1864,7 +1929,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Quantum-Foundations-Visual-Tools/tree/main/08-quantum-foundations-visual-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Quantum-Foundations-Software-Platform/08-quantum-foundations-visual-platform"
+    "path": "Path-Software-Engineer/Quantum-Foundations-Software-Platform/08-quantum-foundations-visual-platform",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-51-quantum-kernel-benchmark-lab",
@@ -1885,7 +1952,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/51-quantum-kernel-benchmark-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-quantum-kernel-benchmark-lab"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-quantum-kernel-benchmark-lab",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-53-quantum-noise-and-qml-limitations-lab",
@@ -1906,7 +1975,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/53-quantum-noise-and-qml-limitations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-noise-and-qml-limitations-lab"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-noise-and-qml-limitations-lab",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-47-quantum-optimization-foundations-lab",
@@ -1925,7 +1996,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/47-quantum-optimization-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/47-quantum-optimization-foundations-lab"
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/47-quantum-optimization-foundations-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-58-quantum-optimization-service-proposal",
@@ -1944,7 +2017,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/tree/main/58-quantum-optimization-service-proposal",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/58-quantum-optimization-service-proposal"
+    "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/58-quantum-optimization-service-proposal",
+    "roadmapNumber": 10,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-software-engineer-rag-agentic-software-platform-05-rag-agent-workflow-platform",
@@ -1955,8 +2030,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "LangGraph",
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -1968,7 +2042,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/RAG-Agents-Tooling-Apps/tree/main/05-rag-agent-workflow-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/RAG-Agentic-Software-Platform/05-rag-agent-workflow-platform"
+    "path": "Path-Software-Engineer/RAG-Agentic-Software-Platform/05-rag-agent-workflow-platform",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-26-rag-document-assistant",
@@ -1978,8 +2054,7 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A documented RAG Document Assistant blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
     "technologies": [
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -1991,7 +2066,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/26-rag-document-assistant",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/26-rag-document-assistant"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/26-rag-document-assistant",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-15-recommender-system-api",
@@ -2017,6 +2094,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs"
   },
@@ -2039,7 +2118,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/37-reinforcement-learning-foundations-gridworld",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/37-reinforcement-learning-foundations-gridworld"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/37-reinforcement-learning-foundations-gridworld",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api",
@@ -2051,9 +2132,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "Pandas",
-      "GCP",
-      "Render"
+      "Pandas"
     ],
     "signals": {
       "files": 238,
@@ -2065,7 +2144,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/01-retail-demand-prediction-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform",
@@ -2076,8 +2157,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "React",
       "Python",
-      "FastAPI",
-      "GCP"
+      "FastAPI"
     ],
     "signals": {
       "files": 864,
@@ -2090,6 +2170,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP",
     "liveUrl": "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
     "apiUrl": "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs"
   },
@@ -2116,7 +2198,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/20-retail-shelf-object-detection",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-reward-design-and-agent-evaluation-lab",
@@ -2137,7 +2221,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/40-reward-design-and-agent-evaluation-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-reward-design-and-agent-evaluation-lab"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-reward-design-and-agent-evaluation-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-software-engineer-rl-simulation-software-platform-07-rl-simulation-control-platform",
@@ -2147,9 +2233,7 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "A product-platform blueprint translating Rl Simulation Control Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
     "technologies": [
       "Docker",
-      "Reinforcement Learning",
-      "GCP",
-      "Render"
+      "Reinforcement Learning"
     ],
     "signals": {
       "files": 1,
@@ -2161,7 +2245,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/RL-Simulation-Software-Platform/tree/main/07-rl-simulation-control-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/RL-Simulation-Software-Platform/07-rl-simulation-control-platform"
+    "path": "Path-Software-Engineer/RL-Simulation-Software-Platform/07-rl-simulation-control-platform",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-63-robot-task-planning-control-lab",
@@ -2180,7 +2266,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/tree/main/63-robot-task-planning-control-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/63-robot-task-planning-control-lab"
+    "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/63-robot-task-planning-control-lab",
+    "roadmapNumber": 11,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-42-robotics-simulation-control-lab",
@@ -2201,7 +2289,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/42-robotics-simulation-control-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-robotics-simulation-control-lab"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-robotics-simulation-control-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "roadmap-71",
@@ -2220,6 +2310,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
     "featured": false,
     "accent": "orange",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure",
     "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
@@ -2246,6 +2338,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
+    "roadmapNumber": 1,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs"
   },
@@ -2258,8 +2352,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "FastAPI",
       "RAG",
-      "LLMs",
-      "GCP"
+      "LLMs"
     ],
     "signals": {
       "files": 1,
@@ -2271,7 +2364,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/25-semantic-search-embeddings-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/25-semantic-search-embeddings-api"
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/25-semantic-search-embeddings-api",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-deep-learning-core-10-sequence-models-rnn-lstm-lab",
@@ -2284,8 +2379,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "PyTorch",
-      "GCP"
+      "PyTorch"
     ],
     "signals": {
       "files": 664,
@@ -2297,7 +2391,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/10-sequence-models-rnn-lstm-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab"
+    "path": "Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-segmentation-quality-control-lab",
@@ -2321,7 +2417,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/21-segmentation-quality-control-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-deep-learning-core-12-transformer-from-architecture-foundations-lab",
@@ -2335,8 +2433,7 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "PyTorch",
-      "GCP"
+      "PyTorch"
     ],
     "signals": {
       "files": 8894,
@@ -2349,6 +2446,8 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab",
+    "roadmapNumber": 2,
+    "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
     "apiUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs"
   },
@@ -2374,7 +2473,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/13-unsupervised-learning-lab-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/13-unsupervised-learning-lab-suite"
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/13-unsupervised-learning-lab-suite",
+    "roadmapNumber": 3,
+    "cloudFocus": "GCP"
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-32-variational-autoencoder-lab",
@@ -2393,7 +2494,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/32-variational-autoencoder-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-variational-autoencoder-lab"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-variational-autoencoder-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-50-variational-quantum-classifier-lab",
@@ -2414,7 +2517,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/50-variational-quantum-classifier-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-variational-quantum-classifier-lab"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-variational-quantum-classifier-lab",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-22-video-understanding-basics-lab",
@@ -2435,7 +2540,9 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/22-video-understanding-basics-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-video-understanding-basics-lab"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-video-understanding-basics-lab",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
   },
   {
     "id": "path-software-engineer-vision-multimodal-ai-platform-04-vision-multimodal-ai-platform",
@@ -2461,30 +2568,10 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS",
     "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net",
     "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
-  },
-  {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-20-visual-search-embeddings-api",
-    "title": "Visual Search Embeddings API",
-    "category": "AI Engineering",
-    "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Visual Search Embeddings API blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
-    "technologies": [
-      "FastAPI",
-      "Computer Vision"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/20-visual-search-embeddings-api",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-visual-search-embeddings-api"
   },
   {
     "id": "university-01-portfolio-projects-lowcortisol-digital-health-platform-webdev-course-lowcortisol",
@@ -2524,6 +2611,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/41-world-models-planning-mini-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-world-models-planning-mini-lab"
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-world-models-planning-mini-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   }
 ];
