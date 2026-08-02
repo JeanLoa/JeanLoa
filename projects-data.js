@@ -345,22 +345,29 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Advanced ML Decision Platform",
     "category": "Software Engineering",
     "family": "Advanced ML Decision Platform",
-    "summary": "A product-platform blueprint translating Advanced ML Decision Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "An evidence-first application that turns advanced machine-learning outputs into inspectable, versioned decision-support experiences.",
     "technologies": [
+      "Angular",
+      "Python",
+      "FastAPI",
+      "Spring Boot",
+      "PostgreSQL",
       "Docker",
       "GCP"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 4734,
+      "code": 153,
+      "tests": 35,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Advanced-ML-Applied-Tools/tree/main/03-advanced-ml-decision-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform"
+    "path": "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform",
+    "liveUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
+    "apiUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html"
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-29-agentic-workflow-langgraph-lab",
@@ -421,16 +428,18 @@ window.PORTFOLIO_PROJECTS = [
       "GCP"
     ],
     "signals": {
-      "files": 290,
+      "files": 322,
       "code": 104,
-      "tests": 124,
+      "tests": 155,
       "notebooks": 0
     },
     "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/06-ai-software-foundations-platform",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform",
+    "liveUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "university-02-computer-science-coursework-algorithm-complexity-analysis",
@@ -472,60 +481,53 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-14-anomaly-detection-monitor",
-    "title": "Anomaly Detection Monitor",
+    "title": "Anomaly Operations Console",
     "category": "AI Engineering",
     "family": "Advanced ML Backgrounds",
-    "summary": "A documented Anomaly Detection Monitor blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
-    "technologies": [],
+    "summary": "An operational anomaly-monitoring workspace that learns normal temporal behavior, produces canonical anomaly scores, calibrates explicit operating points and turns them into reviewable alerts. It combines reproducible offline evaluation with stateful replay, REST/SSE contracts…",
+    "technologies": [
+      "React",
+      "Python",
+      "Docker"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 351,
+      "code": 28,
+      "tests": 60,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/14-anomaly-detection-monitor",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor"
   },
   {
-    "id": "path-ai-engineer-deep-learning-core-11-autoencoder-representation-lab",
-    "title": "Autoencoder Representation Lab",
-    "category": "AI Engineering",
-    "family": "Deep Learning Core",
-    "summary": "A documented Autoencoder Representation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/11-autoencoder-representation-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab"
-  },
-  {
     "id": "path-ai-engineer-advanced-ml-backgrounds-18-automl-meta-learning-benchmark-lab",
-    "title": "AutoML Meta Learning Benchmark Lab",
+    "title": "AutoML Meta-Benchmark Studio",
     "category": "AI Engineering",
     "family": "Advanced ML Backgrounds",
-    "summary": "A documented AutoML Meta Learning Benchmark Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
-    "technologies": [],
+    "summary": "A read-only evidence product for comparing equal-space search strategies, anytime behavior, failure accounting and leave-one-dataset-out warm starts. The platform includes 17 read-only API contracts and nine functional research views.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "scikit-learn",
+      "GCP"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
+      "files": 316,
+      "code": 38,
+      "tests": 316,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/18-automl-meta-learning-benchmark-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab"
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab",
+    "liveUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "university-02-computer-science-coursework-cpp-data-structures-and-algorithms",
@@ -605,18 +607,21 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-16-causal-promotion-effect-lab",
-    "title": "Causal Promotion Effect Lab",
+    "title": "Causal Promotion Lab",
     "category": "AI Engineering",
     "family": "Advanced ML Backgrounds",
-    "summary": "A documented Causal Promotion Effect Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
-    "technologies": [],
+    "summary": "A reproducible causal-inference workspace for promotion decisions. It keeps study design, identification, estimation, heterogeneity and offline policy evaluation traceable through one immutable evidence contract.",
+    "technologies": [
+      "Python",
+      "FastAPI"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 419,
+      "code": 51,
+      "tests": 66,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/16-causal-promotion-effect-lab",
     "featured": false,
     "accent": "violet",
@@ -675,19 +680,22 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Python",
       "PyTorch",
-      "Computer Vision"
+      "Computer Vision",
+      "GCP"
     ],
     "signals": {
-      "files": 456,
-      "code": 70,
-      "tests": 74,
+      "files": 1028,
+      "code": 74,
+      "tests": 114,
       "notebooks": 0
     },
     "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/09-cnn-foundations-image-classifier",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier"
+    "path": "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier",
+    "liveUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-35-conditioned-generation-control-lab",
@@ -743,41 +751,47 @@ window.PORTFOLIO_PROJECTS = [
       "Render"
     ],
     "signals": {
-      "files": 308,
+      "files": 336,
       "code": 107,
-      "tests": 92,
+      "tests": 119,
       "notebooks": 0
     },
     "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/04-customer-segmentation-and-churn-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api",
+    "liveUrl": "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-software-engineer-deep-learning-software-lab-platform-02-deep-learning-visual-lab-platform",
     "title": "Deep Learning Visual Lab Platform",
     "category": "Software Engineering",
     "family": "Deep Learning Software Lab Platform",
-    "summary": "Project 02 of the Software Engineer path. Sprint 1 delivers Axon, a full-stack Neural Network Explainer for a controlled XOR model.",
+    "summary": "Project 02 of the Software Engineer path. Axon is a full-stack educational platform for inspecting registered PyTorch models through bounded FastAPI contracts and responsive Next.js experiences.",
     "technologies": [
       "React",
       "TypeScript",
       "Python",
       "FastAPI",
-      "PyTorch"
+      "Docker",
+      "PyTorch",
+      "GCP"
     ],
     "signals": {
-      "files": 610,
-      "code": 178,
-      "tests": 44,
+      "files": 1138,
+      "code": 358,
+      "tests": 74,
       "notebooks": 0
     },
     "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/tree/main/02-deep-learning-visual-lab-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform"
+    "path": "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform",
+    "liveUrl": "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
+    "apiUrl": "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-39-deep-q-network-gymnasium-lab",
@@ -799,6 +813,31 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-deep-q-network-gymnasium-lab"
+  },
+  {
+    "id": "path-ai-engineer-advanced-ml-backgrounds-17-probabilistic-demand-forecasting",
+    "title": "Demand Uncertainty Studio",
+    "category": "AI Engineering",
+    "family": "Advanced ML Backgrounds",
+    "summary": "Evidence boundary: the approved demonstration bundle is a deterministic, heteroscedastic fixture with 17,379 hourly rows. It mirrors the size and target semantics of UCI Bike Sharing but is not presented as the UCI observations.",
+    "technologies": [
+      "React",
+      "Python",
+      "Docker"
+    ],
+    "signals": {
+      "files": 521,
+      "code": 48,
+      "tests": 70,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/17-probabilistic-demand-forecasting",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting",
+    "liveUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-34-diffusion-denoising-foundations-lab",
@@ -1169,13 +1208,14 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Streamlit",
+      "Docker",
       "GCP",
       "Render"
     ],
     "signals": {
-      "files": 314,
+      "files": 346,
       "code": 106,
-      "tests": 104,
+      "tests": 133,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1202,6 +1242,33 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "cyan",
     "path": "University/01-portfolio-projects/electrocorp-enterprise-platform-suite/java-fundamentals-course-electrocorp"
+  },
+  {
+    "id": "path-ai-engineer-deep-learning-core-11-autoencoder-representation-lab",
+    "title": "Latent Representation Lab",
+    "category": "AI Engineering",
+    "family": "Deep Learning Core",
+    "summary": "An inspectable reconstruction and representation-learning laboratory built around deterministic autoencoders. It reconstructs and denoises images, exposes a dedicated two-dimensional latent space, interpolates between samples, compares model families and makes the largest erro…",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "GCP"
+    ],
+    "signals": {
+      "files": 684,
+      "code": 76,
+      "tests": 109,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/11-autoencoder-representation-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab",
+    "liveUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "leisure-02-machine-learning-labs-model-benchmarking",
@@ -1318,11 +1385,13 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Python",
       "Streamlit",
+      "Docker",
       "PyTorch",
-      "NumPy"
+      "NumPy",
+      "GCP"
     ],
     "signals": {
-      "files": 1546,
+      "files": 1551,
       "code": 54,
       "tests": 430,
       "notebooks": 0
@@ -1393,6 +1462,32 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/62-perception-memory-action-agent-lab"
   },
   {
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-19-image-classification-api",
+    "title": "Pet Breed Classification Studio",
+    "category": "AI Engineering",
+    "family": "Computer Vision Multimodal AI Edge Optimization",
+    "summary": "An evidence-first computer-vision product that validates image inputs, produces calibrated Top-K breed probabilities, abstains below a declared threshold and exposes model evidence through FastAPI and a React Studio.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch"
+    ],
+    "signals": {
+      "files": 470,
+      "code": 45,
+      "tests": 46,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/19-image-classification-api",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api"
+  },
+  {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-48-post-quantum-security-and-hybrid-workflows-lab",
     "title": "Post Quantum Security And Hybrid Workflows Lab",
     "category": "AI Engineering",
@@ -1431,25 +1526,6 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/57-post-quantum-security-product-blueprint"
   },
   {
-    "id": "path-ai-engineer-advanced-ml-backgrounds-17-probabilistic-demand-forecasting",
-    "title": "Probabilistic Demand Forecasting",
-    "category": "AI Engineering",
-    "family": "Advanced ML Backgrounds",
-    "summary": "A documented Probabilistic Demand Forecasting blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/17-probabilistic-demand-forecasting",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting"
-  },
-  {
     "id": "leisure-04-python-fundamentals",
     "title": "Python Fundamentals",
     "category": "Leisure",
@@ -1480,10 +1556,11 @@ window.PORTFOLIO_PROJECTS = [
       "Python",
       "FastAPI",
       "Docker",
-      "PyTorch"
+      "PyTorch",
+      "GCP"
     ],
     "signals": {
-      "files": 696,
+      "files": 699,
       "code": 81,
       "tests": 112,
       "notebooks": 0
@@ -1918,24 +1995,30 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-15-recommender-system-api",
-    "title": "Recommender System API",
+    "title": "Recommendation Studio — Top-N Recommender System API",
     "category": "AI Engineering",
     "family": "Advanced ML Backgrounds",
-    "summary": "A documented Recommender System API blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
+    "summary": "Recommendation Studio is an evidence-first ranking product for anonymous MovieLens-style interactions. It compares Popularity, genre Content, Item-kNN and PyTorch BPR matrix factorization under one chronological, full-catalog protocol, then serves known-user, cold-start, simil…",
     "technologies": [
-      "FastAPI"
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 672,
+      "code": 70,
+      "tests": 130,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/15-recommender-system-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api"
+    "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api",
+    "liveUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-37-reinforcement-learning-foundations-gridworld",
@@ -1967,12 +2050,13 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Python",
       "FastAPI",
+      "Docker",
       "Pandas",
       "GCP",
       "Render"
     ],
     "signals": {
-      "files": 233,
+      "files": 238,
       "code": 60,
       "tests": 100,
       "notebooks": 0
@@ -1996,7 +2080,7 @@ window.PORTFOLIO_PROJECTS = [
       "GCP"
     ],
     "signals": {
-      "files": 862,
+      "files": 864,
       "code": 230,
       "tests": 210,
       "notebooks": 0
@@ -2005,7 +2089,34 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://github.com/Path-Software-Engineer/Applied-ML-Software-Platform/tree/main/01-retail-intelligence-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform"
+    "path": "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
+    "liveUrl": "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
+    "apiUrl": "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs"
+  },
+  {
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-20-retail-shelf-object-detection",
+    "title": "Retail Shelf Detection Console",
+    "category": "AI Engineering",
+    "family": "Computer Vision Multimodal AI Edge Optimization",
+    "summary": "An evidence-first object-detection API and React console for dense retail shelf images. The product exposes bounding boxes, confidence and NMS thresholds, visible-object counts, AP metrics, count error, density slices and immutable model evidence.",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch"
+    ],
+    "signals": {
+      "files": 575,
+      "code": 48,
+      "tests": 101,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/20-retail-shelf-object-detection",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-reward-design-and-agent-evaluation-lab",
@@ -2125,16 +2236,18 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 443,
+      "files": 477,
       "code": 147,
-      "tests": 170,
+      "tests": 203,
       "notebooks": 0
     },
     "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/tree/main/02-sales-forecasting-dashboard-api",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api"
+    "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
+    "liveUrl": "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-25-semantic-search-embeddings-api",
@@ -2162,82 +2275,102 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-ai-engineer-deep-learning-core-10-sequence-models-rnn-lstm-lab",
-    "title": "Sequence Models RNN LSTM Lab",
+    "title": "Sequence Memory Lab",
     "category": "AI Engineering",
     "family": "Deep Learning Core",
-    "summary": "A documented Sequence Models RNN LSTM Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
+    "summary": "An inspectable sequence-classification workspace for comparing vanilla RNN, LSTM, and GRU models on multivariate sensor windows. It joins reproducible PyTorch experiments, educational recurrent-cell labs, versioned inference bundles, a FastAPI service, and a six-view React int…",
     "technologies": [
-      "LLMs"
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch",
+      "GCP"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 664,
+      "code": 73,
+      "tests": 135,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/10-sequence-models-rnn-lstm-lab",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab"
   },
   {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-19-transfer-learning-image-classifier",
-    "title": "Transfer Learning Image Classifier",
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-segmentation-quality-control-lab",
+    "title": "Surface Quality Control Lab",
     "category": "AI Engineering",
     "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Transfer Learning Image Classifier blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
+    "summary": "An evidence-first computer-vision laboratory that turns pixel-level surface-defect segmentation into an auditable piece-level inspection decision. The project implements a real compact U-Net, an OpenCV baseline, validation-only threshold selection, a FastAPI contract and a res…",
     "technologies": [
-      "Computer Vision"
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 475,
+      "code": 62,
+      "tests": 90,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/19-transfer-learning-image-classifier",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/21-segmentation-quality-control-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-transfer-learning-image-classifier"
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab"
   },
   {
-    "id": "path-ai-engineer-deep-learning-core-12-transformer-architecture-foundations-lab",
-    "title": "Transformer Architecture Foundations Lab",
+    "id": "path-ai-engineer-deep-learning-core-12-transformer-from-architecture-foundations-lab",
+    "title": "Transformer Architecture Lab",
     "category": "AI Engineering",
     "family": "Deep Learning Core",
-    "summary": "A documented Transformer Architecture Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Deep Learning Core.",
+    "summary": "An inspectable encoder-decoder Transformer built from PyTorch primitives, trained on controlled sequence-transduction tasks and delivered as a research-oriented web instrument.",
     "technologies": [
-      "RAG",
-      "LLMs"
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch",
+      "GCP"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 8894,
+      "code": 68,
+      "tests": 311,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/12-transformer-architecture-foundations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Deep-Learning-Core/tree/main/12-transformer-from-architecture-foundations-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Deep-Learning-Core/12-transformer-architecture-foundations-lab"
+    "path": "Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab",
+    "liveUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
+    "apiUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-13-unsupervised-learning-lab-suite",
-    "title": "Unsupervised Learning Lab Suite",
+    "title": "Unsupervised Structure Lab",
     "category": "AI Engineering",
     "family": "Advanced ML Backgrounds",
-    "summary": "A documented Unsupervised Learning Lab Suite blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced ML Backgrounds.",
-    "technologies": [],
+    "summary": "A reproducible, label-blind laboratory for questioning structure in the sklearn Digits dataset and deterministic stress-test fixtures. The product compares centroid, hierarchical, density and probabilistic clustering plus explicit random and trivial baselines, while external l…",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "scikit-learn"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 2881,
+      "code": 86,
+      "tests": 685,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Advanced-ML-Backgrounds/tree/main/13-unsupervised-learning-lab-suite",
     "featured": false,
     "accent": "violet",
@@ -2309,23 +2442,27 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Vision Multimodal AI Platform",
     "category": "Software Engineering",
     "family": "Vision Multimodal AI Platform",
-    "summary": "A product-platform blueprint translating Vision Multimodal AI Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "Vision & Multimodal AI Platform es una aplicación de software aplicada a inteligencia artificial visual para mostrar clasificación de imágenes, detección de objetos y asistencia imagen-texto de forma clara, visual y responsable.",
     "technologies": [
+      "Python",
+      "PostgreSQL",
       "Docker",
-      "Computer Vision",
-      "GCP"
+      "PyTorch",
+      "Computer Vision"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 354,
+      "code": 100,
+      "tests": 41,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Vision-Multimodal-Demos/tree/main/04-vision-multimodal-ai-platform",
     "featured": false,
     "accent": "blue",
-    "path": "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform"
+    "path": "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform",
+    "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net",
+    "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-20-visual-search-embeddings-api",

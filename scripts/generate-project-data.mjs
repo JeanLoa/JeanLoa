@@ -338,6 +338,105 @@ const collections = [
   { base: "Path-Software-Engineer", category: "Software Engineering", org: "Path-Software-Engineer" }
 ];
 
+const publicProjectLinks = new Map([
+  [
+    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
+    {
+      liveUrl: "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api",
+    {
+      liveUrl: "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform",
+    {
+      liveUrl: "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier",
+    {
+      liveUrl: "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab",
+    {
+      liveUrl: "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab",
+    {
+      liveUrl: "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api",
+    {
+      liveUrl: "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting",
+    {
+      liveUrl: "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
+      apiUrl: "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab",
+    {
+      liveUrl: "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/",
+      apiUrl: "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs"
+    }
+  ],
+  [
+    "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
+    {
+      liveUrl: "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
+      apiUrl: "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs"
+    }
+  ],
+  [
+    "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform",
+    {
+      liveUrl: "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
+      apiUrl: "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs"
+    }
+  ],
+  [
+    "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform",
+    {
+      liveUrl: "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
+      apiUrl: "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html"
+    }
+  ],
+  [
+    "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform",
+    {
+      liveUrl: "https://d12p4ywh8pvfjo.cloudfront.net",
+      apiUrl: "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
+    }
+  ]
+]);
+
+const supersededProjectPaths = new Set([
+  "Path-AI-Engineer/Deep-Learning-Core/12-transformer-architecture-foundations-lab",
+  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-transfer-learning-image-classifier"
+]);
+
 for (const collection of collections) {
   const collectionPath = join(root, collection.base);
   for (const repository of await readdir(collectionPath, { withFileTypes: true })) {
@@ -349,14 +448,16 @@ for (const collection of collections) {
     for (const entry of numbered) {
       const projectPath = join(repositoryPath, entry.name);
       const projectUrl = `${baseUrl}/tree/main/${entry.name}`;
-      generated.push(await makeProject({
+      const project = await makeProject({
         directory: projectPath,
         category: collection.category,
         family: repository.name,
         url: projectUrl,
         fallbackTitle: titleCase(entry.name),
         accent: collection.category === "AI Engineering" ? "violet" : "blue"
-      }));
+      });
+      if (supersededProjectPaths.has(project.path)) continue;
+      generated.push({ ...project, ...publicProjectLinks.get(project.path) });
     }
   }
 }
