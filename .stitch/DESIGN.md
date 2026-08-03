@@ -241,17 +241,24 @@ lengths of 10–17 characters.
   record”, “Published course”, “Documented collection” or “Independent study”.
 - These descriptors must not visually imitate project-state pills.
 
-### Project Dialog & Videos
+### Project Dialog & Capture Galleries
 
 - Full-screen editorial case study retaining the active category accent.
 - Focus moves to Close on open and returns to the triggering control on close.
-- Video is 16:9, `controls`, `playsinline` and `preload="metadata"`.
-- Project films never autoplay.
-- Show a concise loading label until metadata is ready and a persistent,
-  actionable fallback when media cannot load.
-- Multi-clip projects use accessible chapter buttons with `aria-pressed`.
-- Background audio pauses for project films and starts only through its explicit
-  control.
+- Opening and closing use coordinated backdrop/content transitions between
+  180â€“240ms; reduced-motion users receive an immediate state change.
+- Project cards use the first verified capture as a consistent 16:9 cover.
+- Case studies present three to five real interface captures when verified
+  evidence exists; charts and dataset samples must not be mislabeled as product UI.
+- Capture navigation uses visible numbered buttons, `aria-pressed`, Left/Right
+  keyboard navigation and persistent captions.
+- Portrait captures switch the stage to a taller ratio, while every capture
+  exposes a keyboard-focusable full-resolution link.
+- Images use lazy loading on cards, asynchronous decoding in the dialog and a
+  readable fallback when an asset is unavailable.
+- Project video players, autoplay and chapter playlists are not part of the
+  published experience. Source recordings remain separate from deployable assets.
+- Background audio starts only through its explicit control.
 
 ## 5. Layout Principles
 

@@ -3,6 +3,26 @@ import { join, relative, sep } from "node:path";
 
 const site = process.cwd();
 const root = join(site, "..");
+const galleryManifest = JSON.parse(
+  await readFile(join(site, "content", "project-galleries.json"), "utf8")
+);
+for (const [projectPath, gallery] of Object.entries(galleryManifest)) {
+  if (!Array.isArray(gallery) || gallery.length < 3 || gallery.length > 5) {
+    throw new Error(`Project gallery must contain 3 to 5 captures: ${projectPath}`);
+  }
+  gallery.forEach((item, index) => {
+    const validText = [item?.src, item?.alt, item?.label, item?.caption]
+      .every(value => typeof value === "string" && value.trim());
+    const normalizedSource = typeof item?.src === "string"
+      ? item.src.replaceAll("\\", "/")
+      : "";
+    if (!validText
+        || !/^assets\/project-captures\/[a-z0-9_./-]+\.(png|jpe?g|webp)$/i.test(normalizedSource)
+        || normalizedSource.includes("../")) {
+      throw new Error(`Invalid gallery capture ${index + 1} for ${projectPath}`);
+    }
+  });
+}
 const skip = new Set([
   "node_modules", ".git", ".venv", "venv", ".runtime", ".tmp", ".vite",
   ".mypy_cache", ".ruff_cache", ".matplotlib", ".pip-build-tracker",
@@ -10,8 +30,8 @@ const skip = new Set([
   ".pytest_cache", ".pytest_tmp", ".pytest-tmp"
 ]);
 const techMatchers = [
-  ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i],
-  ["TypeScript", /\btypescript\b/i], ["JavaScript", /\bjavascript\b/i], ["Python", /\bpython\b/i],
+  ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i], ["TypeScript", /\btypescript\b/i],
+  ["JavaScript", /\bjavascript\b/i], ["C#", /\bc\s*(?:#|sharp\b)/i], ["Java", /\bjava\b(?!script)/i], ["Python", /\bpython\b/i],
   ["FastAPI", /\bfastapi\b/i], ["Streamlit", /\bstreamlit\b/i], ["Spring Boot", /\bspring boot\b/i], ["ASP.NET Core", /asp\.net core/i],
   ["PostgreSQL", /\bpostgres(?:ql)?\b/i], ["Docker", /\bdocker\b/i], ["MapLibre", /\bmaplibre\b/i],
   ["OpenStreetMap", /openstreetmap|open street map/i], ["PyTorch", /\bpytorch\b/i], ["TensorFlow", /\btensorflow\b/i],
@@ -100,7 +120,7 @@ async function walk(directory, found = []) {
   return found;
 }
 
-async function signalsFor(directory) {
+async function projectEvidenceFor(directory) {
   const files = await walk(directory);
   const extensions = files.reduce((map, file) => {
     const ext = file.split(".").pop()?.toLowerCase() || "file";
@@ -110,7 +130,27 @@ async function signalsFor(directory) {
   const tests = files.filter(file => /(?:test|spec|evaluation|benchmark)/i.test(file)).length;
   const notebooks = extensions.ipynb || 0;
   const code = files.filter(file => /\.(?:py|ts|tsx|js|jsx|java|cs|cpp|c|html|css)$/i.test(file)).length;
-  return { files: files.length, code, tests, notebooks };
+  const packageTechnologies = new Set();
+  const packageFiles = files.filter(file => file.toLowerCase().endsWith(`${sep}package.json`));
+  for (const packageFile of packageFiles) {
+    try {
+      const manifest = JSON.parse(await readFile(packageFile, "utf8"));
+      const dependencies = new Set(Object.keys({
+        ...(manifest.dependencies || {}),
+        ...(manifest.devDependencies || {}),
+        ...(manifest.peerDependencies || {}),
+        ...(manifest.optionalDependencies || {})
+      }));
+      if (dependencies.has("next")) packageTechnologies.add("Next.js");
+      if ([...dependencies].some(name => name === "@nestjs/core" || name.startsWith("@nestjs/"))) {
+        packageTechnologies.add("NestJS");
+      }
+    } catch {}
+  }
+  return {
+    signals: { files: files.length, code, tests, notebooks },
+    packageTechnologies: [...packageTechnologies]
+  };
 }
 
 async function makeProject({ directory, category, family, url, fallbackTitle, featured = false, accent = "violet" }) {
@@ -118,8 +158,12 @@ async function makeProject({ directory, category, family, url, fallbackTitle, fe
   try { markdown = await readFile(join(directory, "README.md"), "utf8"); } catch {}
   const title = extractTitle(markdown, fallbackTitle);
   const extractedSummary = extractSummary(markdown, `${title} is a documented engineering build within ${family}.`);
-  const technologies = techMatchers.filter(([, matcher]) => matcher.test(markdown)).map(([name]) => name).slice(0, 7);
-  const signals = await signalsFor(directory);
+  const evidence = await projectEvidenceFor(directory);
+  const technologies = [...new Set([
+    ...evidence.packageTechnologies,
+    ...techMatchers.filter(([, matcher]) => matcher.test(markdown)).map(([name]) => name)
+  ])].slice(0, 7);
+  const signals = evidence.signals;
   const status = signals.code >= 4 ? "Implementation" : "Blueprint";
   let summary = extractedSummary;
   if (category === "AI Engineering") {
@@ -299,7 +343,7 @@ const curated = [
     solution: "A Vue 3 operational SPA and ASP.NET Core API organized through DDD/CQRS bounded contexts, reusable UI primitives and explicit product relationships.",
     architecture: ["Bounded-context frontend modules", "DDD/CQRS backend", "PostgreSQL persistence", "Role-aware operational workflows"],
     capabilities: ["Sites, rooms and device groups", "Monitoring and valve control", "Alerts, goals and routines", "Reports, plans and support"],
-    technologies: ["Vue", "JavaScript", "ASP.NET Core", "PostgreSQL", "Docker", "Cloud Run", "Firebase Hosting", "Neon"],
+    technologies: ["Vue", "JavaScript", "C#", "ASP.NET Core", "PostgreSQL", "Docker", "Cloud Run", "Firebase Hosting", "Neon"],
     signals: { files: 757, code: 757, tests: 0, notebooks: 0 },
     status: "Built system",
     url: "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/lowcortisol-digital-health-platform",
@@ -320,7 +364,7 @@ const curated = [
     solution: "An Angular workflow layer over a Spring Boot platform with DDD/CQRS modules, JWT security, PostgreSQL and a guarded Gitflow release chain.",
     architecture: ["Angular bounded workflows", "Spring Boot DDD/CQRS", "JWT + BCrypt security", "Gitflow release architecture"],
     capabilities: ["8 bounded contexts and 99 HTTP operations", "Device and energy monitoring", "Alerts, reports, subscriptions and support", "Versioned releases and deployment evidence"],
-    technologies: ["Angular", "TypeScript", "Spring Boot", "PostgreSQL", "Docker", "Cloud Run", "Firebase Hosting", "Neon"],
+    technologies: ["Angular", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "Docker", "Cloud Run", "Firebase Hosting", "Neon"],
     signals: { files: 1075, code: 1075, tests: 83, notebooks: 0 },
     status: "Built system",
     url: "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/electrocorp-enterprise-platform-suite",
@@ -328,7 +372,7 @@ const curated = [
     apiUrl: "https://electrocorp-platform-vfvqevfzvq-ue.a.run.app/swagger-ui.html",
     featured: true,
     accent: "university",
-    image: "assets/electrocorp-home.png"
+    image: "assets/electrocorp-home.jpg"
   }
 ];
 
@@ -612,6 +656,7 @@ const supplementalDefinitions = [
     category: "University",
     family: "Technical Education",
     summary: "An eleven-lesson Java course with starter files, completed examples, online execution guidance and aligned teaching documentation.",
+    technologies: ["Java"],
     status: "Published course"
   },
   {
@@ -636,36 +681,31 @@ for (const definition of supplementalDefinitions) {
     fallbackTitle: definition.title,
     accent: definition.category === "University" ? "cyan" : "orange"
   });
-  generated.push({ ...project, title: definition.title, summary: definition.summary, status: definition.status });
+  generated.push({
+    ...project,
+    title: definition.title,
+    summary: definition.summary,
+    technologies: definition.technologies || project.technologies,
+    status: definition.status
+  });
 }
 
-const roadmapProjects = [
-  [67, "Final AI + Quantum + Robotics Architecture", "An integration map for service boundaries, API contracts, cloud infrastructure and Kubernetes-ready deployment."],
-  [68, "Core Multi-Service AI Platform", "A roadmap for an API gateway, RAG, agents, tools, logs and evaluation hooks across a shared AI service layer."],
-  [69, "Quantum & QML Service Layer", "A planned provider router, job system, experiment registry, result normalisation and cost-awareness layer."],
-  [70, "Embodied Simulation Platform", "A roadmap connecting simulation, perception-memory-action loops, planning, control and explicit safety constraints."],
-  [71, "Safety, Observability & Evaluation Suite", "A cross-system plan for logs, metrics, traces, incident reports and a unified quality dashboard."],
-  [72, "AI + Quantum + Robotics Capstone", "The final integration roadmap: developer portal, API documentation, evaluation evidence, safety report and product demo."]
-].map(([number, title, summary]) => ({
-  id: `roadmap-${number}`,
-  title,
-  category: "AI Engineering",
-  family: "Final AI Quantum Robotics Platform",
-  summary,
-  technologies: [],
-  signals: { files: 0, code: 0, tests: 0, notebooks: 0 },
-  status: "Roadmap",
-  url: "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
-  featured: false,
-  accent: "orange",
-  roadmapNumber: 12,
-  cloudFocus: cloudFocusByRoadmap.get(12),
-  path: "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
-}));
-
-generated.push(...roadmapProjects);
-
 generated.sort((a, b) => a.title.localeCompare(b.title));
-const payload = [...curated, ...generated];
+const allProjects = [...curated, ...generated];
+const knownGalleryKeys = new Set(
+  allProjects.flatMap(project => [project.path, project.id].filter(Boolean))
+);
+for (const projectKey of Object.keys(galleryManifest)) {
+  if (!knownGalleryKeys.has(projectKey)) {
+    throw new Error(`Project gallery does not match a generated project: ${projectKey}`);
+  }
+}
+
+const payload = allProjects.map(project => {
+  const gallery = galleryManifest[project.path] ?? galleryManifest[project.id];
+  return Array.isArray(gallery) && gallery.length > 0
+    ? { ...project, gallery }
+    : project;
+});
 await writeFile(join(site, "projects-data.js"), `window.PORTFOLIO_PROJECTS = ${JSON.stringify(payload, null, 2)};\n`, "utf8");
 console.log(`Generated ${payload.length} project records (${generated.length} from engineering paths).`);

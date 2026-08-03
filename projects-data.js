@@ -274,6 +274,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Vue",
       "JavaScript",
+      "C#",
       "ASP.NET Core",
       "PostgreSQL",
       "Docker",
@@ -319,6 +320,7 @@ window.PORTFOLIO_PROJECTS = [
     "technologies": [
       "Angular",
       "TypeScript",
+      "Java",
       "Spring Boot",
       "PostgreSQL",
       "Docker",
@@ -338,7 +340,7 @@ window.PORTFOLIO_PROJECTS = [
     "apiUrl": "https://electrocorp-platform-vfvqevfzvq-ue.a.run.app/swagger-ui.html",
     "featured": true,
     "accent": "university",
-    "image": "assets/electrocorp-home.png"
+    "image": "assets/electrocorp-home.jpg"
   },
   {
     "id": "path-software-engineer-advanced-ml-decision-platform-03-advanced-ml-decision-platform",
@@ -348,6 +350,7 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "An evidence-first application that turns advanced machine-learning outputs into inspectable, versioned decision-support experiences.",
     "technologies": [
       "Angular",
+      "Java",
       "Python",
       "FastAPI",
       "Spring Boot",
@@ -368,7 +371,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
     "liveUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
-    "apiUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html"
+    "apiUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-03/03-advanced-ml-decision-platform/01-platform-overview.png",
+        "alt": "Advanced ML Decision Platform overview with three evidence workspaces",
+        "label": "Platform overview",
+        "caption": "The Angular product connects clustering, explainable ranking and probabilistic forecasting under one explicit evidence boundary."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-03/03-advanced-ml-decision-platform/02-cluster-insight.png",
+        "alt": "Cluster Insight deterministic K-Means workspace",
+        "label": "Cluster workspace",
+        "caption": "The full stack creates and persists a controlled K-Means execution with reproducible configuration controls."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-03/03-advanced-ml-decision-platform/05-cluster-evidence.png",
+        "alt": "Cluster validation metrics PCA projection and comparative profiles",
+        "label": "Cluster evidence",
+        "caption": "Silhouette, Davies-Bouldin, Calinski-Harabasz and the PCA projection remain inspectable beside the completed run status."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-03/03-advanced-ml-decision-platform/03-recommendation-playground.png",
+        "alt": "Explainable recommendation playground with ranked results and offline evidence",
+        "label": "Recommendations",
+        "caption": "A real recommendation query returns ranked catalog items, reason factors and bounded offline evaluation metrics."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-03/03-advanced-ml-decision-platform/04-probabilistic-forecast.png",
+        "alt": "Probabilistic demand forecast viewer with quantile metrics",
+        "label": "Forecast viewer",
+        "caption": "The persisted forecast exposes P10, P50 and P90 uncertainty with a chronological baseline comparison and calibration warning."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-29-agentic-workflow-langgraph-lab",
@@ -396,25 +431,28 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
-    "id": "roadmap-72",
-    "title": "AI + Quantum + Robotics Capstone",
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-67-ai-quantum-robotics-platform-architecture",
+    "title": "AI Quantum Robotics Platform Architecture",
     "category": "AI Engineering",
     "family": "Final AI Quantum Robotics Platform",
-    "summary": "The final integration roadmap: developer portal, API documentation, evaluation evidence, safety report and product demo.",
-    "technologies": [],
+    "summary": "A documented AI Quantum Robotics Platform Architecture blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
+    "technologies": [
+      "RAG",
+      "Quantum ML"
+    ],
     "signals": {
-      "files": 0,
+      "files": 1,
       "code": 0,
       "tests": 0,
       "notebooks": 0
     },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/67-ai-quantum-robotics-platform-architecture",
     "featured": false,
-    "accent": "orange",
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/67-ai-quantum-robotics-platform-architecture",
     "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-06-ai-software-foundations-platform",
@@ -431,9 +469,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 322,
+      "files": 352,
       "code": 104,
-      "tests": 155,
+      "tests": 185,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -444,7 +482,33 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/06-ai-software-foundations-platform/capture00001.png",
+        "alt": "AI Software Foundations Platform operations overview and observed demand workflow",
+        "label": "Operations overview",
+        "caption": "The integrated platform exposes portfolio health and the observed-demand workflow in one surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/06-ai-software-foundations-platform/capture00244.png",
+        "alt": "New AI decision form for inventory recommendation evidence",
+        "label": "New decision",
+        "caption": "A bounded decision form connects inventory inputs to the platform recommendation service."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/06-ai-software-foundations-platform/capture00487.png",
+        "alt": "AI platform batch evaluation workspace with multiple inventory positions",
+        "label": "Batch studio",
+        "caption": "The batch workspace evaluates multiple inventory positions under the same governed contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/06-ai-software-foundations-platform/capture00973.png",
+        "alt": "AI platform operations view after completing the product workflow",
+        "label": "Evidence loop",
+        "caption": "The operations view closes the loop between observations, recommendations and recorded evidence."
+      }
+    ]
   },
   {
     "id": "university-02-computer-science-coursework-algorithm-complexity-analysis",
@@ -498,7 +562,7 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 351,
+      "files": 353,
       "code": 28,
       "tests": 60,
       "notebooks": 0
@@ -509,7 +573,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor",
     "roadmapNumber": 3,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/01-overview.png",
+        "alt": "Anomaly Operations Console overview with operational readiness and alert evidence",
+        "label": "Operations overview",
+        "caption": "The overview connects the selected detector, calibrated threshold, replay readiness and held-out evaluation evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/02-model-benchmark.png",
+        "alt": "Anomaly detector benchmark comparing isolation forest and baseline evidence",
+        "label": "Model benchmark",
+        "caption": "The benchmark compares candidate detectors under the same chronological data split before threshold selection."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/03-threshold-lab.png",
+        "alt": "Anomaly threshold lab with calibration curve and operating point",
+        "label": "Threshold lab",
+        "caption": "Calibration-only threshold selection makes the operating point and alert tradeoff explicit without tuning on test data."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/04-live-replay.png",
+        "alt": "Live anomaly evidence replay with scored telemetry and active alerts",
+        "label": "Live replay",
+        "caption": "The real evidence replay streams timestamped scores through the selected threshold and surfaces alert candidates for review."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/05-evaluation-report.png",
+        "alt": "Held out anomaly evaluation report with precision recall F1 and PR AUC",
+        "label": "Evaluation report",
+        "caption": "The held-out report records precision, recall, F1 and PR-AUC alongside protocol checks and known operational limitations."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-18-automl-meta-learning-benchmark-lab",
@@ -524,9 +620,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 316,
+      "files": 317,
       "code": 38,
-      "tests": 316,
+      "tests": 317,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -537,7 +633,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/",
-    "apiUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/18-automl-meta-learning-benchmark-lab/01-benchmark-overview.png",
+        "alt": "Atlas AutoML benchmark qualification overview and evidence boundary",
+        "label": "Benchmark overview",
+        "caption": "The overview accounts for datasets, strategies, paired seeds and every qualification block while clearly limiting the claim scope."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/18-automl-meta-learning-benchmark-lab/02-search-explorer.png",
+        "alt": "AutoML anytime search trajectories and selected pipeline outcomes",
+        "label": "Search explorer",
+        "caption": "Raw incumbent trajectories share measured fit time, keeping the winning pipeline traceable to its ordered trial ledger."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/18-automl-meta-learning-benchmark-lab/03-strategy-comparison.png",
+        "alt": "AutoML search strategy comparison under equal resource space",
+        "label": "Strategy comparison",
+        "caption": "Default, random, cold-search and meta-warm-start strategies are compared under a common qualification budget and task matrix."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/18-automl-meta-learning-benchmark-lab/04-meta-learning.png",
+        "alt": "LODO meta-learning lab with target exclusion and source task portfolio",
+        "label": "Meta-learning lab",
+        "caption": "The leave-one-dataset-out flow excludes the target before scaling, neighbor retrieval and source-configuration selection."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/18-automl-meta-learning-benchmark-lab/05-resource-failure.png",
+        "alt": "AutoML resource and failure lab with trial accounting and measured compute",
+        "label": "Resource and failure lab",
+        "caption": "Completed, failed, timed-out and pruned trials remain explicit beside measured fit time and budget utilization."
+      }
+    ]
   },
   {
     "id": "university-02-computer-science-coursework-cpp-data-structures-and-algorithms",
@@ -637,7 +765,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/16-causal-promotion-effect-lab",
     "roadmapNumber": 3,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/01-study-overview.png",
+        "alt": "Causal Promotion evidence lab study overview with locked protocol",
+        "label": "Study overview",
+        "caption": "The study overview keeps the eligible population, primary estimand, artifact version and synthetic-evidence boundary together."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/02-average-effects.png",
+        "alt": "Average promotion effects forest plot across four causal estimators",
+        "label": "Average effects",
+        "caption": "Naive, adjusted, weighted and doubly robust estimates are compared with their uncertainty under the same locked protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/03-heterogeneity.png",
+        "alt": "Promotion effect heterogeneity analysis with subgroup evidence",
+        "label": "Heterogeneity",
+        "caption": "Subgroup effects and uncertainty expose where estimated lift varies without presenting exploratory differences as proof."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/04-policy-simulator.png",
+        "alt": "Executed ranked policy simulation with cost capacity and estimated net value",
+        "label": "Policy simulator",
+        "caption": "A real policy request applies contact cost and capacity, then compares the ranked decision with treat-none, treat-all and random baselines."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/05-robustness.png",
+        "alt": "Causal robustness workspace with recovery placebo subset and clipping checks",
+        "label": "Robustness checks",
+        "caption": "Known-truth recovery, placebo treatment, subset stability and propensity clipping attempt to refute the estimate before reuse."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-27-chunking-retrieval-evaluation-lab",
@@ -673,9 +833,9 @@ window.PORTFOLIO_PROJECTS = [
       "Python"
     ],
     "signals": {
-      "files": 598,
-      "code": 86,
-      "tests": 351,
+      "files": 688,
+      "code": 91,
+      "tests": 435,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -684,7 +844,33 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite",
     "roadmapNumber": 1,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/03-classical-model-comparison-suite/01-overview.png",
+        "alt": "Classical Model Comparison Suite overview with committed experiment evidence",
+        "label": "Evidence overview",
+        "caption": "The opening view frames classification and regression comparison as a read-only evidence workflow."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/03-classical-model-comparison-suite/02-classification.png",
+        "alt": "Classification comparison view under shared stratified folds",
+        "label": "Classification",
+        "caption": "The classification view identifies the registered dataset, shared folds and immutable official run."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/03-classical-model-comparison-suite/03-regression.png",
+        "alt": "Regression model comparison view with deterministic five fold protocol",
+        "label": "Regression",
+        "caption": "The regression view presents error comparison within the recorded dataset and deterministic fold contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/03-classical-model-comparison-suite/04-protocol.png",
+        "alt": "Model comparison protocol and provenance view",
+        "label": "Protocol",
+        "caption": "The protocol view makes shared folds, pipeline boundaries, baselines, ranking policy and exclusions explicit."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-deep-learning-core-09-cnn-foundations-image-classifier",
@@ -698,9 +884,9 @@ window.PORTFOLIO_PROJECTS = [
       "Computer Vision"
     ],
     "signals": {
-      "files": 1028,
+      "files": 1034,
       "code": 74,
-      "tests": 114,
+      "tests": 120,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -711,7 +897,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/09-cnn-foundations-image-classifier/01-overview.png",
+        "alt": "CNN Vision Lab overview with model topology and inference status",
+        "label": "Vision lab overview",
+        "caption": "The overview connects the FashionMNIST input contract, CNN topology and inference-only serving boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/09-cnn-foundations-image-classifier/02-classification-result.png",
+        "alt": "CNN Vision Lab classification result for an official ankle boot sample",
+        "label": "Classification",
+        "caption": "A held-out gallery sample returns its real top prediction, probabilities, model version and runtime evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/09-cnn-foundations-image-classifier/03-convolution-lab.png",
+        "alt": "Interactive convolution lab with input kernel and feature response matrices",
+        "label": "Convolution lab",
+        "caption": "The spatial lab exposes the input, selected kernel and computed response with exact PyTorch parity."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/09-cnn-foundations-image-classifier/04-feature-maps.png",
+        "alt": "CNN intermediate feature maps captured for a controlled test sample",
+        "label": "Feature maps",
+        "caption": "Whitelisted conv1 activations make intermediate spatial responses inspectable without claiming causality."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/09-cnn-foundations-image-classifier/05-evaluation.png",
+        "alt": "CNN evaluation dashboard with held out metrics and confusion evidence",
+        "label": "Evaluation",
+        "caption": "Held-out accuracy, macro F1, the MLP baseline and per-class evidence share one explicit evaluation contract."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-35-conditioned-generation-control-lab",
@@ -735,27 +953,6 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
-    "id": "roadmap-68",
-    "title": "Core Multi-Service AI Platform",
-    "category": "AI Engineering",
-    "family": "Final AI Quantum Robotics Platform",
-    "summary": "A roadmap for an API gateway, RAG, agents, tools, logs and evaluation hooks across a shared AI service layer.",
-    "technologies": [],
-    "signals": {
-      "files": 0,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
-    "featured": false,
-    "accent": "orange",
-    "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
-  },
-  {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api",
     "title": "Customer Segmentation and Churn API",
     "category": "AI Engineering",
@@ -769,9 +966,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 336,
+      "files": 363,
       "code": 107,
-      "tests": 119,
+      "tests": 146,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -782,7 +979,33 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/04-customer-segmentation-and-churn-api/capture00001.png",
+        "alt": "Customer Signal Desk landing surface for segmentation and churn analysis",
+        "label": "System overview",
+        "caption": "The opening view frames segmentation and churn as separate signals for one customer record."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/04-customer-segmentation-and-churn-api/capture00132.png",
+        "alt": "Customer account form collecting profile service and billing variables",
+        "label": "Account input",
+        "caption": "The input surface groups customer profile, service and billing evidence before inference."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/04-customer-segmentation-and-churn-api/capture00394.png",
+        "alt": "Customer account form populated for segmentation and churn scoring",
+        "label": "Prepared record",
+        "caption": "A complete account state is prepared against the validated segmentation and churn contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/04-customer-segmentation-and-churn-api/capture00525.png",
+        "alt": "Customer intelligence result showing segment assignment and churn probability",
+        "label": "Combined result",
+        "caption": "The response pairs an assigned segment with an estimated churn probability and review context."
+      }
+    ]
   },
   {
     "id": "path-software-engineer-deep-learning-software-lab-platform-02-deep-learning-visual-lab-platform",
@@ -791,6 +1014,7 @@ window.PORTFOLIO_PROJECTS = [
     "family": "Deep Learning Software Lab Platform",
     "summary": "Project 02 of the Software Engineer path. Axon is a full-stack educational platform for inspecting registered PyTorch models through bounded FastAPI contracts and responsive Next.js experiences.",
     "technologies": [
+      "Next.js",
       "React",
       "TypeScript",
       "Python",
@@ -812,7 +1036,27 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
     "liveUrl": "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
-    "apiUrl": "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs"
+    "apiUrl": "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-02/02-deep-learning-visual-lab-platform/desktop-1440.png",
+        "alt": "Deep Learning Visual Lab desktop interface at 1440 pixels",
+        "label": "Desktop lab",
+        "caption": "The full desktop workspace exposes the deep-learning experiment and its visual evidence."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-02/02-deep-learning-visual-lab-platform/tablet-768.png",
+        "alt": "Deep Learning Visual Lab responsive tablet interface",
+        "label": "Tablet layout",
+        "caption": "The tablet layout preserves the experiment hierarchy and primary controls at a narrower width."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-02/02-deep-learning-visual-lab-platform/mobile-viewport-375.png",
+        "alt": "Deep Learning Visual Lab responsive mobile interface",
+        "label": "Mobile layout",
+        "caption": "The mobile view demonstrates the same workflow at a narrow viewport without hiding its primary controls."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-39-deep-q-network-gymnasium-lab",
@@ -849,7 +1093,7 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 521,
+      "files": 522,
       "code": 48,
       "tests": 70,
       "notebooks": 0
@@ -862,7 +1106,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/17-probabilistic-demand-forecasting/01-forecast-explorer.png",
+        "alt": "Demand uncertainty forecast explorer with 24 hour calibrated interval evidence",
+        "label": "Forecast explorer",
+        "caption": "The forecast explorer presents nested quantiles, realized demand and a locked-test origin as one operational evidence view."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/17-probabilistic-demand-forecasting/02-model-comparison.png",
+        "alt": "Probabilistic demand model comparison across point and interval metrics",
+        "label": "Model comparison",
+        "caption": "Five model families share the same locked test, balancing WIS, coverage, interval width and deployable feature availability."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/17-probabilistic-demand-forecasting/03-calibration-lab.png",
+        "alt": "Demand interval calibration lab with coverage by forecast horizon",
+        "label": "Calibration lab",
+        "caption": "Coverage and interval width travel together, with post-development CQR calibration and conditional horizon diagnostics."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/17-probabilistic-demand-forecasting/04-decision-simulator.png",
+        "alt": "Executed capacity decision simulation using underage and overage costs",
+        "label": "Decision simulator",
+        "caption": "The executed scenario translates asymmetric costs into a P80 capacity rule and compares its backtest cost with decision baselines."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/17-probabilistic-demand-forecasting/05-data-availability.png",
+        "alt": "Demand forecasting feature availability and leakage guard contracts",
+        "label": "Data availability",
+        "caption": "The serving contract separates features known at the forecast origin from oracle inputs that cannot be selected in production."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-34-diffusion-denoising-foundations-lab",
@@ -898,9 +1174,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 477,
+      "files": 567,
       "code": 46,
-      "tests": 63,
+      "tests": 65,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -909,7 +1185,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-document-vision-ocr-extractor",
     "roadmapNumber": 4,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/01-overview.png",
+        "alt": "LedgerLens document extraction evidence workbench overview",
+        "label": "Document overview",
+        "caption": "The workbench ties OCR, key-field extraction, normalization and human review to a sealed qualification bundle."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/02-extraction.png",
+        "alt": "Executed receipt extraction with localized company address date and total",
+        "label": "Live extraction",
+        "caption": "A real sealed receipt request keeps localized regions, raw OCR, normalized fields, confidence and operator edits together."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/03-reading-order.png",
+        "alt": "Document OCR reading order and line evidence inspection",
+        "label": "Reading order",
+        "caption": "Recognized lines preserve their spatial and reading sequence so extracted values can be traced back to document evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/04-evaluation.png",
+        "alt": "OCR and document extraction evaluation with separate reader and extractor metrics",
+        "label": "Evaluation",
+        "caption": "Character error, word error, line exact match and document exact match remain separate rather than collapsing into one score."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/05-error-gallery.png",
+        "alt": "Document extraction failure gallery with missing address field",
+        "label": "Error gallery",
+        "caption": "The qualification failure stays visible with expected value, missing prediction, confidence and review-required decision."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
@@ -926,7 +1234,7 @@ window.PORTFOLIO_PROJECTS = [
       "NumPy"
     ],
     "signals": {
-      "files": 322,
+      "files": 334,
       "code": 55,
       "tests": 79,
       "notebooks": 0
@@ -939,7 +1247,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
     "liveUrl": "https://d1sb1ox4sh9pff.cloudfront.net/app/",
-    "apiUrl": "https://d1sb1ox4sh9pff.cloudfront.net/docs"
+    "apiUrl": "https://d1sb1ox4sh9pff.cloudfront.net/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/24-edge-vision-optimization-lab/01-decision-desk.png",
+        "alt": "EdgeForge edge inference optimization decision desk",
+        "label": "Decision desk",
+        "caption": "The decision desk compares quality, latency, size and sparsity under one recorded CPU environment without naming a fake universal winner."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/24-edge-vision-optimization-lab/02-inference-lab.png",
+        "alt": "Executed edge classification inference with approved runtime variant",
+        "label": "Inference lab",
+        "caption": "A real qualification fixture returns ranked classes and request latency using an explicitly approved PyTorch FP32 runtime."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/24-edge-vision-optimization-lab/03-variant-registry.png",
+        "alt": "Edge vision runtime variant registry with artifact approval states",
+        "label": "Variant registry",
+        "caption": "Runtime families, precision, artifact size and approval state stay visible before any benchmark comparison is reused."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/24-edge-vision-optimization-lab/04-benchmark-matrix.png",
+        "alt": "Edge vision benchmark matrix comparing quality latency size and sparsity",
+        "label": "Benchmark matrix",
+        "caption": "All variants share the same host, warmup and iteration contract while macro F1, Top-1, P50, P95, size and sparsity remain separate."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/24-edge-vision-optimization-lab/05-evidence-room.png",
+        "alt": "Edge inference evidence room with host parity and benchmark controls",
+        "label": "Evidence room",
+        "caption": "Measured host, runtime parity, benchmark controls and failed eligibility checks determine whether an exported artifact is acceptable."
+      }
+    ]
   },
   {
     "id": "university-03-academic-final-projects-final-project-deliverables-semester-01-cpp-final-project",
@@ -1003,25 +1343,25 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
-    "id": "roadmap-70",
-    "title": "Embodied Simulation Platform",
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-70-embodied-robotics-simulation-platform",
+    "title": "Embodied Robotics Simulation Platform",
     "category": "AI Engineering",
     "family": "Final AI Quantum Robotics Platform",
-    "summary": "A roadmap connecting simulation, perception-memory-action loops, planning, control and explicit safety constraints.",
+    "summary": "A documented Embodied Robotics Simulation Platform blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
     "technologies": [],
     "signals": {
-      "files": 0,
+      "files": 1,
       "code": 0,
       "tests": 0,
       "notebooks": 0
     },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/70-embodied-robotics-simulation-platform",
     "featured": false,
-    "accent": "orange",
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/70-embodied-robotics-simulation-platform",
     "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-56-enterprise-ai-product-line",
@@ -1045,27 +1385,6 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "GCP"
   },
   {
-    "id": "roadmap-67",
-    "title": "Final AI + Quantum + Robotics Architecture",
-    "category": "AI Engineering",
-    "family": "Final AI Quantum Robotics Platform",
-    "summary": "An integration map for service boundaries, API contracts, cloud infrastructure and Kubernetes-ready deployment.",
-    "technologies": [],
-    "signals": {
-      "files": 0,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
-    "featured": false,
-    "accent": "orange",
-    "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
-  },
-  {
     "id": "path-software-engineer-final-ai-quantum-robotics-software-platform-12-ai-quantum-robotics-platform-portal",
     "title": "Final AI Quantum Robotics Platform",
     "category": "Software Engineering",
@@ -1085,6 +1404,27 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Final-AI-Quantum-Robotics-Software-Platform/12-ai-quantum-robotics-platform-portal",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure"
+  },
+  {
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-72-final-ai-quantum-robotics-platform-demo",
+    "title": "Final AI Quantum Robotics Platform Demo",
+    "category": "AI Engineering",
+    "family": "Final AI Quantum Robotics Platform",
+    "summary": "A documented Final AI Quantum Robotics Platform Demo blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
+    "technologies": [],
+    "signals": {
+      "files": 1,
+      "code": 0,
+      "tests": 0,
+      "notebooks": 0
+    },
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/72-final-ai-quantum-robotics-platform-demo",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/72-final-ai-quantum-robotics-platform-demo",
     "roadmapNumber": 12,
     "cloudFocus": "Azure"
   },
@@ -1293,9 +1633,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 346,
+      "files": 375,
       "code": 106,
-      "tests": 133,
+      "tests": 162,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1304,7 +1644,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service",
     "roadmapNumber": 1,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00001.png",
+        "alt": "Inventory Desk landing surface describing evidence based replenishment",
+        "label": "System overview",
+        "caption": "The product frames replenishment as a forecast-backed, constraint-aware decision."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00126.png",
+        "alt": "Inventory position form with product planning date stock and backlog inputs",
+        "label": "Inventory input",
+        "caption": "The planner collects the inventory position and operating constraints for one product."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00251.png",
+        "alt": "Inventory optimization form populated with planning quantities",
+        "label": "Prepared position",
+        "caption": "A complete inventory position is ready for the forecasting and reorder policy workflow."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00376.png",
+        "alt": "Inventory optimization recommendation with replenishment quantity and calibrated horizon",
+        "label": "Recommendation",
+        "caption": "The result exposes the proposed replenishment quantity beside its calibrated demand horizon."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00501.png",
+        "alt": "Inventory decision evidence table and forecast interval chart",
+        "label": "Decision evidence",
+        "caption": "Forecast intervals, policy inputs and decision metadata remain visible for review."
+      }
+    ]
   },
   {
     "id": "university-01-portfolio-projects-electrocorp-enterprise-platform-suite-java-fundamentals-course-electrocorp",
@@ -1312,7 +1684,9 @@ window.PORTFOLIO_PROJECTS = [
     "category": "University",
     "family": "Technical Education",
     "summary": "An eleven-lesson Java course with starter files, completed examples, online execution guidance and aligned teaching documentation.",
-    "technologies": [],
+    "technologies": [
+      "Java"
+    ],
     "signals": {
       "files": 39,
       "code": 22,
@@ -1351,7 +1725,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/11-autoencoder-representation-lab/01-overview.png",
+        "alt": "Latent Representation Lab overview with encoder bottleneck decoder flow",
+        "label": "Representation overview",
+        "caption": "The opening view frames reconstruction, representation and robustness around an explicit bottleneck."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/11-autoencoder-representation-lab/02-reconstruction.png",
+        "alt": "Autoencoder reconstruction with original decoded image error map and metrics",
+        "label": "Reconstruction",
+        "caption": "A controlled fixture is decoded through the active convolutional autoencoder with error maps and per-image metrics."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/11-autoencoder-representation-lab/03-denoising.png",
+        "alt": "Matched corruption recovery comparison between autoencoders",
+        "label": "Denoising",
+        "caption": "Standard and denoising autoencoders receive the same seeded corruption and are evaluated against the untouched target."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/11-autoencoder-representation-lab/04-latent-explorer.png",
+        "alt": "Direct two dimensional latent space explorer",
+        "label": "Latent explorer",
+        "caption": "The explorer plots direct 2D encoder outputs and keeps labels limited to evaluation coloring."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/11-autoencoder-representation-lab/05-representation-comparison.png",
+        "alt": "Representation comparison retaining conflicting baseline evidence",
+        "label": "Representation comparison",
+        "caption": "Reconstruction, probe utility, capacity and robustness remain separate so the strongest PCA fixture baseline stays visible."
+      }
+    ]
   },
   {
     "id": "leisure-02-machine-learning-labs-model-benchmarking",
@@ -1441,6 +1847,29 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Leisure/02-machine-learning-labs"
   },
   {
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-68-multiservice-ai-platform-core",
+    "title": "Multiservice AI Platform Core",
+    "category": "AI Engineering",
+    "family": "Final AI Quantum Robotics Platform",
+    "summary": "A documented Multiservice AI Platform Core blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
+    "technologies": [
+      "RAG"
+    ],
+    "signals": {
+      "files": 1,
+      "code": 0,
+      "tests": 0,
+      "notebooks": 0
+    },
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/68-multiservice-ai-platform-core",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/68-multiservice-ai-platform-core",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure"
+  },
+  {
     "id": "path-ai-engineer-deep-learning-core-07-neural-network-foundations-lab",
     "title": "Neural Network Foundations Lab",
     "category": "AI Engineering",
@@ -1454,9 +1883,9 @@ window.PORTFOLIO_PROJECTS = [
       "NumPy"
     ],
     "signals": {
-      "files": 1551,
+      "files": 1566,
       "code": 54,
-      "tests": 430,
+      "tests": 445,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1465,7 +1894,33 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/07-neural-network-foundations-lab",
     "roadmapNumber": 2,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/07-neural-network-foundations-lab/01-experiment-overview.png",
+        "alt": "Neural Network Foundations Lab deterministic XOR experiment configuration",
+        "label": "Experiment setup",
+        "caption": "The real Streamlit lab exposes the NumPy network configuration, deterministic seed and initial learning state."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/07-neural-network-foundations-lab/02-trained-experiment.png",
+        "alt": "Neural Network Foundations Lab after one thousand training epochs",
+        "label": "Trained experiment",
+        "caption": "The bounded XOR run reaches 100% training accuracy while retaining its loss trajectory and configuration context."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/07-neural-network-foundations-lab/03-forward-backward-trace.png",
+        "alt": "Per-neuron forward and backward trace for a trained NumPy network",
+        "label": "Signal trace",
+        "caption": "A selected observation is traced through activations, gradients and parameter updates instead of treating the network as a black box."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/07-neural-network-foundations-lab/04-decision-boundary.png",
+        "alt": "XOR decision boundary before and after one thousand epochs",
+        "label": "Decision boundary",
+        "caption": "The learned nonlinear boundary is compared directly with the deterministic initialization on the same observations."
+      }
+    ]
   },
   {
     "id": "university-02-computer-science-coursework-cpp-object-oriented-algorithms",
@@ -1522,9 +1977,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 470,
+      "files": 493,
       "code": 45,
-      "tests": 46,
+      "tests": 49,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1533,7 +1988,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api",
     "roadmapNumber": 4,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/01-overview.png",
+        "alt": "Vision Ledger pet breed classification studio overview",
+        "label": "Vision overview",
+        "caption": "The overview connects validation, visual transformation, calibration and abstention to a qualification-only evidence bundle."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/02-classification.png",
+        "alt": "Executed pet breed classification with ranked probabilities and abstention",
+        "label": "Classification result",
+        "caption": "A real qualification image request returns the primary breed, Top-5 ranking, confidence, abstention and artifact trace."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/03-evaluation.png",
+        "alt": "Pet classifier qualification evaluation and locked-test evidence",
+        "label": "Evaluation",
+        "caption": "Evaluation evidence remains explicitly separated from the unopened Oxford-IIIT Pet test boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/04-error-gallery.png",
+        "alt": "Pet breed classifier error gallery with low confidence cases",
+        "label": "Error gallery",
+        "caption": "Misclassifications and weakest correct decisions stay visible with actual labels and confidence for failure analysis."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/05-model-comparison.png",
+        "alt": "Pet classifier candidate registry separating executed and unqualified models",
+        "label": "Model comparison",
+        "caption": "The candidate registry distinguishes executed qualification models from implementations that have not earned benchmark claims."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-48-post-quantum-security-and-hybrid-workflows-lab",
@@ -1611,9 +2098,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 699,
+      "files": 709,
       "code": 81,
-      "tests": 112,
+      "tests": 122,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1622,7 +2109,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/08-pytorch-regression-classification-api",
     "roadmapNumber": 2,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/overview-desktop-1440.png",
+        "alt": "PyTorch Tabular Studio overview with regression classification and batch navigation",
+        "label": "Studio overview",
+        "caption": "The studio presents two trained neural networks through one production-shaped inference surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/classification-result-1440.png",
+        "alt": "PyTorch classification result with probability evidence",
+        "label": "Classification",
+        "caption": "The classification workflow returns a prediction with its probability-level evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/regression-result-1440.png",
+        "alt": "PyTorch regression result with numerical inference evidence",
+        "label": "Regression",
+        "caption": "The regression workflow exposes the numerical result and the input contract used to produce it."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/batch-result-1440.png",
+        "alt": "PyTorch Tabular Studio batch inference result",
+        "label": "Batch studio",
+        "caption": "Batch inference applies the approved bundle to multiple records while preserving individual outputs."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/experiments-desktop-1440.png",
+        "alt": "PyTorch experiment evidence and model lifecycle view",
+        "label": "Experiments",
+        "caption": "Experiment evidence keeps model selection and lifecycle decisions inspectable from the product."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-38-q-learning-agent-lab",
@@ -1692,27 +2211,6 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-Software-Engineer/QML-Benchmark-Software-Platform/09-qml-benchmark-platform",
     "roadmapNumber": 9,
     "cloudFocus": "Azure"
-  },
-  {
-    "id": "roadmap-69",
-    "title": "Quantum & QML Service Layer",
-    "category": "AI Engineering",
-    "family": "Final AI Quantum Robotics Platform",
-    "summary": "A planned provider router, job system, experiment registry, result normalisation and cost-awareness layer.",
-    "technologies": [],
-    "signals": {
-      "files": 0,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
-    "featured": false,
-    "accent": "orange",
-    "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-45-quantum-algorithms-basics-lab",
@@ -2032,6 +2530,29 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "GCP"
   },
   {
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-69-quantum-service-layer-and-optimization-hub",
+    "title": "Quantum Service Layer And Optimization Hub",
+    "category": "AI Engineering",
+    "family": "Final AI Quantum Robotics Platform",
+    "summary": "A documented Quantum Service Layer And Optimization Hub blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
+    "technologies": [
+      "Quantum ML"
+    ],
+    "signals": {
+      "files": 1,
+      "code": 0,
+      "tests": 0,
+      "notebooks": 0
+    },
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/69-quantum-service-layer-and-optimization-hub",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/69-quantum-service-layer-and-optimization-hub",
+    "roadmapNumber": 12,
+    "cloudFocus": "Azure"
+  },
+  {
     "id": "path-software-engineer-rag-agentic-software-platform-05-rag-agent-workflow-platform",
     "title": "RAG Agent Workflow Platform",
     "category": "Software Engineering",
@@ -2107,7 +2628,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/15-recommender-system-api/01-discover.png",
+        "alt": "Reelwise recommendation studio discovery workspace and catalog evidence",
+        "label": "Discovery workspace",
+        "caption": "The catalog workspace exposes the selected signal, eligible users and evidence boundary before a ranking request is made."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/15-recommender-system-api/02-known-user.png",
+        "alt": "Known user Top 10 recommendation result with serving strategy and exclusions",
+        "label": "Known-user ranking",
+        "caption": "A real BPR request returns a personalized Top 10 while disclosing model version, seen-title exclusions and fallback state."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/15-recommender-system-api/03-new-profile.png",
+        "alt": "Cold start profile built from three explicit movie choices",
+        "label": "Cold-start profile",
+        "caption": "Three explicit session choices produce a content-based ranking without attaching the temporary profile to an identity."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/15-recommender-system-api/04-compare-models.png",
+        "alt": "Recommendation model comparison across four ranking policies",
+        "label": "Model comparison",
+        "caption": "Popularity, content, item-kNN and BPR rankings are compared under one candidate and exclusion protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/15-recommender-system-api/05-evaluation.png",
+        "alt": "Offline recommender evaluation with NDCG coverage diversity and chronological protocol",
+        "label": "Offline evaluation",
+        "caption": "The evaluation view reads relevance beside catalog reach and diversity while keeping the chronological test boundary visible."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-37-reinforcement-learning-foundations-gridworld",
@@ -2156,7 +2709,27 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api",
     "roadmapNumber": 1,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/01-retail-demand-prediction-api/capture00001.png",
+        "alt": "Retail Demand Prediction API landing view with product positioning and model evidence",
+        "label": "System overview",
+        "caption": "The product surface introduces explainable retail-demand inference and its validated model context."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/01-retail-demand-prediction-api/capture00112.png",
+        "alt": "Retail demand inference form with date product store stock and price inputs",
+        "label": "Inference request",
+        "caption": "A typed request surface collects the observation needed by the FastAPI prediction contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/01-retail-demand-prediction-api/capture00334.png",
+        "alt": "Retail demand form populated with a validated product observation",
+        "label": "Validated input",
+        "caption": "The completed observation shows the concrete feature set sent through the prediction workflow."
+      }
+    ]
   },
   {
     "id": "path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform",
@@ -2183,7 +2756,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
     "liveUrl": "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
-    "apiUrl": "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs"
+    "apiUrl": "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-01/01-retail-intelligence-platform/sprint-01/capture00001.png",
+        "alt": "Retail Intelligence Platform demand dashboard overview",
+        "label": "Demand overview",
+        "caption": "The retail dashboard introduces the observed demand period and its primary operating measures."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-01/01-retail-intelligence-platform/sprint-01/capture00229.png",
+        "alt": "Retail demand dashboard comparing product volume and value",
+        "label": "Product signals",
+        "caption": "Product-level volume and value are shown as distinct decision signals."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-01/01-retail-intelligence-platform/sprint-01/capture00457.png",
+        "alt": "Retail intelligence evidence cards with product context",
+        "label": "Evidence cards",
+        "caption": "Evidence cards retain the context behind each aggregated retail measure."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-01/01-retail-intelligence-platform/sprint-02/capture00359.png",
+        "alt": "Retail machine learning model comparison with decision metrics",
+        "label": "Model comparison",
+        "caption": "Candidate models are compared through decision-facing evidence instead of a bare leaderboard."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-01/01-retail-intelligence-platform/sprint-03/capture00525.png",
+        "alt": "Retail intelligence model selection workspace",
+        "label": "Model decision",
+        "caption": "The final workspace records the selected model and the contract used to justify it."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-20-retail-shelf-object-detection",
@@ -2199,7 +2804,7 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 721,
+      "files": 733,
       "code": 48,
       "tests": 144,
       "notebooks": 0
@@ -2212,7 +2817,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
     "liveUrl": "https://d4iau0xa5tbzq.cloudfront.net/app/",
-    "apiUrl": "https://d4iau0xa5tbzq.cloudfront.net/docs"
+    "apiUrl": "https://d4iau0xa5tbzq.cloudfront.net/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/20-retail-shelf-object-detection/01-overview.png",
+        "alt": "Shelf Lens retail object detection operations overview",
+        "label": "Detection overview",
+        "caption": "The overview connects image decoding, candidate detection, NMS, visible counts and evaluation boundaries."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/20-retail-shelf-object-detection/02-detection.png",
+        "alt": "Executed shelf detector with visible boxes thresholds and count controls",
+        "label": "Detection canvas",
+        "caption": "A real shelf-scene request renders accepted boxes while exposing confidence, NMS IoU, zoom and the operational count."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/20-retail-shelf-object-detection/03-evaluation.png",
+        "alt": "Shelf detector qualification evaluation by scene density",
+        "label": "Evaluation",
+        "caption": "Detection quality and count error remain separate across low, medium and high-density qualification slices."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/20-retail-shelf-object-detection/04-count-errors.png",
+        "alt": "Shelf detection error slices comparing truth and predicted boxes",
+        "label": "Count errors",
+        "caption": "Truth and predicted geometry are overlaid for each density slice so count deltas can be inspected visually."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/20-retail-shelf-object-detection/05-model-registry.png",
+        "alt": "Shelf detector candidate registry with executed and unrun model states",
+        "label": "Model registry",
+        "caption": "The registry reports the qualification artifact while leaving unrun YOLO and Faster R-CNN candidates without invented metrics."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-reward-design-and-agent-evaluation-lab",
@@ -2306,25 +2943,27 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "Azure"
   },
   {
-    "id": "roadmap-71",
-    "title": "Safety, Observability & Evaluation Suite",
+    "id": "path-ai-engineer-final-ai-quantum-robotics-platform-71-safety-observability-evaluation-suite",
+    "title": "Safety Observability Evaluation Suite",
     "category": "AI Engineering",
     "family": "Final AI Quantum Robotics Platform",
-    "summary": "A cross-system plan for logs, metrics, traces, incident reports and a unified quality dashboard.",
-    "technologies": [],
+    "summary": "A documented Safety Observability Evaluation Suite blueprint defining the experiment, modules, evaluation signals and known limitations inside Final AI Quantum Robotics Platform.",
+    "technologies": [
+      "RAG"
+    ],
     "signals": {
-      "files": 0,
+      "files": 1,
       "code": 0,
-      "tests": 0,
+      "tests": 1,
       "notebooks": 0
     },
-    "status": "Roadmap",
-    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform",
+    "status": "Blueprint",
+    "url": "https://github.com/Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/tree/main/71-safety-observability-evaluation-suite",
     "featured": false,
-    "accent": "orange",
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/71-safety-observability-evaluation-suite",
     "roadmapNumber": 12,
-    "cloudFocus": "Azure",
-    "path": "Path-AI-Engineer/Final-AI-Quantum-Robotics-Platform/README.md"
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-02-sales-forecasting-dashboard-api",
@@ -2340,9 +2979,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 477,
+      "files": 510,
       "code": 147,
-      "tests": 203,
+      "tests": 236,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2353,7 +2992,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/02-sales-forecasting-dashboard-api/capture00001.png",
+        "alt": "Forecast Desk dashboard with SKU selector and seven day planning controls",
+        "label": "Forecast desk",
+        "caption": "The dashboard starts from a specific SKU and an explicit seven-day planning horizon."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/02-sales-forecasting-dashboard-api/capture00235.png",
+        "alt": "Observed demand history and generated sales forecast chart with daily table",
+        "label": "Forecast output",
+        "caption": "Observed history and the forecast horizon are rendered together with daily forecast values."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/02-sales-forecasting-dashboard-api/capture00352.png",
+        "alt": "Sales forecast dashboard showing demand summary metrics and timeline",
+        "label": "Demand metrics",
+        "caption": "Summary measures expose historical demand, forecast demand, peak demand and forecast error."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/02-sales-forecasting-dashboard-api/capture00469.png",
+        "alt": "Sales forecast comparison for a second retail product",
+        "label": "SKU comparison",
+        "caption": "The same contract supports product-level comparison without changing the analytical workflow."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-01/02-sales-forecasting-dashboard-api/capture00586.png",
+        "alt": "Forecast Desk daily prediction table beneath the demand chart",
+        "label": "Daily evidence",
+        "caption": "The detailed daily table keeps the plotted forecast inspectable as operational evidence."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-25-semantic-search-embeddings-api",
@@ -2394,9 +3065,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 664,
+      "files": 730,
       "code": 73,
-      "tests": 135,
+      "tests": 137,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2405,7 +3076,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab",
     "roadmapNumber": 2,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/01-overview.png",
+        "alt": "Sequence Memory Lab overview of recurrent activity classification",
+        "label": "Memory lab overview",
+        "caption": "The overview maps nine inertial signals through bounded recurrent inference and states the fixture evidence boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/02-classification-result.png",
+        "alt": "RNN activity classification result with probabilities and runtime evidence",
+        "label": "Activity inference",
+        "caption": "A real fixture sequence is classified through the RNN bundle with ranked probabilities, latency and model version."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/03-sequence-lab.png",
+        "alt": "LSTM state and gate laboratory with PyTorch parity",
+        "label": "States and gates",
+        "caption": "The sequence lab exposes recurrent inputs, updated state, gate values and exact educational-cell parity."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/04-model-comparison.png",
+        "alt": "RNN LSTM and GRU comparison under one fixture protocol",
+        "label": "Model comparison",
+        "caption": "RNN, LSTM and GRU are compared under the same split, seed, preprocessing and validation selection rule."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/05-evaluation.png",
+        "alt": "Sequence model evaluation and activity error analysis",
+        "label": "Evaluation",
+        "caption": "Fixture accuracy, macro metrics and confusion evidence remain explicit and separate from UCI HAR benchmark claims."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-segmentation-quality-control-lab",
@@ -2420,9 +3123,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 475,
+      "files": 580,
       "code": 62,
-      "tests": 90,
+      "tests": 98,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2431,7 +3134,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab",
     "roadmapNumber": 4,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/01-overview.png",
+        "alt": "Surface Quality Control Lab overview with qualification metrics and evidence boundary",
+        "label": "Quality overview",
+        "caption": "The React console presents the versioned Small U-Net bundle, validation evidence and the locked official-test boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/02-live-inspection.png",
+        "alt": "Surface defect inspection rejected by the Small U-Net quality workflow",
+        "label": "Defect inspection",
+        "caption": "A real backend inference renders the source, probability map, binary mask and rejected piece-level decision."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/03-clean-surface-accept.png",
+        "alt": "Clean qualification surface accepted after live segmentation inference",
+        "label": "Clean acceptance",
+        "caption": "A second real inference confirms the independent ACCEPT path with zero retained defect components."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/04-threshold-policy.png",
+        "alt": "Pixel threshold sweep and piece-level quality policy",
+        "label": "Threshold policy",
+        "caption": "Validation-only pixel calibration remains visibly separate from the operational area policy for accept, review and reject."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/05-model-record.png",
+        "alt": "Immutable Small U-Net model record with training trace and limitations",
+        "label": "Model record",
+        "caption": "The selected bundle keeps its architecture, checkpoint hash, training trace and reuse limitations together."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-deep-learning-core-12-transformer-from-architecture-foundations-lab",
@@ -2461,7 +3196,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
     "liveUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
-    "apiUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs"
+    "apiUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/12-transformer-from-architecture-foundations-lab/01-overview.png",
+        "alt": "Transformer Architecture Lab overview with encoder decoder evidence",
+        "label": "Architecture overview",
+        "caption": "The overview maps source tokens through encoder and decoder stages while keeping validation and frozen-test status explicit."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/12-transformer-from-architecture-foundations-lab/02-attention-math.png",
+        "alt": "Scaled dot product attention calculation with normalized weights",
+        "label": "Attention math",
+        "caption": "The attention fixture computes QK transpose, scaling, normalization and context vectors with a numerical difference check."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/12-transformer-from-architecture-foundations-lab/03-architecture-trace.png",
+        "alt": "Transformer architecture trace with real token attention matrix",
+        "label": "Architecture trace",
+        "caption": "A bounded copy sample exposes a real encoder attention matrix with layer, head, token axes and entropy evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/12-transformer-from-architecture-foundations-lab/04-sequence-transduction.png",
+        "alt": "Transformer sequence transduction result compared with oracle target",
+        "label": "Sequence transduction",
+        "caption": "Greedy EOS-bounded decoding reports token accuracy, latency and the exact mismatch between prediction and oracle target."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-02/12-transformer-from-architecture-foundations-lab/05-experiments.png",
+        "alt": "Transformer validation experiment registry with ID and OOD evidence",
+        "label": "Experiments",
+        "caption": "The registry separates ID and OOD validation, records runtime cost and preserves the unopened frozen-test boundary."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-13-unsupervised-learning-lab-suite",
@@ -2476,9 +3243,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 2881,
+      "files": 3189,
       "code": 86,
-      "tests": 685,
+      "tests": 754,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2487,7 +3254,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/13-unsupervised-learning-lab-suite",
     "roadmapNumber": 3,
-    "cloudFocus": "GCP"
+    "cloudFocus": "GCP",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/01-overview.png",
+        "alt": "Unsupervised Structure Lab overview with label blind clustering evidence",
+        "label": "Structure overview",
+        "caption": "The overview reports internal geometry, aligned stability, cluster count and runtime without assigning semantic labels."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/02-clustering-workspace.png",
+        "alt": "Clustering workspace with PCA K means configuration and inferred projection",
+        "label": "Clustering workspace",
+        "caption": "The workspace binds representation, clustering family, cluster count and seed to an immutable development run."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/03-projection-explorer.png",
+        "alt": "Projection explorer comparing PCA t SNE and UMAP evidence boundaries",
+        "label": "Projection explorer",
+        "caption": "Projection quality and out-of-sample behavior remain separate from clustering quality and interpretation."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/04-stability-lab.png",
+        "alt": "Clustering stability lab with adjusted Rand index and unstable samples",
+        "label": "Stability lab",
+        "caption": "Seed agreement and subsampling expose assignment fragility before any external labels are revealed."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/05-run-report.png",
+        "alt": "Immutable unsupervised run report with hashes warnings and audit state",
+        "label": "Run report",
+        "caption": "The report preserves configuration, dataset lineage, stability, warnings and the locked external-audit boundary."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-32-variational-autoencoder-lab",
@@ -2547,7 +3346,7 @@ window.PORTFOLIO_PROJECTS = [
       "Computer Vision"
     ],
     "signals": {
-      "files": 354,
+      "files": 361,
       "code": 100,
       "tests": 41,
       "notebooks": 0
@@ -2560,7 +3359,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
     "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net",
-    "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
+    "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-04/04-vision-multimodal-ai-platform/01-overview.png",
+        "alt": "Prism vision and multimodal evidence platform overview",
+        "label": "Platform overview",
+        "caption": "The real Flutter workspace connects classification, detection and image-text retrieval through one asynchronous evidence-first product."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-04/04-vision-multimodal-ai-platform/02-classifier.png",
+        "alt": "Prism image classifier module with upload and uncertainty boundaries",
+        "label": "Classifier module",
+        "caption": "The classification interface keeps upload constraints, ranked-score limitations and the reference-adapter evidence boundary visible."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-04/04-vision-multimodal-ai-platform/03-detection.png",
+        "alt": "Prism object detection viewer with threshold and geometry contract",
+        "label": "Detection viewer",
+        "caption": "The detection module preserves absolute-pixel geometry and makes the visible score threshold an explicit display control."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-04/04-vision-multimodal-ai-platform/04-image-text-query.png",
+        "alt": "Executed red object query in the Prism image text assistant",
+        "label": "Image-text query",
+        "caption": "A real controlled-vocabulary text query is submitted to the seeded local corpus with the product's abstention boundary visible."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-04/04-vision-multimodal-ai-platform/05-retrieved-evidence.png",
+        "alt": "Prism image text assistant ranked red object retrieval evidence",
+        "label": "Retrieved evidence",
+        "caption": "The grounded response returns versioned source assets, stable IDs and similarity scores instead of inventing an answer."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-23-vision-language-search-assistant",
@@ -2575,7 +3406,7 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 617,
+      "files": 624,
       "code": 58,
       "tests": 76,
       "notebooks": 0
@@ -2588,7 +3419,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
     "liveUrl": "https://dv1vtt2v6aeny.cloudfront.net/app/",
-    "apiUrl": "https://dv1vtt2v6aeny.cloudfront.net/docs"
+    "apiUrl": "https://dv1vtt2v6aeny.cloudfront.net/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/23-vision-language-search-assistant/01-retrieval-studio.png",
+        "alt": "Lensline vision language retrieval studio with executed city night query",
+        "label": "Retrieval studio",
+        "caption": "The executed text query exposes retrieval method, index strategy, semantic weight and corpus filters before ranking."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/23-vision-language-search-assistant/02-ranked-evidence.png",
+        "alt": "Ranked visual evidence for a city at night query with component scores",
+        "label": "Ranked evidence",
+        "caption": "Six traceable images return IDs, captions, categories and semantic, lexical and hybrid component scores."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/23-vision-language-search-assistant/03-refinement-room.png",
+        "alt": "Vision language grounded refinement session workspace",
+        "label": "Refinement room",
+        "caption": "The refinement workspace keeps grounded session context and retrieval evidence attached as the search intent changes."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/23-vision-language-search-assistant/04-benchmark.png",
+        "alt": "Vision language retrieval benchmark comparing methods and indexes",
+        "label": "Retrieval benchmark",
+        "caption": "Qualification metrics compare component methods and index strategies using the same versioned retrieval engine as the API."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-04/23-vision-language-search-assistant/05-failure-atlas.png",
+        "alt": "Vision language adversarial failure atlas for negation spatial and abstract queries",
+        "label": "Failure atlas",
+        "caption": "Fixed adversarial queries expose unresolved negation, spatial relations and abstract language as model-card limitations."
+      }
+    ]
   },
   {
     "id": "university-01-portfolio-projects-lowcortisol-digital-health-platform-webdev-course-lowcortisol",

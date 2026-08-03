@@ -4,15 +4,13 @@
     : [];
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const mobileNavigation = window.matchMedia("(max-width: 860px)");
 
   const categoryDefinitions = [
     {
       category: "Internships",
       rootId: "internship-projects",
       sectionId: "internships",
-      label: "Internship",
-      previewCount: 3,
+      label: "Organization",
       groupName: project => project.organization || "Internship",
       groupOrder: new Map([["DecodeLabs", 1], ["SpotterAI", 2]])
     },
@@ -21,7 +19,7 @@
       rootId: "university-projects",
       sectionId: "university",
       label: "Collection",
-      previewCount: 3,
+      groupLabel: group => group.name === "Portfolio Systems" ? "Portfolio" : "Collection",
       groupName: project => {
         const portfolioFamilies = new Set([
           "Mobility systems",
@@ -44,7 +42,6 @@
       rootId: "ai-projects",
       sectionId: "ai-path",
       label: "Roadmap",
-      previewCount: 6,
       groupName: project => project.family || "AI Engineering Roadmap"
     },
     {
@@ -52,7 +49,6 @@
       rootId: "software-projects",
       sectionId: "software-path",
       label: "Roadmap",
-      previewCount: 4,
       groupName: project => project.family || "Software Engineering Roadmap"
     },
     {
@@ -60,7 +56,6 @@
       rootId: "independent-projects",
       sectionId: "independent",
       label: "Collection",
-      previewCount: 3,
       groupName: project => project.family || "Independent Projects",
       groupOrder: new Map([
         ["Programming Foundations", 1],
@@ -117,210 +112,6 @@
     }
   };
 
-  const portfolioMedia = path =>
-    `https://cdn.jsdelivr.net/gh/JeanLoa/JeanLoa@main/${path}`;
-
-  const projectFilms = new Map([
-    ["smartlocation", {
-      brand: "SmartLocation",
-      title: "Routes, made explainable.",
-      description: "A walkthrough of geocoded Lima destinations, graph route calculation and side-by-side Dijkstra, A* and BFS evidence inside an interactive map.",
-      stack: "Angular / TypeScript / Python / MapLibre / OpenStreetMap",
-      footnote: "Distance, travel time, explored nodes and algorithm tradeoffs stay visible.",
-      clips: [{
-        label: "Route intelligence demo",
-        source: "assets/videos/university/smartlocation/lima-route-optimization-demo.mp4",
-        type: "video/mp4",
-        duration: "00:28"
-      }]
-    }],
-    ["electrocorp", {
-      brand: "ElectroCorp",
-      title: "Energy, orchestrated.",
-      description: "A visual walkthrough of spaces, connected devices, energy intelligence and decision-ready reports.",
-      stack: "Angular / Spring Boot / PostgreSQL",
-      footnote: "From domain workflows to visible operational evidence.",
-      clips: [{
-        label: "Product film",
-        source: portfolioMedia("assets/videos/university/electrocorp/film.webm"),
-        type: "video/webm",
-        poster: portfolioMedia("assets/videos/university/electrocorp/poster.webp"),
-        duration: "00:25"
-      }]
-    }],
-    ["lowcortisol", {
-      brand: "LowCortisol",
-      title: "Wellbeing, made operational.",
-      description: "A visual walkthrough of workplaces, resource monitoring, smart valves and operational control.",
-      stack: "Vue / ASP.NET Core / PostgreSQL",
-      footnote: "From physical resources to calm, actionable decisions.",
-      clips: [{
-        label: "Product film",
-        source: portfolioMedia("assets/videos/university/lowcortisol/film.webm"),
-        type: "video/webm",
-        poster: portfolioMedia("assets/videos/university/lowcortisol/poster.webp"),
-        duration: "00:23"
-      }]
-    }],
-    ["decodelabs-decodebot", {
-      brand: "DecodeLabs / Project 01",
-      title: "Intent routing, made inspectable.",
-      description: "A bilingual deterministic assistant with normalized phrase matching, persistent conversations and a visible decision trace.",
-      stack: "Python / Streamlit / SQLite",
-      footnote: "Constant-time intent lookup without presenting deterministic rules as an LLM.",
-      clips: [{
-        label: "Technical demo",
-        source: portfolioMedia("assets/videos/internships/decodelabs/01-decodebot-assistant/deterministic-intent-routing-demo.mp4"),
-        type: "video/mp4",
-        duration: "00:42"
-      }]
-    }],
-    ["decodelabs-decodeclassify", {
-      brand: "DecodeLabs / Project 02",
-      title: "Classification, without leakage.",
-      description: "An inspectable Iris classification workflow covering validated ETL, stratified splitting, training-only scaling, KNN tuning and multiclass evidence.",
-      stack: "Python / Streamlit / scikit-learn / Pandas",
-      footnote: "The held-out test set remains outside preprocessing and model-selection decisions.",
-      clips: [{
-        label: "Technical demo",
-        source: portfolioMedia("assets/videos/internships/decodelabs/02-decode-classify/leakage-safe-knn-classification-demo.mp4"),
-        type: "video/mp4",
-        duration: "00:32"
-      }]
-    }],
-    ["decodelabs-recommendation-logic", {
-      brand: "DecodeLabs / Project 03",
-      title: "Career paths, ranked transparently.",
-      description: "A content-based tech-stack recommender that converts skills and goals into TF-IDF vectors, ranks career paths with cosine similarity and explains every result.",
-      stack: "Python / Streamlit / scikit-learn / SQLite",
-      footnote: "Top-three recommendations expose matched skills, gaps, tools and learning steps.",
-      clips: [{
-        label: "Technical demo",
-        source: portfolioMedia("assets/videos/internships/decodelabs/03-decodepath-recommender/tfidf-cosine-career-recommender-demo.mp4"),
-        type: "video/mp4",
-        duration: "01:04"
-      }]
-    }],
-    ["decodelabs-optic-nerve", {
-      brand: "DecodeLabs / Project 04",
-      title: "Document vision, made inspectable.",
-      description: "An OCR workspace that exposes every step from deterministic OpenCV preprocessing to Tesseract recognition, confidence filtering and word-level bounding boxes.",
-      stack: "Python / Streamlit / OpenCV / Tesseract",
-      footnote: "Accepted and rejected text remain traceable through confidence-aware visual evidence.",
-      clips: [{
-        label: "Technical demo",
-        source: portfolioMedia("assets/videos/internships/decodelabs/04-decodevision-ocr/opencv-tesseract-ocr-pipeline-demo.mp4"),
-        type: "video/mp4",
-        duration: "00:35"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api", {
-      brand: "AI Engineer / Project 01",
-      title: "Demand, made measurable.",
-      description: "A concise walkthrough from retail data and temporal features to prediction evidence exposed through an API.",
-      stack: "Python / FastAPI / Pandas / scikit-learn",
-      footnote: "A reproducible baseline for demand-oriented machine learning systems.",
-      clips: [{
-        label: "Project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/01-retail-demand-prediction-api/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:22"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-02-sales-forecasting-dashboard-api", {
-      brand: "AI Engineer / Project 02",
-      title: "Forecasts, made visible.",
-      description: "An interface-led view of the forecasting workflow, connecting model output, dashboard exploration and API-ready delivery.",
-      stack: "Python / FastAPI / Streamlit / Docker",
-      footnote: "Forecasting evidence translated into an inspectable product surface.",
-      clips: [{
-        label: "Project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/02-sales-forecasting-dashboard-api/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:23"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite", {
-      brand: "AI Engineer / Project 03",
-      title: "Models, compared fairly.",
-      description: "A product film for the reproducible comparison suite, showing shared folds, model evidence, rankings and persisted experiment reports.",
-      stack: "Python / scikit-learn / Pandas / SciPy",
-      footnote: "The protocol and its evidence matter as much as the winning score.",
-      clips: [{
-        label: "Project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/03-classical-model-comparison-suite/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:19"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api", {
-      brand: "AI Engineer / Project 04",
-      title: "Segments, without stereotypes.",
-      description: "A walkthrough of two deliberately separate customer views: descriptive segment discovery and evidence-based churn review priority.",
-      stack: "Python / FastAPI / Streamlit / PostgreSQL",
-      footnote: "Patterns and probabilities remain decision support, never demographic truth or certainty.",
-      clips: [{
-        label: "Project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/04-customer-segmentation-and-churn-api/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:26"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-05-inventory-optimization-ml-service", {
-      brand: "AI Engineer / Project 05",
-      title: "Inventory, decided with evidence.",
-      description: "A product film connecting calibrated demand forecasts, lead-time uncertainty and constrained replenishment recommendations.",
-      stack: "Python / FastAPI / Streamlit / scikit-learn",
-      footnote: "Forecasting and inventory policy stay explicit, replayable and open to human review.",
-      clips: [{
-        label: "Project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/05-inventory-optimization-ml-service/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:25"
-      }]
-    }],
-    ["path-ai-engineer-machine-learning-engineering-software-foundations-06-ai-software-foundations-platform", {
-      brand: "AI Engineer / Project 06",
-      title: "Foundations, made operational.",
-      description: "A React operator console, durable FastAPI workflows, trusted model artifacts and operational evidence.",
-      stack: "React / TypeScript / FastAPI / PostgreSQL / GCP",
-      footnote: "Recommendations are traceable and operable while final ordering decisions remain human-controlled.",
-      clips: [{
-        label: "Final project demo",
-        source: portfolioMedia("assets/videos/ai-engineer/06-ai-software-foundations-platform/demo.mp4"),
-        type: "video/mp4",
-        duration: "00:48"
-      }]
-    }],
-    ["path-software-engineer-applied-ai-software-platform-01-retail-intelligence-platform", {
-      brand: "Software Engineer / Project 01",
-      title: "Intelligence, delivered in sprints.",
-      description: "Three chapters trace the Retail Intelligence Platform from its first usable product slice to a broader decision-support experience.",
-      stack: "React / FastAPI / Python / Docker",
-      footnote: "A software platform shaped incrementally around visible product evidence.",
-      clips: [
-        {
-          label: "Sprint 01",
-          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-01.mp4"),
-          type: "video/mp4",
-          duration: "00:22"
-        },
-        {
-          label: "Sprint 02",
-          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-02.mp4"),
-          type: "video/mp4",
-          duration: "00:17"
-        },
-        {
-          label: "Sprint 03",
-          source: portfolioMedia("assets/videos/software-engineer/01-retail-intelligence-platform/sprint-03.mp4"),
-          type: "video/mp4",
-          duration: "00:26"
-        }
-      ]
-    }]
-  ]);
-
   const universityProjectOrder = new Map([
     ["SmartLocation", 1],
     ["LowCortisol", 2],
@@ -333,6 +124,28 @@
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+
+  const projectGallery = project => {
+    const configured = Array.isArray(project.gallery)
+      ? project.gallery
+          .filter(item => item && typeof item.src === "string" && item.src.trim())
+          .map((item, index) => ({
+            src: item.src,
+            alt: item.alt || `${project.title} project view ${index + 1}`,
+            label: item.label || `View ${String(index + 1).padStart(2, "0")}`,
+            caption: item.caption || "Verified project evidence."
+          }))
+      : [];
+
+    if (configured.length) return configured;
+    if (!project.image) return [];
+    return [{
+      src: project.image,
+      alt: `${project.title} project interface`,
+      label: "Project view",
+      caption: "Verified project evidence."
+    }];
+  };
 
   const rawProjectStatus = project => {
     if (project.status) return project.status;
@@ -441,16 +254,16 @@
       .join("");
   }
 
-  function projectSignalsMarkup(project, film) {
+  function projectSignalsMarkup(project) {
     const signals = project.signals || {};
-    const clips = Array.isArray(film?.clips) ? film.clips : [];
+    const gallery = projectGallery(project);
     const items = [];
 
-    if (clips.length) {
+    if (gallery.length) {
       items.push(`
         <span>
-          <small>Film</small>
-          <strong>${clips.length > 1 ? `${clips.length} chapters` : clips[0].duration}</strong>
+          <small>Views</small>
+          <strong>${gallery.length} verified ${gallery.length === 1 ? "capture" : "captures"}</strong>
         </span>
       `);
     }
@@ -470,7 +283,8 @@
   }
 
   function projectCardMarkup(project, groupName, index) {
-    const film = projectFilms.get(project.id);
+    const gallery = projectGallery(project);
+    const cover = gallery[0];
     const sequence = project.cloudFocus ? projectSequence(project) : index + 1;
     const descriptor = project.eyebrow
       || (project.technologies || []).slice(0, 3).join(" · ")
@@ -478,29 +292,44 @@
     const token = categoryTokens[project.category] || categoryTokens.Leisure;
 
     return `
-      <article class="project-card${film ? " has-film" : ""}" data-accent="${token.key}">
-        <div class="project-card__meta">
-          <span>${escapeHtml(project.cloudFocus ? `${project.cloudFocus} cloud focus` : groupName)}</span>
-          <span>${String(sequence).padStart(2, "0")}</span>
-        </div>
-        <div class="project-card__content">
-          <p class="project-card__eyebrow">${escapeHtml(descriptor)}</p>
-          <h4>${escapeHtml(project.title)}</h4>
-          <p class="project-card__summary">${escapeHtml(project.summary)}</p>
-        </div>
-        <div class="project-card__tags">${technologyMarkup(project)}</div>
-        ${projectSignalsMarkup(project, film)}
-        <div class="project-card__footer">
-          ${statusMarkup(project)}
-          <button
-            class="project-card__open"
-            type="button"
-            data-project-id="${escapeHtml(project.id)}"
-            aria-label="View ${escapeHtml(project.title)} case study"
-          >
-            ${film ? "View case + film" : "View case study"}
-            <span aria-hidden="true">↗</span>
-          </button>
+      <article class="project-card${cover ? " has-gallery" : ""}" data-accent="${token.key}">
+        ${cover ? `
+          <figure class="project-card__cover">
+            <img
+              src="${escapeHtml(cover.src)}"
+              alt="${escapeHtml(cover.alt)}"
+              width="1600"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>${escapeHtml(cover.label)}</figcaption>
+          </figure>
+        ` : ""}
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span>${escapeHtml(project.cloudFocus ? `${project.cloudFocus} cloud focus` : groupName)}</span>
+            <span>${String(sequence).padStart(2, "0")}</span>
+          </div>
+          <div class="project-card__content">
+            <p class="project-card__eyebrow">${escapeHtml(descriptor)}</p>
+            <h4>${escapeHtml(project.title)}</h4>
+            <p class="project-card__summary">${escapeHtml(project.summary)}</p>
+          </div>
+          <div class="project-card__tags">${technologyMarkup(project)}</div>
+          ${projectSignalsMarkup(project)}
+          <div class="project-card__footer">
+            ${statusMarkup(project)}
+            <button
+              class="project-card__open"
+              type="button"
+              data-project-id="${escapeHtml(project.id)}"
+              aria-label="View ${escapeHtml(project.title)} case study"
+            >
+              ${gallery.length ? "View case + captures" : "View case study"}
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
         </div>
       </article>
     `;
@@ -509,11 +338,14 @@
   function projectGroupMarkup(definition, group, groupIndex) {
     const count = group.projects.length;
     const groupNumber = group.roadmapNumber ?? groupIndex + 1;
+    const groupLabel = typeof definition.groupLabel === "function"
+      ? definition.groupLabel(group)
+      : definition.label;
     return `
       <section class="project-group" data-group-name="${escapeHtml(group.name)}">
         <header class="project-group__header">
           <div>
-            <span>${definition.label} / ${String(groupNumber).padStart(2, "0")}</span>
+            <span>${escapeHtml(groupLabel)} / ${String(groupNumber).padStart(2, "0")}</span>
             <h3>${escapeHtml(group.name)}</h3>
           </div>
           <div class="project-group__summary">
@@ -530,102 +362,19 @@
     `;
   }
 
-  function disclosureSnapshot(root) {
-    return {
-      groups: new Set(
-        Array.from(root.querySelectorAll("[data-group-name]"), group => group.dataset.groupName)
-      ),
-      projects: new Set(
-        Array.from(root.querySelectorAll("[data-project-id]"), trigger => trigger.dataset.projectId)
-      )
-    };
-  }
-
-  function animateDisclosureContent(root, snapshot, expanded) {
-    if (reducedMotion.matches || !snapshot) return;
-
-    root.classList.remove("is-expanding", "is-condensing");
-    root.querySelectorAll(".is-new-group, .is-new-card").forEach(node => {
-      node.classList.remove("is-new-group", "is-new-card");
-      node.style.removeProperty("--archive-delay");
-    });
-
-    if (!expanded) {
-      root.classList.add("is-condensing");
-      root.setAttribute("aria-busy", "true");
-      window.setTimeout(() => {
-        root.classList.remove("is-condensing");
-        root.removeAttribute("aria-busy");
-      }, 320);
-      return;
-    }
-
-    let groupIndex = 0;
-    let cardIndex = 0;
-    root.querySelectorAll("[data-group-name]").forEach(group => {
-      const isNewGroup = !snapshot.groups.has(group.dataset.groupName);
-      if (isNewGroup) {
-        group.classList.add("is-new-group");
-        group.style.setProperty("--archive-delay", `${Math.min(groupIndex, 8) * 42}ms`);
-        groupIndex += 1;
-        return;
-      }
-
-      group.querySelectorAll(".project-card").forEach(card => {
-        const projectId = card.querySelector("[data-project-id]")?.dataset.projectId;
-        if (!projectId || snapshot.projects.has(projectId)) return;
-        card.classList.add("is-new-card");
-        card.style.setProperty("--archive-delay", `${Math.min(cardIndex, 6) * 38}ms`);
-        cardIndex += 1;
-      });
-    });
-
-    root.classList.add("is-expanding");
-    root.setAttribute("aria-busy", "true");
-    window.setTimeout(() => {
-      root.classList.remove("is-expanding");
-      root.removeAttribute("aria-busy");
-      root.querySelectorAll(".is-new-group, .is-new-card").forEach(node => {
-        node.classList.remove("is-new-group", "is-new-card");
-        node.style.removeProperty("--archive-delay");
-      });
-    }, 760);
-  }
-
-  function renderCategorySection(definition, expanded = false, transitionSnapshot = null) {
+  function renderCategorySection(definition) {
     const root = document.getElementById(definition.rootId);
     if (!root) return;
 
     const allProjects = sortedProjects(definition.category);
-    const selectedProjects = expanded
-      ? allProjects
-      : allProjects.slice(0, definition.previewCount);
-    const groups = groupProjects(definition, selectedProjects);
+    const groups = groupProjects(definition, allProjects);
 
     root.innerHTML = groups
       .map((group, index) => projectGroupMarkup(definition, group, index))
       .join("");
-    root.dataset.expanded = String(expanded);
-    animateDisclosureContent(root, transitionSnapshot, expanded);
-
-    const button = document.querySelector(`[data-section-toggle="${definition.category}"]`);
-    if (button) {
-      const hiddenProjectCount = Math.max(allProjects.length - definition.previewCount, 0);
-      const collapsedLabel = button.dataset.expandLabel
-        || button.querySelector("[data-toggle-label]")?.textContent
-        || "View complete archive";
-      button.dataset.expandLabel = collapsedLabel;
-      button.setAttribute("aria-expanded", String(expanded));
-      button.querySelector("[data-toggle-label]").textContent = expanded
-        ? "Show concise view"
-        : collapsedLabel;
-      button.querySelector("[data-toggle-count]").textContent = expanded
-        ? String(allProjects.length).padStart(2, "0")
-        : `+${String(hiddenProjectCount).padStart(2, "0")}`;
-      button.querySelector("[data-toggle-count-label]").textContent = expanded
-        ? "visible"
-        : "projects";
-    }
+    root.dataset.rendered = "true";
+    root.dataset.projectCount = String(allProjects.length);
+    root.dataset.groupCount = String(groups.length);
 
     document
       .querySelectorAll(`[data-category-count="${definition.category}"]`)
@@ -635,7 +384,7 @@
     document
       .querySelectorAll(`[data-group-count="${definition.category}"]`)
       .forEach(node => {
-        node.textContent = String(groupProjects(definition, allProjects).length).padStart(2, "0");
+        node.textContent = String(groups.length).padStart(2, "0");
       });
   }
 
@@ -678,8 +427,6 @@
 
     root.innerHTML = flagships.map((project, index) => {
       const token = categoryTokens[project.category] || categoryTokens.University;
-      const film = projectFilms.get(project.id);
-      const filmDuration = film?.clips?.[0]?.duration;
       return `
         <article class="flagship-card flagship-card--${index + 1}" data-accent="${token.key}">
           ${flagshipVisualMarkup(project)}
@@ -690,11 +437,6 @@
             </div>
             <h3>${escapeHtml(project.title)}</h3>
             <p>${escapeHtml(project.summary)}</p>
-            ${filmDuration ? `
-              <p class="flagship-card__film">
-                <span>Product film</span><strong>${escapeHtml(filmDuration)}</strong>
-              </p>
-            ` : ""}
             <div class="flagship-card__footer">
               <div class="flagship-card__tags">${technologyMarkup(project, 4)}</div>
               <button
@@ -703,7 +445,7 @@
                 data-project-id="${escapeHtml(project.id)}"
                 aria-label="View ${escapeHtml(project.title)} case study"
               >
-                ${film ? "View case + film" : "View case study"} <span aria-hidden="true">↗</span>
+                View case study <span aria-hidden="true">↗</span>
               </button>
             </div>
           </div>
@@ -751,7 +493,7 @@
           <span class="atlas-row__bar" aria-hidden="true">
             <i style="width:${share.toFixed(2)}%"></i>
           </span>
-          <span class="atlas-row__arrow" aria-hidden="true">↓</span>
+          <span class="atlas-row__arrow" aria-hidden="true">→</span>
         </a>
       `;
     }).join("");
@@ -769,72 +511,59 @@
     ];
   }
 
-  function filmMarkup(project) {
-    const film = projectFilms.get(project.id);
-    const clips = Array.isArray(film?.clips) ? film.clips : [];
-    const clip = clips[0];
-    if (!film || !clip) return "";
-    const runningTime = clips.length > 1
-      ? `${clips.length} chapters`
-      : clip.duration;
+  function galleryMarkup(project) {
+    const gallery = projectGallery(project);
+    const first = gallery[0];
+    if (!first) return "";
 
     return `
-      <section class="dialog-film" aria-labelledby="dialog-film-title">
-        <div class="dialog-film__intro">
+      <section class="dialog-gallery" aria-labelledby="dialog-gallery-title">
+        <div class="dialog-gallery__intro">
           <div>
-            <p>Product film / ${escapeHtml(runningTime)}</p>
-            <h3 id="dialog-film-title">${escapeHtml(film.title)}</h3>
+            <p>Project evidence / ${String(gallery.length).padStart(2, "0")} ${gallery.length === 1 ? "capture" : "captures"}</p>
+            <h3 id="dialog-gallery-title">The product,<br />seen in context.</h3>
           </div>
-          <p id="dialog-film-description">${escapeHtml(film.description)}</p>
+          <p>Curated interface views and persisted evidence from the implemented project.</p>
         </div>
-        ${clips.length > 1 ? `
-          <div class="dialog-film__playlist" aria-label="${escapeHtml(film.brand)} film chapters">
-            ${clips.map((item, index) => `
-              <button
-                class="dialog-film__chapter${index === 0 ? " is-active" : ""}"
-                type="button"
-                data-film-clip
-                data-film-source="${escapeHtml(item.source)}"
-                data-film-type="${escapeHtml(item.type)}"
-                data-film-poster="${escapeHtml(item.poster || "")}"
-                data-film-label="${escapeHtml(item.label)}"
-                aria-pressed="${index === 0 ? "true" : "false"}"
-              >
-                <span>${String(index + 1).padStart(2, "0")}</span>
-                <strong>${escapeHtml(item.label)}</strong>
-                <small>${escapeHtml(item.duration)}</small>
-              </button>
-            `).join("")}
-          </div>
-        ` : ""}
-        <div class="dialog-film__frame is-loading" data-film-frame>
-          <div class="dialog-film__state" data-film-state role="status" aria-live="polite">
-            <span data-film-status>Loading film metadata…</span>
-            <a
-              data-film-fallback
-              href="${escapeHtml(clip.source)}"
-              target="_blank"
-              rel="noreferrer"
-              hidden
-            >
-              Open film directly <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <video
-            data-project-film
-            controls
-            playsinline
-            preload="metadata"
-            ${clip.poster ? `poster="${escapeHtml(clip.poster)}"` : ""}
-            aria-label="${escapeHtml(`${film.brand} ${clip.label}`)}"
-            aria-describedby="dialog-film-description"
+        <figure class="dialog-gallery__stage" data-gallery-stage>
+          <img
+            src="${escapeHtml(first.src)}"
+            alt="${escapeHtml(first.alt)}"
+            width="1600"
+            height="900"
+            decoding="async"
+            data-gallery-image
+          />
+          <a
+            class="dialog-gallery__full"
+            href="${escapeHtml(first.src)}"
+            target="_blank"
+            rel="noreferrer"
+            data-gallery-full
           >
-            <source data-film-source-element src="${escapeHtml(clip.source)}" type="${escapeHtml(clip.type)}" />
-          </video>
-        </div>
-        <div class="dialog-film__footer">
-          <span>${escapeHtml(film.stack)}</span>
-          <p>${escapeHtml(film.footnote)}</p>
+            Full resolution <span aria-hidden="true">↗</span>
+          </a>
+          <p class="dialog-gallery__fallback" data-gallery-fallback hidden>
+            This verified capture is temporarily unavailable.
+          </p>
+          <figcaption aria-live="polite" data-gallery-caption>${escapeHtml(first.caption)}</figcaption>
+        </figure>
+        <div class="dialog-gallery__rail" aria-label="${escapeHtml(project.title)} gallery views">
+          ${gallery.map((item, index) => `
+            <button
+              class="dialog-gallery__item${index === 0 ? " is-active" : ""}"
+              type="button"
+              data-gallery-item
+              data-gallery-source="${escapeHtml(item.src)}"
+              data-gallery-alt="${escapeHtml(item.alt)}"
+              data-gallery-caption="${escapeHtml(item.caption)}"
+              aria-label="Show ${escapeHtml(item.label)}"
+              aria-pressed="${index === 0 ? "true" : "false"}"
+            >
+              <span>${String(index + 1).padStart(2, "0")}</span>
+              <strong>${escapeHtml(item.label)}</strong>
+            </button>
+          `).join("")}
         </div>
       </section>
     `;
@@ -843,145 +572,342 @@
   const dialog = document.querySelector("#project-dialog");
   const dialogContent = document.querySelector("#dialog-content");
   const backgroundAudio = document.querySelector("[data-background-audio]");
+  const soundDock = document.querySelector("[data-sound-dock]");
   const soundToggle = document.querySelector("[data-sound-toggle]");
-  const soundLabel = document.querySelector("[data-sound-label]");
+  const soundTracks = Array.from(document.querySelectorAll("[data-audio-track]"));
   const soundStatus = document.querySelector("[data-sound-status]");
   const backgroundVolume = 0.28;
+  const dialogMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const dialogExitDuration = 210;
   let lastDialogTrigger = null;
-  let resumeBackgroundAfterFilm = false;
+  let dialogCloseTimer = 0;
+  let dialogCloseTransitionEnd = null;
+
+  let selectedSoundTrack = null;
+  let soundMenuPinned = false;
+  let soundMenuClosing = false;
+
+  function setSoundMenuOpen(open, pinned = soundMenuPinned) {
+    if (!soundDock || !soundToggle) return;
+    soundMenuPinned = open && pinned;
+    soundDock.classList.toggle("is-open", open);
+    soundToggle.setAttribute("aria-expanded", String(open));
+    soundToggle.setAttribute("aria-label", open ? "Close music selector" : "Open music selector");
+  }
 
   function syncBackgroundAudioUi(message = "") {
-    if (!backgroundAudio || !soundToggle || !soundLabel) return;
+    if (!backgroundAudio || !soundToggle) return;
     const playing = !backgroundAudio.paused;
+    soundDock?.classList.toggle("is-playing", playing);
     soundToggle.classList.toggle("is-playing", playing);
-    soundToggle.setAttribute("aria-pressed", String(playing));
-    soundToggle.setAttribute(
-      "aria-label",
-      playing ? "Pause background music" : "Play background music"
-    );
-    soundLabel.textContent = playing ? "Music on" : "Music off";
+    soundTracks.forEach(track => {
+      const selected = track === selectedSoundTrack;
+      track.classList.toggle("is-selected", selected);
+      track.classList.toggle("is-playing", selected && playing);
+      track.setAttribute("aria-pressed", String(selected && playing));
+    });
     if (soundStatus && message) soundStatus.textContent = message;
   }
 
-  async function playBackgroundAudio() {
-    if (!backgroundAudio) return false;
+  async function playBackgroundAudio(track = selectedSoundTrack) {
+    if (!backgroundAudio || !(track instanceof HTMLButtonElement)) return false;
+    const source = track.dataset.audioSource;
+    if (!source) return false;
+    if (track !== selectedSoundTrack) {
+      selectedSoundTrack = track;
+      backgroundAudio.src = source;
+      backgroundAudio.load();
+    }
     backgroundAudio.volume = backgroundVolume;
+    const trackLabel = track.querySelector("strong")?.textContent?.trim() || "Selected music";
     try {
       await backgroundAudio.play();
-      syncBackgroundAudioUi("Background music playing at moderate volume.");
+      syncBackgroundAudioUi(`${trackLabel} playing at moderate volume.`);
       return true;
     } catch {
-      syncBackgroundAudioUi("Use the music control to start background audio.");
+      syncBackgroundAudioUi("The selected track could not be started.");
       return false;
     }
   }
 
   function initializeBackgroundAudio() {
-    if (!backgroundAudio || !soundToggle) return;
+    if (!backgroundAudio || !soundDock || !soundToggle || !soundTracks.length) return;
     backgroundAudio.volume = backgroundVolume;
 
     soundToggle.addEventListener("click", () => {
-      if (backgroundAudio.paused) {
-        void playBackgroundAudio();
-      } else {
-        backgroundAudio.pause();
-        syncBackgroundAudioUi("Background music paused.");
-      }
+      const shouldOpen = !soundDock.classList.contains("is-open") || !soundMenuPinned;
+      setSoundMenuOpen(shouldOpen, shouldOpen);
+      if (shouldOpen) soundTracks[0]?.focus({ preventScroll: true });
+    });
+    soundDock.addEventListener("pointerenter", () => setSoundMenuOpen(true, soundMenuPinned));
+    soundDock.addEventListener("pointerleave", () => {
+      if (!soundMenuPinned && !soundDock.contains(document.activeElement)) setSoundMenuOpen(false, false);
+    });
+    soundDock.addEventListener("focusin", () => {
+      if (!soundMenuClosing) setSoundMenuOpen(true, soundMenuPinned);
+    });
+    soundDock.addEventListener("focusout", () => {
+      window.requestAnimationFrame(() => {
+        if (!soundMenuPinned && !soundDock.contains(document.activeElement)) setSoundMenuOpen(false, false);
+      });
+    });
+    soundTracks.forEach(track => {
+      track.addEventListener("click", () => {
+        if (track === selectedSoundTrack && !backgroundAudio.paused) {
+          backgroundAudio.pause();
+          const trackLabel = track.querySelector("strong")?.textContent?.trim() || "Selected music";
+          syncBackgroundAudioUi(`${trackLabel} paused.`);
+          return;
+        }
+        void playBackgroundAudio(track);
+      });
     });
     backgroundAudio.addEventListener("play", () => syncBackgroundAudioUi());
     backgroundAudio.addEventListener("pause", () => syncBackgroundAudioUi());
     backgroundAudio.addEventListener("error", () => {
-      syncBackgroundAudioUi("Background music could not be loaded.");
+      syncBackgroundAudioUi("The selected music file could not be loaded.");
+    });
+    document.addEventListener("click", event => {
+      if (!soundDock.contains(event.target)) setSoundMenuOpen(false, false);
+    });
+    soundDock.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      soundMenuClosing = true;
+      setSoundMenuOpen(false, false);
+      soundToggle.focus({ preventScroll: true });
+      window.requestAnimationFrame(() => { soundMenuClosing = false; });
     });
     syncBackgroundAudioUi();
   }
 
-  function initializeProjectFilm() {
-    const video = dialog?.querySelector("[data-project-film]");
-    const source = dialog?.querySelector("[data-film-source-element]");
-    const frame = dialog?.querySelector("[data-film-frame]");
-    const status = dialog?.querySelector("[data-film-status]");
-    const fallback = dialog?.querySelector("[data-film-fallback]");
-    const chapterButtons = Array.from(dialog?.querySelectorAll("[data-film-clip]") || []);
-    if (!video || !source) return;
-    let switchingClip = false;
+  function initializeProjectSearch() {
+    const discovery = document.querySelector("[data-hero-discovery]");
+    const form = document.querySelector("[data-project-search-form]");
+    const input = document.querySelector("[data-project-search]");
+    const toggle = document.querySelector("[data-project-search-toggle]");
+    const results = document.querySelector("[data-project-search-results]");
+    const count = document.querySelector("[data-project-search-count]");
+    const status = document.querySelector("[data-project-search-status]");
+    if (!discovery || !form || !input || !toggle || !results) return;
 
-    const setFilmState = (state, message) => {
-      frame?.classList.toggle("is-loading", state === "loading");
-      frame?.classList.toggle("is-ready", state === "ready");
-      frame?.classList.toggle("has-error", state === "error");
-      if (status) status.textContent = message;
-      if (fallback) {
-        fallback.hidden = state !== "error";
-        fallback.href = source.src;
-      }
+    const normalize = value => String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/c\s*\+\+/g, " cpp ")
+      .replace(/c\s*(?:#|sharp)/g, " csharp ")
+      .replace(/asp\s*\.?\s*net/g, " aspnet ")
+      .replace(/\.net/g, " dotnet ")
+      .replace(/next\s*\.?\s*js/g, " nextjs ")
+      .replace(/nest\s*\.?\s*js/g, " nestjs ")
+      .replace(/node\s*\.?\s*js/g, " nodejs ")
+      .replace(/scikit[\s-]*learn/g, " scikitlearn ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+    const exactKeywordTerms = new Set([
+      "java", "javascript", "js", "typescript", "ts", "csharp", "cpp",
+      "nextjs", "nestjs", "nodejs", "dotnet", "aspnet"
+    ]);
+    const aliasesFor = technologies => {
+      const technologyText = normalize((technologies || []).join(" "));
+      const aliases = [];
+      if (technologyText.includes("aspnet")) aliases.push("csharp", "dotnet", "net");
+      if (technologyText.includes("spring boot")) aliases.push("java");
+      if (technologyText.includes("nextjs")) aliases.push("nextjs", "react", "typescript", "ts");
+      if (technologyText.includes("nestjs")) aliases.push("nestjs", "nodejs", "typescript", "ts");
+      if (technologyText.includes("javascript")) aliases.push("js");
+      if (technologyText.includes("typescript")) aliases.push("ts");
+      if (technologyText.includes("postgresql")) aliases.push("postgres", "sql");
+      if (technologyText.includes("scikitlearn")) aliases.push("sklearn");
+      return aliases;
+    };
+    const searchableProjects = projects.map(project => {
+      const text = normalize([
+        project.title,
+        project.category,
+        project.family,
+        project.summary,
+        project.status,
+        ...(project.technologies || []),
+        ...(project.capabilities || []),
+        ...aliasesFor(project.technologies)
+      ].join(" "));
+      return {
+        project,
+        text,
+        tokens: new Set(text.split(/\s+/).filter(Boolean))
+      };
+    });
+    let searchPinned = false;
+
+    const setSearchOpen = (open, pinned = searchPinned) => {
+      searchPinned = open && pinned;
+      discovery.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
     };
 
-    const handleFilmError = () => {
-      setFilmState(
-        "error",
-        "This film is temporarily unavailable from the media source."
+    const renderResults = () => {
+      const query = normalize(input.value.trim());
+      if (!query) {
+        results.hidden = true;
+        results.innerHTML = "";
+        if (status) status.textContent = "";
+        return;
+      }
+      const terms = query.split(/\s+/).filter(Boolean);
+      const allMatches = searchableProjects
+        .filter(item => terms.every(term => exactKeywordTerms.has(term)
+          ? item.tokens.has(term)
+          : item.text.includes(term)));
+      const matches = allMatches.slice(0, 5);
+      if (count) count.textContent = String(allMatches.length).padStart(2, "0");
+      results.hidden = false;
+      results.innerHTML = matches.length
+        ? `<ul>${matches.map(({ project }, index) => `
+            <li>
+              <button type="button" data-project-id="${escapeHtml(project.id)}">
+                <span>${String(index + 1).padStart(2, "0")} / ${escapeHtml(project.category)}</span>
+                <strong>${escapeHtml(project.title)}</strong>
+                <small>${escapeHtml(project.family || "Project archive")}</small>
+              </button>
+            </li>
+          `).join("")}</ul>`
+        : `<p class="hero-search__empty"><strong>No exact match.</strong><span>Try a broader term such as AI, API, Python or Vue.</span></p>`;
+      if (status) status.textContent = matches.length
+        ? `${allMatches.length} matching projects. The first five are shown.`
+        : "No projects match this search.";
+    };
+
+    toggle.addEventListener("click", () => {
+      const shouldOpen = !discovery.classList.contains("is-open") || !searchPinned;
+      setSearchOpen(shouldOpen, shouldOpen);
+      if (shouldOpen) input.focus({ preventScroll: true });
+    });
+    discovery.addEventListener("pointerenter", () => setSearchOpen(true, searchPinned));
+    discovery.addEventListener("pointerleave", () => {
+      if (!searchPinned && !discovery.contains(document.activeElement) && !input.value) setSearchOpen(false, false);
+    });
+    input.addEventListener("focus", () => setSearchOpen(true, searchPinned));
+    input.addEventListener("input", renderResults);
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      results.querySelector("[data-project-id]")?.click();
+    });
+    form.addEventListener("keydown", event => {
+      if (event.key === "ArrowDown") {
+        const firstResult = results.querySelector("[data-project-id]");
+        if (firstResult) {
+          event.preventDefault();
+          firstResult.focus();
+        }
+      }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        input.value = "";
+        if (count) count.textContent = String(projects.length).padStart(3, "0");
+        renderResults();
+        setSearchOpen(false, false);
+        toggle.focus({ preventScroll: true });
+      }
+    });
+    results.addEventListener("click", event => {
+      if (!event.target.closest("[data-project-id]")) return;
+      searchPinned = false;
+      window.requestAnimationFrame(() => setSearchOpen(false, false));
+    });
+  }
+
+  function initializeProjectGallery() {
+    const image = dialog?.querySelector("[data-gallery-image]");
+    const caption = dialog?.querySelector("[data-gallery-caption]");
+    const stage = dialog?.querySelector("[data-gallery-stage]");
+    const fallback = dialog?.querySelector("[data-gallery-fallback]");
+    const fullResolution = dialog?.querySelector("[data-gallery-full]");
+    const items = Array.from(dialog?.querySelectorAll("[data-gallery-item]") || []);
+    if (!image || !stage || items.length === 0) return;
+    let requestToken = 0;
+    const syncStageOrientation = () => {
+      stage.classList.toggle(
+        "is-portrait",
+        image.naturalHeight > image.naturalWidth * 1.12
       );
     };
 
-    const resumeBackground = () => {
-      if (switchingClip || !resumeBackgroundAfterFilm) return;
-      resumeBackgroundAfterFilm = false;
-      void playBackgroundAudio();
+    const showImage = item => {
+      if (!(item instanceof HTMLButtonElement)) return;
+      const token = ++requestToken;
+      items.forEach(button => {
+        const selected = button === item;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
+
+      stage.classList.add("is-switching");
+      stage.classList.remove("has-error");
+      stage.classList.remove("is-portrait");
+      if (fallback) fallback.hidden = true;
+      if (caption) caption.hidden = false;
+      if (fullResolution instanceof HTMLAnchorElement) fullResolution.hidden = false;
+      image.hidden = false;
+      image.alt = item.dataset.galleryAlt || "Project evidence";
+      if (caption) caption.textContent = item.dataset.galleryCaption || "Verified project evidence.";
+      if (fullResolution instanceof HTMLAnchorElement) {
+        fullResolution.href = item.dataset.gallerySource || image.src;
+      }
+
+      const settle = () => {
+        if (token !== requestToken) return;
+        syncStageOrientation();
+        stage.classList.remove("is-switching");
+      };
+      image.addEventListener("load", settle, { once: true });
+      image.addEventListener("error", () => {
+        if (token !== requestToken) return;
+        stage.classList.remove("is-switching");
+        stage.classList.add("has-error");
+        image.hidden = true;
+        if (fallback) fallback.hidden = false;
+        if (caption) caption.hidden = true;
+        if (fullResolution instanceof HTMLAnchorElement) fullResolution.hidden = true;
+      }, { once: true });
+      image.src = item.dataset.gallerySource || "";
+      if (image.complete && image.naturalWidth > 0) {
+        window.requestAnimationFrame(settle);
+      }
     };
 
-    video.addEventListener("loadedmetadata", () => {
-      setFilmState("ready", "Project film ready.");
-    });
-    video.addEventListener("waiting", () => {
-      setFilmState("loading", "Loading project film…");
-    });
-    video.addEventListener("stalled", () => {
-      setFilmState("loading", "The media source is responding slowly…");
-    });
-    video.addEventListener("error", handleFilmError);
-    source.addEventListener("error", handleFilmError);
-    video.addEventListener("play", () => {
-      resumeBackgroundAfterFilm = Boolean(backgroundAudio && !backgroundAudio.paused);
-      if (resumeBackgroundAfterFilm) {
-        backgroundAudio.pause();
-        syncBackgroundAudioUi("Background music paused while the project film plays.");
-      }
-    });
-    video.addEventListener("pause", resumeBackground);
-    video.addEventListener("ended", resumeBackground);
-
-    chapterButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const shouldContinue = !video.paused;
-        switchingClip = true;
-        video.pause();
-        setFilmState("loading", `Loading ${button.dataset.filmLabel || "project film"}…`);
-        source.src = button.dataset.filmSource || "";
-        source.type = button.dataset.filmType || "video/mp4";
-        const poster = button.dataset.filmPoster || "";
-        if (poster) video.poster = poster;
-        else video.removeAttribute("poster");
-        video.setAttribute(
-          "aria-label",
-          `${button.dataset.filmLabel || "Project"} product film`
-        );
-        chapterButtons.forEach(item => {
-          const selected = item === button;
-          item.classList.toggle("is-active", selected);
-          item.setAttribute("aria-pressed", String(selected));
-        });
-        video.load();
-        switchingClip = false;
-        if (shouldContinue) video.play().catch(() => {});
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => showImage(item));
+      item.addEventListener("keydown", event => {
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        const targetIndex = event.key === "Home"
+          ? 0
+          : event.key === "End"
+            ? items.length - 1
+            : (index + (event.key === "ArrowRight" ? 1 : -1) + items.length) % items.length;
+        const target = items[targetIndex];
+        target.focus();
+        showImage(target);
       });
     });
 
-    if (video.readyState >= 1) {
-      setFilmState("ready", "Project film ready.");
+    if (image.complete && image.naturalWidth > 0) {
+      syncStageOrientation();
     } else {
-      setFilmState("loading", "Loading film metadata…");
+      image.addEventListener("load", syncStageOrientation, { once: true });
     }
+
+    const initialRequestToken = requestToken;
+    image.addEventListener("error", () => {
+      if (initialRequestToken !== requestToken) return;
+      stage.classList.add("has-error");
+      image.hidden = true;
+      if (fallback) fallback.hidden = false;
+      if (caption) caption.hidden = true;
+      if (fullResolution instanceof HTMLAnchorElement) fullResolution.hidden = true;
+    }, { once: true });
   }
 
   function openProject(projectId, trigger) {
@@ -1044,7 +970,7 @@
             ` : ""}
           </div>
         </header>
-        ${filmMarkup(project)}
+        ${galleryMarkup(project)}
         <div class="dialog-body">
           <aside class="dialog-index" aria-label="Case study contents">
             <span>01 / Problem</span>
@@ -1080,7 +1006,6 @@
                 <div><strong>${escapeHtml(signals.files ?? "—")}</strong><span>files mapped</span></div>
                 <div><strong>${escapeHtml(signals.code ?? "—")}</strong><span>code files</span></div>
                 <div><strong>${escapeHtml(signals.tests ?? "—")}</strong><span>test signals</span></div>
-                <div><strong>${escapeHtml(signals.notebooks ?? "—")}</strong><span>notebooks</span></div>
               </div>
               <div class="dialog-tags">${technologyMarkup(project, 8)}</div>
               <nav class="dialog-links" aria-label="Project links">
@@ -1096,137 +1021,263 @@
       </article>
     `;
 
+    clearDialogCloseTransition();
+    dialog.classList.remove("is-visible", "is-closing");
     dialog.showModal();
+    dialog.scrollTop = 0;
     document.body.classList.add("dialog-open");
-    initializeProjectFilm();
-    dialog.querySelector(".dialog-close")?.focus();
+    initializeProjectGallery();
+    window.requestAnimationFrame(() => {
+      if (!dialog.open || dialog.classList.contains("is-closing")) return;
+      dialog.classList.add("is-visible");
+      dialog.querySelector(".dialog-close")?.focus({ preventScroll: true });
+    });
+  }
+
+  function clearDialogCloseTransition() {
+    if (dialogCloseTimer) {
+      window.clearTimeout(dialogCloseTimer);
+      dialogCloseTimer = 0;
+    }
+    if (dialog && dialogCloseTransitionEnd) {
+      dialog.removeEventListener("transitionend", dialogCloseTransitionEnd);
+      dialogCloseTransitionEnd = null;
+    }
+  }
+
+  function completeDialogClose() {
+    clearDialogCloseTransition();
+    if (!dialog?.open) return;
+    dialog.classList.remove("is-visible", "is-closing");
+    dialog.close();
   }
 
   function closeDialog() {
-    dialog?.querySelector("video")?.pause();
-    dialog?.close();
-  }
-
-  function initializeDisclosures() {
-    categoryDefinitions.forEach(definition => {
-      const button = document.querySelector(`[data-section-toggle="${definition.category}"]`);
-      if (!button) return;
-      button.dataset.expandLabel = button.querySelector("[data-toggle-label]")?.textContent || "View complete archive";
-      button.addEventListener("click", () => {
-        const expanded = button.getAttribute("aria-expanded") === "true";
-        const root = document.getElementById(definition.rootId);
-        const snapshot = root ? disclosureSnapshot(root) : null;
-        renderCategorySection(definition, !expanded, snapshot);
-        const status = document.querySelector(`[data-section-status="${definition.category}"]`);
-        if (status) {
-          const count = sortedProjects(definition.category).length;
-          status.textContent = expanded
-            ? `${definition.category} reduced to a concise preview.`
-            : `All ${count} ${definition.category} projects are now visible.`;
-        }
-        if (expanded) {
-          document.getElementById(definition.sectionId)?.scrollIntoView({
-            behavior: reducedMotion.matches ? "auto" : "smooth",
-            block: "start"
-          });
-        }
-      });
-    });
-  }
-
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".primary-nav");
-  const navScrim = document.querySelector("[data-nav-dismiss]");
-
-  function setNavigation(open, returnFocus = false) {
-    if (!menuButton || !navigation || !navScrim) return;
-    const mobile = mobileNavigation.matches;
-    const nextOpen = mobile && open;
-    navigation.classList.toggle("is-open", nextOpen);
-    menuButton.setAttribute("aria-expanded", String(nextOpen));
-    menuButton.querySelector(".sr-only").textContent = nextOpen
-      ? "Close navigation"
-      : "Open navigation";
-    navScrim.hidden = !nextOpen;
-    document.body.classList.toggle("nav-open", nextOpen);
-
-    if (mobile) {
-      navigation.toggleAttribute("inert", !nextOpen);
-      navigation.setAttribute("aria-hidden", String(!nextOpen));
-    } else {
-      navigation.removeAttribute("inert");
-      navigation.removeAttribute("aria-hidden");
+    if (!dialog?.open || dialog.classList.contains("is-closing")) return;
+    if (dialogMotionQuery.matches) {
+      completeDialogClose();
+      return;
     }
 
-    if (nextOpen) navigation.querySelector("a")?.focus();
-    if (!nextOpen && returnFocus) menuButton.focus();
+    dialog.classList.remove("is-visible");
+    dialog.classList.add("is-closing");
+    dialogCloseTransitionEnd = event => {
+      if (event.target === dialog && event.propertyName === "opacity") {
+        completeDialogClose();
+      }
+    };
+    dialog.addEventListener("transitionend", dialogCloseTransitionEnd);
+    dialogCloseTimer = window.setTimeout(
+      completeDialogClose,
+      dialogExitDuration + 80
+    );
   }
 
-  function initializeNavigation() {
-    menuButton?.addEventListener("click", () => {
-      setNavigation(menuButton.getAttribute("aria-expanded") !== "true");
-    });
-    navScrim?.addEventListener("click", () => setNavigation(false, true));
-    navigation?.addEventListener("click", event => {
-      if (event.target.closest("a")) setNavigation(false);
-    });
-    mobileNavigation.addEventListener("change", () => setNavigation(false));
-    setNavigation(false);
+  const screens = Array.from(document.querySelectorAll("[data-screen]"));
+  const screenNavigation = document.querySelector(".screen-navigation");
+  const screenLinks = Array.from(document.querySelectorAll("[data-screen-link]"));
+  const screenStatus = document.querySelector("[data-screen-status]");
+  const activeScreenLabel = document.querySelector("[data-active-screen-label]");
+  const baseDocumentTitle = document.title;
+  let activeScreen = null;
+  let pendingHistoryFocus = null;
+  let updateScreenUi = () => {};
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
-        event.preventDefault();
-        setNavigation(false, true);
-      }
-      if (
-        event.key === "Tab"
-        && mobileNavigation.matches
-        && menuButton?.getAttribute("aria-expanded") === "true"
-      ) {
-        const focusable = [menuButton, ...navigation.querySelectorAll("a")];
-        const first = focusable[0];
-        const last = focusable.at(-1);
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
-      }
-    });
+  function targetFromHash(rawHash) {
+    let identifier = String(rawHash || "").replace(/^#/, "");
+    if (!identifier) identifier = "top";
+    try {
+      identifier = decodeURIComponent(identifier);
+    } catch {
+      return null;
+    }
+    return document.getElementById(identifier);
   }
 
-  function initializeActiveNavigation() {
-    if (!("IntersectionObserver" in window)) return;
-    const links = Array.from(document.querySelectorAll(".primary-nav a[href^='#']"));
-    const sections = [
-      "selected",
-      "internships",
-      "university",
-      "ai-path",
-      "software-path",
-      "independent"
-    ].map(id => document.getElementById(id)).filter(Boolean);
+  function screenFromHash(rawHash) {
+    const target = targetFromHash(rawHash);
+    if (!target) return null;
+    return target.matches("[data-screen]") ? target : target.closest("[data-screen]");
+  }
 
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries
-        .filter(entry => entry.isIntersecting)
-        .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
-      if (!visible) return;
-      const target = `#${visible.target.id}`;
-      links.forEach(link => {
-        if (link.getAttribute("href") === target) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
+  function activateScreen(targetScreen, options = {}) {
+    const {
+      historyMode = "none",
+      historyHash = "",
+      focus = false,
+      announce = true
+    } = options;
+    const target = typeof targetScreen === "string"
+      ? screenFromHash(targetScreen.startsWith("#") ? targetScreen : `#${targetScreen}`)
+      : targetScreen;
+    if (!(target instanceof HTMLElement) || !screens.includes(target)) return false;
+
+    target.classList.add("is-active");
+    target.inert = false;
+    target.removeAttribute("aria-hidden");
+
+    if (focus) target.focus({ preventScroll: true });
+
+    screens.forEach(screen => {
+      if (screen === target) return;
+      screen.classList.remove("is-active");
+      screen.inert = true;
+      screen.setAttribute("aria-hidden", "true");
+    });
+
+    activeScreen = target;
+    const label = target.dataset.screenLabel || target.id;
+    const navigationOwner = document.getElementById(target.dataset.navigationOwner || target.id) || target;
+    document.body.dataset.activeScreen = navigationOwner.id;
+    if (activeScreenLabel) activeScreenLabel.textContent = label;
+    document.title = target.id === "top" ? baseDocumentTitle : `${label} — Jean Loa`;
+
+    screenLinks.forEach(link => {
+      const linkedScreen = screenFromHash(link.getAttribute("href"));
+      if (linkedScreen === navigationOwner) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+
+    const activeLink = screenLinks.find(link => screenFromHash(link.getAttribute("href")) === navigationOwner);
+    activeLink?.scrollIntoView({
+      behavior: reducedMotion.matches || !focus ? "auto" : "smooth",
+      block: "nearest",
+      inline: "center"
+    });
+
+    const nextHash = historyHash && screenFromHash(historyHash) === target
+      ? historyHash
+      : `#${target.id}`;
+    if (historyMode === "push" && window.location.hash !== nextHash) {
+      window.history.pushState({ screen: target.id }, "", nextHash);
+    } else if (historyMode === "replace" && window.location.hash !== nextHash) {
+      window.history.replaceState({ screen: target.id }, "", nextHash);
+    }
+
+    const requestedAnchor = targetFromHash(nextHash);
+    if (requestedAnchor && requestedAnchor !== target && target.contains(requestedAnchor)) {
+      window.requestAnimationFrame(() => {
+        requestedAnchor.scrollIntoView({
+          behavior: reducedMotion.matches || historyMode !== "push" ? "auto" : "smooth",
+          block: "start"
+        });
       });
-    }, { rootMargin: "-20% 0px -65%", threshold: [0, 0.15, 0.5] });
+    }
 
-    sections.forEach(section => observer.observe(section));
+    if (screenStatus) {
+      screenStatus.textContent = announce && !focus ? `${label} screen opened.` : "";
+    }
+    updateScreenUi();
+    window.dispatchEvent(new CustomEvent("portfolio:screenchange", {
+      detail: { id: target.id, label, navigationOwner: navigationOwner.id }
+    }));
+    return true;
+  }
+
+  function initializeScreenNavigation() {
+    if (!screens.length || !screenNavigation) return;
+    document.documentElement.classList.add("has-screen-navigation");
+    window.scrollTo(0, 0);
+
+    const requestedHash = window.location.hash || "#top";
+    const initialScreen = screenFromHash(requestedHash);
+    activateScreen(initialScreen || screens[0], {
+      historyMode: window.location.hash && initialScreen ? "none" : "replace",
+      historyHash: initialScreen ? requestedHash : "#top",
+      announce: false
+    });
+
+    document.querySelector("[data-skip-current]")?.addEventListener("click", event => {
+      event.preventDefault();
+      activeScreen?.focus({ preventScroll: true });
+    });
+
+    document.addEventListener("click", event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target.closest("a[href^='#']");
+      if (!link || link.hasAttribute("download") || link.target === "_blank") return;
+      const hash = link.getAttribute("href");
+      const target = screenFromHash(hash);
+      if (!target) return;
+      event.preventDefault();
+      const fromScreenNavigation = link.matches("[data-screen-link]");
+      const keyboardActivation = fromScreenNavigation && event.detail === 0;
+      const opensArchive = link.matches("[data-archive-link]");
+      const closesArchive = link.matches("[data-archive-back]");
+      if (opensArchive && activeScreen) target.dataset.returnScreen = activeScreen.id;
+      const returnTrigger = link.matches("[data-archive-back]") && activeScreen
+        ? target.querySelector(`[data-archive-link][href="#${activeScreen.id}"]`)
+        : null;
+      const canPopArchiveHistory = closesArchive
+        && activeScreen?.dataset.returnScreen === target.id
+        && window.history.state?.screen === activeScreen.id;
+      if (canPopArchiveHistory) {
+        pendingHistoryFocus = returnTrigger instanceof HTMLElement ? returnTrigger : null;
+        window.history.back();
+        return;
+      }
+      activateScreen(target, {
+        historyMode: closesArchive ? "replace" : "push",
+        historyHash: hash,
+        focus: (!fromScreenNavigation || keyboardActivation) && !returnTrigger
+      });
+      if (returnTrigger instanceof HTMLElement) {
+        window.requestAnimationFrame(() => returnTrigger.focus({ preventScroll: true }));
+      }
+    });
+
+    const restoreFromHistory = () => {
+      const target = screenFromHash(window.location.hash) || screens[0];
+      if (dialog?.open) {
+        lastDialogTrigger = null;
+        closeDialog();
+      }
+      activateScreen(target, { focus: true });
+      if (pendingHistoryFocus instanceof HTMLElement && !pendingHistoryFocus.closest("[inert]")) {
+        const focusTarget = pendingHistoryFocus;
+        pendingHistoryFocus = null;
+        window.requestAnimationFrame(() => focusTarget.focus({ preventScroll: true }));
+      } else {
+        pendingHistoryFocus = null;
+      }
+    };
+    window.addEventListener("hashchange", restoreFromHistory);
+    window.addEventListener("beforeprint", () => {
+      screens.forEach(screen => {
+        screen.inert = false;
+        screen.removeAttribute("aria-hidden");
+      });
+    });
+    window.addEventListener("afterprint", () => {
+      screens.forEach(screen => {
+        const isCurrent = screen === activeScreen;
+        screen.inert = !isCurrent;
+        if (isCurrent) screen.removeAttribute("aria-hidden");
+        else screen.setAttribute("aria-hidden", "true");
+      });
+    });
+
+    screenNavigation.addEventListener("keydown", event => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      const currentIndex = Math.max(0, screenLinks.indexOf(document.activeElement));
+      let nextIndex = currentIndex;
+      if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + screenLinks.length) % screenLinks.length;
+      if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % screenLinks.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = screenLinks.length - 1;
+      event.preventDefault();
+      screenLinks[nextIndex]?.focus();
+      screenLinks[nextIndex]?.click();
+    });
   }
 
   function initializeReveal() {
     const nodes = document.querySelectorAll(".reveal");
-    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    if (
+      document.documentElement.classList.contains("has-screen-navigation")
+      || reducedMotion.matches
+      || !("IntersectionObserver" in window)
+    ) {
       nodes.forEach(node => node.classList.add("is-visible"));
       return;
     }
@@ -1243,38 +1294,54 @@
   function initializeScrollUi() {
     const header = document.querySelector("[data-header]");
     const progress = document.querySelector(".scroll-progress span");
-    const update = () => {
-      const top = window.scrollY;
-      const maximum = document.documentElement.scrollHeight - window.innerHeight;
-      header?.classList.toggle("is-scrolled", top > 24);
+    updateScreenUi = () => {
+      const current = activeScreen || document.querySelector("[data-screen].is-active");
+      const screenMode = document.documentElement.classList.contains("has-screen-navigation");
+      const top = screenMode && current ? current.scrollTop : window.scrollY;
+      const maximum = screenMode && current
+        ? current.scrollHeight - current.clientHeight
+        : document.documentElement.scrollHeight - window.innerHeight;
+      header?.classList.toggle("is-scrolled", current?.id !== "top" || top > 24);
       if (progress) {
-        progress.style.width = `${maximum > 0 ? (top / maximum) * 100 : 0}%`;
+        const completion = maximum > 0 ? Math.min(100, Math.max(0, (top / maximum) * 100)) : 0;
+        progress.style.width = `${completion}%`;
       }
     };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
+    screens.forEach(screen => screen.addEventListener("scroll", updateScreenUi, { passive: true }));
+    window.addEventListener("scroll", updateScreenUi, { passive: true });
+    window.addEventListener("resize", updateScreenUi, { passive: true });
+    updateScreenUi();
   }
 
   function initializeHeroMotion() {
     const hero = document.querySelector(".hero");
-    const core = document.querySelector(".hero-core");
-    if (!hero || !core || reducedMotion.matches) return;
+    const eyes = Array.from(document.querySelectorAll(".hero-eye"));
+    if (!hero || !eyes.length || reducedMotion.matches) return;
+    const setEyePosition = (x, y) => {
+      eyes.forEach(eye => {
+        const isExpansiveEye = eye.classList.contains("hero-eye--right");
+        const xTravel = isExpansiveEye ? x * -11 : x * 22;
+        const yTravel = isExpansiveEye ? y * 8 : y * 17;
+        eye.style.setProperty("--eye-x", `${xTravel}px`);
+        eye.style.setProperty("--eye-y", `${yTravel}px`);
+      });
+    };
     hero.addEventListener("pointermove", event => {
       const rectangle = hero.getBoundingClientRect();
       const x = (event.clientX - rectangle.left) / rectangle.width - 0.5;
       const y = (event.clientY - rectangle.top) / rectangle.height - 0.5;
-      core.style.transform = `translate3d(${x * 20}px, ${y * 20}px, 0)`;
+      setEyePosition(x, y);
     });
+    hero.addEventListener("pointerleave", () => setEyePosition(0, 0));
   }
 
   renderFlagships();
   initializeEvidenceImages();
   renderCategoryAtlas();
   categoryDefinitions.forEach(definition => renderCategorySection(definition));
-  initializeDisclosures();
-  initializeNavigation();
-  initializeActiveNavigation();
+  initializeScreenNavigation();
   initializeBackgroundAudio();
+  initializeProjectSearch();
   initializeReveal();
   initializeScrollUi();
   initializeHeroMotion();
@@ -1301,13 +1368,25 @@
   });
 
   dialog?.querySelector(".dialog-close")?.addEventListener("click", closeDialog);
+  dialog?.addEventListener("cancel", event => {
+    event.preventDefault();
+    closeDialog();
+  });
   dialog?.addEventListener("click", event => {
     if (event.target === dialog) closeDialog();
   });
   dialog?.addEventListener("close", () => {
-    dialog.querySelector("video")?.pause();
+    clearDialogCloseTransition();
+    dialog.classList.remove("is-visible", "is-closing");
     document.body.classList.remove("dialog-open");
-    if (lastDialogTrigger instanceof HTMLElement) lastDialogTrigger.focus();
+    const returnTarget = lastDialogTrigger instanceof HTMLElement
+      && lastDialogTrigger.isConnected
+      && !lastDialogTrigger.closest("[inert]")
+      ? lastDialogTrigger
+      : activeScreen;
     lastDialogTrigger = null;
+    window.requestAnimationFrame(() => {
+      returnTarget?.focus({ preventScroll: true });
+    });
   });
 })();

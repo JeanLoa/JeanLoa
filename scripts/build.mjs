@@ -20,12 +20,36 @@ for (const file of [
 for (const asset of [
   "assets/electrocorp-home.jpg",
   "assets/lowcortisol-reports.png",
-  "assets/audio/the-secret-ingredient-called-victory.mp3",
-  "assets/videos/university/smartlocation/lima-route-optimization-demo.mp4"
+  "assets/audio/audio1.mp3",
+  "assets/audio/audio2.mp3",
+  "assets/audio/audio3.mp3",
+  "assets/audio/audio4.mp3",
+  "assets/audio/audio5.mp3"
 ]) {
   const destination = join(dist, "client", asset);
   await mkdir(dirname(destination), { recursive: true });
   await cp(join(root, asset), destination, { recursive: true });
+}
+const galleryManifest = JSON.parse(
+  await readFile(join(root, "content", "project-galleries.json"), "utf8")
+);
+const galleryAssets = new Set(
+  Object.values(galleryManifest)
+    .flat()
+    .map(item => item?.src)
+    .filter(Boolean)
+);
+
+for (const asset of galleryAssets) {
+  const normalizedAsset = asset.replaceAll("\\", "/");
+  if (!/^assets\/project-captures\/[a-z0-9_./-]+\.(png|jpe?g|webp)$/i.test(normalizedAsset)
+      || normalizedAsset.includes("../")) {
+    throw new Error(`Invalid project gallery asset: ${asset}`);
+  }
+
+  const destination = join(dist, "client", ...normalizedAsset.split("/"));
+  await mkdir(dirname(destination), { recursive: true });
+  await cp(join(root, ...normalizedAsset.split("/")), destination);
 }
 
 const worker = `const worker = {

@@ -11,7 +11,9 @@
       "index.html",
       "styles.css",
       "app.js",
-      "scripts/generate-project-data.mjs"
+      "scripts/generate-project-data.mjs",
+      "content/project-galleries.json",
+      "assets/project-captures/"
     ],
     "build": "Node.js scripts/build.mjs",
     "packageDependencies": []
@@ -95,7 +97,7 @@
     "COMPLETED and PENDING status pills",
     "neutral academic record descriptors",
     "full-screen project case-study dialog",
-    "single-film and chapter-playlist video showcases",
+    "three-to-five image project evidence galleries",
     "engineering style and contact section",
     "background audio control"
   ],
@@ -105,6 +107,8 @@
     "Keep every trajectory as an explicit section.",
     "Present the portfolio as a body of complete engineering work, not as a SaaS landing page.",
     "Prioritize project evidence, implementation state, media and repository links.",
+    "Use verified interface captures as project covers and case-study evidence; never substitute unrelated figures silently.",
+    "Do not publish project video players; source recordings remain outside deployable assets.",
     "Reuse existing render functions and CSS layers before introducing new primitives.",
     "Use only COMPLETED and PENDING as visible project states.",
     "Omit project-state pills for courses, collections and academic records.",
@@ -117,6 +121,7 @@
     "Do not use emoji as interface icons.",
     "Do not add constant animation or hover-only primary interactions.",
     "Do not break generated project data, media paths, categories, statuses, links or deployment output.",
+    "Project capture galleries contain three to five labeled images and support keyboard selection, visible focus and reduced motion.",
     "Do not upload the project to Stitch without explicit authorization."
   ],
   "allowedDependencies": {
@@ -134,7 +139,7 @@
       "editorial technical portfolio navigation",
       "multi-track engineering hierarchy",
       "project evidence cards",
-      "restrained audiovisual case studies",
+      "restrained screenshot-led case studies",
       "accessible monochromatic interactions"
     ],
     "reject": [

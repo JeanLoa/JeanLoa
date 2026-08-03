@@ -23,7 +23,7 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to the work</a>
+    <a class="skip-link" href="#main" data-skip-current>Skip to current screen</a>
     <div class="page-noise" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
@@ -32,143 +32,80 @@
         <span class="brand-mark">JL</span>
         <span class="brand-copy">Software + AI<br />Engineer</span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
-      </button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="#selected">Selected</a>
-        <a href="#internships">Internships</a>
-        <a href="#university">University</a>
-        <a href="#ai-path">AI path</a>
-        <a href="#software-path">Software path</a>
-        <a href="#independent">Independent</a>
-      </nav>
+      <p class="header-screen">
+        <span>Viewing</span>
+        <strong data-active-screen-label>Home</strong>
+      </p>
+      <div class="sound-dock" data-sound-dock>
+        <button
+          class="sound-control"
+          type="button"
+          data-sound-toggle
+          aria-expanded="false"
+          aria-controls="sound-track-list"
+          aria-label="Open music selector"
+        >
+          <span class="sound-control__meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </button>
+        <div class="sound-track-list" id="sound-track-list" role="group" aria-label="Music tracks">
+          <button class="sound-track sound-track--1" type="button" data-audio-track data-audio-source="assets/audio/audio1.mp3" aria-pressed="false"><span>01</span><strong>Audio 1</strong></button>
+          <button class="sound-track sound-track--2" type="button" data-audio-track data-audio-source="assets/audio/audio2.mp3" aria-pressed="false"><span>02</span><strong>Audio 2</strong></button>
+          <button class="sound-track sound-track--3" type="button" data-audio-track data-audio-source="assets/audio/audio3.mp3" aria-pressed="false"><span>03</span><strong>Audio 3</strong></button>
+          <button class="sound-track sound-track--4" type="button" data-audio-track data-audio-source="assets/audio/audio4.mp3" aria-pressed="false"><span>04</span><strong>Audio 4</strong></button>
+          <button class="sound-track sound-track--5" type="button" data-audio-track data-audio-source="assets/audio/audio5.mp3" aria-pressed="false"><span>05</span><strong>Audio 5</strong></button>
+        </div>
+      </div>
       <a class="header-cta" href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">
         GitHub <span aria-hidden="true">↗</span>
       </a>
     </header>
-    <button class="nav-scrim" type="button" data-nav-dismiss aria-label="Close navigation" hidden></button>
-    <audio data-background-audio loop preload="metadata">
-      <source src="assets/audio/the-secret-ingredient-called-victory.mp3" type="audio/mpeg" />
-    </audio>
-    <button
-      class="sound-control"
-      type="button"
-      data-sound-toggle
-      aria-pressed="false"
-      aria-label="Play background music"
-    >
-      <span class="sound-control__meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="sound-control__copy">
-        <small>Ambient track</small>
-        <strong data-sound-label>Music off</strong>
-      </span>
-    </button>
+    <audio data-background-audio loop preload="metadata"></audio>
     <p class="sr-only" data-sound-status aria-live="polite"></p>
 
-    <main id="main">
-      <section id="top" class="hero">
-        <div class="hero-backdrop" aria-hidden="true">
-          <div class="hero-orbit hero-orbit--one"></div>
-          <div class="hero-orbit hero-orbit--two"></div>
-          <div class="hero-core"></div>
-          <span class="signal signal--one">DOMAIN</span>
-          <span class="signal signal--two">MODEL</span>
-          <span class="signal signal--three">PRODUCT</span>
-        </div>
+    <main id="main" class="screen-stage">
+      <section id="top" class="hero portfolio-screen is-active" data-screen data-screen-label="Home" tabindex="-1" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="kicker reveal">Software Engineering · AI Engineering · Lima, Peru</p>
-          <h1 class="hero-title" aria-label="I engineer products end to end">
-            <span class="hero-line reveal">I engineer</span>
-            <span class="hero-line hero-line--accent reveal"><em>products</em></span>
-            <span class="hero-line reveal">end to end.</span>
-          </h1>
-          <div class="hero-bottom reveal">
-            <p>
-              From frontend and backend architecture to data, AI, deployment and
-              technical evidence—complete systems rather than isolated demos.
-            </p>
-            <div class="hero-actions" aria-label="Explore Jean Loa's engineering work">
-              <a class="hero-track-link" href="#software-path" data-accent="software">
-                <span>01</span>
-                <strong>Software Engineering</strong>
-                <small>Products · platforms · delivery</small>
-              </a>
-              <a class="hero-track-link" href="#ai-path" data-accent="ai">
-                <span>02</span>
-                <strong>AI Engineering</strong>
-                <small>Models · agents · evaluation</small>
-              </a>
-              <a class="hero-selected-link" href="#selected">
-                Explore selected systems <span aria-hidden="true">↓</span>
-              </a>
+          <p class="kicker reveal">Software Engineering · AI Engineering</p>
+          <div class="hero-orbits" aria-hidden="true">
+            <div class="hero-eye hero-eye--left reveal">
+              <span class="hero-eye__pupil"></span>
+            </div>
+            <div class="hero-eye hero-eye--right reveal">
+              <span class="hero-eye__pupil"></span>
             </div>
           </div>
-        </div>
-        <div class="hero-index" aria-label="Portfolio metrics">
-          <div><strong data-total-projects>—</strong><span>projects mapped</span></div>
-          <div><strong>03</strong><span>flagship systems</span></div>
-          <div><strong>05</strong><span>explicit contexts</span></div>
-          <div><strong>02</strong><span>engineering paths</span></div>
-        </div>
-      </section>
-
-      <section id="selected" class="selected-section section-pad" aria-labelledby="selected-title">
-        <div class="selected-heading">
-          <div>
-            <div class="section-label reveal"><span>01</span> Selected systems</div>
-            <h2 id="selected-title" class="section-title reveal">Three systems.<br />Different constraints.</h2>
+          <div class="hero-focus">
+            <h1 id="hero-title" class="hero-title" aria-label="I engineer end to end">
+              <span class="hero-line reveal">I engineer</span>
+              <span class="hero-line hero-line--accent reveal"><em>end to end.</em></span>
+            </h1>
           </div>
-          <p class="section-note reveal">
-            The strongest product work comes first: mobility intelligence, resource
-            operations and enterprise energy management.
-          </p>
-        </div>
-        <div id="flagship-projects" class="flagship-projects"></div>
-      </section>
-
-      <section id="categories" class="category-atlas section-pad" aria-labelledby="category-atlas-title">
-        <div class="category-atlas__heading">
-          <div>
-            <div class="section-label reveal"><span>02</span> Category map</div>
-            <h2 id="category-atlas-title" class="section-title reveal">One practice.<br />Five contexts.</h2>
-          </div>
-          <p class="section-note reveal">
-            Color identifies context. Counts and states describe the real archive;
-            nothing is promoted by decoration alone.
-          </p>
-        </div>
-        <div id="category-atlas" class="category-atlas__rows"></div>
-      </section>
-
-      <section class="manifesto section-pad" aria-labelledby="working-principle-title">
-        <div class="section-label reveal"><span>03</span> Working principle</div>
-        <div class="manifesto-grid">
-          <h2 id="working-principle-title" class="manifesto-lead reveal">
-            Not a gallery of isolated demos. A living map of systems, experiments,
-            decisions and technical growth.
-          </h2>
-          <div class="manifesto-copy reveal">
-            <p>
-              Every entry says what is built, what remains a blueprint, how it is shaped,
-              and where the evidence lives. Ambition is useful only when the state of the
-              work stays honest.
-            </p>
-            <div class="principle-row">
-              <span>Explore before executing.</span>
-              <span>Execute with a map.</span>
-              <span>Document every advance.</span>
+          <div class="hero-discovery reveal" data-hero-discovery>
+            <div class="hero-search-shell">
+              <form class="hero-search" role="search" data-project-search-form>
+                <label for="project-search">Search the project archive</label>
+                <div class="hero-search__field">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+                  <input id="project-search" type="search" inputmode="search" autocomplete="off" placeholder="Python, vision, Vue..." data-project-search aria-controls="project-search-results" aria-describedby="project-search-hint" />
+                  <span aria-hidden="true" data-project-search-count>106</span>
+                </div>
+                <p id="project-search-hint" class="hero-search__hint">Type a technology, discipline or project name.</p>
+                <div id="project-search-results" class="hero-search__results" data-project-search-results hidden></div>
+                <p class="sr-only" data-project-search-status aria-live="polite"></p>
+              </form>
             </div>
+            <button class="hero-project-count" type="button" data-project-search-toggle aria-expanded="false" aria-controls="project-search">
+              <strong data-total-projects>106</strong>
+              <span class="sr-only">projects. Open keyword search.</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <div id="archive" class="archive-anchor" aria-hidden="true"></div>
-
-      <section id="internships" class="project-section project-section--internships section-pad" aria-labelledby="internships-title">
+      <section id="internships" class="project-section project-section--internships section-pad portfolio-screen" data-screen data-screen-label="Internships" tabindex="-1" aria-labelledby="internships-title">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>04</span> Internship work</div>
+            <div class="section-label reveal"><span>03</span> Internship work</div>
             <h2 id="internships-title" class="section-title reveal">Professional work.<br />Visible progress.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -177,29 +114,27 @@
               implementation evidence and presented without inflated claims.
             </p>
             <div class="project-section__totals" aria-label="Internship progress">
-              <span><strong data-internship-completed>03</strong> completed</span>
-              <span><strong data-internship-pending>02</strong> pending</span>
+              <span><strong data-internship-completed>05</strong> completed</span>
+              <span><strong data-internship-pending>00</strong> pending</span>
             </div>
-            <button class="section-disclosure" type="button" data-section-toggle="Internships" aria-controls="internship-projects" aria-expanded="false">
+            <a class="section-disclosure" href="#internships-archive" data-archive-link="Internships" aria-label="Open the complete internship archive">
               <span class="section-disclosure__copy">
-                <span class="section-disclosure__eyebrow">Archive control</span>
-                <span data-toggle-label>View complete internship archive</span>
+                <span class="section-disclosure__eyebrow">Open archive</span>
+                <span class="section-disclosure__label">View complete internship archive</span>
               </span>
               <span class="section-disclosure__meta" aria-hidden="true">
-                <span class="section-disclosure__count"><strong data-toggle-count>+02</strong><small data-toggle-count-label>projects</small></span>
-                <span class="section-disclosure__icon" data-toggle-icon><i></i><i></i></span>
+                <span class="section-disclosure__count"><strong data-category-count="Internships">05</strong><small>projects</small></span>
+                <span class="section-disclosure__icon"><i></i><i></i></span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
-        <div id="internship-projects" class="project-section__groups"></div>
-        <p class="sr-only" role="status" data-section-status="Internships"></p>
       </section>
 
-      <section id="university" class="project-section project-section--university section-pad" aria-labelledby="university-title">
+      <section id="university" class="project-section project-section--university section-pad portfolio-screen" data-screen data-screen-label="University" tabindex="-1" aria-labelledby="university-title">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>05</span> University work</div>
+            <div class="section-label reveal"><span>04</span> University work</div>
             <h2 id="university-title" class="section-title reveal">Systems built<br />through practice.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -211,26 +146,24 @@
               <span><strong data-category-count="University">12</strong> projects</span>
               <span><strong data-group-count="University">04</strong> collections</span>
             </div>
-            <button class="section-disclosure" type="button" data-section-toggle="University" aria-controls="university-projects" aria-expanded="false">
+            <a class="section-disclosure" href="#university-archive" data-archive-link="University" aria-label="Open the complete university archive">
               <span class="section-disclosure__copy">
-                <span class="section-disclosure__eyebrow">Archive control</span>
-                <span data-toggle-label>View complete university archive</span>
+                <span class="section-disclosure__eyebrow">Open archive</span>
+                <span class="section-disclosure__label">View complete university archive</span>
               </span>
               <span class="section-disclosure__meta" aria-hidden="true">
-                <span class="section-disclosure__count"><strong data-toggle-count>+09</strong><small data-toggle-count-label>projects</small></span>
-                <span class="section-disclosure__icon" data-toggle-icon><i></i><i></i></span>
+                <span class="section-disclosure__count"><strong data-category-count="University">12</strong><small>projects</small></span>
+                <span class="section-disclosure__icon"><i></i><i></i></span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
-        <div id="university-projects" class="project-section__groups"></div>
-        <p class="sr-only" role="status" data-section-status="University"></p>
       </section>
 
-      <section id="ai-path" class="project-section project-section--ai section-pad" aria-labelledby="ai-path-title">
+      <section id="ai-path" class="project-section project-section--ai section-pad portfolio-screen" data-screen data-screen-label="AI Engineering" tabindex="-1" aria-labelledby="ai-path-title">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>06</span> AI engineering path</div>
+            <div class="section-label reveal"><span>01</span> AI engineering path</div>
             <h2 id="ai-path-title" class="section-title reveal">Intelligence,<br />mapped in depth.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -244,26 +177,24 @@
               <span><strong data-category-count="AI Engineering">72</strong> projects</span>
               <span><strong data-group-count="AI Engineering">12</strong> roadmaps</span>
             </div>
-            <button class="section-disclosure" type="button" data-section-toggle="AI Engineering" aria-controls="ai-projects" aria-expanded="false">
+            <a class="section-disclosure" href="#ai-archive" data-archive-link="AI Engineering" aria-label="Open all AI Engineering roadmaps">
               <span class="section-disclosure__copy">
-                <span class="section-disclosure__eyebrow">Archive control</span>
-                <span data-toggle-label>View all AI roadmaps</span>
+                <span class="section-disclosure__eyebrow">Open archive</span>
+                <span class="section-disclosure__label">View all AI roadmaps</span>
               </span>
               <span class="section-disclosure__meta" aria-hidden="true">
-                <span class="section-disclosure__count"><strong data-toggle-count>+66</strong><small data-toggle-count-label>projects</small></span>
-                <span class="section-disclosure__icon" data-toggle-icon><i></i><i></i></span>
+                <span class="section-disclosure__count"><strong data-category-count="AI Engineering">72</strong><small>projects</small></span>
+                <span class="section-disclosure__icon"><i></i><i></i></span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
-        <div id="ai-projects" class="project-section__groups"></div>
-        <p class="sr-only" role="status" data-section-status="AI Engineering"></p>
       </section>
 
-      <section id="software-path" class="project-section project-section--software section-pad" aria-labelledby="software-path-title">
+      <section id="software-path" class="project-section project-section--software section-pad portfolio-screen" data-screen data-screen-label="Software Engineering" tabindex="-1" aria-labelledby="software-path-title">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>07</span> Software engineering path</div>
+            <div class="section-label reveal"><span>02</span> Software engineering path</div>
             <h2 id="software-path-title" class="section-title reveal">Platforms shaped<br />for delivery.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -277,27 +208,24 @@
               <span><strong data-category-count="Software Engineering">12</strong> projects</span>
               <span><strong data-group-count="Software Engineering">12</strong> roadmaps</span>
             </div>
-            <button class="section-disclosure" type="button" data-section-toggle="Software Engineering" aria-controls="software-projects" aria-expanded="false">
+            <a class="section-disclosure" href="#software-archive" data-archive-link="Software Engineering" aria-label="Open all Software Engineering roadmaps">
               <span class="section-disclosure__copy">
-                <span class="section-disclosure__eyebrow">Archive control</span>
-                <span data-toggle-label>View all software roadmaps</span>
+                <span class="section-disclosure__eyebrow">Open archive</span>
+                <span class="section-disclosure__label">View all software roadmaps</span>
               </span>
               <span class="section-disclosure__meta" aria-hidden="true">
-                <span class="section-disclosure__count"><strong data-toggle-count>+08</strong><small data-toggle-count-label>projects</small></span>
-                <span class="section-disclosure__icon" data-toggle-icon><i></i><i></i></span>
+                <span class="section-disclosure__count"><strong data-category-count="Software Engineering">12</strong><small>projects</small></span>
+                <span class="section-disclosure__icon"><i></i><i></i></span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
-
-        <div id="software-projects" class="project-section__groups"></div>
-        <p class="sr-only" role="status" data-section-status="Software Engineering"></p>
       </section>
 
-      <section id="independent" class="project-section project-section--independent section-pad" aria-labelledby="independent-title">
+      <section id="independent" class="project-section project-section--independent section-pad portfolio-screen" data-screen data-screen-label="Independent" tabindex="-1" aria-labelledby="independent-title">
         <div class="project-section__heading">
           <div>
-            <div class="section-label reveal"><span>08</span> Independent practice</div>
+            <div class="section-label reveal"><span>05</span> Independent practice</div>
             <h2 id="independent-title" class="section-title reveal">Foundations explored<br />by curiosity.</h2>
           </div>
           <div class="project-section__summary reveal">
@@ -309,30 +237,148 @@
               <span><strong data-category-count="Leisure">05</strong> projects</span>
               <span><strong data-group-count="Leisure">02</strong> collections</span>
             </div>
-            <button class="section-disclosure" type="button" data-section-toggle="Leisure" aria-controls="independent-projects" aria-expanded="false">
+            <a class="section-disclosure" href="#independent-archive" data-archive-link="Leisure" aria-label="Open the complete independent archive">
               <span class="section-disclosure__copy">
-                <span class="section-disclosure__eyebrow">Archive control</span>
-                <span data-toggle-label>View complete independent archive</span>
+                <span class="section-disclosure__eyebrow">Open archive</span>
+                <span class="section-disclosure__label">View complete independent archive</span>
               </span>
               <span class="section-disclosure__meta" aria-hidden="true">
-                <span class="section-disclosure__count"><strong data-toggle-count>+02</strong><small data-toggle-count-label>projects</small></span>
-                <span class="section-disclosure__icon" data-toggle-icon><i></i><i></i></span>
+                <span class="section-disclosure__count"><strong data-category-count="Leisure">05</strong><small>projects</small></span>
+                <span class="section-disclosure__icon"><i></i><i></i></span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
-        <div id="independent-projects" class="project-section__groups"></div>
-        <p class="sr-only" role="status" data-section-status="Leisure"></p>
       </section>
 
-      <section id="about" class="about-section">
+      <section id="ai-archive" class="archive-screen project-section--ai portfolio-screen" data-screen data-navigation-owner="ai-path" data-screen-label="AI Engineering archive" tabindex="-1" aria-labelledby="ai-archive-title">
+        <div class="archive-screen__content section-pad">
+          <div class="archive-screen__toolbar">
+            <a class="archive-screen__back" href="#ai-path" data-archive-back><span aria-hidden="true">←</span> Back to AI overview</a>
+          </div>
+          <header class="archive-screen__header">
+            <div class="archive-screen__heading">
+              <div>
+                <div class="section-label"><span>01</span> AI project archive</div>
+                <h2 id="ai-archive-title" class="archive-screen__title">Roadmaps,<br />opened in sequence.</h2>
+              </div>
+              <div class="archive-screen__summary">
+                <p>Every AI Engineering project, grouped by its chronological roadmap and cloud focus.</p>
+                <div class="project-section__totals" aria-label="AI archive totals">
+                  <span><strong data-category-count="AI Engineering">72</strong> projects</span>
+                  <span><strong data-group-count="AI Engineering">12</strong> roadmaps</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="ai-projects" class="project-section__groups archive-screen__groups"></div>
+        </div>
+      </section>
+
+      <section id="software-archive" class="archive-screen archive-screen--group-grid project-section--software portfolio-screen" data-screen data-navigation-owner="software-path" data-screen-label="Software Engineering archive" tabindex="-1" aria-labelledby="software-archive-title">
+        <div class="archive-screen__content section-pad">
+          <div class="archive-screen__toolbar">
+            <a class="archive-screen__back" href="#software-path" data-archive-back><span aria-hidden="true">←</span> Back to Software overview</a>
+          </div>
+          <header class="archive-screen__header">
+            <div class="archive-screen__heading">
+              <div>
+                <div class="section-label"><span>02</span> Software project archive</div>
+                <h2 id="software-archive-title" class="archive-screen__title">Platforms,<br />roadmap by roadmap.</h2>
+              </div>
+              <div class="archive-screen__summary">
+                <p>Every Software Engineering platform, separated by roadmap and presented as an inspectable system.</p>
+                <div class="project-section__totals" aria-label="Software archive totals">
+                  <span><strong data-category-count="Software Engineering">12</strong> projects</span>
+                  <span><strong data-group-count="Software Engineering">12</strong> roadmaps</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="software-projects" class="project-section__groups archive-screen__groups"></div>
+        </div>
+      </section>
+
+      <section id="internships-archive" class="archive-screen project-section--internships portfolio-screen" data-screen data-navigation-owner="internships" data-screen-label="Internship archive" tabindex="-1" aria-labelledby="internships-archive-title">
+        <div class="archive-screen__content section-pad">
+          <div class="archive-screen__toolbar">
+            <a class="archive-screen__back" href="#internships" data-archive-back><span aria-hidden="true">←</span> Back to Internships overview</a>
+          </div>
+          <header class="archive-screen__header">
+            <div class="archive-screen__heading">
+              <div>
+                <div class="section-label"><span>03</span> Internship project archive</div>
+                <h2 id="internships-archive-title" class="archive-screen__title">Experience,<br />grouped by organization.</h2>
+              </div>
+              <div class="archive-screen__summary">
+                <p>DecodeLabs and SpotterAI work, organized by professional context and implementation evidence.</p>
+                <div class="project-section__totals" aria-label="Internship archive totals">
+                  <span><strong data-category-count="Internships">05</strong> projects</span>
+                  <span><strong data-group-count="Internships">02</strong> organizations</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="internship-projects" class="project-section__groups archive-screen__groups"></div>
+        </div>
+      </section>
+
+      <section id="university-archive" class="archive-screen project-section--university portfolio-screen" data-screen data-navigation-owner="university" data-screen-label="University archive" tabindex="-1" aria-labelledby="university-archive-title">
+        <div class="archive-screen__content section-pad">
+          <div class="archive-screen__toolbar">
+            <a class="archive-screen__back" href="#university" data-archive-back><span aria-hidden="true">←</span> Back to University overview</a>
+          </div>
+          <header class="archive-screen__header">
+            <div class="archive-screen__heading">
+              <div>
+                <div class="section-label"><span>04</span> University project archive</div>
+                <h2 id="university-archive-title" class="archive-screen__title">Products,<br />coursework and capstones.</h2>
+              </div>
+              <div class="archive-screen__summary">
+                <p>Portfolio systems and academic work remain separated by type, scope and presentation value.</p>
+                <div class="project-section__totals" aria-label="University archive totals">
+                  <span><strong data-category-count="University">12</strong> projects</span>
+                  <span><strong data-group-count="University">04</strong> collections</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="university-projects" class="project-section__groups archive-screen__groups"></div>
+        </div>
+      </section>
+
+      <section id="independent-archive" class="archive-screen project-section--independent portfolio-screen" data-screen data-navigation-owner="independent" data-screen-label="Independent archive" tabindex="-1" aria-labelledby="independent-archive-title">
+        <div class="archive-screen__content section-pad">
+          <div class="archive-screen__toolbar">
+            <a class="archive-screen__back" href="#independent" data-archive-back><span aria-hidden="true">←</span> Back to Independent overview</a>
+          </div>
+          <header class="archive-screen__header">
+            <div class="archive-screen__heading">
+              <div>
+                <div class="section-label"><span>05</span> Independent project archive</div>
+                <h2 id="independent-archive-title" class="archive-screen__title">Foundations,<br />grouped by collection.</h2>
+              </div>
+              <div class="archive-screen__summary">
+                <p>Programming foundations and independent laboratories, kept distinct and easy to inspect.</p>
+                <div class="project-section__totals" aria-label="Independent archive totals">
+                  <span><strong data-category-count="Leisure">05</strong> projects</span>
+                  <span><strong data-group-count="Leisure">02</strong> collections</span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div id="independent-projects" class="project-section__groups archive-screen__groups"></div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section portfolio-screen portfolio-screen--about" data-screen data-screen-label="About" tabindex="-1" aria-labelledby="about-title">
         <div class="about-visual" aria-hidden="true">
           <div class="about-ring"></div>
           <div class="about-coordinate"><span>12.0464° S</span><span>77.0428° W</span></div>
         </div>
         <div class="about-content section-pad">
-          <div class="section-label reveal"><span>09</span> Engineering style</div>
-          <h2 class="about-title reveal">Structure.<br /><em>Purpose.</em><br />Evidence.</h2>
+          <div class="section-label reveal"><span>06</span> Engineering style</div>
+          <h2 id="about-title" class="about-title reveal">Structure.<br /><em>Purpose.</em><br />Evidence.</h2>
           <div class="about-copy reveal">
             <p>
               I take projects from domain framing and architecture through frontend,
@@ -347,18 +393,30 @@
             Let’s build something rigorous. <span aria-hidden="true">↗</span>
           </a>
         </div>
+        <footer class="site-footer">
+          <div><strong>Jean Loa</strong><span>Software Engineer · Applied AI</span></div>
+          <div class="footer-links"><a href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Back to home ←</a></div>
+          <p>Built to make the work inspectable.</p>
+        </footer>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div><strong>Jean Loa</strong><span>Software Engineer · Applied AI</span></div>
-      <div class="footer-links"><a href="https://github.com/JeanLoa" target="_blank" rel="noreferrer">GitHub</a><a href="#top">Back to top ↑</a></div>
-      <p>Built to make the work inspectable.</p>
-    </footer>
+    <nav class="screen-navigation" aria-label="Portfolio sections">
+      <div class="screen-navigation__track">
+        <a href="#top" data-screen-link data-accent="neutral"><span>00</span><strong>Home</strong></a>
+        <a href="#ai-path" data-screen-link data-accent="ai"><span>01</span><strong>AI</strong></a>
+        <a href="#software-path" data-screen-link data-accent="software"><span>02</span><strong>Software</strong></a>
+        <a href="#internships" data-screen-link data-accent="internship"><span>03</span><strong>Internships</strong></a>
+        <a href="#university" data-screen-link data-accent="university"><span>04</span><strong>University</strong></a>
+        <a href="#independent" data-screen-link data-accent="independent"><span>05</span><strong>Independent</strong></a>
+        <a href="#about" data-screen-link data-accent="neutral"><span>06</span><strong>About</strong></a>
+      </div>
+    </nav>
+    <p class="sr-only" role="status" aria-live="polite" data-screen-status></p>
 
     <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close project details">Close <span aria-hidden="true">×</span></button>
       <div class="dialog-shell">
-        <button class="dialog-close" type="button" aria-label="Close project details">Close <span aria-hidden="true">×</span></button>
         <div id="dialog-content"></div>
       </div>
     </dialog>
