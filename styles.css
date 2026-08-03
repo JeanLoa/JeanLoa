@@ -64,6 +64,11 @@
     --max-width: 100rem;
     --header-height: 4.75rem;
     --screen-nav-height: 5.25rem;
+    --scrollbar-size: 0.75rem;
+    --scrollbar-track: var(--canvas);
+    --scrollbar-track-line: var(--line);
+    --scrollbar-thumb: #777a74;
+    --scrollbar-thumb-hover: var(--ink);
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -141,6 +146,38 @@
   ::selection {
     color: var(--paper);
     background: var(--ink);
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results)::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results)::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-left: 1px solid var(--scrollbar-track-line);
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results)::-webkit-scrollbar-thumb {
+    min-height: 3rem;
+    background: var(--scrollbar-thumb);
+    background-clip: padding-box;
+    border: 3px solid var(--scrollbar-track);
+    border-radius: 999px;
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results)::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+    background-clip: padding-box;
+  }
+
+  :where(.portfolio-screen, .project-dialog, .hero-search__results)::-webkit-scrollbar-corner {
+    background: var(--scrollbar-track);
   }
 
   .sr-only {
@@ -397,12 +434,22 @@
     background: var(--internship);
   }
 
+  body[data-active-screen="internships"] .portfolio-screen.is-active {
+    --scrollbar-thumb: var(--internship-text);
+    --scrollbar-thumb-hover: var(--internship);
+  }
+
   body[data-active-screen="university"] .site-header.is-scrolled .header-screen strong {
     color: var(--university-text);
   }
 
   body[data-active-screen="university"] .scroll-progress span {
     background: var(--university);
+  }
+
+  body[data-active-screen="university"] .portfolio-screen.is-active {
+    --scrollbar-thumb: var(--university-text);
+    --scrollbar-thumb-hover: var(--university);
   }
 
   body[data-active-screen="ai-path"] .site-header.is-scrolled .header-screen strong {
@@ -413,6 +460,11 @@
     background: var(--ai);
   }
 
+  body[data-active-screen="ai-path"] .portfolio-screen.is-active {
+    --scrollbar-thumb: var(--ai-text);
+    --scrollbar-thumb-hover: var(--ai);
+  }
+
   body[data-active-screen="software-path"] .site-header.is-scrolled .header-screen strong {
     color: var(--software-text);
   }
@@ -421,12 +473,22 @@
     background: var(--software);
   }
 
+  body[data-active-screen="software-path"] .portfolio-screen.is-active {
+    --scrollbar-thumb: var(--software-text);
+    --scrollbar-thumb-hover: var(--software);
+  }
+
   body[data-active-screen="independent"] .site-header.is-scrolled .header-screen strong {
     color: var(--independent-text);
   }
 
   body[data-active-screen="independent"] .scroll-progress span {
     background: var(--independent);
+  }
+
+  body[data-active-screen="independent"] .portfolio-screen.is-active {
+    --scrollbar-thumb: var(--independent-text);
+    --scrollbar-thumb-hover: var(--independent);
   }
 
   .has-screen-navigation,
@@ -458,7 +520,6 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    scrollbar-color: var(--line-strong) transparent;
     scrollbar-gutter: stable;
     transform: translate3d(0, 0.75rem, 0);
     transition:
@@ -1107,6 +1168,10 @@
   }
 
   .hero-search__results {
+    --scrollbar-track: #0e0f0e;
+    --scrollbar-track-line: rgba(255, 255, 255, 0.16);
+    --scrollbar-thumb: #9b82ed;
+    --scrollbar-thumb-hover: #c8b7ff;
     position: absolute;
     z-index: 8;
     top: calc(100% + 0.65rem);
@@ -2420,6 +2485,10 @@
   }
 
   .project-dialog {
+    --scrollbar-track: var(--ink);
+    --scrollbar-track-line: var(--inverse-line);
+    --scrollbar-thumb: #9b82ed;
+    --scrollbar-thumb-hover: #c8b7ff;
     width: 100%;
     max-width: none;
     height: 100%;
