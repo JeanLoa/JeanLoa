@@ -410,6 +410,27 @@ const publicProjectLinks = new Map([
     }
   ],
   [
+    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection",
+    {
+      liveUrl: "https://d4iau0xa5tbzq.cloudfront.net/app/",
+      apiUrl: "https://d4iau0xa5tbzq.cloudfront.net/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-vision-language-search-assistant",
+    {
+      liveUrl: "https://dv1vtt2v6aeny.cloudfront.net/app/",
+      apiUrl: "https://dv1vtt2v6aeny.cloudfront.net/docs"
+    }
+  ],
+  [
+    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab",
+    {
+      liveUrl: "https://d1sb1ox4sh9pff.cloudfront.net/app/",
+      apiUrl: "https://d1sb1ox4sh9pff.cloudfront.net/docs"
+    }
+  ],
+  [
     "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
     {
       liveUrl: "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
@@ -439,13 +460,6 @@ const publicProjectLinks = new Map([
   ]
 ]);
 
-const supersededProjectPaths = new Set([
-  "Path-AI-Engineer/Deep-Learning-Core/12-transformer-architecture-foundations-lab",
-  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-transfer-learning-image-classifier",
-  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-visual-search-embeddings-api",
-  "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-object-detection-retail-lab"
-]);
-
 for (const collection of collections) {
   const collectionPath = join(root, collection.base);
   for (const repository of await readdir(collectionPath, { withFileTypes: true })) {
@@ -453,7 +467,23 @@ for (const collection of collections) {
     const repositoryPath = join(collectionPath, repository.name);
     const baseUrl = await repositoryUrl(repositoryPath, `https://github.com/${collection.org}/${repository.name}`);
     const entries = await readdir(repositoryPath, { withFileTypes: true });
-    const numbered = entries.filter(entry => entry.isDirectory() && /^\d{2}-/.test(entry.name));
+    const numberedCandidates = entries.filter(entry => entry.isDirectory() && /^\d{2}-/.test(entry.name));
+    const candidatesByNumber = new Map();
+    for (const entry of numberedCandidates) {
+      const projectNumber = entry.name.slice(0, 2);
+      const candidates = candidatesByNumber.get(projectNumber) ?? [];
+      candidates.push(entry);
+      candidatesByNumber.set(projectNumber, candidates);
+    }
+    const duplicateNumbers = [...candidatesByNumber.entries()]
+      .filter(([, candidates]) => candidates.length > 1)
+      .map(([projectNumber, candidates]) => `${projectNumber}: ${candidates.map(entry => entry.name).join(", ")}`);
+
+    if (duplicateNumbers.length > 0) {
+      throw new Error(`Duplicate project numbers in ${collection.base}/${repository.name}: ${duplicateNumbers.join("; ")}`);
+    }
+
+    const numbered = numberedCandidates.sort((left, right) => left.name.localeCompare(right.name));
     for (const entry of numbered) {
       const projectPath = join(repositoryPath, entry.name);
       const projectUrl = `${baseUrl}/tree/main/${entry.name}`;
@@ -469,7 +499,6 @@ for (const collection of collections) {
         fallbackTitle: titleCase(entry.name),
         accent: collection.category === "AI Engineering" ? "violet" : "blue"
       });
-      if (supersededProjectPaths.has(project.path)) continue;
       generated.push({
         ...project,
         roadmapNumber,

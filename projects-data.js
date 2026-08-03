@@ -886,27 +886,60 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
-    "title": "Edge Vision Optimization Lab",
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-22-document-vision-ocr-extractor",
+    "title": "Document Extraction Workbench",
     "category": "AI Engineering",
     "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Edge Vision Optimization Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
+    "summary": "Project 22 of the AI Engineer path is an evidence-first document intelligence product. It turns a single-page receipt into localized OCR lines, normalized business fields and an auditable extraction record without hiding uncertainty behind a polished interface.",
     "technologies": [
-      "Computer Vision"
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 477,
+      "code": 46,
+      "tests": 63,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/22-document-vision-ocr-extractor",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-document-vision-ocr-extractor",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS"
+  },
+  {
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
+    "title": "Edge Vision Benchmark Console",
+    "category": "AI Engineering",
+    "family": "Computer Vision Multimodal AI Edge Optimization",
+    "summary": "Project 24 closes Plan 4 with an evidence-first laboratory for visual inference optimization. It compares quality, latency, artifact size, sparsity and runtime parity without treating a smaller file, more zero weights or a successful export as automatic acceleration.",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "PyTorch",
+      "NumPy"
+    ],
+    "signals": {
+      "files": 322,
+      "code": 55,
+      "tests": 79,
+      "notebooks": 0
+    },
+    "status": "Implementation",
     "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/24-edge-vision-optimization-lab",
     "featured": false,
     "accent": "violet",
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab",
     "roadmapNumber": 4,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://d1sb1ox4sh9pff.cloudfront.net/app/",
+    "apiUrl": "https://d1sb1ox4sh9pff.cloudfront.net/docs"
   },
   {
     "id": "university-03-academic-final-projects-final-project-deliverables-semester-01-cpp-final-project",
@@ -1406,29 +1439,6 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "orange",
     "path": "Leisure/02-machine-learning-labs"
-  },
-  {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-23-multimodal-image-text-assistant",
-    "title": "Multimodal Image Text Assistant",
-    "category": "AI Engineering",
-    "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Multimodal Image Text Assistant blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
-    "technologies": [
-      "Computer Vision"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/23-multimodal-image-text-assistant",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-multimodal-image-text-assistant",
-    "roadmapNumber": 4,
-    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-deep-learning-core-07-neural-network-foundations-lab",
@@ -2189,9 +2199,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 575,
+      "files": 721,
       "code": 48,
-      "tests": 101,
+      "tests": 144,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2200,7 +2210,9 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection",
     "roadmapNumber": 4,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://d4iau0xa5tbzq.cloudfront.net/app/",
+    "apiUrl": "https://d4iau0xa5tbzq.cloudfront.net/docs"
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-reward-design-and-agent-evaluation-lab",
@@ -2522,29 +2534,6 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "Azure"
   },
   {
-    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-22-video-understanding-basics-lab",
-    "title": "Video Understanding Basics Lab",
-    "category": "AI Engineering",
-    "family": "Computer Vision Multimodal AI Edge Optimization",
-    "summary": "A documented Video Understanding Basics Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Computer Vision Multimodal AI Edge Optimization.",
-    "technologies": [
-      "Computer Vision"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/22-video-understanding-basics-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-video-understanding-basics-lab",
-    "roadmapNumber": 4,
-    "cloudFocus": "AWS"
-  },
-  {
     "id": "path-software-engineer-vision-multimodal-ai-platform-04-vision-multimodal-ai-platform",
     "title": "Vision Multimodal AI Platform",
     "category": "Software Engineering",
@@ -2572,6 +2561,34 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS",
     "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net",
     "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
+  },
+  {
+    "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-23-vision-language-search-assistant",
+    "title": "Vision-Language Retrieval Studio",
+    "category": "AI Engineering",
+    "family": "Computer Vision Multimodal AI Edge Optimization",
+    "summary": "Project 23 of the AI Engineer path turns multimodal similarity into an auditable search product. It retrieves a sealed image collection from text, another image or a short sequence of deterministic refinements. Every answer cites imageid, normalized ranking scores and stored c…",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker"
+    ],
+    "signals": {
+      "files": 617,
+      "code": 58,
+      "tests": 76,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/tree/main/23-vision-language-search-assistant",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-vision-language-search-assistant",
+    "roadmapNumber": 4,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://dv1vtt2v6aeny.cloudfront.net/app/",
+    "apiUrl": "https://dv1vtt2v6aeny.cloudfront.net/docs"
   },
   {
     "id": "university-01-portfolio-projects-lowcortisol-digital-health-platform-webdev-course-lowcortisol",
