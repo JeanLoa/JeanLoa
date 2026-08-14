@@ -370,7 +370,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
-    "liveUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
+    "liveUrl": "https://sf-03-advanced-ml-web-1069123053246.us-central1.run.app/",
     "apiUrl": "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html",
     "gallery": [
       {
@@ -404,31 +404,6 @@ window.PORTFOLIO_PROJECTS = [
         "caption": "The persisted forecast exposes P10, P50 and P90 uncertainty with a chronological baseline comparison and calibration warning."
       }
     ]
-  },
-  {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-29-agentic-workflow-langgraph-lab",
-    "title": "Agentic Workflow LangGraph Lab",
-    "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented Agentic Workflow LangGraph Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
-    "technologies": [
-      "LangGraph",
-      "RAG",
-      "LLMs"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/29-agentic-workflow-langgraph-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/29-agentic-workflow-langgraph-lab",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-67-ai-quantum-robotics-platform-architecture",
@@ -481,7 +456,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -562,9 +537,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 353,
+      "files": 361,
       "code": 28,
-      "tests": 60,
+      "tests": 63,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -574,6 +549,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-03-p14-anomaly-detection-monitor-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-03-p14-anomaly-detection-monitor-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-03/14-anomaly-detection-monitor/01-overview.png",
@@ -620,9 +597,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 317,
+      "files": 316,
       "code": 38,
-      "tests": 317,
+      "tests": 316,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -666,6 +643,36 @@ window.PORTFOLIO_PROJECTS = [
         "caption": "Completed, failed, timed-out and pruned trials remain explicit beside measured fit time and budget utilization."
       }
     ]
+  },
+  {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-29-agent-security-redteam-lab",
+    "title": "BastionOps Agent Security Range",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 29 is an authorized, synthetic red-team laboratory for a tool-using agent. It compares a vulnerable control (V0), a prompt-only control (V1) and a policy-enforced control (V2) against paired adversarial and benign cases. The product surface is the Agent Security Comman…",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 175,
+      "code": 58,
+      "tests": 24,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/29-agent-security-redteam-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/29-agent-security-redteam-lab",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "university-02-computer-science-coursework-cpp-data-structures-and-algorithms",
@@ -754,9 +761,9 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI"
     ],
     "signals": {
-      "files": 419,
+      "files": 435,
       "code": 51,
-      "tests": 66,
+      "tests": 74,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -766,6 +773,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/16-causal-promotion-effect-lab",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-03-p16-causal-promotion-lab-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-03-p16-causal-promotion-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-03/16-causal-promotion-effect-lab/01-study-overview.png",
@@ -800,42 +809,19 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-27-chunking-retrieval-evaluation-lab",
-    "title": "Chunking Retrieval Evaluation Lab",
-    "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented Chunking Retrieval Evaluation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
-    "technologies": [
-      "RAG",
-      "LLMs"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/27-chunking-retrieval-evaluation-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/27-chunking-retrieval-evaluation-lab",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
-  },
-  {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-03-classical-model-comparison-suite",
     "title": "Classical Model Comparison Suite",
     "category": "AI Engineering",
     "family": "Machine Learning Engineering Software Foundations",
     "summary": "A reproducible and configurable laboratory for comparing classical machine learning models under one explicit experimental protocol.",
     "technologies": [
-      "Python"
+      "Python",
+      "Docker"
     ],
     "signals": {
-      "files": 688,
+      "files": 721,
       "code": 91,
-      "tests": 435,
+      "tests": 462,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -845,6 +831,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-01-p03-model-comparison-suite-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-01-p03-model-comparison-suite-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-01/03-classical-model-comparison-suite/01-overview.png",
@@ -896,7 +884,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -932,25 +920,29 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-35-conditioned-generation-control-lab",
-    "title": "Conditioned Generation Control Lab",
+    "id": "path-ai-engineer-generative-models-diffusion-systems-35-controlnet-guided-generation-lab",
+    "title": "Control Guidance Studio",
     "category": "AI Engineering",
     "family": "Generative Models Diffusion Systems",
-    "summary": "A documented Conditioned Generation Control Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
-    "technologies": [],
+    "summary": "Project 35 of the AI Engineer path is an evidence-first laboratory for spatially controlled text-to-image generation. It compares an uncontrolled Stable Diffusion 1.5 baseline with Canny-conditioned ControlNet runs while keeping prompt, seed, scheduler and inference budget fixed.",
+    "technologies": [
+      "Docker"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 132,
+      "code": 31,
+      "tests": 24,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/35-conditioned-generation-control-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/35-controlnet-guided-generation-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-conditioned-generation-control-lab",
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-controlnet-guided-generation-lab",
     "roadmapNumber": 6,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api",
@@ -978,7 +970,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -1023,8 +1015,8 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 1138,
-      "code": 358,
+      "files": 324,
+      "code": 121,
       "tests": 74,
       "notebooks": 0
     },
@@ -1035,7 +1027,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
-    "liveUrl": "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
+    "liveUrl": "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app/",
     "apiUrl": "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs",
     "gallery": [
       {
@@ -1105,7 +1097,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -1141,25 +1133,31 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-34-diffusion-denoising-foundations-lab",
-    "title": "Diffusion Denoising Foundations Lab",
+    "id": "path-ai-engineer-generative-models-diffusion-systems-32-diffusion-from-scratch-mini-lab",
+    "title": "Diffusion Process Observatory",
     "category": "AI Engineering",
     "family": "Generative Models Diffusion Systems",
-    "summary": "A documented Diffusion Denoising Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
-    "technologies": [],
+    "summary": "Project 32 implements a compact Denoising Diffusion Probabilistic Model from its equations to a reproducible DDPM/DDIM evidence workflow. The runner uses repository-owned PyTorch schedules, forward/reverse equations, time-conditioned U-Net, EMA and sampler contracts. No pretra…",
+    "technologies": [
+      "React",
+      "Python",
+      "PyTorch"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 141,
+      "code": 59,
+      "tests": 27,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/34-diffusion-denoising-foundations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/32-diffusion-from-scratch-mini-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-diffusion-denoising-foundations-lab",
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-diffusion-from-scratch-mini-lab",
     "roadmapNumber": 6,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-22-document-vision-ocr-extractor",
@@ -1174,7 +1172,7 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 567,
+      "files": 572,
       "code": 46,
       "tests": 65,
       "notebooks": 0
@@ -1186,6 +1184,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-document-vision-ocr-extractor",
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
+    "liveUrl": "https://4pmxw3wqyo5c3aajxegkdox6bm0lmgrn.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://4pmxw3wqyo5c3aajxegkdox6bm0lmgrn.lambda-url.us-east-1.on.aws/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-04/22-document-vision-ocr-extractor/01-overview.png",
@@ -1385,6 +1385,37 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "GCP"
   },
   {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-26-enterprise-rag-with-citations",
+    "title": "Enterprise Citation Console",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 26 of the AI Engineer path is an authorization-first, multi-tenant RAG qualification system. It reduces the corpus to evidence visible to the authenticated identity before retrieval or reranking, produces claim-linked citations, verifies each source structurally and ab…",
+    "technologies": [
+      "React",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 149,
+      "code": 43,
+      "tests": 14,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/26-enterprise-rag-with-citations",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/26-enterprise-rag-with-citations",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-software-engineer-final-ai-quantum-robotics-software-platform-12-ai-quantum-robotics-platform-portal",
     "title": "Final AI Quantum Robotics Platform",
     "category": "Software Engineering",
@@ -1448,93 +1479,63 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Leisure/03-machine-learning-pipelines"
   },
   {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-33-gan-image-generation-lab",
-    "title": "GAN Image Generation Lab",
-    "category": "AI Engineering",
-    "family": "Generative Models Diffusion Systems",
-    "summary": "A documented GAN Image Generation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/33-gan-image-generation-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-gan-image-generation-lab",
-    "roadmapNumber": 6,
-    "cloudFocus": "AWS"
-  },
-  {
     "id": "path-software-engineer-generative-ai-control-platform-06-generative-ai-control-platform",
     "title": "Generative AI Control Platform",
     "category": "Software Engineering",
     "family": "Generative AI Control Platform",
-    "summary": "A product-platform blueprint translating Generative AI Control Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "Project 6 of the Software Engineer path converts controlled Generative AI evidence into a product with explicit contracts, durable metadata and responsible interpretation boundaries.",
     "technologies": [
-      "Docker"
+      "Python",
+      "ASP.NET Core",
+      "PostgreSQL",
+      "Docker",
+      "PyTorch"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 3250,
+      "code": 124,
+      "tests": 378,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Generative-AI-Control-Platform/tree/main/06-generative-ai-control-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform",
     "roadmapNumber": 6,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://d4nv0cxcyxmp4.cloudfront.net/",
+    "apiUrl": "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html"
   },
   {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-36-generative-ai-evaluation-suite",
-    "title": "Generative AI Evaluation Suite",
+    "id": "path-ai-engineer-generative-models-diffusion-systems-36-generative-media-safety-eval-suite",
+    "title": "Generative Media Safety Evaluation Suite",
     "category": "AI Engineering",
     "family": "Generative Models Diffusion Systems",
-    "summary": "A documented Generative AI Evaluation Suite blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/36-generative-ai-evaluation-suite",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite",
-    "roadmapNumber": 6,
-    "cloudFocus": "AWS"
-  },
-  {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-31-generative-models-foundations-lab",
-    "title": "Generative Models Foundations Lab",
-    "category": "AI Engineering",
-    "family": "Generative Models Diffusion Systems",
-    "summary": "A documented Generative Models Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
+    "summary": "Project 36 closes Plan 6 with a reproducible, policy-first system for evaluating image generators. It measures safety and utility together, preserves uncertainty, routes ambiguous cases to human review, and emits a traceable release decision without exposing restricted prompts…",
     "technologies": [
-      "RAG",
-      "LLMs"
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "PyTorch"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 383,
+      "code": 52,
+      "tests": 60,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/31-generative-models-foundations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/36-generative-media-safety-eval-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/31-generative-models-foundations-lab",
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-media-safety-eval-suite",
     "roadmapNumber": 6,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-64-human-robot-interaction-safety-lab",
@@ -1645,6 +1646,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-01-p05-inventory-dashboard-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-01-p05-inventory-api-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-01/05-inventory-optimization-ml-service/capture00001.png",
@@ -1700,6 +1703,32 @@ window.PORTFOLIO_PROJECTS = [
     "path": "University/01-portfolio-projects/electrocorp-enterprise-platform-suite/java-fundamentals-course-electrocorp"
   },
   {
+    "id": "path-ai-engineer-generative-models-diffusion-systems-31-vae-gan-foundations-lab",
+    "title": "Latent Generative Observatory",
+    "category": "AI Engineering",
+    "family": "Generative Models Diffusion Systems",
+    "summary": "Project 31 opens Plan 6 with a reproducible comparison of five objectives on Fashion-MNIST: deterministic autoencoder, VAE, beta-VAE, DCGAN and WGAN-GP. The product is a read-only observatory built from immutable run bundles; it never trains a model in a web request.",
+    "technologies": [
+      "React",
+      "Python"
+    ],
+    "signals": {
+      "files": 1176,
+      "code": 49,
+      "tests": 210,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/31-vae-gan-foundations-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/31-vae-gan-foundations-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-ai-engineer-deep-learning-core-11-autoencoder-representation-lab",
     "title": "Latent Representation Lab",
     "category": "AI Engineering",
@@ -1724,7 +1753,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -1779,53 +1808,31 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Leisure/02-machine-learning-labs/model-benchmarking"
   },
   {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-30-llm-evaluation-guardrails-mcp-suite",
-    "title": "LLM Evaluation Guardrails MCP Suite",
+    "id": "path-ai-engineer-generative-models-diffusion-systems-34-lora-finetuning-concept-lab",
+    "title": "LoRA Adaptation Bench",
     "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented LLM Evaluation Guardrails MCP Suite blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
+    "family": "Generative Models Diffusion Systems",
+    "summary": "Project 34 of the AI Engineer path is an evidence-first laboratory for Low-Rank Adaptation over Stable Diffusion 1.5. It asks a narrow question: how much domain adaptation does each rank buy per trainable parameter, and what does it cost in retention, diversity, memory risk an…",
     "technologies": [
-      "LangGraph",
-      "RAG",
-      "LLMs"
+      "React",
+      "Python",
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
+      "files": 236,
+      "code": 49,
+      "tests": 30,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/30-llm-evaluation-guardrails-mcp-suite",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/34-lora-finetuning-concept-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/30-llm-evaluation-guardrails-mcp-suite",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
-  },
-  {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-28-llm-tool-use-function-calling-lab",
-    "title": "LLM Tool Use Function Calling Lab",
-    "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented LLM Tool Use Function Calling Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
-    "technologies": [
-      "RAG",
-      "LLMs"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/28-llm-tool-use-function-calling-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/28-llm-tool-use-function-calling-lab",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-lora-finetuning-concept-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "leisure-02-machine-learning-labs",
@@ -1845,6 +1852,35 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "orange",
     "path": "Leisure/02-machine-learning-labs"
+  },
+  {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-28-mcp-tool-server-lab",
+    "title": "MCP Protocol Observatory",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 28 of the AI Engineer path is a protocol-first laboratory for Model Context Protocol 2026-07-28. It exposes a deterministic HarborOps operations snapshot through tools, resources, resource templates and prompts, then verifies equivalent semantics over direct dispatch,…",
+    "technologies": [
+      "React",
+      "Python",
+      "Docker",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 241,
+      "code": 45,
+      "tests": 39,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/28-mcp-tool-server-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/28-mcp-tool-server-lab",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/docs"
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-68-multiservice-ai-platform-core",
@@ -1895,6 +1931,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/07-neural-network-foundations-lab",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-02-p07-neural-foundations-lab-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-02-p07-neural-foundations-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-02/07-neural-network-foundations-lab/01-experiment-overview.png",
@@ -1963,6 +2001,35 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-25-personal-document-rag-system",
+    "title": "Personal Knowledge Desk",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 25 of the AI Engineer path is a local-first retrieval-augmented generation system for personal documents. It treats parsing, retrieval, grounding, citations, abstention and privacy as separate, testable contracts.",
+    "technologies": [
+      "React",
+      "Python",
+      "Docker",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 424,
+      "code": 58,
+      "tests": 55,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/25-personal-document-rag-system",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/25-personal-document-rag-system",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-19-image-classification-api",
     "title": "Pet Breed Classification Studio",
     "category": "AI Engineering",
@@ -1977,7 +2044,7 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 493,
+      "files": 496,
       "code": 45,
       "tests": 49,
       "notebooks": 0
@@ -1989,6 +2056,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api",
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
+    "liveUrl": "https://bfrfpilgexeu7u5yzg7rjgwtqe0zembl.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://bfrfpilgexeu7u5yzg7rjgwtqe0zembl.lambda-url.us-east-1.on.aws/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-04/19-image-classification-api/01-overview.png",
@@ -2110,6 +2179,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/08-pytorch-regression-classification-api",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-02-p08-pytorch-tabular-studio-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-02-p08-pytorch-tabular-studio-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-02/08-pytorch-regression-classification-api/overview-desktop-1440.png",
@@ -2554,52 +2625,34 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-software-engineer-rag-agentic-software-platform-05-rag-agent-workflow-platform",
-    "title": "RAG Agent Workflow Platform",
+    "title": "RAG & Agent Workflow Platform",
     "category": "Software Engineering",
     "family": "RAG Agentic Software Platform",
-    "summary": "A product-platform blueprint translating RAG Agent Workflow Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "Project 05 of the Software Engineer path is a modular platform for trustworthy retrieval and observable agent workflows. It turns controlled documents into resolvable search evidence, measures retrieval behavior under comparable experiments, and executes one bounded read-only…",
     "technologies": [
+      "NestJS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
       "LangGraph",
-      "RAG",
-      "LLMs"
+      "RAG"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 342,
+      "code": 191,
+      "tests": 47,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-Software-Engineer/RAG-Agents-Tooling-Apps/tree/main/05-rag-agent-workflow-platform",
+    "status": "Implementation",
+    "url": "https://github.com/Path-Software-Engineer/RAG-Agentic-Software-Platform/tree/main/05-rag-agent-workflow-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/RAG-Agentic-Software-Platform/05-rag-agent-workflow-platform",
     "roadmapNumber": 5,
-    "cloudFocus": "AWS"
-  },
-  {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-26-rag-document-assistant",
-    "title": "RAG Document Assistant",
-    "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented RAG Document Assistant blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
-    "technologies": [
-      "RAG",
-      "LLMs"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/26-rag-document-assistant",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/26-rag-document-assistant",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
+    "cloudFocus": "AWS",
+    "liveUrl": "https://d3fm03zlz7v223.cloudfront.net/",
+    "apiUrl": "https://d3fm03zlz7v223.cloudfront.net/api/docs"
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-15-recommender-system-api",
@@ -2627,7 +2680,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -2686,6 +2739,37 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "Azure"
   },
   {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-30-multi-agent-repository-assistant",
+    "title": "Repository Intelligence Studio",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 30 is the Plan 5 integrator: an evidence-first multi-agent repository qualification system. ForgeGuard Repository Sandbox contains four frozen, synthetic repositories; RepoPilot Team coordinates a supervisor and five specialists through typed handoffs, scoped context a…",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 5824,
+      "code": 159,
+      "tests": 594,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/30-multi-agent-repository-assistant",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/30-multi-agent-repository-assistant",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/app/overview",
+    "apiUrl": "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api",
     "title": "Retail Demand Prediction API",
     "category": "AI Engineering",
@@ -2710,6 +2794,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-01-p01-retail-demand-lab-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-01-p01-retail-demand-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-01/01-retail-demand-prediction-api/capture00001.png",
@@ -2755,7 +2841,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
-    "liveUrl": "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
+    "liveUrl": "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app/",
     "apiUrl": "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs",
     "gallery": [
       {
@@ -2991,7 +3077,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
     "roadmapNumber": 1,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -3027,31 +3113,6 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-25-semantic-search-embeddings-api",
-    "title": "Semantic Search Embeddings API",
-    "category": "AI Engineering",
-    "family": "LLMs RAG Agents Agentic Systems",
-    "summary": "A documented Semantic Search Embeddings API blueprint defining the experiment, modules, evaluation signals and known limitations inside LLMs RAG Agents Agentic Systems.",
-    "technologies": [
-      "FastAPI",
-      "RAG",
-      "LLMs"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/25-semantic-search-embeddings-api",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/25-semantic-search-embeddings-api",
-    "roadmapNumber": 5,
-    "cloudFocus": "AWS"
-  },
-  {
     "id": "path-ai-engineer-deep-learning-core-10-sequence-models-rnn-lstm-lab",
     "title": "Sequence Memory Lab",
     "category": "AI Engineering",
@@ -3065,9 +3126,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 730,
+      "files": 764,
       "code": 73,
-      "tests": 137,
+      "tests": 138,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3077,6 +3138,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-02-p10-sequence-memory-lab-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-02-p10-sequence-memory-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-02/10-sequence-models-rnn-lstm-lab/01-overview.png",
@@ -3111,6 +3174,35 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "path-ai-engineer-generative-models-diffusion-systems-33-stable-diffusion-app-lab",
+    "title": "Stable Diffusion Production Studio",
+    "category": "AI Engineering",
+    "family": "Generative Models Diffusion Systems",
+    "summary": "A local-first image generation and editing system built around Stable Diffusion XL. It treats inference as an asynchronous, auditable job—not as a prompt wired directly to a model.",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "signals": {
+      "files": 114,
+      "code": 38,
+      "tests": 21,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/33-stable-diffusion-app-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-stable-diffusion-app-lab",
+    "roadmapNumber": 6,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/",
+    "apiUrl": "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-segmentation-quality-control-lab",
     "title": "Surface Quality Control Lab",
     "category": "AI Engineering",
@@ -3123,7 +3215,7 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 580,
+      "files": 582,
       "code": 62,
       "tests": 98,
       "notebooks": 0
@@ -3135,6 +3227,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab",
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
+    "liveUrl": "https://fwnivrqjijm7ha442fmskohfji0aameu.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://fwnivrqjijm7ha442fmskohfji0aameu.lambda-url.us-east-1.on.aws/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-04/21-segmentation-quality-control-lab/01-overview.png",
@@ -3169,6 +3263,36 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "path-ai-engineer-llms-rag-agents-agentic-systems-27-langgraph-tool-agent",
+    "title": "Tool Agent Control Room",
+    "category": "AI Engineering",
+    "family": "LLMs RAG Agents Agentic Systems",
+    "summary": "Project 27 is a governed incident-investigation lab for the synthetic AtlasOps platform. It demonstrates a single agent that may propose tool calls while the application retains authority over validation, permissions, budgets, approvals, execution, evidence, and termination.",
+    "technologies": [
+      "React",
+      "Python",
+      "Docker",
+      "LangGraph",
+      "RAG",
+      "LLMs"
+    ],
+    "signals": {
+      "files": 851,
+      "code": 49,
+      "tests": 133,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/tree/main/27-langgraph-tool-agent",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/27-langgraph-tool-agent",
+    "roadmapNumber": 5,
+    "cloudFocus": "AWS",
+    "liveUrl": "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/app/",
+    "apiUrl": "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
     "id": "path-ai-engineer-deep-learning-core-12-transformer-from-architecture-foundations-lab",
     "title": "Transformer Architecture Lab",
     "category": "AI Engineering",
@@ -3195,7 +3319,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab",
     "roadmapNumber": 2,
     "cloudFocus": "GCP",
-    "liveUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
+    "liveUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/",
     "apiUrl": "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
@@ -3243,9 +3367,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 3189,
+      "files": 3394,
       "code": 86,
-      "tests": 754,
+      "tests": 843,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3255,6 +3379,8 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Advanced-ML-Backgrounds/13-unsupervised-learning-lab-suite",
     "roadmapNumber": 3,
     "cloudFocus": "GCP",
+    "liveUrl": "https://ai-03-p13-unsupervised-learning-lab-1088743147874.us-central1.run.app/",
+    "apiUrl": "https://ai-03-p13-unsupervised-learning-lab-1088743147874.us-central1.run.app/docs",
     "gallery": [
       {
         "src": "assets/project-captures/ai-engineer/plan-03/13-unsupervised-learning-lab-suite/01-overview.png",
@@ -3287,27 +3413,6 @@ window.PORTFOLIO_PROJECTS = [
         "caption": "The report preserves configuration, dataset lineage, stability, warnings and the locked external-audit boundary."
       }
     ]
-  },
-  {
-    "id": "path-ai-engineer-generative-models-diffusion-systems-32-variational-autoencoder-lab",
-    "title": "Variational Autoencoder Lab",
-    "category": "AI Engineering",
-    "family": "Generative Models Diffusion Systems",
-    "summary": "A documented Variational Autoencoder Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Generative Models Diffusion Systems.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Generative-Models-Diffusion-Systems/tree/main/32-variational-autoencoder-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-variational-autoencoder-lab",
-    "roadmapNumber": 6,
-    "cloudFocus": "AWS"
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-50-variational-quantum-classifier-lab",
@@ -3358,7 +3463,7 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform",
     "roadmapNumber": 4,
     "cloudFocus": "AWS",
-    "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net",
+    "liveUrl": "https://d12p4ywh8pvfjo.cloudfront.net/",
     "apiUrl": "https://d12p4ywh8pvfjo.cloudfront.net/api/docs",
     "gallery": [
       {

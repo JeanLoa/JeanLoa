@@ -389,119 +389,58 @@ const cloudFocusByRoadmap = new Map([
   [10, "GCP"], [11, "AWS"], [12, "Azure"]
 ]);
 
+const deploymentLinks = (liveUrl, apiUrl) => ({ liveUrl, apiUrl });
 const publicProjectLinks = new Map([
-  [
-    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api",
-    {
-      liveUrl: "https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api",
-    {
-      liveUrl: "https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform",
-    {
-      liveUrl: "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier",
-    {
-      liveUrl: "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab",
-    {
-      liveUrl: "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab",
-    {
-      liveUrl: "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api",
-    {
-      liveUrl: "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting",
-    {
-      liveUrl: "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app",
-      apiUrl: "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab",
-    {
-      liveUrl: "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/",
-      apiUrl: "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection",
-    {
-      liveUrl: "https://d4iau0xa5tbzq.cloudfront.net/app/",
-      apiUrl: "https://d4iau0xa5tbzq.cloudfront.net/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-vision-language-search-assistant",
-    {
-      liveUrl: "https://dv1vtt2v6aeny.cloudfront.net/app/",
-      apiUrl: "https://dv1vtt2v6aeny.cloudfront.net/docs"
-    }
-  ],
-  [
-    "Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab",
-    {
-      liveUrl: "https://d1sb1ox4sh9pff.cloudfront.net/app/",
-      apiUrl: "https://d1sb1ox4sh9pff.cloudfront.net/docs"
-    }
-  ],
-  [
-    "Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform",
-    {
-      liveUrl: "https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app",
-      apiUrl: "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs"
-    }
-  ],
-  [
-    "Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform",
-    {
-      liveUrl: "https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app",
-      apiUrl: "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs"
-    }
-  ],
-  [
-    "Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform",
-    {
-      liveUrl: "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app",
-      apiUrl: "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html"
-    }
-  ],
-  [
-    "Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform",
-    {
-      liveUrl: "https://d12p4ywh8pvfjo.cloudfront.net",
-      apiUrl: "https://d12p4ywh8pvfjo.cloudfront.net/api/docs"
-    }
-  ]
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/01-retail-demand-prediction-api", deploymentLinks("https://ai-01-p01-retail-demand-lab-1088743147874.us-central1.run.app/", "https://ai-01-p01-retail-demand-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/02-sales-forecasting-dashboard-api", deploymentLinks("https://ai-01-p02-sales-forecast-dashboard-1088743147874.us-central1.run.app/", "https://ai-01-p02-sales-forecast-api-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/03-classical-model-comparison-suite", deploymentLinks("https://ai-01-p03-model-comparison-suite-1088743147874.us-central1.run.app/", "https://ai-01-p03-model-comparison-suite-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/04-customer-segmentation-and-churn-api", deploymentLinks("https://ai-01-p04-customer-intel-dashboard-1088743147874.us-central1.run.app/", "https://ai-01-p04-customer-intel-api-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/05-inventory-optimization-ml-service", deploymentLinks("https://ai-01-p05-inventory-dashboard-1088743147874.us-central1.run.app/", "https://ai-01-p05-inventory-api-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Machine-Learning-Engineering-Software-Foundations/06-ai-software-foundations-platform", deploymentLinks("https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/", "https://ai-01-p06-ai-foundations-platform-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/07-neural-network-foundations-lab", deploymentLinks("https://ai-02-p07-neural-foundations-lab-1088743147874.us-central1.run.app/", "https://ai-02-p07-neural-foundations-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/08-pytorch-regression-classification-api", deploymentLinks("https://ai-02-p08-pytorch-tabular-studio-1088743147874.us-central1.run.app/", "https://ai-02-p08-pytorch-tabular-studio-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/09-cnn-foundations-image-classifier", deploymentLinks("https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/", "https://ai-02-p09-cnn-vision-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/10-sequence-models-rnn-lstm-lab", deploymentLinks("https://ai-02-p10-sequence-memory-lab-1088743147874.us-central1.run.app/", "https://ai-02-p10-sequence-memory-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/11-autoencoder-representation-lab", deploymentLinks("https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/", "https://ai-02-p11-latent-representation-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Deep-Learning-Core/12-transformer-from-architecture-foundations-lab", deploymentLinks("https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/", "https://ai-02-p12-transformer-architecture-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/13-unsupervised-learning-lab-suite", deploymentLinks("https://ai-03-p13-unsupervised-learning-lab-1088743147874.us-central1.run.app/", "https://ai-03-p13-unsupervised-learning-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/14-anomaly-detection-monitor", deploymentLinks("https://ai-03-p14-anomaly-detection-monitor-1088743147874.us-central1.run.app/", "https://ai-03-p14-anomaly-detection-monitor-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/15-recommender-system-api", deploymentLinks("https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/", "https://ai-03-p15-recommendation-studio-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/16-causal-promotion-effect-lab", deploymentLinks("https://ai-03-p16-causal-promotion-lab-1088743147874.us-central1.run.app/", "https://ai-03-p16-causal-promotion-lab-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/17-probabilistic-demand-forecasting", deploymentLinks("https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/", "https://ai-03-p17-demand-uncertainty-studio-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Advanced-ML-Backgrounds/18-automl-meta-learning-benchmark-lab", deploymentLinks("https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/", "https://ai-03-p18-automl-meta-benchmark-1088743147874.us-central1.run.app/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/19-image-classification-api", deploymentLinks("https://bfrfpilgexeu7u5yzg7rjgwtqe0zembl.lambda-url.us-east-1.on.aws/app/", "https://bfrfpilgexeu7u5yzg7rjgwtqe0zembl.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/20-retail-shelf-object-detection", deploymentLinks("https://d4iau0xa5tbzq.cloudfront.net/app/", "https://d4iau0xa5tbzq.cloudfront.net/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/21-segmentation-quality-control-lab", deploymentLinks("https://fwnivrqjijm7ha442fmskohfji0aameu.lambda-url.us-east-1.on.aws/app/", "https://fwnivrqjijm7ha442fmskohfji0aameu.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/22-document-vision-ocr-extractor", deploymentLinks("https://4pmxw3wqyo5c3aajxegkdox6bm0lmgrn.lambda-url.us-east-1.on.aws/app/", "https://4pmxw3wqyo5c3aajxegkdox6bm0lmgrn.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/23-vision-language-search-assistant", deploymentLinks("https://dv1vtt2v6aeny.cloudfront.net/app/", "https://dv1vtt2v6aeny.cloudfront.net/docs")],
+  ["Path-AI-Engineer/Computer-Vision-Multimodal-AI-Edge-Optimization/24-edge-vision-optimization-lab", deploymentLinks("https://d1sb1ox4sh9pff.cloudfront.net/app/", "https://d1sb1ox4sh9pff.cloudfront.net/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/25-personal-document-rag-system", deploymentLinks("https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/app/", "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/26-enterprise-rag-with-citations", deploymentLinks("https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/app/", "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/27-langgraph-tool-agent", deploymentLinks("https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/app/", "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/28-mcp-tool-server-lab", deploymentLinks("https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/app/", "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/29-agent-security-redteam-lab", deploymentLinks("https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/app/", "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/LLMs-RAG-Agents-Agentic-Systems/30-multi-agent-repository-assistant", deploymentLinks("https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/app/overview", "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/31-vae-gan-foundations-lab", deploymentLinks("https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/", "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-diffusion-from-scratch-mini-lab", deploymentLinks("https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/", "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-stable-diffusion-app-lab", deploymentLinks("https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/", "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-lora-finetuning-concept-lab", deploymentLinks("https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/", "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-controlnet-guided-generation-lab", deploymentLinks("https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/", "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-media-safety-eval-suite", deploymentLinks("https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/", "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform", deploymentLinks("https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app/", "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs")],
+  ["Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform", deploymentLinks("https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app/", "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs")],
+  ["Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform", deploymentLinks("https://sf-03-advanced-ml-web-1069123053246.us-central1.run.app/", "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html")],
+  ["Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform", deploymentLinks("https://d12p4ywh8pvfjo.cloudfront.net/", "https://d12p4ywh8pvfjo.cloudfront.net/api/docs")],
+  ["Path-Software-Engineer/RAG-Agentic-Software-Platform/05-rag-agent-workflow-platform", deploymentLinks("https://d3fm03zlz7v223.cloudfront.net/", "https://d3fm03zlz7v223.cloudfront.net/api/docs")],
+  ["Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform", deploymentLinks("https://d4nv0cxcyxmp4.cloudfront.net/", "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html")]
+]);
+
+const supersededProjectPaths = new Set([
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-variational-autoencoder-lab",
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-gan-image-generation-lab",
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-diffusion-denoising-foundations-lab",
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-conditioned-generation-control-lab",
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite"
 ]);
 
 for (const collection of collections) {
@@ -511,7 +450,12 @@ for (const collection of collections) {
     const repositoryPath = join(collectionPath, repository.name);
     const baseUrl = await repositoryUrl(repositoryPath, `https://github.com/${collection.org}/${repository.name}`);
     const entries = await readdir(repositoryPath, { withFileTypes: true });
-    const numberedCandidates = entries.filter(entry => entry.isDirectory() && /^\d{2}-/.test(entry.name));
+    const numberedCandidates = entries.filter(entry => {
+      const relativeProjectPath = `${collection.base}/${repository.name}/${entry.name}`;
+      return entry.isDirectory()
+        && /^\d{2}-/.test(entry.name)
+        && !supersededProjectPaths.has(relativeProjectPath);
+    });
     const candidatesByNumber = new Map();
     for (const entry of numberedCandidates) {
       const projectNumber = entry.name.slice(0, 2);

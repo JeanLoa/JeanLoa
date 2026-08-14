@@ -254,6 +254,107 @@
       .join("");
   }
 
+  function cloudProviderMark(project) {
+    if (project.cloudFocus === "GCP") {
+      const gradientId = `gcp-${String(project.id).replace(/[^a-z0-9_-]/gi, "-")}`;
+      return `
+        <svg class="project-card__cloud-mark project-card__cloud-mark--gcp" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="${gradientId}" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#4285f4"></stop>
+              <stop offset="0.34" stop-color="#34a853"></stop>
+              <stop offset="0.67" stop-color="#fbbc05"></stop>
+              <stop offset="1" stop-color="#ea4335"></stop>
+            </linearGradient>
+          </defs>
+          <path fill="url(#${gradientId})" d="M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006-.007-.007.03a6.717 6.717 0 0 0 4.077 1.356h5.173l.03.03h5.192c6.687.053 9.376-8.605 3.835-12.35a9.365 9.365 0 0 0-2.821-4.552l-.043.043.006-.05A9.344 9.344 0 0 0 12.19 2.38zm-.358 4.146c1.244-.04 2.518.368 3.486 1.15a5.186 5.186 0 0 1 1.862 4.078v.518c3.53-.07 3.53 5.262 0 5.193h-5.193l-.008.009v-.04H6.785a2.59 2.59 0 0 1-1.067-.23h.001a2.597 2.597 0 1 1 3.437-3.437l3.013-3.012A6.747 6.747 0 0 0 8.11 8.24c.018-.01.04-.026.054-.023a5.186 5.186 0 0 1 3.67-1.69z"></path>
+        </svg>
+      `;
+    }
+
+    if (project.cloudFocus === "AWS") {
+      return `
+        <svg class="project-card__cloud-mark project-card__cloud-mark--aws" viewBox="0 0 42 24" aria-hidden="true" focusable="false">
+          <text x="2" y="15">aws</text>
+          <path d="M7 18.2c7.7 4.4 19.7 4.1 28-.7"></path>
+          <path d="m31.8 16 3.8 1.1-1.3 3.6"></path>
+        </svg>
+      `;
+    }
+
+    return `
+      <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="3" y="4" width="18" height="16" rx="1"></rect>
+        <path d="M3 9h18M7 6.5h.01M10 6.5h.01"></path>
+      </svg>
+    `;
+  }
+
+  function projectActionsMarkup(project) {
+    const provider = (project.liveUrl || project.apiUrl) && ["GCP", "AWS"].includes(project.cloudFocus)
+      ? project.cloudFocus.toLowerCase()
+      : "";
+    const actions = [];
+
+    if (project.liveUrl) {
+      actions.push(`
+        <a
+          class="project-card__action project-card__action--app"
+          href="${escapeHtml(project.liveUrl)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open ${escapeHtml(project.title)} application in a new tab"
+        >
+          ${cloudProviderMark(project)}
+          <span>APP</span>
+        </a>
+      `);
+    }
+
+    if (project.apiUrl) {
+      actions.push(`
+        <a
+          class="project-card__action project-card__action--api"
+          href="${escapeHtml(project.apiUrl)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open ${escapeHtml(project.title)} API documentation in a new tab"
+        >
+          <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m9 7-5 5 5 5M15 7l5 5-5 5M14 4l-4 16"></path>
+          </svg>
+          <span>API</span>
+        </a>
+      `);
+    }
+
+    actions.push(`
+      <button
+        class="project-card__action project-card__action--view"
+        type="button"
+        data-project-id="${escapeHtml(project.id)}"
+        aria-label="View ${escapeHtml(project.title)} case study"
+      >
+        <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+          <circle cx="12" cy="12" r="2.5"></circle>
+        </svg>
+        <span>VIEW</span>
+      </button>
+    `);
+
+    return `
+      <div
+        class="project-card__actions${actions.length === 1 ? " is-single" : ""}"
+        ${provider ? `data-cloud="${provider}"` : ""}
+        style="--project-action-count: ${actions.length}"
+        aria-label="Project actions"
+      >
+        ${actions.join("")}
+      </div>
+    `;
+  }
+
   function projectSignalsMarkup(project) {
     const signals = project.signals || {};
     const gallery = projectGallery(project);
@@ -320,15 +421,7 @@
           ${projectSignalsMarkup(project)}
           <div class="project-card__footer">
             ${statusMarkup(project)}
-            <button
-              class="project-card__open"
-              type="button"
-              data-project-id="${escapeHtml(project.id)}"
-              aria-label="View ${escapeHtml(project.title)} case study"
-            >
-              ${gallery.length ? "View case + captures" : "View case study"}
-              <span aria-hidden="true">↗</span>
-            </button>
+            ${projectActionsMarkup(project)}
           </div>
         </div>
       </article>
