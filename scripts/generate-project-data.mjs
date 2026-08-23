@@ -206,7 +206,31 @@ async function repositoryUrl(directory, fallback) {
   }
 }
 
+const alfalfaEvidence = await projectEvidenceFor(join(root, "alfalfa"));
+
 const curated = [
+  {
+    id: "venturseed-alfalfa",
+    title: "Alfalfa",
+    eyebrow: "VenturSeed / AI Internship",
+    category: "Internships",
+    organization: "VenturSeed",
+    sequence: "01",
+    family: "AI Product Engineering Internship",
+    summary: "A lightweight bilingual AI assistant and inspectable coding agent that keeps model routing, evidence and workspace actions visible to the user.",
+    challenge: "Turn conversational and coding assistance into an efficient, explainable product without hiding tool use, evidence or workspace changes behind opaque automation.",
+    solution: "An Angular Studio and Python runtime connect grounded retrieval, web research, attachments, deliberate model routing and approval-gated reversible coding workflows.",
+    architecture: ["Angular Studio experience", "Python assistant runtime", "Grounded retrieval and model routing", "Approval-gated coding workflows"],
+    capabilities: ["Bilingual conversations and cited retrieval", "Files, web research and persistent workspaces", "Beta, Sigma, Alfa and Omega routing", "Reviewable patches, validation and safe undo"],
+    technologies: ["Angular", "TypeScript", "Python", "RAG", "LLMs", "Cloud Run"],
+    signals: alfalfaEvidence.signals,
+    status: "Active internship",
+    liveUrl: "https://alfalfa-1088743147874.us-central1.run.app/",
+    liveProvider: "GCP",
+    featured: false,
+    internship: true,
+    accent: "internship"
+  },
   {
     id: "decodelabs-decodebot",
     title: "DecodeBot Assistant",
@@ -328,6 +352,7 @@ const curated = [
     status: "Functional demo",
     url: "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/smartlocation-route-optimization-platform",
     liveUrl: "https://smartlocation.onrender.com",
+    liveProvider: "Render",
     featured: true,
     accent: "university",
     visual: "map"
@@ -349,6 +374,8 @@ const curated = [
     url: "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/lowcortisol-digital-health-platform",
     liveUrl: "https://university-lowcortisol.web.app",
     apiUrl: "https://lowcortisol-platform-y2umk6uzwq-ue.a.run.app/swagger/index.html",
+    liveProvider: "Firebase",
+    apiProvider: "GCP",
     featured: true,
     accent: "university",
     image: "assets/lowcortisol-reports.png"
@@ -370,6 +397,8 @@ const curated = [
     url: "https://github.com/JeanLoa/University/tree/main/01-portfolio-projects/electrocorp-enterprise-platform-suite",
     liveUrl: "https://university-electrocorp.web.app",
     apiUrl: "https://electrocorp-platform-vfvqevfzvq-ue.a.run.app/swagger-ui.html",
+    liveProvider: "Firebase",
+    apiProvider: "GCP",
     featured: true,
     accent: "university",
     image: "assets/electrocorp-home.jpg"

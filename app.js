@@ -12,7 +12,7 @@
       sectionId: "internships",
       label: "Organization",
       groupName: project => project.organization || "Internship",
-      groupOrder: new Map([["DecodeLabs", 1], ["SpotterAI", 2]])
+      groupOrder: new Map([["VenturSeed", 1], ["DecodeLabs", 2], ["SpotterAI", 3]])
     },
     {
       category: "University",
@@ -159,9 +159,9 @@
 
   const projectStatus = project => {
     if (omitsStatus(project)) return null;
-    return /pending|blueprint|roadmap|development/i.test(rawProjectStatus(project))
-      ? "Pending"
-      : "Completed";
+    const source = rawProjectStatus(project);
+    if (/active|in progress/i.test(source)) return "Active";
+    return /pending|blueprint|roadmap|development/i.test(source) ? "Pending" : "Completed";
   };
 
   const isFeaturedProject = project => flagshipIds.includes(project.id);
@@ -254,9 +254,9 @@
       .join("");
   }
 
-  function cloudProviderMark(project) {
-    if (project.cloudFocus === "GCP") {
-      const gradientId = `gcp-${String(project.id).replace(/[^a-z0-9_-]/gi, "-")}`;
+  function cloudProviderMark(provider, markerId) {
+    if (provider === "GCP") {
+      const gradientId = `gcp-${String(markerId).replace(/[^a-z0-9_-]/gi, "-")}`;
       return `
         <svg class="project-card__cloud-mark project-card__cloud-mark--gcp" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <defs>
@@ -272,13 +272,43 @@
       `;
     }
 
-    if (project.cloudFocus === "AWS") {
+    if (provider === "AWS") {
       return `
         <svg class="project-card__cloud-mark project-card__cloud-mark--aws" viewBox="0 0 42 24" aria-hidden="true" focusable="false">
           <text x="2" y="15">aws</text>
           <path d="M7 18.2c7.7 4.4 19.7 4.1 28-.7"></path>
           <path d="m31.8 16 3.8 1.1-1.3 3.6"></path>
         </svg>
+      `;
+    }
+
+    if (provider === "Firebase") {
+      return `
+        <img
+          class="project-card__cloud-mark project-card__cloud-mark--firebase"
+          src="https://cdn.simpleicons.org/firebase/FFCA28"
+          alt=""
+          width="16"
+          height="16"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        />
+      `;
+    }
+
+    if (provider === "Render") {
+      return `
+        <img
+          class="project-card__cloud-mark project-card__cloud-mark--render"
+          src="https://cdn.simpleicons.org/render/46E3B7"
+          alt=""
+          width="16"
+          height="16"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        />
       `;
     }
 
@@ -291,21 +321,24 @@
   }
 
   function projectActionsMarkup(project) {
-    const provider = (project.liveUrl || project.apiUrl) && ["GCP", "AWS"].includes(project.cloudFocus)
-      ? project.cloudFocus.toLowerCase()
-      : "";
+    const defaultProvider = ["GCP", "AWS"].includes(project.cloudFocus) ? project.cloudFocus : "";
+    const liveProvider = project.liveProvider || defaultProvider;
+    const apiProvider = project.apiProvider || defaultProvider;
+    const providers = [...new Set([liveProvider, apiProvider].filter(Boolean))];
+    const provider = providers.length === 1 ? providers[0].toLowerCase() : "";
     const actions = [];
 
     if (project.liveUrl) {
       actions.push(`
         <a
           class="project-card__action project-card__action--app"
+          ${liveProvider ? `data-provider="${escapeHtml(liveProvider.toLowerCase())}"` : ""}
           href="${escapeHtml(project.liveUrl)}"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open ${escapeHtml(project.title)} application in a new tab"
         >
-          ${cloudProviderMark(project)}
+          ${cloudProviderMark(liveProvider, `${project.id}-app`)}
           <span>APP</span>
         </a>
       `);
@@ -315,14 +348,17 @@
       actions.push(`
         <a
           class="project-card__action project-card__action--api"
+          ${apiProvider ? `data-provider="${escapeHtml(apiProvider.toLowerCase())}"` : ""}
           href="${escapeHtml(project.apiUrl)}"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open ${escapeHtml(project.title)} API documentation in a new tab"
         >
-          <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="m9 7-5 5 5 5M15 7l5 5-5 5M14 4l-4 16"></path>
-          </svg>
+          ${apiProvider ? cloudProviderMark(apiProvider, `${project.id}-api`) : `
+            <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m9 7-5 5 5 5M15 7l5 5-5 5M14 4l-4 16"></path>
+            </svg>
+          `}
           <span>API</span>
         </a>
       `);
@@ -567,7 +603,7 @@
     root.innerHTML = categoryDefinitions.map((definition, index) => {
       const items = projects.filter(project => project.category === definition.category);
       const completed = items.filter(project => projectStatus(project) === "Completed").length;
-      const pending = items.filter(project => projectStatus(project) === "Pending").length;
+      const pending = items.filter(project => ["Active", "Pending"].includes(projectStatus(project))).length;
       const collections = groupProjects(definition, sortedProjects(definition.category)).length;
       const token = categoryTokens[definition.category];
       const share = (items.length / total) * 100;
@@ -1451,7 +1487,7 @@
   });
   document.querySelectorAll("[data-internship-pending]").forEach(node => {
     node.textContent = String(
-      internships.filter(project => projectStatus(project) === "Pending").length
+      internships.filter(project => ["Active", "Pending"].includes(projectStatus(project))).length
     ).padStart(2, "0");
   });
 

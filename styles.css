@@ -1570,6 +1570,49 @@
     stroke-linejoin: round;
   }
 
+  .project-card__cloud-mark--firebase,
+  .project-card__cloud-mark--render {
+    object-fit: contain;
+  }
+
+  .project-card__action[data-provider="firebase"] {
+    color: #fff6dc;
+    background:
+      linear-gradient(135deg, rgba(255, 202, 40, 0.28), rgba(255, 138, 0, 0.12) 52%, rgba(17, 17, 17, 0.96)),
+      #111;
+  }
+
+  .project-card__action[data-provider="firebase"]:hover,
+  .project-card__action[data-provider="firebase"]:focus-visible {
+    color: #16120a;
+    background: linear-gradient(135deg, #ffca28, #ff8a00);
+  }
+
+  .project-card__action[data-provider="render"] {
+    color: #d9fff7;
+    background: linear-gradient(135deg, rgba(70, 227, 183, 0.28), rgba(17, 17, 17, 0.96) 68%);
+  }
+
+  .project-card__action[data-provider="render"]:hover,
+  .project-card__action[data-provider="render"]:focus-visible {
+    color: #081713;
+    background: #46e3b7;
+  }
+
+  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"] {
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(66, 133, 244, 0.32), rgba(52, 168, 83, 0.16) 36%, rgba(251, 188, 5, 0.16) 68%, rgba(234, 67, 53, 0.28)),
+      #111;
+  }
+
+  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"]:hover,
+  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"]:focus-visible {
+    background:
+      linear-gradient(135deg, rgba(66, 133, 244, 0.58), rgba(52, 168, 83, 0.38) 36%, rgba(251, 188, 5, 0.32) 68%, rgba(234, 67, 53, 0.5)),
+      #111;
+  }
+
   .project-card__actions[data-cloud="gcp"] {
     background: linear-gradient(90deg, #4285f4 0%, #34a853 34%, #fbbc05 67%, #ea4335 100%);
     border-color: transparent;
