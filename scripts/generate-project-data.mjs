@@ -27,8 +27,10 @@ const skip = new Set([
   "node_modules", ".git", ".venv", "venv", ".runtime", ".tmp", ".vite",
   ".mypy_cache", ".ruff_cache", ".matplotlib", ".pip-build-tracker",
   ".pip-temp-day84", "dist", "build", "target", "coverage", ".angular",
-  ".pytest_cache", ".pytest_tmp", ".pytest-tmp"
+  ".pytest_cache", ".pytest_tmp", ".pytest-tmp", ".hypothesis", ".next",
+  ".validation-site", "__pycache__", "htmlcov", "playwright-report", "test-results"
 ]);
+const skipPrefixes = [".next-", ".validation-site-", "playwright-report-", "test-results-"];
 const techMatchers = [
   ["Angular", /\bangular\b/i], ["Vue", /\bvue(?:\.js| 3)?\b/i], ["React", /\breact\b/i], ["TypeScript", /\btypescript\b/i],
   ["JavaScript", /\bjavascript\b/i], ["C#", /\bc\s*(?:#|sharp\b)/i], ["Java", /\bjava\b(?!script)/i], ["Python", /\bpython\b/i],
@@ -112,7 +114,7 @@ async function walk(directory, found = []) {
     throw error;
   }
   for (const entry of entries) {
-    if (skip.has(entry.name)) continue;
+    if (skip.has(entry.name) || skipPrefixes.some(prefix => entry.name.startsWith(prefix))) continue;
     const full = join(directory, entry.name);
     if (entry.isDirectory()) await walk(full, found);
     else found.push(full);
@@ -456,20 +458,47 @@ const publicProjectLinks = new Map([
   ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-lora-finetuning-concept-lab", deploymentLinks("https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/", "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/docs")],
   ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-controlnet-guided-generation-lab", deploymentLinks("https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/", "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/docs")],
   ["Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-media-safety-eval-suite", deploymentLinks("https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/", "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/43-quantum-math-for-software-lab", deploymentLinks("https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/44-quantum-algorithms-playground", deploymentLinks("https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/45-quantum-gates-and-circuits-lab", deploymentLinks("https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/46-quantum-cloud-abstraction-layer", deploymentLinks("https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/47-quantum-optimization-basic-lab", deploymentLinks("https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/48-post-quantum-security-scanner-lite", deploymentLinks("https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-ml-model-zoo", deploymentLinks("https://p9-p49-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p49-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-quantum-kernel-benchmark", deploymentLinks("https://p9-p50-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p50-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-vqc-qsvm-comparison-suite", deploymentLinks("https://p9-p51-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p51-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-vqe-qaoa-advanced-optimization", deploymentLinks("https://p9-p52-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p52-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-error-mitigation-basics", deploymentLinks("https://p9-p53-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p53-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-workflow-platform", deploymentLinks("https://p9-p54-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9-p54-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
   ["Path-Software-Engineer/Applied-AI-Software-Platform/01-retail-intelligence-platform", deploymentLinks("https://sf-01-retail-intelligence-web-s3dd5t6azq-uc.a.run.app/", "https://sf-01-retail-intelligence-api-s3dd5t6azq-uc.a.run.app/docs")],
   ["Path-Software-Engineer/Deep-Learning-Software-Lab-Platform/02-deep-learning-visual-lab-platform", deploymentLinks("https://sf-02-deep-learning-visual-lab-web-s3dd5t6azq-uc.a.run.app/", "https://sf-02-deep-learning-visual-lab-api-s3dd5t6azq-uc.a.run.app/docs")],
   ["Path-Software-Engineer/Advanced-ML-Decision-Platform/03-advanced-ml-decision-platform", deploymentLinks("https://sf-03-advanced-ml-web-1069123053246.us-central1.run.app/", "https://sf-03-advanced-ml-api-1069123053246.us-central1.run.app/swagger-ui/index.html")],
   ["Path-Software-Engineer/Vision-Multimodal-AI-Platform/04-vision-multimodal-ai-platform", deploymentLinks("https://d12p4ywh8pvfjo.cloudfront.net/", "https://d12p4ywh8pvfjo.cloudfront.net/api/docs")],
   ["Path-Software-Engineer/RAG-Agentic-Software-Platform/05-rag-agent-workflow-platform", deploymentLinks("https://d3fm03zlz7v223.cloudfront.net/", "https://d3fm03zlz7v223.cloudfront.net/api/docs")],
-  ["Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform", deploymentLinks("https://d4nv0cxcyxmp4.cloudfront.net/", "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html")]
+  ["Path-Software-Engineer/Generative-AI-Control-Platform/06-generative-ai-control-platform", deploymentLinks("https://d4nv0cxcyxmp4.cloudfront.net/", "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html")],
+  ["Path-Software-Engineer/RL-Simulation-Software-Platform/07-rl-simulation-control-platform", deploymentLinks("https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs/")],
+  ["Path-Software-Engineer/Quantum-Foundations-Software-Platform/08-quantum-foundations-visual-platform", deploymentLinks("https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")],
+  ["Path-Software-Engineer/QML-Benchmark-Software-Platform/09-qml-benchmark-platform", deploymentLinks("https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/", "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs")]
 ]);
 
 const supersededProjectPaths = new Set([
+  "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Quantum-Foundations/44-quantum-algorithms-playground",
   "Path-AI-Engineer/Generative-Models-Diffusion-Systems/32-variational-autoencoder-lab",
   "Path-AI-Engineer/Generative-Models-Diffusion-Systems/33-gan-image-generation-lab",
   "Path-AI-Engineer/Generative-Models-Diffusion-Systems/34-diffusion-denoising-foundations-lab",
   "Path-AI-Engineer/Generative-Models-Diffusion-Systems/35-conditioned-generation-control-lab",
-  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite"
+  "Path-AI-Engineer/Generative-Models-Diffusion-Systems/36-generative-ai-evaluation-suite",
+  "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-q-learning-agent-lab",
+  "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-deep-q-network-gymnasium-lab",
+  "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-reward-design-and-agent-evaluation-lab",
+  "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-world-models-planning-mini-lab",
+  "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-robotics-simulation-control-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-data-encoding-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-variational-quantum-classifier-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-quantum-kernel-benchmark-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-qaoa-vqe-optimizer-comparison-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-noise-and-qml-limitations-lab",
+  "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-platform-blueprint"
 ]);
 
 for (const collection of collections) {

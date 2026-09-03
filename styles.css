@@ -1095,7 +1095,7 @@
 
   .hero-discovery:hover .hero-search-shell,
   .hero-discovery.is-open .hero-search-shell {
-    max-height: 5rem;
+    max-height: 8rem;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -1160,11 +1160,90 @@
     font-size: 0.58rem;
   }
 
+  .hero-search__controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.45rem;
+  }
+
   .hero-search__hint {
-    margin-top: 0.35rem;
+    margin: 0;
     color: rgba(255, 255, 255, 0.48);
     font-family: var(--mono);
     font-size: 0.5rem;
+  }
+
+  .focus-mode-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 0.65rem;
+    align-items: center;
+    min-height: 2.4rem;
+    padding: 0.35rem 0.45rem 0.35rem 0.7rem;
+    color: rgba(255, 255, 255, 0.72);
+    background: #090a09;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    cursor: pointer;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .focus-mode-toggle:hover,
+  .focus-mode-toggle:focus-visible,
+  .focus-mode-toggle[aria-checked="true"] {
+    color: #fff;
+    border-color: #b9a2ff;
+  }
+
+  .focus-mode-toggle__copy {
+    display: grid;
+    gap: 0.08rem;
+    text-align: left;
+  }
+
+  .focus-mode-toggle__copy strong,
+  .focus-mode-toggle__copy small {
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .focus-mode-toggle__copy small {
+    color: rgba(255, 255, 255, 0.48);
+  }
+
+  .focus-mode-toggle__track {
+    position: relative;
+    width: 2.25rem;
+    height: 1.2rem;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    transition: background-color 180ms ease, border-color 180ms ease;
+  }
+
+  .focus-mode-toggle__track i {
+    position: absolute;
+    top: 0.17rem;
+    left: 0.17rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transition: transform 220ms var(--ease), background-color 180ms ease;
+  }
+
+  .focus-mode-toggle[aria-checked="true"] .focus-mode-toggle__track {
+    background: rgba(185, 162, 255, 0.28);
+    border-color: #b9a2ff;
+  }
+
+  .focus-mode-toggle[aria-checked="true"] .focus-mode-toggle__track i {
+    background: #b9a2ff;
+    transform: translateX(1rem);
   }
 
   .hero-search__results {
@@ -1546,7 +1625,9 @@
   }
 
   .project-card__cloud-mark--gcp {
-    width: 1.05rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    overflow: visible;
   }
 
   .project-card__cloud-mark--aws {
@@ -1571,79 +1652,106 @@
   }
 
   .project-card__cloud-mark--firebase,
-  .project-card__cloud-mark--render {
+  .project-card__cloud-mark--render,
+  .project-card__cloud-mark--azure {
+    width: 1.15rem;
+    height: 1.15rem;
     object-fit: contain;
   }
 
-  .project-card__action[data-provider="firebase"] {
-    color: #fff6dc;
+  .project-card__action--app {
+    font-weight: 700;
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.52);
+  }
+
+  .project-card__action[data-provider] {
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  .project-card__action[data-provider="gcp"] {
     background:
-      linear-gradient(135deg, rgba(255, 202, 40, 0.28), rgba(255, 138, 0, 0.12) 52%, rgba(17, 17, 17, 0.96)),
+      linear-gradient(135deg, rgba(66, 133, 244, 0.34), rgba(52, 168, 83, 0.2) 36%, rgba(251, 188, 5, 0.18) 68%, rgba(234, 67, 53, 0.3)),
+      var(--ink);
+  }
+
+  .project-card__action[data-provider="aws"] {
+    background: linear-gradient(135deg, rgba(255, 211, 122, 0.18), rgba(255, 153, 0, 0.34) 54%, rgba(240, 106, 0, 0.2)), var(--ink);
+  }
+
+  .project-card__action[data-provider="firebase"] {
+    background: linear-gradient(135deg, rgba(255, 224, 130, 0.2), rgba(255, 202, 40, 0.32) 45%, rgba(255, 138, 0, 0.22)), var(--ink);
+  }
+
+  .project-card__action[data-provider="render"] {
+    background: linear-gradient(135deg, rgba(127, 244, 212, 0.18), rgba(70, 227, 183, 0.32) 42%, rgba(48, 169, 199, 0.22)), var(--ink);
+  }
+
+  .project-card__action[data-provider="azure"] {
+    background: linear-gradient(135deg, rgba(0, 120, 212, 0.4), rgba(0, 90, 158, 0.3) 55%, rgba(36, 58, 122, 0.3)), var(--ink);
+  }
+
+  .project-card__action[data-provider] .project-card__cloud-mark {
+    filter: grayscale(1) brightness(2.4);
+    opacity: 0.9;
+    transition:
+      filter 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .project-card__action[data-provider="gcp"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="gcp"]:focus-visible .project-card__cloud-mark,
+  .project-card__action[data-provider="azure"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="azure"]:focus-visible .project-card__cloud-mark {
+    filter: grayscale(1) brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+    opacity: 1;
+  }
+
+  .project-card__action[data-provider="aws"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="aws"]:focus-visible .project-card__cloud-mark,
+  .project-card__action[data-provider="firebase"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="firebase"]:focus-visible .project-card__cloud-mark,
+  .project-card__action[data-provider="render"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="render"]:focus-visible .project-card__cloud-mark {
+    filter: brightness(0) saturate(100%);
+    opacity: 0.9;
+  }
+
+  .project-card__action[data-provider="gcp"]:hover,
+  .project-card__action[data-provider="gcp"]:focus-visible {
+    color: #fff;
+    background:
+      linear-gradient(135deg, #4285f4, #34a853 36%, #fbbc05 68%, #ea4335),
       #111;
+  }
+
+  .project-card__action[data-provider="aws"]:hover,
+  .project-card__action[data-provider="aws"]:focus-visible {
+    color: #111;
+    background: linear-gradient(135deg, #ffd37a, #ff9900 54%, #f06a00);
   }
 
   .project-card__action[data-provider="firebase"]:hover,
   .project-card__action[data-provider="firebase"]:focus-visible {
     color: #16120a;
-    background: linear-gradient(135deg, #ffca28, #ff8a00);
-  }
-
-  .project-card__action[data-provider="render"] {
-    color: #d9fff7;
-    background: linear-gradient(135deg, rgba(70, 227, 183, 0.28), rgba(17, 17, 17, 0.96) 68%);
+    background: linear-gradient(135deg, #ffe082, #ffca28 45%, #ff8a00);
   }
 
   .project-card__action[data-provider="render"]:hover,
   .project-card__action[data-provider="render"]:focus-visible {
     color: #081713;
-    background: #46e3b7;
+    background: linear-gradient(135deg, #7ff4d4, #46e3b7 42%, #30a9c7);
   }
 
-  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"] {
+  .project-card__action[data-provider="azure"]:hover,
+  .project-card__action[data-provider="azure"]:focus-visible {
     color: #fff;
-    background:
-      linear-gradient(135deg, rgba(66, 133, 244, 0.32), rgba(52, 168, 83, 0.16) 36%, rgba(251, 188, 5, 0.16) 68%, rgba(234, 67, 53, 0.28)),
-      #111;
+    background: linear-gradient(135deg, #0078d4, #005a9e 55%, #243a7a);
   }
 
-  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"]:hover,
-  .project-card__actions:not([data-cloud]) .project-card__action[data-provider="gcp"]:focus-visible {
-    background:
-      linear-gradient(135deg, rgba(66, 133, 244, 0.58), rgba(52, 168, 83, 0.38) 36%, rgba(251, 188, 5, 0.32) 68%, rgba(234, 67, 53, 0.5)),
-      #111;
-  }
-
-  .project-card__actions[data-cloud="gcp"] {
-    background: linear-gradient(90deg, #4285f4 0%, #34a853 34%, #fbbc05 67%, #ea4335 100%);
-    border-color: transparent;
-  }
-
-  .project-card__actions[data-cloud="gcp"] .project-card__action {
-    color: #fff;
-    background:
-      linear-gradient(135deg, rgba(66, 133, 244, 0.24), rgba(52, 168, 83, 0.1) 35%, rgba(251, 188, 5, 0.1) 68%, rgba(234, 67, 53, 0.22)),
-      #111;
-  }
-
-  .project-card__actions[data-cloud="gcp"] .project-card__action:hover {
-    background:
-      linear-gradient(135deg, rgba(66, 133, 244, 0.48), rgba(52, 168, 83, 0.28) 35%, rgba(251, 188, 5, 0.24) 68%, rgba(234, 67, 53, 0.42)),
-      #111;
-  }
-
-  .project-card__actions[data-cloud="aws"] {
-    background: #ff9900;
-    border-color: #ff9900;
-  }
-
-  .project-card__actions[data-cloud="aws"] .project-card__action {
-    color: #fff;
-    background: linear-gradient(135deg, rgba(255, 153, 0, 0.22), rgba(17, 17, 17, 0.96) 68%);
-  }
-
-  .project-card__actions[data-cloud="aws"] .project-card__action:hover {
-    color: #111;
-    background: #ff9900;
+  .project-card__actions[data-cloud] {
+    background: var(--ink);
+    border-color: var(--ink);
   }
 
   .category-atlas {
@@ -2363,8 +2471,8 @@
     padding: 0 1.25rem 0 0;
   }
 
-  .project-card:hover .project-card__actions:not([data-cloud]) .project-card__action,
-  .project-card:focus-within .project-card__actions:not([data-cloud]) .project-card__action {
+  .project-card:hover .project-card__actions:not([data-cloud]) .project-card__action:not([data-provider]),
+  .project-card:focus-within .project-card__actions:not([data-cloud]) .project-card__action:not([data-provider]) {
     color: var(--ink);
     background: var(--accent);
     border-color: var(--accent);
@@ -3080,6 +3188,98 @@
 
   .dialog-links {
     margin-top: 3rem;
+  }
+
+  .dialog-link__label {
+    display: inline-flex;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .dialog-link[data-provider] .project-card__cloud-mark {
+    filter: grayscale(1) brightness(2.4);
+    opacity: 0.82;
+    transition:
+      filter 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .dialog-link[data-provider]:hover .project-card__cloud-mark,
+  .dialog-link[data-provider]:focus-visible .project-card__cloud-mark {
+    filter: none;
+    opacity: 1;
+  }
+
+  body[data-focus-mode="true"] .archive-screen .project-card__meta,
+  body[data-focus-mode="true"] .archive-screen .project-card__eyebrow,
+  body[data-focus-mode="true"] .archive-screen .project-card__signals,
+  body[data-focus-mode="true"] .flagship-card__index,
+  body[data-focus-mode="true"] .archive-screen .project-card__footer > .status-pill,
+  body[data-focus-mode="true"] .archive-screen .project-card__footer > .project-card__no-status {
+    display: none;
+  }
+
+  body[data-focus-mode="true"] .archive-screen .project-card__body {
+    gap: 0.9rem;
+  }
+
+  body[data-focus-mode="true"] .archive-screen .project-card__summary {
+    -webkit-line-clamp: 2;
+  }
+
+  body[data-focus-mode="true"] .flagship-card__body > p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  body[data-focus-mode="true"] .archive-screen .project-card__footer {
+    margin-top: auto;
+  }
+
+  body[data-focus-mode="true"] .dialog-kicker,
+  body[data-focus-mode="true"] .dialog-hero .featured-label,
+  body[data-focus-mode="true"] .dialog-hero .status-pill,
+  body[data-focus-mode="true"] .dialog-index,
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="problem"],
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="response"],
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="architecture"],
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="evidence"] > .dialog-section__label,
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="evidence"] > h3,
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="evidence"] > .evidence-grid,
+  body[data-focus-mode="true"] .dialog-gallery__intro > p {
+    display: none;
+  }
+
+  body[data-focus-mode="true"] .dialog-summary {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  body[data-focus-mode="true"] .dialog-gallery__intro,
+  body[data-focus-mode="true"] .dialog-body {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-focus-mode="true"] .dialog-gallery__intro {
+    margin-bottom: 1rem;
+  }
+
+  body[data-focus-mode="true"] .dialog-body {
+    gap: 0;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  body[data-focus-mode="true"] .dialog-section[data-focus-section="evidence"] {
+    padding: 0;
+    border: 0;
+  }
+
+  body[data-focus-mode="true"] .dialog-links {
+    margin-top: 1.5rem;
   }
 
   .dialog-link {

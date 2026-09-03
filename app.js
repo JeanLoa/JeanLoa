@@ -312,6 +312,22 @@
       `;
     }
 
+    if (provider === "Azure") {
+      const gradientId = `azure-${String(markerId).replace(/[^a-z0-9_-]/gi, "-")}`;
+      return `
+        <svg class="project-card__cloud-mark project-card__cloud-mark--azure" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="${gradientId}" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#50e6ff"></stop>
+              <stop offset="0.52" stop-color="#0078d4"></stop>
+              <stop offset="1" stop-color="#243a7a"></stop>
+            </linearGradient>
+          </defs>
+          <path fill="url(#${gradientId})" d="M13.05 4.24 6.56 22H.56L5.65 8.44l7.4-4.2ZM14.8 0 7.64 3.78l6.87 16.8L24 22 14.8 0Z"></path>
+        </svg>
+      `;
+    }
+
     return `
       <svg class="project-card__action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <rect x="3" y="4" width="18" height="16" rx="1"></rect>
@@ -321,7 +337,7 @@
   }
 
   function projectActionsMarkup(project) {
-    const defaultProvider = ["GCP", "AWS"].includes(project.cloudFocus) ? project.cloudFocus : "";
+    const defaultProvider = ["GCP", "AWS", "Azure"].includes(project.cloudFocus) ? project.cloudFocus : "";
     const liveProvider = project.liveProvider || defaultProvider;
     const apiProvider = project.apiProvider || defaultProvider;
     const providers = [...new Set([liveProvider, apiProvider].filter(Boolean))];
@@ -947,6 +963,46 @@
     });
   }
 
+  function initializeFocusMode() {
+    const toggles = Array.from(document.querySelectorAll("[data-focus-mode-toggle]"));
+    const status = document.querySelector("[data-focus-mode-status]");
+    if (!toggles.length) return;
+
+    const storageKey = "jeanloa-focus-mode";
+    let enabled = false;
+    try {
+      enabled = window.localStorage.getItem(storageKey) === "true";
+    } catch {
+      enabled = false;
+    }
+
+    const applyFocusMode = (nextEnabled, announce = false) => {
+      enabled = nextEnabled;
+      document.body.dataset.focusMode = String(enabled);
+      toggles.forEach(toggle => {
+        toggle.setAttribute("aria-checked", String(enabled));
+        toggle.setAttribute("aria-label", `Turn Focus Mode ${enabled ? "off" : "on"}`);
+        const label = toggle.querySelector("[data-focus-mode-label]");
+        if (label) label.textContent = enabled ? "On" : "Off";
+      });
+      if (announce && status) {
+        status.textContent = enabled
+          ? "Focus Mode on. Project cards and case studies now show less text."
+          : "Focus Mode off. Full project detail is visible.";
+      }
+      try {
+        window.localStorage.setItem(storageKey, String(enabled));
+      } catch {
+        // The mode still works for this visit when storage is unavailable.
+      }
+    };
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", () => applyFocusMode(!enabled, true));
+    });
+    applyFocusMode(enabled);
+  }
+
   function initializeProjectGallery() {
     const image = dialog?.querySelector("[data-gallery-image]");
     const caption = dialog?.querySelector("[data-gallery-caption]");
@@ -1064,16 +1120,19 @@
     const dialogKicker = project.cloudFocus
       ? `${projectContext} / ${project.cloudFocus} cloud focus`
       : projectContext;
+    const defaultProvider = ["GCP", "AWS", "Azure"].includes(project.cloudFocus) ? project.cloudFocus : "";
     const projectLinks = [
       project.liveUrl && {
         url: project.liveUrl,
         label: "Open the live product",
-        modifier: "dialog-link--live"
+        modifier: "dialog-link--live",
+        provider: project.liveProvider || defaultProvider
       },
       project.apiUrl && {
         url: project.apiUrl,
         label: "Explore the live API",
-        modifier: "dialog-link--api"
+        modifier: "dialog-link--api",
+        provider: project.apiProvider || defaultProvider
       },
       {
         url: project.url,
@@ -1108,17 +1167,17 @@
             <span>04 / Evidence</span>
           </aside>
           <div class="dialog-sections">
-            <section class="dialog-section">
+            <section class="dialog-section" data-focus-section="problem">
               <p class="dialog-section__label">01 · The problem</p>
               <h3>Why this work exists.</h3>
               <p>${escapeHtml(challenge)}</p>
             </section>
-            <section class="dialog-section">
+            <section class="dialog-section" data-focus-section="response">
               <p class="dialog-section__label">02 · The response</p>
               <h3>${isBlueprint ? "A rigorous implementation map." : "A connected product system."}</h3>
               <p>${escapeHtml(solution)}</p>
             </section>
-            <section class="dialog-section">
+            <section class="dialog-section" data-focus-section="architecture">
               <p class="dialog-section__label">03 · Architecture and capabilities</p>
               <h3>How the system is shaped.</h3>
               <div class="detail-list">
@@ -1128,7 +1187,7 @@
                 ${capabilities.map(item => `<span>${escapeHtml(item)}</span>`).join("")}
               </div>
             </section>
-            <section class="dialog-section">
+            <section class="dialog-section" data-focus-section="evidence">
               <p class="dialog-section__label">04 · Evidence surface</p>
               <h3>What can be inspected.</h3>
               <div class="evidence-grid">
@@ -1139,8 +1198,8 @@
               <div class="dialog-tags">${technologyMarkup(project, 8)}</div>
               <nav class="dialog-links" aria-label="Project links">
                 ${projectLinks.map(link => `
-                  <a class="dialog-link ${link.modifier}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
-                    <strong>${escapeHtml(link.label)}</strong><span aria-hidden="true">↗</span>
+                  <a class="dialog-link ${link.modifier}" ${link.provider ? `data-provider="${escapeHtml(link.provider.toLowerCase())}"` : ""} href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+                    <span class="dialog-link__label">${link.provider ? cloudProviderMark(link.provider, `${project.id}-${link.modifier}`) : ""}<strong>${escapeHtml(link.label)}</strong></span><span aria-hidden="true">↗</span>
                   </a>
                 `).join("")}
               </nav>
@@ -1464,6 +1523,7 @@
     hero.addEventListener("pointerleave", () => setEyePosition(0, 0));
   }
 
+  initializeFocusMode();
   renderFlagships();
   initializeEvidenceImages();
   renderCategoryAtlas();

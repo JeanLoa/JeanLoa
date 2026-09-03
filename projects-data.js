@@ -31,9 +31,9 @@ window.PORTFOLIO_PROJECTS = [
       "Cloud Run"
     ],
     "signals": {
-      "files": 116,
+      "files": 4062,
       "code": 60,
-      "tests": 14,
+      "tests": 93,
       "notebooks": 0
     },
     "status": "Active internship",
@@ -407,9 +407,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 4734,
+      "files": 4715,
       "code": 153,
-      "tests": 35,
+      "tests": 30,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -493,9 +493,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 352,
+      "files": 161,
       "code": 104,
-      "tests": 185,
+      "tests": 36,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -586,9 +586,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 361,
+      "files": 67,
       "code": 28,
-      "tests": 63,
+      "tests": 8,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -634,6 +634,30 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-robotics-navigation-simulation",
+    "title": "Asteria Robot Navigation Mission Control",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "Project 40 implements an auditable, simulation-only navigation mission-control system for a differential-drive robot. It owns its scenario registry, deterministic mission evaluator, safety supervisor, API, web console, ROS workspace contracts and benchmark evidence; it does no…",
+    "technologies": [
+      "Next.js",
+      "Python"
+    ],
+    "signals": {
+      "files": 90,
+      "code": 33,
+      "tests": 7,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/40-robotics-navigation-simulation",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-robotics-navigation-simulation",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
+  },
+  {
     "id": "path-ai-engineer-advanced-ml-backgrounds-18-automl-meta-learning-benchmark-lab",
     "title": "AutoML Meta-Benchmark Studio",
     "category": "AI Engineering",
@@ -646,9 +670,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 316,
+      "files": 110,
       "code": 38,
-      "tests": 316,
+      "tests": 110,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -708,9 +732,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 175,
+      "files": 138,
       "code": 58,
-      "tests": 24,
+      "tests": 18,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -810,9 +834,9 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI"
     ],
     "signals": {
-      "files": 435,
+      "files": 87,
       "code": 51,
-      "tests": 74,
+      "tests": 8,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -868,9 +892,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 721,
+      "files": 581,
       "code": 91,
-      "tests": 462,
+      "tests": 376,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -921,9 +945,9 @@ window.PORTFOLIO_PROJECTS = [
       "Computer Vision"
     ],
     "signals": {
-      "files": 1034,
+      "files": 148,
       "code": 74,
-      "tests": 120,
+      "tests": 11,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -978,9 +1002,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 132,
+      "files": 76,
       "code": 31,
-      "tests": 24,
+      "tests": 10,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1007,9 +1031,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 363,
+      "files": 183,
       "code": 107,
-      "tests": 146,
+      "tests": 31,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1064,9 +1088,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 324,
+      "files": 222,
       "code": 121,
-      "tests": 74,
+      "tests": 38,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1100,29 +1124,6 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-39-deep-q-network-gymnasium-lab",
-    "title": "Deep Q Network Gymnasium Lab",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented Deep Q Network Gymnasium Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/39-deep-q-network-gymnasium-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-deep-q-network-gymnasium-lab",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
-  },
-  {
     "id": "path-ai-engineer-advanced-ml-backgrounds-17-probabilistic-demand-forecasting",
     "title": "Demand Uncertainty Studio",
     "category": "AI Engineering",
@@ -1134,9 +1135,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 522,
+      "files": 110,
       "code": 48,
-      "tests": 70,
+      "tests": 13,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1193,9 +1194,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 141,
+      "files": 102,
       "code": 59,
-      "tests": 27,
+      "tests": 15,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1221,9 +1222,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 572,
+      "files": 104,
       "code": 46,
-      "tests": 65,
+      "tests": 11,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1269,6 +1270,35 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-38-dqn-control-dashboard",
+    "title": "DQN Control Observatory",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "Project 38 of the AI Engineer path: an evidence-first Deep Q-Learning laboratory for CartPole-v1 and Acrobot-v1. The repository implements DQN and Double DQN from first principles, compares them with declared baselines, preserves reproducible checkpoints, and exposes immutable…",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "PyTorch",
+      "GitHub Actions"
+    ],
+    "signals": {
+      "files": 646,
+      "code": 101,
+      "tests": 217,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/38-dqn-control-dashboard",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-dqn-control-dashboard",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
+  },
+  {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
     "title": "Edge Vision Benchmark Console",
     "category": "AI Engineering",
@@ -1283,9 +1313,9 @@ window.PORTFOLIO_PROJECTS = [
       "NumPy"
     ],
     "signals": {
-      "files": 334,
+      "files": 142,
       "code": 55,
-      "tests": 79,
+      "tests": 17,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1449,9 +1479,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 149,
+      "files": 96,
       "code": 43,
-      "tests": 14,
+      "tests": 9,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1541,9 +1571,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 3250,
+      "files": 3234,
       "code": 124,
-      "tests": 378,
+      "tests": 372,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1571,9 +1601,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 383,
+      "files": 107,
       "code": 52,
-      "tests": 60,
+      "tests": 19,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1585,6 +1615,33 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS",
     "liveUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/",
     "apiUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs"
+  },
+  {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-37-reinforcement-learning-foundations-gridworld",
+    "title": "GridWorld Policy Lab",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "An auditable tabular reinforcement-learning product that makes the MDP, policy, value functions and learning process inspectable from environment definition to registered evidence. Project 37 deliberately stops before DQN: Q-Learning and SARSA are implemented from first princi…",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Reinforcement Learning"
+    ],
+    "signals": {
+      "files": 698,
+      "code": 79,
+      "tests": 17,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/37-reinforcement-learning-foundations-gridworld",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/37-reinforcement-learning-foundations-gridworld",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-64-human-robot-interaction-safety-lab",
@@ -1629,27 +1686,59 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "AWS"
   },
   {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-54-hybrid-ai-quantum-platform-blueprint",
-    "title": "Hybrid AI Quantum Platform Blueprint",
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-52-vqe-qaoa-advanced-optimization",
+    "title": "Hybrid Quantum Optimization Workbench",
     "category": "AI Engineering",
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented Hybrid AI Quantum Platform Blueprint blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
+    "summary": "Project 52 of Plan 9 is an evidence-bounded laboratory for two distinct hybrid workflows: VQE energy minimization and QAOA MaxCut optimization. Both tracks share typed lifecycle, resource, failure, oracle, and artifact contracts without merging their domain semantics.",
     "technologies": [
-      "Quantum ML"
+      "Next.js",
+      "FastAPI",
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 94,
+      "code": 56,
+      "tests": 13,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/54-hybrid-ai-quantum-platform-blueprint",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/52-vqe-qaoa-advanced-optimization",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-platform-blueprint",
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-vqe-qaoa-advanced-optimization",
     "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p52-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p52-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+  },
+  {
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-54-hybrid-ai-quantum-workflow-platform",
+    "title": "Hybrid Quantum Workflow Control Plane",
+    "category": "AI Engineering",
+    "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
+    "summary": "Project 54 is a local-first platform for defining, validating, executing and inspecting declarative AI + quantum workflows. It demonstrates platform architecture and evidence boundaries; it does not claim quantum advantage, enterprise production readiness or perfect provider p…",
+    "technologies": [
+      "Next.js",
+      "FastAPI",
+      "Docker",
+      "Qiskit"
+    ],
+    "signals": {
+      "files": 122,
+      "code": 64,
+      "tests": 8,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/54-hybrid-ai-quantum-workflow-platform",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/54-hybrid-ai-quantum-workflow-platform",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p54-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p54-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
     "id": "university-02-computer-science-coursework-cpp-introduction-to-algorithms",
@@ -1683,9 +1772,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 375,
+      "files": 184,
       "code": 106,
-      "tests": 162,
+      "tests": 42,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1762,9 +1851,9 @@ window.PORTFOLIO_PROJECTS = [
       "Python"
     ],
     "signals": {
-      "files": 1176,
+      "files": 432,
       "code": 49,
-      "tests": 210,
+      "tests": 17,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1790,9 +1879,9 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI"
     ],
     "signals": {
-      "files": 684,
+      "files": 164,
       "code": 76,
-      "tests": 109,
+      "tests": 14,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1868,9 +1957,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 236,
+      "files": 100,
       "code": 49,
-      "tests": 30,
+      "tests": 15,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1916,9 +2005,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 241,
+      "files": 138,
       "code": 45,
-      "tests": 39,
+      "tests": 23,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -1968,9 +2057,9 @@ window.PORTFOLIO_PROJECTS = [
       "NumPy"
     ],
     "signals": {
-      "files": 1566,
+      "files": 120,
       "code": 54,
-      "tests": 445,
+      "tests": 20,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2063,9 +2152,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 424,
+      "files": 191,
       "code": 58,
-      "tests": 55,
+      "tests": 43,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2093,9 +2182,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 496,
+      "files": 321,
       "code": 45,
-      "tests": 49,
+      "tests": 10,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2141,27 +2230,6 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-48-post-quantum-security-and-hybrid-workflows-lab",
-    "title": "Post Quantum Security And Hybrid Workflows Lab",
-    "category": "AI Engineering",
-    "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Post Quantum Security And Hybrid Workflows Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
-    "technologies": [],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/48-post-quantum-security-and-hybrid-workflows-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/48-post-quantum-security-and-hybrid-workflows-lab",
-    "roadmapNumber": 8,
-    "cloudFocus": "Azure"
-  },
-  {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-57-post-quantum-security-product-blueprint",
     "title": "Post Quantum Security Product Blueprint",
     "category": "AI Engineering",
@@ -2181,6 +2249,91 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/57-post-quantum-security-product-blueprint",
     "roadmapNumber": 10,
     "cloudFocus": "GCP"
+  },
+  {
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-48-post-quantum-security-scanner-lite",
+    "title": "Post-Quantum Readiness Scanner Lite",
+    "category": "AI Engineering",
+    "family": "Quantum Computing Quantum AI Foundations",
+    "summary": "Project 48 closes Plan 8 with a defensive, local-first static analysis system for post-quantum migration readiness. It inventories bounded cryptographic evidence in approved Python, Java, JavaScript/TypeScript, Go, dependency, and configuration files; classifies observations;…",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Java",
+      "Python",
+      "FastAPI",
+      "Docker"
+    ],
+    "signals": {
+      "files": 748,
+      "code": 526,
+      "tests": 521,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/48-post-quantum-security-scanner-lite",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/48-post-quantum-security-scanner-lite",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+  },
+  {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-39-ppo-simulated-agent-lab",
+    "title": "PPO Simulated Agent Lab",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "Project 39 of the AI Engineer path implements the progression from policy gradients to actor-critic and PPO for bounded continuous control. The implementation is local to this repository; Stable-Baselines3 is an optional external reference, never the trainer behind the owned r…",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "signals": {
+      "files": 579,
+      "code": 103,
+      "tests": 31,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/39-ppo-simulated-agent-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-ppo-simulated-agent-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
+  },
+  {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-42-world-model-planning-lab",
+    "title": "Project 42 — Latent Planning Observatory",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "An evidence-bounded laboratory for learning partial-observation MiniGrid dynamics with an educational RSSM-lite, imagining prior-only futures and planning with random shooting, categorical CEM and uncertainty-aware receding-horizon control.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "signals": {
+      "files": 177,
+      "code": 69,
+      "tests": 23,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/42-world-model-planning-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-world-model-planning-lab",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
   },
   {
     "id": "leisure-04-python-fundamentals",
@@ -2216,9 +2369,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 709,
+      "files": 178,
       "code": 81,
-      "tests": 122,
+      "tests": 22,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2264,188 +2417,120 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-38-q-learning-agent-lab",
-    "title": "Q Learning Agent Lab",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented Q Learning Agent Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/38-q-learning-agent-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-q-learning-agent-lab",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
-  },
-  {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-52-qaoa-vqe-optimizer-comparison-lab",
-    "title": "QAOA VQE Optimizer Comparison Lab",
-    "category": "AI Engineering",
-    "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented QAOA VQE Optimizer Comparison Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
-    "technologies": [
-      "Quantum ML"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/52-qaoa-vqe-optimizer-comparison-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/52-qaoa-vqe-optimizer-comparison-lab",
-    "roadmapNumber": 9,
-    "cloudFocus": "Azure"
-  },
-  {
     "id": "path-software-engineer-qml-benchmark-software-platform-09-qml-benchmark-platform",
     "title": "QML Benchmark Hybrid Platform",
     "category": "Software Engineering",
     "family": "QML Benchmark Software Platform",
-    "summary": "A product-platform blueprint translating QML Benchmark Hybrid Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "Sprint 3 release candidate: Quantum Noise Limitations Board — ideal, finite-shot, noisy and readout-mitigated QSVM evidence on the same immutable dataset, split, model and seeds.",
     "technologies": [
+      "Docker",
       "Quantum ML"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
+      "files": 91,
+      "code": 37,
+      "tests": 91,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/QML-Benchmark-Software-Platform/tree/main/09-qml-benchmark-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/QML-Benchmark-Software-Platform/09-qml-benchmark-platform",
     "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-45-quantum-algorithms-basics-lab",
-    "title": "Quantum Algorithms Basics Lab",
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-44-quantum-algorithms-playground",
+    "title": "Quantum Algorithms Playground — Project 44",
     "category": "AI Engineering",
     "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Quantum Algorithms Basics Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
+    "summary": "An evidence-first, local simulation laboratory for six bounded quantum-algorithm families. The product connects a frozen instance registry, explicit reversible oracle builders, Qiskit circuits, exact reference calculations, seeded Aer shot execution, a controlled FastAPI servi…",
     "technologies": [
-      "Quantum ML"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/45-quantum-algorithms-basics-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/45-quantum-algorithms-basics-lab",
-    "roadmapNumber": 8,
-    "cloudFocus": "Azure"
-  },
-  {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-44-quantum-circuits-and-gates-playground",
-    "title": "Quantum Circuits And Gates Playground",
-    "category": "AI Engineering",
-    "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Quantum Circuits And Gates Playground blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
-    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "Docker",
       "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 141,
+      "code": 62,
+      "tests": 47,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/44-quantum-circuits-and-gates-playground",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/44-quantum-algorithms-playground",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/44-quantum-circuits-and-gates-playground",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/44-quantum-algorithms-playground",
     "roadmapNumber": 8,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-46-quantum-cloud-provider-comparison-lab",
-    "title": "Quantum Cloud Provider Comparison Lab",
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-45-quantum-gates-and-circuits-lab",
+    "title": "Quantum Circuit Observatory — Project 45",
     "category": "AI Engineering",
     "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Quantum Cloud Provider Comparison Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
+    "summary": "An applied laboratory for defining a bounded quantum circuit once, materializing it in Qiskit and Cirq, and proving that ordering, global phase, sampling, noise, and transpilation preserve—or intentionally change—the same mathematical intent.",
     "technologies": [
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "NumPy",
       "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 475,
+      "code": 60,
+      "tests": 9,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/46-quantum-cloud-provider-comparison-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/45-quantum-gates-and-circuits-lab",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/46-quantum-cloud-provider-comparison-lab",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/45-quantum-gates-and-circuits-lab",
     "roadmapNumber": 8,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-43-quantum-computing-foundations-lab",
-    "title": "Quantum Computing Foundations Lab",
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-46-quantum-cloud-abstraction-layer",
+    "title": "Quantum Cloud Control Plane",
     "category": "AI Engineering",
     "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Quantum Computing Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
+    "summary": "Project 46 of the AI Engineer quantum foundations path. This repository implements an evidence-bounded control plane for local Qiskit/Aer and Braket simulation plus pinned IBM Quantum, Amazon Braket and Azure Quantum adapter contracts.",
     "technologies": [
-      "Quantum ML"
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 359,
+      "code": 71,
+      "tests": 215,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/43-quantum-computing-foundations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/46-quantum-cloud-abstraction-layer",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/43-quantum-computing-foundations-lab",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/46-quantum-cloud-abstraction-layer",
     "roadmapNumber": 8,
-    "cloudFocus": "Azure"
-  },
-  {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-49-quantum-data-encoding-lab",
-    "title": "Quantum Data Encoding Lab",
-    "category": "AI Engineering",
-    "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented Quantum Data Encoding Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
-    "technologies": [
-      "Quantum ML"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/49-quantum-data-encoding-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-data-encoding-lab",
-    "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-59-quantum-developer-platform-design",
@@ -2540,93 +2625,118 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "path-software-engineer-quantum-foundations-software-platform-08-quantum-foundations-visual-platform",
-    "title": "Quantum Foundations Software Platform",
+    "title": "Quantum Foundations Visual Platform",
     "category": "Software Engineering",
     "family": "Quantum Foundations Software Platform",
-    "summary": "A product-platform blueprint translating Quantum Foundations Software Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "An accessible educational platform that connects verified quantum-foundation notes to bounded, reproducible Qiskit Aer evidence. It teaches the mathematics and the software boundary without presenting a simulator as hardware or a small demonstration as quantum advantage.",
     "technologies": [
-      "Streamlit"
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 119,
+      "code": 32,
+      "tests": 14,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/Quantum-Foundations-Visual-Tools/tree/main/08-quantum-foundations-visual-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/Quantum-Foundations-Software-Platform/08-quantum-foundations-visual-platform",
     "roadmapNumber": 8,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-51-quantum-kernel-benchmark-lab",
-    "title": "Quantum Kernel Benchmark Lab",
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-50-quantum-kernel-benchmark",
+    "title": "Quantum Kernel Benchmark Studio",
     "category": "AI Engineering",
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented Quantum Kernel Benchmark Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
+    "summary": "Project 50 of Plan 9 is an evidence-bounded benchmark for classical and quantum kernels. It studies the Gram matrix itself—geometry, stability, cost, conditioning, and lineage—before interpreting downstream SVC or kernel-ridge scores.",
     "technologies": [
-      "Quantum ML"
+      "Next.js",
+      "PostgreSQL",
+      "Docker",
+      "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
+      "files": 97,
+      "code": 57,
+      "tests": 97,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/51-quantum-kernel-benchmark-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/50-quantum-kernel-benchmark",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-quantum-kernel-benchmark-lab",
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-quantum-kernel-benchmark",
     "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p50-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p50-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-53-quantum-noise-and-qml-limitations-lab",
-    "title": "Quantum Noise And QML Limitations Lab",
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-49-quantum-ml-model-zoo",
+    "title": "Quantum ML Model Observatory",
     "category": "AI Engineering",
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented Quantum Noise And QML Limitations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
+    "summary": "Project 49 of the AI Engineer roadmap is an executable, evidence-bounded model zoo for small quantum machine-learning systems. It places six quantum families beside paired classical references and records the data, encoding, circuit, backend and resource boundary behind every…",
     "technologies": [
-      "Quantum ML"
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "scikit-learn",
+      "Qiskit"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 88,
+      "code": 53,
+      "tests": 10,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/53-quantum-noise-and-qml-limitations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/49-quantum-ml-model-zoo",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-noise-and-qml-limitations-lab",
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/49-quantum-ml-model-zoo",
     "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p49-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p49-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
-    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-47-quantum-optimization-foundations-lab",
-    "title": "Quantum Optimization Foundations Lab",
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-53-quantum-error-mitigation-basics",
+    "title": "Quantum Noise & Mitigation Observatory",
     "category": "AI Engineering",
-    "family": "Quantum Computing Quantum AI Foundations",
-    "summary": "A documented Quantum Optimization Foundations Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Quantum Computing Quantum AI Foundations.",
-    "technologies": [],
+    "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
+    "summary": "Project 53 of the AI Engineer path. This repository is a reproducible, evidence-bounded laboratory for controlled quantum noise characterization, error suppression, error mitigation, and a deliberately narrow repetition-code correction boundary.",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "Docker"
+    ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 101,
+      "code": 57,
+      "tests": 12,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/47-quantum-optimization-foundations-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/53-quantum-error-mitigation-basics",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/47-quantum-optimization-foundations-lab",
-    "roadmapNumber": 8,
-    "cloudFocus": "Azure"
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/53-quantum-error-mitigation-basics",
+    "roadmapNumber": 9,
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p53-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p53-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-58-quantum-optimization-service-proposal",
@@ -2648,6 +2758,35 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Quantum-First-Business-Product-Developer-Platform/58-quantum-optimization-service-proposal",
     "roadmapNumber": 10,
     "cloudFocus": "GCP"
+  },
+  {
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-47-quantum-optimization-basic-lab",
+    "title": "Quantum Optimization Workbench",
+    "category": "AI Engineering",
+    "family": "Quantum Computing Quantum AI Foundations",
+    "summary": "Project 47 of the AI Engineer quantum foundations path. It is an evidence-bounded laboratory for QAOA on Max-Cut and VQE on H2, with exact references, finite-shot and noisy local simulation, classical baselines, an experiment API, and a nine-surface Next.js observatory.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Docker",
+      "Qiskit"
+    ],
+    "signals": {
+      "files": 105,
+      "code": 55,
+      "tests": 11,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/47-quantum-optimization-basic-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/47-quantum-optimization-basic-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-69-quantum-service-layer-and-optimization-hub",
@@ -2673,6 +2812,36 @@ window.PORTFOLIO_PROJECTS = [
     "cloudFocus": "Azure"
   },
   {
+    "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-43-quantum-math-for-software-lab",
+    "title": "Quantum State Mathematics Lab",
+    "category": "AI Engineering",
+    "family": "Quantum Computing Quantum AI Foundations",
+    "summary": "Project 43 is an interactive, evidence-first laboratory that translates quantum-computing foundations into small, testable software operations. It implements the mathematics itself with NumPy and SymPy, then compares frozen results independently with Qiskit Quantum Information.",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "NumPy",
+      "Qiskit",
+      "Quantum ML"
+    ],
+    "signals": {
+      "files": 411,
+      "code": 62,
+      "tests": 8,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/tree/main/43-quantum-math-for-software-lab",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Quantum-Computing-Quantum-AI-Foundations/43-quantum-math-for-software-lab",
+    "roadmapNumber": 8,
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+  },
+  {
     "id": "path-software-engineer-rag-agentic-software-platform-05-rag-agent-workflow-platform",
     "title": "RAG & Agent Workflow Platform",
     "category": "Software Engineering",
@@ -2688,9 +2857,9 @@ window.PORTFOLIO_PROJECTS = [
       "RAG"
     ],
     "signals": {
-      "files": 342,
+      "files": 324,
       "code": 191,
-      "tests": 47,
+      "tests": 42,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2717,9 +2886,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 672,
+      "files": 118,
       "code": 70,
-      "tests": 130,
+      "tests": 21,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2765,29 +2934,6 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-37-reinforcement-learning-foundations-gridworld",
-    "title": "Reinforcement Learning Foundations Gridworld",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented Reinforcement Learning Foundations Gridworld blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/37-reinforcement-learning-foundations-gridworld",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/37-reinforcement-learning-foundations-gridworld",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
-  },
-  {
     "id": "path-ai-engineer-llms-rag-agents-agentic-systems-30-multi-agent-repository-assistant",
     "title": "Repository Intelligence Studio",
     "category": "AI Engineering",
@@ -2803,9 +2949,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 5824,
+      "files": 5235,
       "code": 159,
-      "tests": 594,
+      "tests": 456,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2831,9 +2977,9 @@ window.PORTFOLIO_PROJECTS = [
       "Pandas"
     ],
     "signals": {
-      "files": 238,
+      "files": 131,
       "code": 60,
-      "tests": 100,
+      "tests": 33,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2878,9 +3024,9 @@ window.PORTFOLIO_PROJECTS = [
       "FastAPI"
     ],
     "signals": {
-      "files": 864,
+      "files": 558,
       "code": 230,
-      "tests": 210,
+      "tests": 58,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2939,9 +3085,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 733,
+      "files": 127,
       "code": 48,
-      "tests": 144,
+      "tests": 10,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2987,51 +3133,33 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-40-reward-design-and-agent-evaluation-lab",
-    "title": "Reward Design And Agent Evaluation Lab",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented Reward Design And Agent Evaluation Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 1,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/40-reward-design-and-agent-evaluation-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-reward-design-and-agent-evaluation-lab",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
-  },
-  {
     "id": "path-software-engineer-rl-simulation-software-platform-07-rl-simulation-control-platform",
     "title": "Rl Simulation Control Platform",
     "category": "Software Engineering",
     "family": "RL Simulation Software Platform",
-    "summary": "A product-platform blueprint translating Rl Simulation Control Platform into a dashboard, API, AI services, data, reports and implementation evidence.",
+    "summary": "Current implementation status — Azure + Neon release candidate",
     "technologies": [
+      "Vue",
+      "Python",
+      "PostgreSQL",
       "Docker",
       "Reinforcement Learning"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 159,
+      "code": 35,
+      "tests": 20,
       "notebooks": 0
     },
-    "status": "Blueprint",
+    "status": "Implementation",
     "url": "https://github.com/Path-Software-Engineer/RL-Simulation-Software-Platform/tree/main/07-rl-simulation-control-platform",
     "featured": false,
     "accent": "blue",
     "path": "Path-Software-Engineer/RL-Simulation-Software-Platform/07-rl-simulation-control-platform",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs/"
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-63-robot-task-planning-control-lab",
@@ -3053,29 +3181,6 @@ window.PORTFOLIO_PROJECTS = [
     "path": "Path-AI-Engineer/Embodied-AI-Humanoid-Robotics-Android-Systems/63-robot-task-planning-control-lab",
     "roadmapNumber": 11,
     "cloudFocus": "AWS"
-  },
-  {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-42-robotics-simulation-control-lab",
-    "title": "Robotics Simulation Control Lab",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented Robotics Simulation Control Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/42-robotics-simulation-control-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-robotics-simulation-control-lab",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-71-safety-observability-evaluation-suite",
@@ -3114,9 +3219,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 510,
+      "files": 237,
       "code": 147,
-      "tests": 236,
+      "tests": 60,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3175,9 +3280,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 764,
+      "files": 204,
       "code": 73,
-      "tests": 138,
+      "tests": 75,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3236,9 +3341,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 114,
+      "files": 86,
       "code": 38,
-      "tests": 21,
+      "tests": 13,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3264,9 +3369,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 582,
+      "files": 241,
       "code": 62,
-      "tests": 98,
+      "tests": 19,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3326,9 +3431,9 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 851,
+      "files": 182,
       "code": 49,
-      "tests": 133,
+      "tests": 36,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3356,9 +3461,9 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 8894,
+      "files": 8392,
       "code": 68,
-      "tests": 311,
+      "tests": 245,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3416,9 +3521,9 @@ window.PORTFOLIO_PROJECTS = [
       "scikit-learn"
     ],
     "signals": {
-      "files": 3394,
+      "files": 2435,
       "code": 86,
-      "tests": 843,
+      "tests": 551,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3464,27 +3569,32 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-50-variational-quantum-classifier-lab",
-    "title": "Variational Quantum Classifier Lab",
+    "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-51-vqc-qsvm-comparison-suite",
+    "title": "Variational–Kernel Quantum Arena",
     "category": "AI Engineering",
     "family": "Advanced Quantum Machine Learning Hybrid AI Quantum Platforms",
-    "summary": "A documented Variational Quantum Classifier Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Advanced Quantum Machine Learning Hybrid AI Quantum Platforms.",
+    "summary": "Project 51 of Plan 9 is a controlled, evidence-bounded comparison of variational quantum classifiers, fidelity-kernel SVMs, and strong classical baselines. Every comparable method receives the same sample IDs, split, train-fitted preprocessing, feature budget, and prediction c…",
     "technologies": [
-      "Quantum ML"
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker"
     ],
     "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
+      "files": 98,
+      "code": 58,
+      "tests": 14,
       "notebooks": 0
     },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/50-variational-quantum-classifier-lab",
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/tree/main/51-vqc-qsvm-comparison-suite",
     "featured": false,
     "accent": "violet",
-    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/50-variational-quantum-classifier-lab",
+    "path": "Path-AI-Engineer/Advanced-Quantum-Machine-Learning-Hybrid-AI-Quantum-Platforms/51-vqc-qsvm-comparison-suite",
     "roadmapNumber": 9,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "liveUrl": "https://p9-p51-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
+    "apiUrl": "https://p9-p51-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
   },
   {
     "id": "path-software-engineer-vision-multimodal-ai-platform-04-vision-multimodal-ai-platform",
@@ -3500,9 +3610,9 @@ window.PORTFOLIO_PROJECTS = [
       "Computer Vision"
     ],
     "signals": {
-      "files": 361,
+      "files": 254,
       "code": 100,
-      "tests": 41,
+      "tests": 19,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3548,6 +3658,32 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-41-vision-action-agent-sim",
+    "title": "Vision-Action Driving Studio",
+    "category": "AI Engineering",
+    "family": "Reinforcement Learning World Models Robotics Simulation",
+    "summary": "Project 41 is a simulation-only, evidence-bounded laboratory for policies that map a four-frame pixel history to one of nine frozen macro-actions in CarRacing-v3. It compares random and visual heuristic baselines, Behavior Cloning, Offline DQN, discrete CQL, PPO-CNN and BC-ini…",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "PostgreSQL",
+      "PyTorch"
+    ],
+    "signals": {
+      "files": 29871,
+      "code": 69,
+      "tests": 21642,
+      "notebooks": 0
+    },
+    "status": "Implementation",
+    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/41-vision-action-agent-sim",
+    "featured": false,
+    "accent": "violet",
+    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-vision-action-agent-sim",
+    "roadmapNumber": 7,
+    "cloudFocus": "Azure"
+  },
+  {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-23-vision-language-search-assistant",
     "title": "Vision-Language Retrieval Studio",
     "category": "AI Engineering",
@@ -3560,9 +3696,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 624,
+      "files": 126,
       "code": 58,
-      "tests": 76,
+      "tests": 13,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -3625,28 +3761,5 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "accent": "cyan",
     "path": "University/01-portfolio-projects/lowcortisol-digital-health-platform/webdev-course-lowcortisol"
-  },
-  {
-    "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-41-world-models-planning-mini-lab",
-    "title": "World Models Planning Mini Lab",
-    "category": "AI Engineering",
-    "family": "Reinforcement Learning World Models Robotics Simulation",
-    "summary": "A documented World Models Planning Mini Lab blueprint defining the experiment, modules, evaluation signals and known limitations inside Reinforcement Learning World Models Robotics Simulation.",
-    "technologies": [
-      "Reinforcement Learning"
-    ],
-    "signals": {
-      "files": 1,
-      "code": 0,
-      "tests": 0,
-      "notebooks": 0
-    },
-    "status": "Blueprint",
-    "url": "https://github.com/Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/tree/main/41-world-models-planning-mini-lab",
-    "featured": false,
-    "accent": "violet",
-    "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-world-models-planning-mini-lab",
-    "roadmapNumber": 7,
-    "cloudFocus": "Azure"
   }
 ];

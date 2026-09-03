@@ -87,15 +87,25 @@
                 <div class="hero-search__field">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
                   <input id="project-search" type="search" inputmode="search" autocomplete="off" placeholder="Python, vision, Vue..." data-project-search aria-controls="project-search-results" aria-describedby="project-search-hint" />
-                  <span aria-hidden="true" data-project-search-count>106</span>
+                  <span aria-hidden="true" data-project-search-count>107</span>
                 </div>
-                <p id="project-search-hint" class="hero-search__hint">Type a technology, discipline or project name.</p>
+                <div class="hero-search__controls">
+                  <p id="project-search-hint" class="hero-search__hint">Type a technology, discipline or project name.</p>
+                  <button class="focus-mode-toggle" type="button" role="switch" aria-checked="false" aria-label="Turn Focus Mode on" data-focus-mode-toggle>
+                    <span class="focus-mode-toggle__copy">
+                      <strong>Focus mode</strong>
+                      <small data-focus-mode-label>Off</small>
+                    </span>
+                    <span class="focus-mode-toggle__track" aria-hidden="true"><i></i></span>
+                  </button>
+                </div>
                 <div id="project-search-results" class="hero-search__results" data-project-search-results hidden></div>
                 <p class="sr-only" data-project-search-status aria-live="polite"></p>
+                <p class="sr-only" data-focus-mode-status aria-live="polite"></p>
               </form>
             </div>
             <button class="hero-project-count" type="button" data-project-search-toggle aria-expanded="false" aria-controls="project-search">
-              <strong data-total-projects>106</strong>
+              <strong data-total-projects>107</strong>
               <span class="sr-only">projects. Open keyword search.</span>
             </button>
           </div>
