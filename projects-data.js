@@ -644,8 +644,8 @@ window.PORTFOLIO_PROJECTS = [
       "Python"
     ],
     "signals": {
-      "files": 90,
-      "code": 33,
+      "files": 91,
+      "code": 34,
       "tests": 7,
       "notebooks": 0
     },
@@ -655,7 +655,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/40-robotics-navigation-simulation",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/40-robotics-navigation-simulation/01-overview.jpg",
+        "alt": "Robotics navigation simulation overview",
+        "label": "Overview",
+        "caption": "The Asteria workspace presents the simulated mission, planners and safety boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/40-robotics-navigation-simulation/02-map-route.jpg",
+        "alt": "Robotics navigation map and route planner",
+        "label": "Map and route",
+        "caption": "Map geometry, route intent and obstacles share one inspectable planning surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/40-robotics-navigation-simulation/03-mission-run.jpg",
+        "alt": "Robotics simulated mission run",
+        "label": "Mission run",
+        "caption": "Planner and controller behavior is visible across the complete simulated mission."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/40-robotics-navigation-simulation/04-safety.jpg",
+        "alt": "Robotics navigation safety supervisor",
+        "label": "Safety",
+        "caption": "Safety supervision, stop conditions and intervention evidence remain explicit."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/40-robotics-navigation-simulation/05-benchmark.jpg",
+        "alt": "Robotics planner controller benchmark",
+        "label": "Benchmark",
+        "caption": "Four planner-controller pairs are compared under matched simulation scenarios."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-18-automl-meta-learning-benchmark-lab",
@@ -732,8 +764,8 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 138,
-      "code": 58,
+      "files": 139,
+      "code": 59,
       "tests": 18,
       "notebooks": 0
     },
@@ -745,7 +777,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/app/",
-    "apiUrl": "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://b7v6pqvatvqqx7a6pzn774xfay0mseht.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/29-agent-security-redteam-lab/01-overview.jpg",
+        "alt": "BastionOps defensive agent security overview",
+        "label": "Overview",
+        "caption": "The synthetic range compares vulnerable, prompt-only and policy-enforced controls."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/29-agent-security-redteam-lab/02-campaigns.jpg",
+        "alt": "BastionOps paired security campaigns",
+        "label": "Campaigns",
+        "caption": "Sanitized attacks and benign controls are paired across twelve threat families."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/29-agent-security-redteam-lab/03-policy.jpg",
+        "alt": "BastionOps deny-by-default policy controls",
+        "label": "Policy",
+        "caption": "Versioned Rego rules constrain identity, capabilities, effects and egress."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/29-agent-security-redteam-lab/04-approvals.jpg",
+        "alt": "BastionOps exact payload approval flow",
+        "label": "Approvals",
+        "caption": "Typed write effects bind exact payload approval to a durable event trail."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/29-agent-security-redteam-lab/05-evaluation.jpg",
+        "alt": "BastionOps honest security evaluation boundary",
+        "label": "Evaluation",
+        "caption": "Deterministic Track A is separated from the unexecuted real-model Track B."
+      }
+    ]
   },
   {
     "id": "university-02-computer-science-coursework-cpp-data-structures-and-algorithms",
@@ -1015,7 +1079,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://qnzsgo7h6nfsmfecldfowj55uy0zxkib.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/35-controlnet-guided-generation-lab/01-overview.jpg",
+        "alt": "Control Guidance Studio evidence overview",
+        "label": "Overview",
+        "caption": "The real observatory states its local evidence and no-browser-inference boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/35-controlnet-guided-generation-lab/02-structure-lab.jpg",
+        "alt": "ControlNet structure protocol controls",
+        "label": "Structure lab",
+        "caption": "Protocol controls expose the spatial conditioning contract without starting inference."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/35-controlnet-guided-generation-lab/03-scale-matrix.jpg",
+        "alt": "ControlNet fixed scale comparison matrix",
+        "label": "Scale matrix",
+        "caption": "Fixed comparisons make conditioning scale and structural trade-offs inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/35-controlnet-guided-generation-lab/04-evaluation.jpg",
+        "alt": "ControlNet measured trade-off evaluation",
+        "label": "Evaluation",
+        "caption": "Measured and missing evidence remain clearly separated in the evaluation surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/35-controlnet-guided-generation-lab/05-research-cards.jpg",
+        "alt": "ControlNet identity and safety research cards",
+        "label": "Research cards",
+        "caption": "Model identity, safety and execution limits stay visible beside the protocol."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-04-customer-segmentation-and-churn-api",
@@ -1194,8 +1290,8 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 102,
-      "code": 59,
+      "files": 103,
+      "code": 60,
       "tests": 15,
       "notebooks": 0
     },
@@ -1207,7 +1303,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://vgmeex6prckdnak3tlphrf3l2u0ipxvb.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/32-diffusion-from-scratch-mini-lab/01-overview.jpg",
+        "alt": "Diffusion Process Observatory overview",
+        "label": "Overview",
+        "caption": "Repository-owned equations, U-Net, EMA and samplers form the complete workflow."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/32-diffusion-from-scratch-mini-lab/02-schedules.jpg",
+        "alt": "Linear and cosine diffusion schedule view",
+        "label": "Schedules",
+        "caption": "Beta, alpha-bar and signal-to-noise tensors make the forward process inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/32-diffusion-from-scratch-mini-lab/03-samplers.jpg",
+        "alt": "DDPM and DDIM sampler comparison",
+        "label": "Samplers",
+        "caption": "DDPM and DDIM consume the same immutable checkpoint and seed contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/32-diffusion-from-scratch-mini-lab/04-evidence.jpg",
+        "alt": "Diffusion content-addressed run evidence",
+        "label": "Evidence",
+        "caption": "Quality proxies, latency, checkpoint identity and resume state remain connected."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/32-diffusion-from-scratch-mini-lab/05-protocol.jpg",
+        "alt": "Diffusion smoke and mini protocol boundary",
+        "label": "Protocol",
+        "caption": "Smoke qualification is visibly separated from the required six-run mini matrix."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-22-document-vision-ocr-extractor",
@@ -1285,8 +1413,8 @@ window.PORTFOLIO_PROJECTS = [
       "GitHub Actions"
     ],
     "signals": {
-      "files": 646,
-      "code": 101,
+      "files": 647,
+      "code": 102,
       "tests": 217,
       "notebooks": 0
     },
@@ -1296,7 +1424,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/38-dqn-control-dashboard",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/38-dqn-control-dashboard/01-overview.jpg",
+        "alt": "DQN control dashboard experiment overview",
+        "label": "Overview",
+        "caption": "The control surface summarizes the registered environment, DQN variant and reproducibility boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/38-dqn-control-dashboard/02-learning-curves.jpg",
+        "alt": "DQN and Double DQN learning curves",
+        "label": "Learning curves",
+        "caption": "Seed-level returns and stability trends remain visible without collapsing training and evaluation."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/38-dqn-control-dashboard/03-q-diagnostics.jpg",
+        "alt": "DQN action-value diagnostics",
+        "label": "Q diagnostics",
+        "caption": "Action values, targets and approximation health are exposed for model diagnosis."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/38-dqn-control-dashboard/04-episode-replay.jpg",
+        "alt": "DQN episode replay workspace",
+        "label": "Episode replay",
+        "caption": "A complete desktop replay connects actions, rewards and terminal semantics."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/38-dqn-control-dashboard/05-evidence.jpg",
+        "alt": "DQN experiment evidence registry",
+        "label": "Evidence",
+        "caption": "Seeds, ablations, checkpoints and evaluation artifacts remain traceable."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-24-edge-vision-optimization-lab",
@@ -1492,7 +1652,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/app/",
-    "apiUrl": "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://fq6bvzn7ktxvthyeje6prdsc7y0shejo.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/26-enterprise-rag-with-citations/01-command-center.jpg",
+        "alt": "Enterprise RAG authorization-first command center",
+        "label": "Command center",
+        "caption": "The connected workspace exposes authorized corpus state and qualification context."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/26-enterprise-rag-with-citations/02-knowledge-catalog.jpg",
+        "alt": "Enterprise RAG governed knowledge catalog",
+        "label": "Knowledge catalog",
+        "caption": "Only current authorized document versions are visible in the governed catalog."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/26-enterprise-rag-with-citations/03-governed-answer.jpg",
+        "alt": "Enterprise RAG answer with verified citations",
+        "label": "Governed answer",
+        "caption": "A real request returns claim-linked citations against the authorized corpus."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/26-enterprise-rag-with-citations/04-retrieval-inspector.jpg",
+        "alt": "Enterprise RAG authorized retrieval inspector",
+        "label": "Retrieval inspector",
+        "caption": "Candidate authorization, reranking and audit evidence remain visible together."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/26-enterprise-rag-with-citations/05-evaluation.jpg",
+        "alt": "Enterprise RAG qualification evaluation",
+        "label": "Evaluation",
+        "caption": "Development authorization probes are shown without implying that the locked final was run."
+      }
+    ]
   },
   {
     "id": "path-software-engineer-final-ai-quantum-robotics-software-platform-12-ai-quantum-robotics-platform-portal",
@@ -1584,7 +1776,27 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://d4nv0cxcyxmp4.cloudfront.net/",
-    "apiUrl": "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html"
+    "apiUrl": "https://d4nv0cxcyxmp4.cloudfront.net/swagger/index.html",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-06/06-generative-ai-control-platform/01-overview.jpg",
+        "alt": "Generative AI Control Platform overview with VAE GAN and diffusion families",
+        "label": "Platform overview",
+        "caption": "The overview connects three model families while keeping registered evidence separate from real execution claims."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-06/06-generative-ai-control-platform/02-family-comparison.jpg",
+        "alt": "Generative AI Control Platform VAE and GAN mechanism comparison",
+        "label": "Family comparison",
+        "caption": "The comparison surface contrasts VAE and GAN mechanisms, published evidence and interpretation limits without creating a leaderboard."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-06/06-generative-ai-control-platform/03-safety-boundary.jpg",
+        "alt": "Generative AI Control Platform safety constraints and remaining boundaries",
+        "label": "Safety boundary",
+        "caption": "Risk, control and remaining limitation stay together for conceptual evidence, conditioning, metrics and training data."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-generative-models-diffusion-systems-36-generative-media-safety-eval-suite",
@@ -1601,8 +1813,8 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 107,
-      "code": 52,
+      "files": 108,
+      "code": 53,
       "tests": 19,
       "notebooks": 0
     },
@@ -1614,7 +1826,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://iuj4ao33iqcp2wpkl7x46qzp7e0duadr.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/36-generative-media-safety-eval-suite/01-overview.jpg",
+        "alt": "Generative Trust and Safety Console overview",
+        "label": "Overview",
+        "caption": "Fixture qualification is visibly separated from missing real-model evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/36-generative-media-safety-eval-suite/02-benchmark.jpg",
+        "alt": "Generative media approved benchmark boundary",
+        "label": "Benchmark",
+        "caption": "Only approved suite identifiers reach the authorized evaluation path."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/36-generative-media-safety-eval-suite/03-metrics.jpg",
+        "alt": "Generative media multi-axis safety metrics",
+        "label": "Metrics",
+        "caption": "Safety, utility, calibration, fairness and privacy remain separate evidence axes."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/36-generative-media-safety-eval-suite/04-review.jpg",
+        "alt": "Generative media human review and provenance controls",
+        "label": "Review",
+        "caption": "Review, quarantine and fail-closed provenance controls remain inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/36-generative-media-safety-eval-suite/05-release-gate.jpg",
+        "alt": "Generative media withheld release decision",
+        "label": "Release gate",
+        "caption": "Real-model, locked-test, human-review and C2PA evidence are required before release."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-37-reinforcement-learning-foundations-gridworld",
@@ -1641,7 +1885,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/37-reinforcement-learning-foundations-gridworld",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/37-reinforcement-learning-foundations-gridworld/01-environment.jpg",
+        "alt": "GridWorld Policy Lab versioned environment and transition model",
+        "label": "Environment",
+        "caption": "The connected laboratory exposes the registered GridWorld layout, reward geometry and complete stochastic transition model."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/37-reinforcement-learning-foundations-gridworld/02-policy.jpg",
+        "alt": "GridWorld Policy Lab learned policy and state action values",
+        "label": "Policy",
+        "caption": "The greedy policy, state values and every Q-value remain inspectable against the same versioned environment."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/37-reinforcement-learning-foundations-gridworld/03-learning.jpg",
+        "alt": "GridWorld Policy Lab learning telemetry and evaluation metrics",
+        "label": "Learning",
+        "caption": "Training telemetry is separated from the frozen greedy evaluation, with return, success, coverage and Bellman residual visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/37-reinforcement-learning-foundations-gridworld/04-comparison.jpg",
+        "alt": "GridWorld Policy Lab Q Learning and SARSA comparison",
+        "label": "Comparison",
+        "caption": "Q-Learning and SARSA are compared under equal budgets using seed-level aggregates and explicit uncertainty intervals."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/37-reinforcement-learning-foundations-gridworld/05-evidence.jpg",
+        "alt": "GridWorld Policy Lab reproducibility manifest and artifact lineage",
+        "label": "Evidence",
+        "caption": "The evidence view links every result to frozen configuration, seeds, layout hash, commit and content-addressed artifacts."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-64-human-robot-interaction-safety-lab",
@@ -1697,8 +1973,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 94,
-      "code": 56,
+      "files": 95,
+      "code": 57,
       "tests": 13,
       "notebooks": 0
     },
@@ -1710,7 +1986,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p52-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p52-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p52-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/52-vqe-qaoa-advanced-optimization/01-overview.jpg",
+        "alt": "VQE QAOA optimization studio overview",
+        "label": "Overview",
+        "caption": "VQE and QAOA remain separate optimization tracks with explicit semantics."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/52-vqe-qaoa-advanced-optimization/02-vqe-track.jpg",
+        "alt": "VQE experiment track",
+        "label": "VQE track",
+        "caption": "Hamiltonian, ansatz and convergence evidence are presented for the VQE fixtures."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/52-vqe-qaoa-advanced-optimization/03-qaoa-track.jpg",
+        "alt": "QAOA graph optimization track",
+        "label": "QAOA track",
+        "caption": "Graph instances, depth and objective quality remain inspectable for QAOA."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/52-vqe-qaoa-advanced-optimization/04-trainability.jpg",
+        "alt": "VQE QAOA trainability diagnostics",
+        "label": "Trainability",
+        "caption": "Optimization difficulty and seed variability are visible without hardware claims."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/52-vqe-qaoa-advanced-optimization/05-evidence.jpg",
+        "alt": "VQE QAOA final evidence",
+        "label": "Evidence",
+        "caption": "Final fixtures, graph cases and simulation-only boundaries remain explicit."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-54-hybrid-ai-quantum-workflow-platform",
@@ -1725,8 +2033,8 @@ window.PORTFOLIO_PROJECTS = [
       "Qiskit"
     ],
     "signals": {
-      "files": 122,
-      "code": 64,
+      "files": 123,
+      "code": 65,
       "tests": 8,
       "notebooks": 0
     },
@@ -1738,7 +2046,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p54-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p54-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p54-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/54-hybrid-ai-quantum-workflow-platform/01-catalog.jpg",
+        "alt": "Hybrid AI quantum workflow catalog",
+        "label": "Catalog",
+        "caption": "Six registered workflow templates expose their declarative contracts."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/54-hybrid-ai-quantum-workflow-platform/02-workflow-builder.jpg",
+        "alt": "Hybrid AI quantum workflow builder",
+        "label": "Workflow builder",
+        "caption": "Classical and quantum steps are composed as an auditable DAG."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/54-hybrid-ai-quantum-workflow-platform/03-run-timeline.jpg",
+        "alt": "Hybrid AI quantum workflow run timeline",
+        "label": "Run timeline",
+        "caption": "Execution stages, approvals and artifacts remain visible in sequence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/54-hybrid-ai-quantum-workflow-platform/04-provider-adapters.jpg",
+        "alt": "Hybrid AI quantum provider adapters",
+        "label": "Providers",
+        "caption": "Provider capabilities, budgets and portability limits are surfaced together."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/54-hybrid-ai-quantum-workflow-platform/05-evidence.jpg",
+        "alt": "Hybrid AI quantum workflow evidence",
+        "label": "Evidence",
+        "caption": "Eighty scenarios preserve lineage without implying quantum advantage or universal portability."
+      }
+    ]
   },
   {
     "id": "university-02-computer-science-coursework-cpp-introduction-to-algorithms",
@@ -1851,8 +2191,8 @@ window.PORTFOLIO_PROJECTS = [
       "Python"
     ],
     "signals": {
-      "files": 432,
-      "code": 49,
+      "files": 433,
+      "code": 50,
       "tests": 17,
       "notebooks": 0
     },
@@ -1864,7 +2204,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://xkkhaujklv3g3btdoi5k5jffbq0rbdaz.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/31-vae-gan-foundations-lab/01-overview.jpg",
+        "alt": "Latent Generative Observatory overview",
+        "label": "Overview",
+        "caption": "Five generative objectives share a frozen Fashion-MNIST comparison protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/31-vae-gan-foundations-lab/02-objectives.jpg",
+        "alt": "Latent model objective decomposition",
+        "label": "Objectives",
+        "caption": "Reconstruction, KL, ELBO and adversarial components remain individually visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/31-vae-gan-foundations-lab/03-latent-space.jpg",
+        "alt": "Seeded latent representation diagnostics",
+        "label": "Latent space",
+        "caption": "Reconstructions, interpolations and traversals reuse fixed evaluation seeds."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/31-vae-gan-foundations-lab/04-audit.jpg",
+        "alt": "Latent model coverage and memorization audit",
+        "label": "Audit",
+        "caption": "Coverage, duplicates and nearest-neighbor evidence complement visual samples."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/31-vae-gan-foundations-lab/05-protocol.jpg",
+        "alt": "Latent model immutable evidence protocol",
+        "label": "Protocol",
+        "caption": "Dataset checksums, transforms, checkpoint metadata and blocked test state stay attached."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-deep-learning-core-11-autoencoder-representation-lab",
@@ -1957,8 +2329,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 100,
-      "code": 49,
+      "files": 101,
+      "code": 50,
       "tests": 15,
       "notebooks": 0
     },
@@ -1970,7 +2342,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://t5tdpttxbwefktio7g6qopwdem0kmpen.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/34-lora-finetuning-concept-lab/01-overview.jpg",
+        "alt": "LoRA Adaptation Bench overview",
+        "label": "Overview",
+        "caption": "Ranks 4, 8 and 16 share one frozen base and equal optimization budget."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/34-lora-finetuning-concept-lab/02-rank-comparison.jpg",
+        "alt": "LoRA rank capacity comparison",
+        "label": "Rank comparison",
+        "caption": "Trainable capacity, retention and compute remain separate comparison axes."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/34-lora-finetuning-concept-lab/03-dataset.jpg",
+        "alt": "LoRA licensed dataset contract",
+        "label": "Dataset",
+        "caption": "Row count, CC0 license, split and materialization gate are explicit."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/34-lora-finetuning-concept-lab/04-evaluation.jpg",
+        "alt": "LoRA adaptation evaluation axes",
+        "label": "Evaluation",
+        "caption": "Alignment, diversity, retention, memorization and human review form the evidence set."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/34-lora-finetuning-concept-lab/05-release-gate.jpg",
+        "alt": "LoRA adapter publication gate",
+        "label": "Release gate",
+        "caption": "Missing GPU runs, artifacts and review keep publication explicitly withheld."
+      }
+    ]
   },
   {
     "id": "leisure-02-machine-learning-labs",
@@ -2005,8 +2409,8 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 138,
-      "code": 45,
+      "files": 139,
+      "code": 46,
       "tests": 23,
       "notebooks": 0
     },
@@ -2018,7 +2422,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/app/",
-    "apiUrl": "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://rynvqkrfx7leay4nlajsbueife0vvqiz.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/28-mcp-tool-server-lab/01-overview.jpg",
+        "alt": "MCP Protocol Observatory overview",
+        "label": "Overview",
+        "caption": "The HarborOps surface summarizes tools, resources, templates, prompts and conformance evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/28-mcp-tool-server-lab/02-tools.jpg",
+        "alt": "MCP read-only typed tool catalog",
+        "label": "Tools",
+        "caption": "Seven read-only tools expose versioned JSON Schema input and output contracts."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/28-mcp-tool-server-lab/03-resources.jpg",
+        "alt": "MCP resources templates and prompts",
+        "label": "Resources",
+        "caption": "Static resources, URI templates and user-controlled prompts keep context explicit."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/28-mcp-tool-server-lab/04-transports.jpg",
+        "alt": "MCP direct stdio and HTTP transport matrix",
+        "label": "Transports",
+        "caption": "Direct dispatch, newline-framed stdio and Streamable HTTP share one semantic contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/28-mcp-tool-server-lab/05-conformance.jpg",
+        "alt": "MCP versioned conformance evidence",
+        "label": "Conformance",
+        "caption": "Development and locked cases stay separate and MCP Inspector remains explicitly unexecuted."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-68-multiservice-ai-platform-core",
@@ -2152,8 +2588,8 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 191,
-      "code": 58,
+      "files": 193,
+      "code": 59,
       "tests": 43,
       "notebooks": 0
     },
@@ -2165,7 +2601,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/app/",
-    "apiUrl": "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://qswbpj2hx56lvs2hgcc6a4b7ai0njdut.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/25-personal-document-rag-system/01-overview.jpg",
+        "alt": "Personal Knowledge Desk grounded RAG overview",
+        "label": "Overview",
+        "caption": "The local-first workspace makes document lineage, retrieval and abstention part of the product surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/25-personal-document-rag-system/02-library.jpg",
+        "alt": "Personal Knowledge Desk document library controls",
+        "label": "Library",
+        "caption": "Supported sources, stable identifiers and deterministic chunk strategies remain inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/25-personal-document-rag-system/03-grounded-answer.jpg",
+        "alt": "Personal Knowledge Desk grounded answer outcomes",
+        "label": "Grounded answer",
+        "caption": "The answer view distinguishes supported responses from insufficient or absent evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/25-personal-document-rag-system/04-retrieval-inspector.jpg",
+        "alt": "Personal Knowledge Desk retrieval inspector",
+        "label": "Retrieval",
+        "caption": "BM25, dense and hybrid paths expose backend identity, ranks and source locators."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/25-personal-document-rag-system/05-evaluation.jpg",
+        "alt": "Personal Knowledge Desk evaluation boundary",
+        "label": "Evaluation",
+        "caption": "Qualification evidence stays separate from the unopened sealed evaluation split."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-19-image-classification-api",
@@ -2279,7 +2747,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-pqscan-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/48-post-quantum-security-scanner-lite/01-new-scan.jpg",
+        "alt": "Post-quantum security scanner new scan",
+        "label": "New scan",
+        "caption": "The deployed scanner accepts a bounded software inventory for analysis."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/48-post-quantum-security-scanner-lite/02-inventory.jpg",
+        "alt": "Post-quantum cryptographic inventory",
+        "label": "Inventory",
+        "caption": "Discovered cryptographic dependencies are organized in one reviewable inventory."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/48-post-quantum-security-scanner-lite/03-findings.jpg",
+        "alt": "Post-quantum scanner findings",
+        "label": "Findings",
+        "caption": "Risk findings remain linked to affected algorithms and evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/48-post-quantum-security-scanner-lite/04-migration-board.jpg",
+        "alt": "Post-quantum migration board",
+        "label": "Migration board",
+        "caption": "Prioritized remediation work is separated from detected evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/48-post-quantum-security-scanner-lite/05-evidence.jpg",
+        "alt": "Post-quantum scanner evidence view",
+        "label": "Evidence",
+        "caption": "Scanner provenance and assessment limits remain explicit."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-39-ppo-simulated-agent-lab",
@@ -2295,8 +2795,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 579,
-      "code": 103,
+      "files": 580,
+      "code": 104,
       "tests": 31,
       "notebooks": 0
     },
@@ -2306,7 +2806,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/39-ppo-simulated-agent-lab",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/39-ppo-simulated-agent-lab/01-overview.jpg",
+        "alt": "PPO simulated agent laboratory overview",
+        "label": "Overview",
+        "caption": "The laboratory states its simulation-only scope and frozen evaluation protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/39-ppo-simulated-agent-lab/02-rollouts.jpg",
+        "alt": "PPO rollout inspection surface",
+        "label": "Rollouts",
+        "caption": "Collected trajectories expose advantages, returns and episode boundaries."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/39-ppo-simulated-agent-lab/03-optimization.jpg",
+        "alt": "PPO clipped optimization diagnostics",
+        "label": "Optimization",
+        "caption": "Policy loss, value loss, entropy and clipping behavior are inspected together."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/39-ppo-simulated-agent-lab/04-robustness.jpg",
+        "alt": "PPO robustness and seed analysis",
+        "label": "Robustness",
+        "caption": "The final ablation preserves seed-level variability and fixed budgets."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/39-ppo-simulated-agent-lab/05-evidence.jpg",
+        "alt": "PPO sealed evidence view",
+        "label": "Evidence",
+        "caption": "Pre-freeze decisions and once-opened test evidence remain separated."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-reinforcement-learning-world-models-robotics-simulation-42-world-model-planning-lab",
@@ -2322,9 +2854,9 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 177,
-      "code": 69,
-      "tests": 23,
+      "files": 183,
+      "code": 70,
+      "tests": 25,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2333,7 +2865,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/42-world-model-planning-lab",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/42-world-model-planning-lab/01-overview.jpg",
+        "alt": "World model planning laboratory overview",
+        "label": "Overview",
+        "caption": "The workspace connects learned dynamics, uncertainty and planning evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/42-world-model-planning-lab/02-dataset.jpg",
+        "alt": "World model transition dataset registry",
+        "label": "Dataset",
+        "caption": "The 600k-transition corpus and its split contract remain inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/42-world-model-planning-lab/03-prediction.jpg",
+        "alt": "World model prediction diagnostics",
+        "label": "Prediction",
+        "caption": "Latent prediction quality and uncertainty are compared across registered seeds."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/42-world-model-planning-lab/04-planning.jpg",
+        "alt": "World model planning workspace",
+        "label": "Planning",
+        "caption": "Candidate plans are evaluated under a fixed horizon and explicit partial observation."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/42-world-model-planning-lab/05-evidence.jpg",
+        "alt": "World model sealed planning evidence",
+        "label": "Evidence",
+        "caption": "Locked planning seeds, ensemble lineage and evaluation limits remain visible."
+      }
+    ]
   },
   {
     "id": "leisure-04-python-fundamentals",
@@ -2440,7 +3004,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9qml-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-09/09-qml-benchmark-platform/01-encoding.jpg",
+        "alt": "QML Benchmark Platform executed feature encoding workspace",
+        "label": "Feature encoding",
+        "caption": "A persisted three-feature encoding run exposes normalization, circuit depth, qubit count and the deterministic preparation boundary."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-09/09-qml-benchmark-platform/02-kernel-benchmark.jpg",
+        "alt": "QML Benchmark Platform completed paired kernel benchmark",
+        "label": "Kernel benchmark",
+        "caption": "Four models share the same immutable split, seeds and metrics across eight paired runs with zero hardware jobs."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-09/09-qml-benchmark-platform/03-kernel-matrix.jpg",
+        "alt": "QML Benchmark Platform kernel matrix heatmap and values",
+        "label": "Kernel matrix",
+        "caption": "The persisted linear kernel is visible as both a heatmap and an auditable sample-by-sample value table."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-09/09-qml-benchmark-platform/04-noise-study.jpg",
+        "alt": "QML Benchmark Platform completed paired noise study",
+        "label": "Noise study",
+        "caption": "Ideal, finite-shot, noisy and readout-mitigated QSVM modes are compared across twelve paired runs under one declared budget."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-09/09-qml-benchmark-platform/05-interpretation-boundary.jpg",
+        "alt": "QML Benchmark Platform provenance and interpretation boundary",
+        "label": "Evidence boundary",
+        "caption": "The final evidence view states that no hardware or quantum advantage was demonstrated and that mitigation is not quantum error correction."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-44-quantum-algorithms-playground",
@@ -2469,7 +3065,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-qalgorithms.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/44-quantum-algorithms-playground/01-deutsch-jozsa-problem.jpg",
+        "alt": "Quantum Algorithms Playground Deutsch-Jozsa problem contract in desktop view",
+        "label": "Deutsch-Jozsa",
+        "caption": "The approved Deutsch-Jozsa instance exposes its promise-query input, expected classification and recorded run."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/44-quantum-algorithms-playground/02-grover-amplitudes.jpg",
+        "alt": "Quantum Algorithms Playground Grover amplitude and phase inspection",
+        "label": "Grover amplitudes",
+        "caption": "The simulator makes Grover's amplified marked state visible while retaining the bounded instance and shot budget."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/44-quantum-algorithms-playground/03-qft-circuit-steps.jpg",
+        "alt": "Quantum Algorithms Playground QFT circuit step sequence",
+        "label": "QFT steps",
+        "caption": "The QFT workspace decomposes the approved circuit into an inspectable sequence of operations and measurements."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/44-quantum-algorithms-playground/04-phase-estimation-measurement.jpg",
+        "alt": "Quantum Algorithms Playground phase estimation measurement evidence",
+        "label": "Phase estimation",
+        "caption": "Exact and shot-based phase-estimation outcomes are compared with their TVD and correctness result."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/44-quantum-algorithms-playground/05-shor-evidence.jpg",
+        "alt": "Quantum Algorithms Playground bounded Shor order-finding evidence",
+        "label": "Order evidence",
+        "caption": "The N=15-only order-finding run keeps simulator provenance, hashes and the no-hardware boundary visible."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-45-quantum-gates-and-circuits-lab",
@@ -2499,7 +3127,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-qcircuits-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/45-quantum-gates-and-circuits-lab/01-circuit-builder.jpg",
+        "alt": "Quantum Circuit Observatory canonical Bell circuit builder",
+        "label": "Circuit builder",
+        "caption": "The builder preserves one canonical two-qubit intent, explicit wire ordering and a bounded gate palette."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/45-quantum-gates-and-circuits-lab/02-gate-inspector.jpg",
+        "alt": "Quantum Circuit Observatory unitary gate inspector",
+        "label": "Gate inspector",
+        "caption": "The selected Hadamard gate is shown as an exact matrix with its unitarity, arity and ordering contract."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/45-quantum-gates-and-circuits-lab/03-framework-compare.jpg",
+        "alt": "Quantum Circuit Observatory Qiskit and Cirq framework comparison",
+        "label": "Framework compare",
+        "caption": "Canonical, Qiskit and Cirq state fidelities are aligned only after explicit endian and global-phase normalization."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/45-quantum-gates-and-circuits-lab/04-noise-model.jpg",
+        "alt": "Quantum Circuit Observatory simulated depolarizing noise view",
+        "label": "Noise model",
+        "caption": "The density-matrix surface reports trace, purity and ideal fidelity under a declared simulated channel without mitigation claims."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/45-quantum-gates-and-circuits-lab/05-evidence.jpg",
+        "alt": "Quantum Circuit Observatory reproducible evidence contract",
+        "label": "Evidence",
+        "caption": "The evidence surface keeps schema, seeds, simulator-only boundary and canonical circuit payload visible."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-computing-quantum-ai-foundations-46-quantum-cloud-abstraction-layer",
@@ -2530,7 +3190,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-qcloud-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/46-quantum-cloud-abstraction-layer/01-provider-registry.jpg",
+        "alt": "Quantum Cloud Control Plane provider registry after a local workload",
+        "label": "Provider registry",
+        "caption": "Five provider contracts remain comparable while only local and deterministic adapters carry executed evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/46-quantum-cloud-abstraction-layer/02-backend-catalog.jpg",
+        "alt": "Quantum Cloud Control Plane safe backend capability catalog",
+        "label": "Backend catalog",
+        "caption": "The capability registry separates online local simulators from cloud backends whose discovery was not executed."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/46-quantum-cloud-abstraction-layer/03-submit-review.jpg",
+        "alt": "Quantum Cloud Control Plane submission policy review",
+        "label": "Submit review",
+        "caption": "The review surface allows a zero-priced local path and visibly denies cost-bearing cloud submission without approval."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/46-quantum-cloud-abstraction-layer/04-local-result.jpg",
+        "alt": "Quantum Cloud Control Plane successful local Bell workload result",
+        "label": "Local result",
+        "caption": "A real local run records 256 samples, a zero-dollar cost, normalized outcomes and an immutable artifact hash."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/46-quantum-cloud-abstraction-layer/05-evidence.jpg",
+        "alt": "Quantum Cloud Control Plane frozen release evidence",
+        "label": "Evidence",
+        "caption": "The verified bundle reports 144 conformance runs, a locked test protocol and zero paid jobs."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-59-quantum-developer-platform-design",
@@ -2649,7 +3341,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8qf-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-08/08-quantum-foundations-visual-platform/01-overview.jpg",
+        "alt": "Quantum Foundations Visual Platform overview and evidence boundary",
+        "label": "Foundations overview",
+        "caption": "The learning path places exact theory, ideal simulation, absent hardware and the no-advantage claim in one opening view."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-08/08-quantum-foundations-visual-platform/02-state-lab.jpg",
+        "alt": "Quantum Foundations one-qubit interactive normalized state lab",
+        "label": "State lab",
+        "caption": "Bounded angle controls update amplitudes, probabilities, Bloch coordinates and a visual state projection together."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-08/08-quantum-foundations-visual-platform/03-algorithms.jpg",
+        "alt": "Quantum Foundations algorithm comparison workspace",
+        "label": "Algorithms",
+        "caption": "The algorithm surface compares problem, classical baseline, quantum idea and complexity before any speedup interpretation."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-08/08-quantum-foundations-visual-platform/04-optimization.jpg",
+        "alt": "Quantum Foundations bounded optimization scenario workspace",
+        "label": "Optimization",
+        "caption": "The scenario keeps classical limits and bounded estimates visible while stating that no quantum solver was executed."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-08/08-quantum-foundations-visual-platform/05-simulation.jpg",
+        "alt": "Quantum Foundations reproducible Bell-state simulation result",
+        "label": "Simulation evidence",
+        "caption": "A real 1,024-shot ideal simulation records outcomes 00 and 11 with a circuit digest and explicit no-hardware boundary."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-50-quantum-kernel-benchmark",
@@ -2664,9 +3388,9 @@ window.PORTFOLIO_PROJECTS = [
       "Qiskit"
     ],
     "signals": {
-      "files": 97,
-      "code": 57,
-      "tests": 97,
+      "files": 100,
+      "code": 58,
+      "tests": 100,
       "notebooks": 0
     },
     "status": "Implementation",
@@ -2677,7 +3401,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p50-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p50-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p50-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/50-quantum-kernel-benchmark/01-overview.jpg",
+        "alt": "Quantum kernel benchmark studio overview",
+        "label": "Overview",
+        "caption": "The studio states the shared preprocessing contract and no-advantage boundary."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/50-quantum-kernel-benchmark/02-matrix-lab.jpg",
+        "alt": "Quantum kernel Gram matrix laboratory",
+        "label": "Matrix lab",
+        "caption": "Classical and quantum Gram matrices remain directly inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/50-quantum-kernel-benchmark/03-feature-maps.jpg",
+        "alt": "Quantum kernel feature map catalog",
+        "label": "Feature maps",
+        "caption": "Auditable feature-map definitions and resource expectations are exposed."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/50-quantum-kernel-benchmark/04-cost-preview.jpg",
+        "alt": "Quantum kernel execution cost preview",
+        "label": "Cost preview",
+        "caption": "Exact, finite-shot and noisy execution facets remain distinct before a run."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/50-quantum-kernel-benchmark/05-evidence.jpg",
+        "alt": "Quantum kernel frozen evidence",
+        "label": "Evidence",
+        "caption": "Datasets, configurations and once-opened tests remain traceable."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-49-quantum-ml-model-zoo",
@@ -2708,7 +3464,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p49-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p49-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p49-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/49-quantum-ml-model-zoo/01-zoo-catalog.jpg",
+        "alt": "Quantum ML model zoo catalog",
+        "label": "Zoo catalog",
+        "caption": "The connected local application presents the registered model families and backends."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/49-quantum-ml-model-zoo/02-experiment-builder.jpg",
+        "alt": "Quantum ML model zoo experiment builder",
+        "label": "Experiment builder",
+        "caption": "Dataset, model and execution settings are configured against the live local API."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/49-quantum-ml-model-zoo/03-circuit-inspector.jpg",
+        "alt": "Quantum ML model zoo circuit inspector",
+        "label": "Circuit inspector",
+        "caption": "Circuit structure and resource details remain inspectable before comparison."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/49-quantum-ml-model-zoo/04-comparison-arena.jpg",
+        "alt": "Quantum ML model comparison arena",
+        "label": "Comparison arena",
+        "caption": "Classical and quantum candidates share one controlled comparison surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/49-quantum-ml-model-zoo/05-model-card.jpg",
+        "alt": "Quantum ML model evidence card",
+        "label": "Model card",
+        "caption": "Capabilities, provenance and claim limits remain attached to the selected model."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-quantum-machine-learning-hybrid-ai-quantum-platforms-53-quantum-error-mitigation-basics",
@@ -2723,8 +3511,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 101,
-      "code": 57,
+      "files": 102,
+      "code": 58,
       "tests": 12,
       "notebooks": 0
     },
@@ -2736,7 +3524,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p53-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p53-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p53-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/53-quantum-error-mitigation-basics/01-overview.jpg",
+        "alt": "Quantum error mitigation laboratory overview",
+        "label": "Overview",
+        "caption": "The laboratory separates ideal, noisy and mitigated evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/53-quantum-error-mitigation-basics/02-noise-lab.jpg",
+        "alt": "Quantum error mitigation noise laboratory",
+        "label": "Noise lab",
+        "caption": "Declared simulated noise channels and workload conditions remain visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/53-quantum-error-mitigation-basics/03-mitigation-lab.jpg",
+        "alt": "Quantum error mitigation method comparison",
+        "label": "Mitigation lab",
+        "caption": "Mitigation methods are compared under the same simulation protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/53-quantum-error-mitigation-basics/04-correction-boundary.jpg",
+        "alt": "Mitigation versus correction boundary",
+        "label": "Correction boundary",
+        "caption": "The interface states that mitigation is not quantum error correction."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/53-quantum-error-mitigation-basics/05-evidence.jpg",
+        "alt": "Quantum error mitigation evidence registry",
+        "label": "Evidence",
+        "caption": "The frozen 36/12/12 workload split and simulation boundary remain traceable."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-quantum-first-business-product-developer-platform-58-quantum-optimization-service-proposal",
@@ -2786,7 +3606,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-qopt-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/47-quantum-optimization-basic-lab/01-problem-catalog.jpg",
+        "alt": "Quantum optimization problem catalog",
+        "label": "Problem catalog",
+        "caption": "The deployed application exposes bounded optimization fixtures and their formulations."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/47-quantum-optimization-basic-lab/02-experiment-builder.jpg",
+        "alt": "Quantum optimization experiment builder",
+        "label": "Experiment builder",
+        "caption": "Algorithm, backend and budget controls are assembled before execution."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/47-quantum-optimization-basic-lab/03-circuit.jpg",
+        "alt": "Quantum optimization circuit inspector",
+        "label": "Circuit",
+        "caption": "The selected circuit and its execution contract remain inspectable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/47-quantum-optimization-basic-lab/04-results.jpg",
+        "alt": "Quantum optimization result comparison",
+        "label": "Results",
+        "caption": "Objective quality and classical references are compared without an advantage claim."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/47-quantum-optimization-basic-lab/05-evidence.jpg",
+        "alt": "Quantum optimization evidence registry",
+        "label": "Evidence",
+        "caption": "Simulator provenance, seeds and bounded conclusions remain visible."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-final-ai-quantum-robotics-platform-69-quantum-service-layer-and-optimization-hub",
@@ -2839,7 +3691,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 8,
     "cloudFocus": "Azure",
     "liveUrl": "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p8-qmath-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/43-quantum-math-for-software-lab/01-complex-analysis.jpg",
+        "alt": "Quantum State Mathematics Lab complex plane analysis in a full desktop workspace",
+        "label": "Complex analysis",
+        "caption": "The workspace resolves an exact complex-number payload and exposes its plotted coordinate, result envelope and invariant checks."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/43-quantum-math-for-software-lab/02-state-validation.jpg",
+        "alt": "Quantum State Mathematics Lab qubit state validation workspace",
+        "label": "Qubit state",
+        "caption": "Normalized amplitudes, Born probabilities and global-phase equivalence are evaluated against an explicit state payload."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/43-quantum-math-for-software-lab/03-bloch-sphere.jpg",
+        "alt": "Quantum State Mathematics Lab Bloch sphere analysis with rendered vector",
+        "label": "Bloch sphere",
+        "caption": "A one-qubit state is projected into a three-dimensional Bloch vector while the source amplitudes remain visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/43-quantum-math-for-software-lab/04-entanglement.jpg",
+        "alt": "Quantum State Mathematics Lab entanglement analysis workspace",
+        "label": "Entanglement",
+        "caption": "The bipartite-state surface computes Schmidt structure, separability, reduced states and entropy from bounded input."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-08/43-quantum-math-for-software-lab/05-evidence-registry.jpg",
+        "alt": "Quantum State Mathematics Lab reproducibility evidence registry",
+        "label": "Evidence registry",
+        "caption": "The evidence view materializes the frozen split inventory, runtime ledger, reference boundary and verified final bundle."
+      }
+    ]
   },
   {
     "id": "path-software-engineer-rag-agentic-software-platform-05-rag-agent-workflow-platform",
@@ -2870,7 +3754,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://d3fm03zlz7v223.cloudfront.net/",
-    "apiUrl": "https://d3fm03zlz7v223.cloudfront.net/api/docs"
+    "apiUrl": "https://d3fm03zlz7v223.cloudfront.net/api/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-05/05-rag-agent-workflow-platform/01-overview.jpg",
+        "alt": "Atlas governed evidence platform overview in desktop view",
+        "label": "Platform overview",
+        "caption": "Atlas connects controlled ingestion, source-resolvable search, retrieval evaluation and governed workflow traces."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-05/05-rag-agent-workflow-platform/02-documents.jpg",
+        "alt": "Atlas document registry with four completed resources",
+        "label": "Document registry",
+        "caption": "Four controlled Markdown and text resources are indexed with durable status, source metadata and chunk counts."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-05/05-rag-agent-workflow-platform/03-search.jpg",
+        "alt": "Atlas semantic search returning four ranked evidence sources",
+        "label": "Evidence search",
+        "caption": "A real query retrieves four cited sources while the interface keeps similarity explicitly separate from confidence."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-05/05-rag-agent-workflow-platform/04-evaluation.jpg",
+        "alt": "Atlas retrieval evaluation strategy comparison and relevance analysis",
+        "label": "Retrieval evaluation",
+        "caption": "Three chunking strategies are compared against the same ground-truth queries with recall, precision, MRR and visible error analysis."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-05/05-rag-agent-workflow-platform/05-agent-runs.jpg",
+        "alt": "Atlas completed governed workflow trace with four citations",
+        "label": "Agent trace",
+        "caption": "The completed bounded run exposes its graph, tool-call budget, elapsed time and four citation artifacts without private reasoning."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-advanced-ml-backgrounds-15-recommender-system-api",
@@ -2949,8 +3865,8 @@ window.PORTFOLIO_PROJECTS = [
       "LLMs"
     ],
     "signals": {
-      "files": 5235,
-      "code": 159,
+      "files": 5236,
+      "code": 160,
       "tests": 456,
       "notebooks": 0
     },
@@ -2962,7 +3878,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/app/overview",
-    "apiUrl": "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://gr3ppliox2rbf7ixgmjn4ldz7q0ijgjb.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/30-multi-agent-repository-assistant/01-overview.jpg",
+        "alt": "Repository Intelligence Studio overview",
+        "label": "Overview",
+        "caption": "The integrator coordinates a supervisor and five specialists over frozen repositories."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/30-multi-agent-repository-assistant/02-orchestration.jpg",
+        "alt": "RepoPilot durable orchestration view",
+        "label": "Orchestration",
+        "caption": "Typed handoffs, isolated roles, graph state and explicit budgets remain visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/30-multi-agent-repository-assistant/03-evidence.jpg",
+        "alt": "RepoPilot content-addressed evidence view",
+        "label": "Evidence",
+        "caption": "Every conclusion resolves to snapshot, path, lines and content hash."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/30-multi-agent-repository-assistant/04-approval.jpg",
+        "alt": "RepoPilot patch approval boundary",
+        "label": "Approval",
+        "caption": "Patch proposals stop at a human gate before bounded ephemeral execution."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/30-multi-agent-repository-assistant/05-evaluation.jpg",
+        "alt": "RepoPilot architecture evaluation ledger",
+        "label": "Evaluation",
+        "caption": "Observed local architectures stay distinct from credentialed provider harnesses and sealed tests."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-machine-learning-engineering-software-foundations-01-retail-demand-prediction-api",
@@ -3159,7 +4107,33 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 7,
     "cloudFocus": "Azure",
     "liveUrl": "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs/"
+    "apiUrl": "https://p7rl-platform.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs/",
+    "gallery": [
+      {
+        "src": "assets/project-captures/software-engineer/plan-07/07-rl-simulation-control-platform/01-experiment.jpg",
+        "alt": "Vector RL evidence lab world-model experiment overview",
+        "label": "Experiment",
+        "caption": "The public workspace frames one registered Gridworld rollout and keeps its bounded transition-model limitations visible."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-07/07-rl-simulation-control-platform/02-world-model.jpg",
+        "alt": "Vector expected state versus imagined state comparison",
+        "label": "World model",
+        "caption": "Expected and predicted states are compared beside first divergence, accumulated error and the rollout drift curve."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-07/07-rl-simulation-control-platform/03-rollout.jpg",
+        "alt": "Vector autoregressive rollout step inspector",
+        "label": "Rollout inspector",
+        "caption": "Eleven persisted actions remain individually inspectable together with the open-loop planning limitation and metric samples."
+      },
+      {
+        "src": "assets/project-captures/software-engineer/plan-07/07-rl-simulation-control-platform/04-rollout-step-7.jpg",
+        "alt": "Vector Gridworld step seven expected and predicted state divergence",
+        "label": "Step divergence",
+        "caption": "Step seven exposes the exact one-cell model drift between the real transition and the autoregressive prediction."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-embodied-ai-humanoid-robotics-android-systems-63-robot-task-planning-control-lab",
@@ -3341,8 +4315,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 86,
-      "code": 38,
+      "files": 87,
+      "code": 39,
       "tests": 13,
       "notebooks": 0
     },
@@ -3354,7 +4328,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 6,
     "cloudFocus": "AWS",
     "liveUrl": "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/",
-    "apiUrl": "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://hvnhjxormu2nwsycxg6f2x54sa0yuvgq.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/33-stable-diffusion-app-lab/01-overview.jpg",
+        "alt": "Stable Diffusion Production Studio overview",
+        "label": "Overview",
+        "caption": "The metadata-mode studio exposes asynchronous job and worker boundaries."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/33-stable-diffusion-app-lab/02-generation.jpg",
+        "alt": "Stable Diffusion bounded generation request",
+        "label": "Generation",
+        "caption": "Model identity and request controls remain visible while unqualified GPU execution stays disabled."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/33-stable-diffusion-app-lab/03-editing.jpg",
+        "alt": "Stable Diffusion image editing validation",
+        "label": "Editing",
+        "caption": "Source hashing, dimension validation and metadata stripping guard edit workflows."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/33-stable-diffusion-app-lab/04-jobs.jpg",
+        "alt": "Stable Diffusion durable job lifecycle",
+        "label": "Jobs",
+        "caption": "PostgreSQL truth, bounded delivery and safety decisions define the lifecycle."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-06/33-stable-diffusion-app-lab/05-governance.jpg",
+        "alt": "Stable Diffusion governance and evaluation",
+        "label": "Governance",
+        "caption": "The reviewed development suite is shown without inventing missing GPU evidence."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-21-segmentation-quality-control-lab",
@@ -3444,7 +4450,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 5,
     "cloudFocus": "AWS",
     "liveUrl": "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/app/",
-    "apiUrl": "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/docs"
+    "apiUrl": "https://xvicyoqjqbwhqgx43sufykmvci0jckws.lambda-url.us-east-1.on.aws/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/27-langgraph-tool-agent/01-task-composer.jpg",
+        "alt": "AtlasOps bounded task composer",
+        "label": "Task composer",
+        "caption": "The task surface binds a goal to explicit capability and budget limits."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/27-langgraph-tool-agent/02-live-run.jpg",
+        "alt": "AtlasOps persisted LangGraph run",
+        "label": "Live run",
+        "caption": "Graph progress, model turns, tool calls and token budgets remain observable."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/27-langgraph-tool-agent/03-approval-inbox.jpg",
+        "alt": "AtlasOps exact payload approval inbox",
+        "label": "Approval inbox",
+        "caption": "A reversible sandbox write pauses for review of its exact scoped payload."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/27-langgraph-tool-agent/04-evidence-ledger.jpg",
+        "alt": "AtlasOps observed source evidence ledger",
+        "label": "Evidence ledger",
+        "caption": "Observed sources and tool events persist beside the governed workflow."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-05/27-langgraph-tool-agent/05-evaluation.jpg",
+        "alt": "AtlasOps frozen evaluation protocol",
+        "label": "Evaluation",
+        "caption": "The 80-case campaign is labeled not executed and no hosted-model metrics are invented."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-deep-learning-core-12-transformer-from-architecture-foundations-lab",
@@ -3581,8 +4619,8 @@ window.PORTFOLIO_PROJECTS = [
       "Docker"
     ],
     "signals": {
-      "files": 98,
-      "code": 58,
+      "files": 99,
+      "code": 59,
       "tests": 14,
       "notebooks": 0
     },
@@ -3594,7 +4632,39 @@ window.PORTFOLIO_PROJECTS = [
     "roadmapNumber": 9,
     "cloudFocus": "Azure",
     "liveUrl": "https://p9-p51-web.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/",
-    "apiUrl": "https://p9-p51-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs"
+    "apiUrl": "https://p9-p51-api.delightfulwave-8159d6fc.centralus.azurecontainerapps.io/docs",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/51-vqc-qsvm-comparison-suite/01-overview.jpg",
+        "alt": "VQC QSVM comparison suite overview",
+        "label": "Overview",
+        "caption": "The suite frames VQC, QSVC and classical baselines under one protocol."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/51-vqc-qsvm-comparison-suite/02-experiment-builder.jpg",
+        "alt": "VQC QSVM experiment builder",
+        "label": "Experiment builder",
+        "caption": "Task, model family and budget choices are assembled in a controlled surface."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/51-vqc-qsvm-comparison-suite/03-circuit-inspector.jpg",
+        "alt": "VQC QSVM circuit inspector",
+        "label": "Circuit inspector",
+        "caption": "Variational and kernel circuit structure is visible beside resource estimates."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/51-vqc-qsvm-comparison-suite/04-comparison-arena.jpg",
+        "alt": "VQC QSVM comparison arena",
+        "label": "Comparison arena",
+        "caption": "Validation and test evidence is compared without declaring a universal winner."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-09/51-vqc-qsvm-comparison-suite/05-evidence.jpg",
+        "alt": "VQC QSVM evidence registry",
+        "label": "Evidence",
+        "caption": "Eight tasks and their frozen evaluation lineage remain inspectable."
+      }
+    ]
   },
   {
     "id": "path-software-engineer-vision-multimodal-ai-platform-04-vision-multimodal-ai-platform",
@@ -3670,8 +4740,8 @@ window.PORTFOLIO_PROJECTS = [
       "PyTorch"
     ],
     "signals": {
-      "files": 29871,
-      "code": 69,
+      "files": 29872,
+      "code": 70,
       "tests": 21642,
       "notebooks": 0
     },
@@ -3681,7 +4751,39 @@ window.PORTFOLIO_PROJECTS = [
     "accent": "violet",
     "path": "Path-AI-Engineer/Reinforcement-Learning-World-Models-Robotics-Simulation/41-vision-action-agent-sim",
     "roadmapNumber": 7,
-    "cloudFocus": "Azure"
+    "cloudFocus": "Azure",
+    "gallery": [
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/41-vision-action-agent-sim/01-overview.jpg",
+        "alt": "Vision action agent simulation overview",
+        "label": "Overview",
+        "caption": "The simulation surface connects dataset, policy inventory and evaluation boundaries."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/41-vision-action-agent-sim/02-dataset.jpg",
+        "alt": "Vision action agent dataset registry",
+        "label": "Dataset",
+        "caption": "The registered transition inventory keeps collection and split evidence visible."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/41-vision-action-agent-sim/03-policy-inventory.jpg",
+        "alt": "Vision action policy inventory",
+        "label": "Policies",
+        "caption": "Candidate policies remain comparable without obscuring their training lineage."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/41-vision-action-agent-sim/04-diagnostics.jpg",
+        "alt": "Vision action agent diagnostic workspace",
+        "label": "Diagnostics",
+        "caption": "Prediction, action and failure diagnostics are presented as separate evidence."
+      },
+      {
+        "src": "assets/project-captures/ai-engineer/plan-07/41-vision-action-agent-sim/05-evaluation.jpg",
+        "alt": "Vision action agent frozen evaluation",
+        "label": "Evaluation",
+        "caption": "Simulation-only evaluation reports performance without implying real-driving readiness."
+      }
+    ]
   },
   {
     "id": "path-ai-engineer-computer-vision-multimodal-ai-edge-optimization-23-vision-language-search-assistant",

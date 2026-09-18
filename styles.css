@@ -1665,30 +1665,54 @@
   }
 
   .project-card__action[data-provider] {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     color: var(--paper);
     background: var(--ink);
   }
 
   .project-card__action[data-provider="gcp"] {
+    --provider-hover-background: linear-gradient(135deg, #4285f4, #34a853 36%, #fbbc05 68%, #ea4335);
     background:
       linear-gradient(135deg, rgba(66, 133, 244, 0.34), rgba(52, 168, 83, 0.2) 36%, rgba(251, 188, 5, 0.18) 68%, rgba(234, 67, 53, 0.3)),
       var(--ink);
   }
 
   .project-card__action[data-provider="aws"] {
+    --provider-hover-background: linear-gradient(135deg, #ffd37a, #ff9900 54%, #f06a00);
     background: linear-gradient(135deg, rgba(255, 211, 122, 0.18), rgba(255, 153, 0, 0.34) 54%, rgba(240, 106, 0, 0.2)), var(--ink);
   }
 
   .project-card__action[data-provider="firebase"] {
+    --provider-hover-background: linear-gradient(135deg, #ffe082, #ffca28 45%, #ff8a00);
     background: linear-gradient(135deg, rgba(255, 224, 130, 0.2), rgba(255, 202, 40, 0.32) 45%, rgba(255, 138, 0, 0.22)), var(--ink);
   }
 
   .project-card__action[data-provider="render"] {
+    --provider-hover-background: linear-gradient(135deg, #7ff4d4, #46e3b7 42%, #30a9c7);
     background: linear-gradient(135deg, rgba(127, 244, 212, 0.18), rgba(70, 227, 183, 0.32) 42%, rgba(48, 169, 199, 0.22)), var(--ink);
   }
 
   .project-card__action[data-provider="azure"] {
+    --provider-hover-background: linear-gradient(135deg, #0078d4, #005a9e 55%, #243a7a);
     background: linear-gradient(135deg, rgba(0, 120, 212, 0.4), rgba(0, 90, 158, 0.3) 55%, rgba(36, 58, 122, 0.3)), var(--ink);
+  }
+
+  .project-card__action[data-provider]::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: var(--provider-hover-background, var(--accent));
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+
+  .project-card__action[data-provider] > * {
+    position: relative;
+    z-index: 1;
   }
 
   .project-card__action[data-provider] .project-card__cloud-mark {
@@ -1701,52 +1725,26 @@
 
   .project-card__action[data-provider="gcp"]:hover .project-card__cloud-mark,
   .project-card__action[data-provider="gcp"]:focus-visible .project-card__cloud-mark,
-  .project-card__action[data-provider="azure"]:hover .project-card__cloud-mark,
-  .project-card__action[data-provider="azure"]:focus-visible .project-card__cloud-mark {
-    filter: grayscale(1) brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-    opacity: 1;
-  }
-
   .project-card__action[data-provider="aws"]:hover .project-card__cloud-mark,
   .project-card__action[data-provider="aws"]:focus-visible .project-card__cloud-mark,
   .project-card__action[data-provider="firebase"]:hover .project-card__cloud-mark,
   .project-card__action[data-provider="firebase"]:focus-visible .project-card__cloud-mark,
   .project-card__action[data-provider="render"]:hover .project-card__cloud-mark,
-  .project-card__action[data-provider="render"]:focus-visible .project-card__cloud-mark {
+  .project-card__action[data-provider="render"]:focus-visible .project-card__cloud-mark,
+  .project-card__action[data-provider="azure"]:hover .project-card__cloud-mark,
+  .project-card__action[data-provider="azure"]:focus-visible .project-card__cloud-mark {
     filter: brightness(0) saturate(100%);
     opacity: 0.9;
   }
 
-  .project-card__action[data-provider="gcp"]:hover,
-  .project-card__action[data-provider="gcp"]:focus-visible {
-    color: #fff;
-    background:
-      linear-gradient(135deg, #4285f4, #34a853 36%, #fbbc05 68%, #ea4335),
-      #111;
-  }
-
-  .project-card__action[data-provider="aws"]:hover,
-  .project-card__action[data-provider="aws"]:focus-visible {
+  .project-card__action[data-provider]:hover,
+  .project-card__action[data-provider]:focus-visible {
     color: #111;
-    background: linear-gradient(135deg, #ffd37a, #ff9900 54%, #f06a00);
   }
 
-  .project-card__action[data-provider="firebase"]:hover,
-  .project-card__action[data-provider="firebase"]:focus-visible {
-    color: #16120a;
-    background: linear-gradient(135deg, #ffe082, #ffca28 45%, #ff8a00);
-  }
-
-  .project-card__action[data-provider="render"]:hover,
-  .project-card__action[data-provider="render"]:focus-visible {
-    color: #081713;
-    background: linear-gradient(135deg, #7ff4d4, #46e3b7 42%, #30a9c7);
-  }
-
-  .project-card__action[data-provider="azure"]:hover,
-  .project-card__action[data-provider="azure"]:focus-visible {
-    color: #fff;
-    background: linear-gradient(135deg, #0078d4, #005a9e 55%, #243a7a);
+  .project-card__action[data-provider]:hover::before,
+  .project-card__action[data-provider]:focus-visible::before {
+    opacity: 1;
   }
 
   .project-card__actions[data-cloud] {
